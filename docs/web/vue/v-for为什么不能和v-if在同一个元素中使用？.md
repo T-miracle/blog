@@ -35,7 +35,7 @@ export function genElement (el: ASTElement, state: CodegenState): string {
 
 ## 结论
 
-永远不要把 v-if 和 v-for 同时用在同一个元素上
+永远不要把 `v-if` 和 `v-for` 同时用在同一个元素上
 
 ## 解决方式
 

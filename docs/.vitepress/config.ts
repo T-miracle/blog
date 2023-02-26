@@ -59,17 +59,17 @@ export default defineConfig({
                         text: "概念",
                         collapsed: true,
                         items: [
-                            { text: "🔸 什么是OPP开发模式", link: "/web/concept/opp" },
-                            { text: "🔸 什么是SASS系统", link: "/web/concept/sass" },
+                            { text: "🔸 什么是OPP开发模式", link: "/web/concept/什么是OPP开发模式" },
+                            { text: "🔸 什么是SASS系统", link: "/web/concept/什么是SASS系统" },
                         ],
                     },
                     {
                         text: "JavaScript",
                         collapsed: true,
                         items: [
-                            { text: "🚩 什么是Ajax？如何实现一个简单的Ajax？", link: "/web/javascript/ajax" },
+                            { text: "🚩 什么是Ajax？如何实现一个简单的Ajax？", link: "/web/javascript/什么是Ajax？如何实现一个简单的Ajax？" },
                             { text: "🚩 Promise", link: "/web/javascript/Promise" },
-                            { text: "🏴 GC垃圾回收机制", link: "/web/javascript/GC" },
+                            { text: "🏴 GC垃圾回收机制", link: "/web/javascript/GC垃圾回收机制" },
                         ],
                     },
                     {
