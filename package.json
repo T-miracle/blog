@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "markdown-it-task-lists": "^2.1.1",
+    "sass": "^1.58.3",
+    "viewerjs": "^1.11.2",
+    "vite": "^4.1.4",
+    "vitepress": "^1.0.0-alpha.47",
+    "vitepress-plugin-back-to-top": "^1.0.1",
+    "vue": "^3.2.47"
+  }
+}

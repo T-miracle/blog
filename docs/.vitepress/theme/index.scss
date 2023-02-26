@@ -1,0 +1,27 @@
+@media (min-width: 1440px) {
+    .VPSidebar, .VPNavBar.has-sidebar .title {
+        padding-left: min(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)) !important;
+    }
+
+    .group {
+        width: 100% !important;
+    }
+}
+
+.vp-doc {
+    h1 {
+        text-align: center;
+    }
+
+    img {
+        cursor: pointer;
+    }
+
+    table.mk {
+        tr {
+            > :nth-child(1) {
+                text-align: right;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+# 忽略的文件
+yarn_error.log
+
+# 忽略的文件夹
+.idea
+node_modules
+.vscode
+**/dist
+**/cache
