@@ -72,7 +72,7 @@ key: 3  id: 3 index: 2 name: test3     key: 2  id: 2 index: 2  name: test2
 
 5. 建议使用 `v-for` 指令时一定要指定 `key` 的值（既提升性能、又防止列表状态紊乱）
 
-<vPageFooterTips :links="[
+<vPageTips :links="[
     {text: 'v-for中为什么要加key？', link: 'https://juejin.cn/post/7110105626415628296'},
     {text: '为什么使用v-for时必须添加唯一的key?', link: 'https://segmentfault.com/a/1190000013810844'},
     ]"

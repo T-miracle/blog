@@ -24,10 +24,10 @@
 <vPageTips :links="[
     {
         text: '什么是渐进式前端开发框架？向您介绍vue，看了就懂了',
-        links: 'https://blog.51cto.com/u_14482423/2992771'
+        link: 'https://blog.51cto.com/u_14482423/2992771'
     },
     {
         text: '速看！！ vue 渐进式框架理解',
-        links: 'https://juejin.cn/post/7033957461383970824'
+        link: 'https://juejin.cn/post/7033957461383970824'
     }
 ]"/>
