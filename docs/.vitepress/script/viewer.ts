@@ -4,8 +4,8 @@ import Viewer from 'viewerjs'
 /**
  * 给图片添加预览功能
  */
-const viewer = () => {
-    document.querySelectorAll('.main img').forEach(item => {
+const setViewer = () => {
+    document.querySelectorAll('.vp-doc img').forEach(item => {
         new Viewer(<HTMLElement>item, {
             navbar: false,
             title: false,
@@ -21,4 +21,4 @@ const viewer = () => {
     })
 }
 
-export default viewer;
+export default setViewer;

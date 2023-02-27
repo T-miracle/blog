@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@giscus/vue": "^2.2.8",
+    "element-plus": "^2.2.32",
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
     "viewerjs": "^1.11.2",

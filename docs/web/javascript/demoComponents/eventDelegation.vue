@@ -1,22 +1,39 @@
 <template>
-    <div id="content">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-    </div>
+    <el-tooltip
+        class="box-item"
+        effect="dark"
+        content="你可以点击试试看~"
+        placement="right"
+    >
+        <div ref="content" id="content">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+        </div>
+    </el-tooltip>
 </template>
 
 <script setup lang="ts">
-    import { nextTick } from 'vue';
+    import { onMounted, ref } from 'vue';
+    import { ElTooltip, ElMessageBox } from 'element-plus';
 
-    nextTick(() => {
-        let content: HTMLElement = document.getElementById('content')
-        content.addEventListener('click', function (e) {
-            const box = e.target as HTMLElement
-            alert(box.innerText)
-        })
-    })
+    const content = ref<HTMLElement | null>(null);
+
+    onMounted(() => {
+        content.value.onclick = (e: MouseEvent) => {
+            const box = e.target as HTMLElement;
+            ElMessageBox({
+                message: box.innerText,
+                showConfirmButton: false,
+                showCancelButton: true,
+                cancelButtonText: '关闭',
+                buttonSize: 'small',
+                center: true,
+                customStyle: { width: '120px' }
+            });
+        };
+    });
 
 </script>
 
