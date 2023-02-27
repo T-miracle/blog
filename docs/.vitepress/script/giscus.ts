@@ -48,17 +48,17 @@ let element = document.querySelector('html');
 let observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
         if (mutation.type == 'attributes') {
-            let comment = document.getElementById('comment');
-            if (element.className) {
-                comment.setAttribute('theme', 'dark')
+            let comment: Element = document.getElementById('comment');
+            if (element.className.indexOf('dark') !== -1) {
+                comment?.setAttribute('theme', 'dark');
             } else {
-                comment.setAttribute('theme', 'light')
+                comment?.setAttribute('theme', 'light');
             }
         }
     });
 });
 observer.observe(element, {
-    attributes: true
+    attributeFilter: ['class']
 });
 
 export default setGiscus;

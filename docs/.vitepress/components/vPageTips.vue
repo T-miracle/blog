@@ -1,11 +1,11 @@
 <template>
     <div class="page-tips">
         <div class="page-tips__title">
-            <slot>本文章借鉴或转载于：</slot>
+            <slot>本文章部分借鉴于：</slot>
         </div>
         <div class="page-tips__links">
             <div v-for="(item, index) in links" :key="index">
-                <a :href="item.link">{{ item.text }}</a>
+                <a :href="item.link" target="_blank">{{ item.text }}</a>
             </div>
         </div>
     </div>
