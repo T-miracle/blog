@@ -1,3 +1,4 @@
+<!--外链跳转提示内容-->
 <template>
     <div class="page-tips">
         <div class="page-tips__title">

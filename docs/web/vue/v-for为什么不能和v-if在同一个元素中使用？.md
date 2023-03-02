@@ -49,16 +49,17 @@ export function genElement (el: ASTElement, state: CodegenState): string {
 
 如果条件出现在循环内部，可通过计算属性`computed`提前过滤掉那些不需要显示的项
 
-```js
-/* Vue2 */
+::: code-group
+```js [Vue2]
 computed: {
     items: function() {
       return this.list.filter(item => item.isShow)
     }
 }
-
-/* Vue3 */
+```
+```ts [Vue3]
 const items = computed(() => {
     return list.filter(item => item.isShow)
 })
 ```
+:::

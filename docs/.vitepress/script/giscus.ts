@@ -3,7 +3,7 @@ import { createApp, h } from 'vue';
 
 // 添加评论容器
 const setGiscus = () => {
-    const dark : boolean = !!document.querySelector('html').className;
+    const dark: boolean = !!document.querySelector('html').className;
     // 删除原有评论容器
     let old = document.getElementById('giscus');
     if (old) {
@@ -35,7 +35,7 @@ const setGiscus = () => {
                     term: 'Welcome to giscus!',
                     reactionsEnabled: '1',
                     inputPosition: 'top',
-                    theme: dark ? 'dark' : 'light',
+                    theme: dark ? 'transparent_dark' : 'light',
                     lang: 'zh-CN',
                     loading: 'lazy'
                 }
@@ -51,17 +51,13 @@ const setWatch = () => {
         mutations.forEach(mutation => {
             if (mutation.type == 'attributes') {
                 let comment: Element = document.getElementById('comment');
-                if (element.className.indexOf('dark') !== -1) {
-                    comment?.setAttribute('theme', 'dark');
-                } else {
-                    comment?.setAttribute('theme', 'light');
-                }
+                comment?.setAttribute('theme', element.className.indexOf('dark') !== -1 ? 'transparent_dark' : 'light');
             }
         });
     });
     observer.observe(element, {
         attributeFilter: [ 'class' ]
     });
-}
+};
 
 export { setGiscus, setWatch };

@@ -9,6 +9,7 @@ import setViewer from '../script/viewer';
 import { setGiscus, setWatch } from '../script/giscus';
 import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
+import vDisplayList from '../components/vDisplayList.vue';
 
 export default {
     ...DefaultTheme,
@@ -17,6 +18,7 @@ export default {
         // 注册全局组件
         ctx.app.component('vSetup', vSetup);
         ctx.app.component('vPageTips', vPageTips);
+        ctx.app.component('vDisplayList', vDisplayList);
         // 设置全局返回顶部按钮
         vitepressBackToTop({
             threshold: 300

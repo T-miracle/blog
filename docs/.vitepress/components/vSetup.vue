@@ -1,3 +1,4 @@
+<!--页面建设中提示-->
 <template>
     <div class="construction-message">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100.001px"
@@ -57,8 +58,8 @@
         <p>
             <span>页</span>
             <span>面</span>
-            <span>搭</span>
             <span>建</span>
+            <span>设</span>
             <span>中</span>
             <span>...</span>
         </p>
