@@ -48,6 +48,8 @@
 }
 
 .group {
+    user-select: none;
+
     &:nth-of-type(1) {
         .items {
             padding-left: 0;
@@ -73,4 +75,8 @@
     .items {
         padding-left: 15px;
     }
+}
+
+.pager-link .title svg {
+    display: none;
 }

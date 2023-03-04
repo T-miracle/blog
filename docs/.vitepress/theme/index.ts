@@ -10,6 +10,8 @@ import { setGiscus, setWatch } from '../script/giscus';
 import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
+import vEventLoop from '../components/vEventLoop.vue';
+import vScratchPaper from '../components/vScratchPaper.vue';
 
 export default {
     ...DefaultTheme,
@@ -19,6 +21,8 @@ export default {
         ctx.app.component('vSetup', vSetup);
         ctx.app.component('vPageTips', vPageTips);
         ctx.app.component('vDisplayList', vDisplayList);
+        ctx.app.component('vEventLoop', vEventLoop);
+        ctx.app.component('vScratchPaper', vScratchPaper);
         // 设置全局返回顶部按钮
         vitepressBackToTop({
             threshold: 300

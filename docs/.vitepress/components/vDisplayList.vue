@@ -60,22 +60,21 @@
                 .info {
                     float: left;
                     width: calc(100% - 80px);
-                    height: 80px;
                     padding: 0 20px;
                     color: #1e1e20;
 
                     .title {
-                        height: 40px;
                         font-size: 24px;
-                        line-height: 40px;
+                        line-height: 26px;
                         margin: 0;
-                        padding: 0;
+                        padding: 5px 0;
                     }
 
                     .desc {
                         font-size: 14px;
                         line-height: 18px;
                         color: #606266;
+                        padding: 5px 0;
                     }
                 }
             }

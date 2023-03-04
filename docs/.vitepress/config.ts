@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress';
 import markdown_it_task_lists from 'markdown-it-task-lists';
-import sidebar from './script/sidebar';
+import learnSidebar from './script/sidebar/learn';
+import bugsSidebar from './script/sidebar/bugs';
+import testQuestionsSidebar from './script/sidebar/test-questions';
 
 export default defineConfig({
     // lang: "zh-CN",
@@ -21,11 +23,13 @@ export default defineConfig({
             md.use(markdown_it_task_lists);
         }
     },
+    lastUpdated: true,
     // 主题配置
     themeConfig: {
         socialLinks: [
             { icon: 'github', link: 'https://github.com/T-miracle/blog' }
         ],
+        lastUpdatedText: '上次更新于',
         sidebarMenuLabel: '菜单',
         returnToTopLabel: '返回顶部',
         darkModeSwitchLabel: '切换白天/黑夜主题',
@@ -39,10 +43,20 @@ export default defineConfig({
             indexName: 'namichong',
             placeholder: '请输入关键词'
         },
-        nav: [ {
-            text: `主站链接`,
-            link: 'https://www.namichong.com/'
-        } ],
+        nav: [
+            {
+                text: `主站链接`,
+                link: 'https://www.namichong.com/'
+            },
+            {
+                text: '学习',
+                items: [
+                    { text: '基础知识', link: '/' },
+                    { text: 'BUG处理', link: '/bugs/' },
+                    { text: '测试题库', link: '/test-questions/' },
+                ]
+            }
+        ],
         // 左上角标题图标
         logo: '/logo.jpg',
         // 右侧导航目录显示层级
@@ -50,6 +64,10 @@ export default defineConfig({
         // 右侧导航目录显示文字
         outlineTitle: '导航',
         // 左侧栏目录配置
-        sidebar: sidebar
+        sidebar: {
+            '/': learnSidebar,
+            '/bugs/': bugsSidebar,
+            '/test-questions/': testQuestionsSidebar,
+        }
     }
 });

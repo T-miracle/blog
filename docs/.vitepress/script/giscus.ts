@@ -30,7 +30,7 @@ const setGiscus = () => {
                     repo: 'T-miracle/blog',
                     repoId: 'R_kgDOJCf-FQ',
                     category: 'General',
-                    categoryId: 'DIC_kwDOJCf-Fc4CUfVi',
+                    categoryId: 'DIC_kwDOJCf-Fc4CUohc',
                     mapping: 'pathname',
                     term: 'Welcome to giscus!',
                     reactionsEnabled: '1',
