@@ -5,11 +5,13 @@
                 <div class="core__stack-and-apis">
                     <div class="core__stack">
                         <div class="stack__title">
-                            <slot name="stack">调用栈</slot>
+                            <slot name="stack">Call Stack 调用栈</slot>
                         </div>
                         <div class="stack__content">
                             <template v-if="stack">
-                                <div class="stack__info" v-for="(item, index) in stack" :key="index" v-text="item"/>
+                                <div class="stack__info" v-for="(item, index) in stack" :key="index">
+                                    <img :src="item" alt="">
+                                </div>
                                 <div style="text-align: center; background-color: unset">⬇</div>
                             </template>
                         </div>
@@ -24,7 +26,9 @@
                                 <div class="apis__info" v-for="(item, index) in apis" :key="index">
                                     <div class="info__time">
                                         <div>{{ item.time }}</div>
-                                        <div class="time__info">{{ item.info }}</div>
+                                        <div class="time__info">
+                                            <img :src="item.info" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </template>
@@ -43,7 +47,7 @@
                             </slot>
                         </div>
                         <div class="loop__title">
-                            <slot name="loop">事件<br/>循环</slot>
+                            <slot name="loop">Event Loop<br/>事件循环</slot>
                         </div>
                     </div>
                     <div class="queue__arrow">
@@ -57,28 +61,32 @@
                     </div>
                     <div class="queue">
                         <div class="queue__title">
-                            <slot name="queue">回调队列</slot>
+                            <slot name="queue">Callback Queue 回调队列</slot>
                         </div>
                         <div class="queue__content">
                             <div class="micro-task">
                                 <div class="micro-task__title">
-                                    <slot name="micro-task">微任务</slot>
+                                    <slot name="micro-task">microTask 微任务</slot>
                                 </div>
                                 <div class="micro-task__info">
                                     <template v-if="queue && queue[0]">
                                         <div style="text-align: center; background-color: unset">⬇</div>
-                                        <div v-for="(item, index) in queue[0]" :key="index">{{ item }}</div>
+                                        <div v-for="(item, index) in queue[0]" :key="index">
+                                            <img :src="item" alt="">
+                                        </div>
                                     </template>
                                 </div>
                             </div>
                             <div class="macro-task">
                                 <div class="macro-task__title">
-                                    <slot name="macro-task">宏任务</slot>
+                                    <slot name="macro-task">macroTask 宏任务</slot>
                                 </div>
                                 <div class="macro-task__info">
                                     <template v-if="queue && queue[1]">
                                         <div style="text-align: center; background-color: unset">⬇</div>
-                                        <div v-for="(item, index) in queue[1]" :key="index">{{ item }}</div>
+                                        <div v-for="(item, index) in queue[1]" :key="index">
+                                            <img :src="item" alt="">
+                                        </div>
                                     </template>
                                 </div>
                             </div>
@@ -88,7 +96,7 @@
             </div>
             <div class="event-loop__console">
                 <div class="console__title">
-                    <slot name="console">浏览器控制台</slot>
+                    <slot name="console">Browser Console 浏览器控制台</slot>
                 </div>
                 <div class="console__result">
                     <template v-if="console">
@@ -107,28 +115,26 @@
 </template>
 
 <script setup lang="ts">
-    type apisType = {
-        time: number,
-        info: string
-    }
-
     const { loop, stack, apis, queue, console, consoleIndex } = withDefaults(defineProps<{
         /*栈内容*/
-        stack: string[] | null
+        stack?: string[]
         /*APIs内容*/
-        apis: apisType[] | null
+        apis?: {
+            time?: string,
+            info: string
+        }[]
         /*event-loop图标旋转*/
-        loop: boolean
+        loop?: boolean
         /*队列信息*/
-        queue: string[][] | null
+        queue?: string[][]
         /*控制台内容*/
-        console: string[] | null
+        console?: string[]
         /*控制台标记*/
-        consoleIndex: number | null
+        consoleIndex?: number
     }>(), {
         stack: null,
         apis: null,
-        loop: false,
+        loop: true,
         queue: null,
         console: null,
         consoleIndex: null
@@ -140,6 +146,12 @@
     $borderColor: lightslategrey;
     $fontColor: #1c1e21;
 
+    img {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
     @mixin titleStyle {
         background-color: $backgroundColor;
         color: white;
@@ -150,11 +162,7 @@
     }
 
     @mixin info {
-        font-size: .8em;
-        border-radius: 4px;
-        padding: 4px;
-        white-space: pre-wrap;
-        line-height: 1.2em;
+        text-align: center;
     }
 
     .whirling {
@@ -173,13 +181,11 @@
 
     .event-loop-container {
         width: 100%;
+        height: 100%;
         margin: 20px 0;
 
         .event-loop-box {
             width: 100%;
-            max-width: 600px;
-            border: 2px solid $borderColor;
-            border-radius: 4px;
             margin: 0 auto;
 
             .event-loop__core {
@@ -192,7 +198,6 @@
                     grid-column-gap: 10px;
 
                     > div {
-                        min-height: 120px;
                         border: 2px solid $borderColor;
                         border-radius: 4px;
 
@@ -203,14 +208,14 @@
 
                     .core__stack {
                         .stack__content {
-                            padding: 10px;
+                            padding: 0;
                             display: flex;
                             flex-direction: column-reverse;
-                            min-height: 120px;
+                            min-height: 160px;
 
                             .stack__info {
+                                padding: 4px;
                                 margin-top: 5px;
-                                background: #b5eaff;
                                 @include info;
                             }
                         }
@@ -218,7 +223,7 @@
 
                     .core__apis {
                         .apis__content {
-                            padding: 10px;
+                            padding: 0;
                             display: flex;
                             flex-direction: column-reverse;
                             justify-content: flex-end;
@@ -241,7 +246,6 @@
 
                                     .time__info {
                                         @include info;
-                                        background-color: #b9ffbe;
                                         color: black;
                                     }
                                 }
@@ -315,22 +319,6 @@
                                     }
                                 }
                             }
-
-                            .micro-task {
-                                .micro-task__info {
-                                    > div {
-                                        background-color: #adffad;
-                                    }
-                                }
-                            }
-
-                            .macro-task {
-                                .macro-task__info {
-                                    > div {
-                                        background-color: #ff9ec9;
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -356,7 +344,8 @@
                         border-bottom: 1px dotted #7f8497;
 
                         &.zd {
-                            background-color: #fff2bd;
+                            background-color: #85ff81;
+                            font-weight: bold;
                         }
                     }
                 }

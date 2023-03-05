@@ -1,3 +1,6 @@
 {
-    "include": ["docs/**/*.d.ts", "docs/**/*.vue"]
+    "include": ["docs/**/*.d.ts", "docs/**/*.vue"],
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true
+    }
 }

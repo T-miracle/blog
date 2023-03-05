@@ -8,7 +8,7 @@ import {
     javaIcon,
     jsIcon,
     rearEndIcon,
-    springBootIcon,
+    springBootIcon, springIcon,
     vueIcon,
     webIcon
 } from './icons';
@@ -21,6 +21,7 @@ import webConceptItems from './learn/webConcept';
 import springbootItems from './learn/springboot';
 import { DefaultTheme } from 'vitepress/types/default-theme';
 import ideaItems from './learn/idea';
+import springItems from './learn/spring';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -79,6 +80,11 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                         text: javaBaseIcon + 'Java基础',
                         collapsed: true,
                         items: []
+                    },
+                    {
+                        text: springIcon + 'Spring',
+                        collapsed: true,
+                        items: springItems
                     },
                     {
                         text: springBootIcon + 'SpringBoot',

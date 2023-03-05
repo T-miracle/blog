@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'vitepress/types/default-theme';
-import { elementIcon, webIcon } from './icons';
+import { elementIcon, tsIcon, webIcon } from './icons';
 
 const bugsSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -10,6 +10,13 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
         text: webIcon + '前端',
         collapsed: false,
         items: [
+            {
+                text: tsIcon + 'TypeScript',
+                collapsed: true,
+                items: [
+                    { text: '代码警告：TS2307: Cannot find module \'xxx\' or its corresponding type declarations.', link: '/bugs/web/typescript/warning_ts2307' }
+                ]
+            },
             {
                 text: elementIcon + 'Element-UI & Element-Plus',
                 collapsed: true,
@@ -22,6 +29,6 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
             }
         ]
     }
-]
+];
 
 export default bugsSidebar;

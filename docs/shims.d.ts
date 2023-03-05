@@ -5,3 +5,6 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'markdown-it';
+declare module 'markdown-it-mathjax3';

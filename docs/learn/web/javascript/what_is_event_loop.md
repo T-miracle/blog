@@ -42,19 +42,11 @@ console.log('结束')
 
 下面我们一步一步解析它的执行顺序
 
-### 示例组件解释
+### 容器理解
 
-先看下下面这个组件示例，它大概地抽象描述了`JavaScript`引擎的各个容器：
+先看下下面这个示例，它大概地抽象描述了`JavaScript`引擎的各个容器：
 
-<vEventLoop>
-    <template v-slot:stack>Call Stack</template>
-    <template v-slot:apis>WebAPIs</template>
-    <template v-slot:loop>Event Loop</template>
-    <template v-slot:queue>Callback Queue</template>
-    <template v-slot:micro-task>microTask</template>
-    <template v-slot:macro-task>macroTask</template>
-    <template v-slot:console>Browser Console</template>
-</vEventLoop>
+![](../../../public/images/event-loop-demo.png)
 
 - **Call Stack**：`JavaScript`的调用栈
 - **Web APIs**：`Web`应用接口，像`setTimeout`、`DOM`操作、`Ajax`请求、`Promise`请求之类的相关执行都放在里面
@@ -64,104 +56,19 @@ console.log('结束')
   - **macro-task**：[宏任务队列](what_is_macroTask_and_microTask.md)
 - **Browser Console**：浏览器控制台
 
-### 执行代码
+### 执行步骤
 
-首先，会先执行
+![](/images/event-loop-demo.gif)
 
-```js
-console.log('开始')
-```
+### 详细解析
 
-这个任务被压入调用栈中
+下面详细解析一下步骤：
 
-<vEventLoop
-    :stack="['console.log(\'开始\')']"
-/>
-
-然后被执行，执行完毕后被弹出，结果会被浏览器控制台打印
-
-<vEventLoop
-    :console="['开始']"
-    :consoleIndex="-1"
-/>
-
-接着，执行到
-
-```js
-setTimeout(() => {
-    console.log('定时')
-}, 1000)
-```
-
-该任务同样被压入调用栈中
-
-<vEventLoop
-    :stack="['setTimeout(() => {\n    console.log(\'定时\')\n}, 1000)']"
-    :console="['开始']"
-/>
-
-然后调用栈发现 `setTimeout`这个任务是异步执行的操作（宏任务），会把该任务的子任务（方法）放到 `WebAPIs` 中，如果有执行时间会进入计时
-
-<vEventLoop
-    :stack="['setTimeout(Fn, 1000)']"
-    :apis="[{ time: '1000ms', info: 'console.log(\'定时\')'}]"
-    :console="['开始']"
-/>
-
-`setTimeout`内部子任务被放入后，它本身将会被调用栈弹出
-
-<vEventLoop
-    :apis="[{ time: '1000ms', info: 'console.log(\'定时\')'}]"
-    :console="['开始']"
-/>
-
-然后，会继续执行同步任务
-
-```js
-console.log('结束')
-```
-
-继续压入调用栈中
-
-<vEventLoop
-    :stack="['console.log(\'结束\')']"
-    :apis="[{ time: '1000ms', info: 'console.log(\'定时\')'}]"
-    :console="['开始']"
-/>
-
-被执行，在浏览器控制台中打印
-
-<vEventLoop
-    :apis="[{ time: '1000ms', info: 'console.log(\'定时\')'}]"
-    :console="['开始', '结束']"
-    :consoleIndex="-1"
-/>
-
-如果 `WebAPIs` 中有定时执行完毕（或者为其他异步执行完毕）的任务，会依次加入到回调队列中进行排队等待处理
-
-这时，**同步任务已经全部被执行完（即调用栈已空闲），则开始执行异步任务，事件循环会开始工作**
-
-<vEventLoop
-    :queueInfo="[,['console.log(\'定时\')']]"
-    :loop="true"
-    :console="['开始', '结束']"
-/>
-
-当回调队列中有任务时，事件循环会依次获取到任务，将任务放到调用栈中执行（如果被执行的任务里还有多个子任务，会被拆开按以上所有的步骤进行执行（即同步任务全部顺序执行，异步任务进入`WebAPIs`等待））
-
-**直到事件循环查询到 `WebAPIs` 中已经没有可以执行的任务时，事件循环才会停止**
-
-<vEventLoop
-    :stack="['console.log(\'定时\')']"
-    :console="['开始', '结束']"
-/>
-
-<vEventLoop
-    :console="['开始', '结束', '定时']"
-    :consoleIndex="-1"
-/>
-
-最后，全部信息在控制台中打印完毕
+1. 当`script`脚本或者在`NodeJS`的代码被执行时，事件循环就开启了
+2. 当线程运行时，遇到同步任务会被立即执行，微任务会加入微任务队列，宏任务会经过`WebAPIs`处理（处理定时或其他）后，放入宏任务队列
+3. 线程继续运行到下一个任务，同样，不同类型的任务处理方式如第`2`步一致，但是处理完这一次任务后，事件循环会先查看微任务队列有没有任务需要处理，如果有，优先处理微任务，在执行下一个任务
+4. 如此反复循环，直到所有同步任务和微任务执行完毕，开始按宏任务队列依次执行宏任务
+5. 宏任务执行完毕后，事件循环终止
 
 ## 事件循环与`DOM`渲染之间的关系
 

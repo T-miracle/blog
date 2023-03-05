@@ -13,7 +13,8 @@ const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '🚩 watch和computed的区别', link: '/learn/web/vue/the_difference_between_watch_and_computed' },
     { text: '🚩 keep-live是什么？如何使用？', link: '/learn/web/vue/what_is_keep-live' },
     { text: '🏴 Diff 算法', link: '/learn/web/vue/diff_algorithm' },
-    { text: '🚩 Vue打包部署Nginx后页面路径刷新404的问题', link: '/learn/web/vue/nginx_path_refresh_404_problem' }
+    { text: '🚩 Vue打包部署Nginx后页面路径刷新404的问题', link: '/learn/web/vue/nginx_path_refresh_404_problem' },
+    { text: '🚩 vue项目上线打包时如何做性能优化', link: '/learn/web/vue/vue_project_packaging_optimization.md' },
 ];
 
 export default vueItems;

@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress';
-import markdown_it_task_lists from 'markdown-it-task-lists';
+import taskLists from 'markdown-it-task-lists';
+import mathjax3 from 'markdown-it-mathjax3'
+const customElements: string[] = ['mjx-container'];
 import learnSidebar from './script/sidebar/learn';
 import bugsSidebar from './script/sidebar/bugs';
 import testQuestionsSidebar from './script/sidebar/test-questions';
@@ -20,10 +22,18 @@ export default defineConfig({
         // 代码块显示行数
         // lineNumbers: true,
         config: (md) => {
-            md.use(markdown_it_task_lists);
+            md.use(mathjax3);
+            md.use(taskLists);
         }
     },
-    lastUpdated: true,
+    vue: {
+        template: {
+            compilerOptions: {
+                isCustomElement: (tag) => customElements.indexOf(tag) > 0,
+            },
+        }
+    },
+    // lastUpdated: true,
     // 主题配置
     themeConfig: {
         socialLinks: [
@@ -44,18 +54,9 @@ export default defineConfig({
             placeholder: '请输入关键词'
         },
         nav: [
-            {
-                text: `主站链接`,
-                link: 'https://www.namichong.com/'
-            },
-            {
-                text: '学习',
-                items: [
-                    { text: '基础知识', link: '/' },
-                    { text: 'BUG处理', link: '/bugs/' },
-                    { text: '测试题库', link: '/test-questions/' },
-                ]
-            }
+            { text: '基础知识', link: '/' },
+            { text: 'BUG处理', link: '/bugs/' },
+            { text: '测试题库', link: '/test-questions/' },
         ],
         // 左上角标题图标
         logo: '/logo.jpg',

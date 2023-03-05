@@ -14,7 +14,8 @@ const testQuestionsSidebar: DefaultTheme.SidebarItem[] = [
                 text: jsIcon + 'JavaScript',
                 collapsed: true,
                 items: [
-                    { text: '事件循环-测试题1', link: '/test-questions/web/javascript/event_loop_test_demo_1' }
+                    { text: '事件循环-测试题1', link: '/test-questions/web/javascript/event_loop_test_demo_1' },
+                    { text: '事件循环-测试题2', link: '/test-questions/web/javascript/event_loop_test_demo_2' },
                 ]
             }
         ]

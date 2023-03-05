@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
     import { ElCarousel, ElCarouselItem } from 'element-plus'
-    import VEventLoop from '../../../../.vitepress/components/vEventLoop.vue';
+    import VEventLoop from '../../../../utils/components/vEventLoop.vue';
 </script>
 
 <style scoped lang="scss">
