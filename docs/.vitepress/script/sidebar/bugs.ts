@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'vitepress/types/default-theme';
-import { elementIcon, tsIcon, webIcon } from './icons';
+import { elementIcon, tsIcon, webIcon } from '../icons';
 
 const bugsSidebar: DefaultTheme.SidebarItem[] = [
     {

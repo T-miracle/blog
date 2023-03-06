@@ -11,7 +11,7 @@ import {
     springBootIcon, springIcon,
     vueIcon,
     webIcon
-} from './icons';
+} from '../icons';
 import htmlItems from './learn/html';
 import cssItems from './learn/css';
 import jsItems from './learn/js';

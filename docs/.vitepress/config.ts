@@ -1,10 +1,13 @@
 import { defineConfig } from 'vitepress';
 import taskLists from 'markdown-it-task-lists';
-import mathjax3 from 'markdown-it-mathjax3'
-const customElements: string[] = ['mjx-container'];
+import mathjax3 from 'markdown-it-mathjax3';
 import learnSidebar from './script/sidebar/learn';
 import bugsSidebar from './script/sidebar/bugs';
 import testQuestionsSidebar from './script/sidebar/test-questions';
+import interviewAndWrittenExaminationItems from './script/sidebar/interview_and_written_examination';
+import { qqGroupIcon } from './script/icons';
+
+const customElements: string[] = [ 'mjx-container' ];
 
 export default defineConfig({
     // lang: "zh-CN",
@@ -12,7 +15,9 @@ export default defineConfig({
     description: '记录一些编程知识和面试题',
     titleTemplate: 'Tmiracle',
     // 左上角标题的图标
-    head: [ [ 'link', { rel: 'icon', href: '/logo.jpg' } ] ],
+    head: [
+        [ 'link', { rel: 'icon', href: '/logo.jpg' } ]
+    ],
     // 开启黑暗主题按钮
     appearance: true,
     // URL清除.html后缀
@@ -29,15 +34,16 @@ export default defineConfig({
     vue: {
         template: {
             compilerOptions: {
-                isCustomElement: (tag) => customElements.indexOf(tag) > 0,
-            },
+                isCustomElement: (tag) => customElements.indexOf(tag) > 0
+            }
         }
     },
     // lastUpdated: true,
     // 主题配置
     themeConfig: {
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/T-miracle/blog' }
+            { icon: 'github', link: 'https://github.com/T-miracle/blog' },
+            { icon: { svg: qqGroupIcon }, link: 'https://jq.qq.com/?_wv=1027&k=YX3jUWQe' },
         ],
         lastUpdatedText: '上次更新于',
         sidebarMenuLabel: '菜单',
@@ -56,7 +62,13 @@ export default defineConfig({
         nav: [
             { text: '基础知识', link: '/' },
             { text: 'BUG处理', link: '/bugs/' },
-            { text: '测试题库', link: '/test-questions/' },
+            {
+                text: '题库',
+                items: [
+                    { text: '测试题', link: '/test-questions/' },
+                    { text: '面试与笔试模拟', link: '/interview_and_written_examination/' }
+                ]
+            },
         ],
         // 左上角标题图标
         logo: '/logo.jpg',
@@ -69,6 +81,7 @@ export default defineConfig({
             '/': learnSidebar,
             '/bugs/': bugsSidebar,
             '/test-questions/': testQuestionsSidebar,
+            '/interview_and_written_examination/': interviewAndWrittenExaminationItems
         }
     }
 });
