@@ -1,8 +1,9 @@
 import { DefaultTheme } from 'vitepress/types/default-theme';
+import { jobIcon } from '../icons';
 
-const interviewAndWrittenExaminationItems: DefaultTheme.SidebarItem[] = [
+const simulationItems: DefaultTheme.SidebarItem[] = [
     {
-        text: '页面说明',
+        text: jobIcon + '页面说明',
         link: '/interview_and_written_examination/'
     },
     {
@@ -19,4 +20,4 @@ const interviewAndWrittenExaminationItems: DefaultTheme.SidebarItem[] = [
     }
 ];
 
-export default interviewAndWrittenExaminationItems;
+export default simulationItems;

@@ -25,6 +25,21 @@
     }
 }
 
+.VPContent {
+    .VPHome {
+        .main {
+            > .text {
+                font-size: 36px;
+                line-height: 42px;
+            }
+            > .tagline {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+    }
+}
+
 .vp-doc {
     h1 {
         text-align: center;
@@ -80,4 +95,8 @@
 
 .pager-link .title svg {
     display: none;
+}
+
+.dark svg.icon {
+    fill: white;
 }

@@ -1,6 +1,7 @@
 import { DefaultTheme } from 'vitepress/types/default-theme';
 
 const jsItems: DefaultTheme.SidebarItem[] = [
+    { text: '🚩 JavaScript中有哪些数据类型？', link: '/learn/web/javascript/type_of_data.md'},
     { text: '🚩 var、let、const 的区别', link: '/learn/web/javascript/the_difference_between_var_let_and_const'},
     { text: '🚩 什么是Ajax？如何实现一个简单的Ajax？', link: '/learn/web/javascript/what_is_ajax_and_how_do_you_implement_one' },
     { text: '🚩 什么是闭包？', link: '/learn/web/javascript/what_is_closure' },

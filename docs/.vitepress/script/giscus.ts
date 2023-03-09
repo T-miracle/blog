@@ -3,6 +3,8 @@ import { createApp, h } from 'vue';
 
 // 添加评论容器
 const setGiscus = () => {
+    // 如果是首页，则不添加
+    if (!location.pathname || location.pathname === '/') return
     const dark: boolean = !!document.querySelector('html').className;
     // 删除原有评论容器
     let old = document.getElementById('giscus');

@@ -10,7 +10,7 @@ import {
     rearEndIcon,
     springBootIcon, springIcon,
     vueIcon,
-    webIcon
+    webIcon, wxMiniprogramIcon
 } from '../icons';
 import htmlItems from './learn/html';
 import cssItems from './learn/css';
@@ -22,16 +22,22 @@ import springbootItems from './learn/springboot';
 import { DefaultTheme } from 'vitepress/types/default-theme';
 import ideaItems from './learn/idea';
 import springItems from './learn/spring';
+import wxMiniprogramItems from './learn/wx-miniprogram';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
         text: infoIcon + '关于',
-        link: '/'
+        link: '/learn/'
     },
     {
         text: webIcon + '前端',
         collapsed: false,
         items: [
+            {
+                text: conceptIcon + '概念',
+                collapsed: true,
+                items: webConceptItems
+            },
             {
                 text: htmlIcon + 'HTML',
                 collapsed: true,
@@ -58,9 +64,9 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 items: httpItems
             },
             {
-                text: conceptIcon + '概念',
+                text: wxMiniprogramIcon + '微信小程序',
                 collapsed: true,
-                items: webConceptItems
+                items: wxMiniprogramItems
             },
             {
                 text: githubIcon + '开源项目收集',

@@ -3,8 +3,8 @@ import taskLists from 'markdown-it-task-lists';
 import mathjax3 from 'markdown-it-mathjax3';
 import learnSidebar from './script/sidebar/learn';
 import bugsSidebar from './script/sidebar/bugs';
-import testQuestionsSidebar from './script/sidebar/test-questions';
-import interviewAndWrittenExaminationItems from './script/sidebar/interview_and_written_examination';
+import testSidebar from './script/sidebar/test';
+import simulationItems from './script/sidebar/simulation';
 import { qqGroupIcon } from './script/icons';
 
 const customElements: string[] = [ 'mjx-container' ];
@@ -12,7 +12,7 @@ const customElements: string[] = [ 'mjx-container' ];
 export default defineConfig({
     // lang: "zh-CN",
     title: 'Tmiracle的知识博客',
-    description: '记录一些编程知识和面试题',
+    description: '记录编程知识、问题处理以及面试笔试模拟',
     titleTemplate: 'Tmiracle',
     // 左上角标题的图标
     head: [
@@ -41,6 +41,11 @@ export default defineConfig({
     // lastUpdated: true,
     // 主题配置
     themeConfig: {
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright © 2022-present Tmiracle <br/>' +
+                '<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2022008261号-1</a>'
+        },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/T-miracle/blog' },
             { icon: { svg: qqGroupIcon }, link: 'https://jq.qq.com/?_wv=1027&k=YX3jUWQe' },
@@ -60,13 +65,13 @@ export default defineConfig({
             placeholder: '请输入关键词'
         },
         nav: [
-            { text: '基础知识', link: '/' },
+            { text: '编程知识', link: '/learn/' },
             { text: 'BUG处理', link: '/bugs/' },
             {
                 text: '题库',
                 items: [
-                    { text: '测试题', link: '/test-questions/' },
-                    { text: '面试与笔试模拟', link: '/interview_and_written_examination/' }
+                    { text: '测试题', link: '/test/' },
+                    { text: '面试与笔试模拟', link: '/simulation/' }
                 ]
             },
         ],
@@ -78,10 +83,10 @@ export default defineConfig({
         outlineTitle: '导航',
         // 左侧栏目录配置
         sidebar: {
-            '/': learnSidebar,
+            '/learn/': learnSidebar,
             '/bugs/': bugsSidebar,
-            '/test-questions/': testQuestionsSidebar,
-            '/interview_and_written_examination/': interviewAndWrittenExaminationItems
+            '/test/': testSidebar,
+            '/simulation/': simulationItems
         }
     }
 });
