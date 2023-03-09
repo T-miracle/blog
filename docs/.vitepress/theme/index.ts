@@ -6,11 +6,13 @@ import 'element-plus/dist/index.css'
 import 'vitepress-plugin-back-to-top/dist/style.css';
 import vitepressBackToTop from 'vitepress-plugin-back-to-top';
 import setViewer from '../script/viewer';
-import { setGiscus, setWatch } from '../script/giscus';
+import { setGiscus, setThemeWatch } from '../script/giscus';
 import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
 import vScratchPaper from '../components/vScratchPaper.vue';
+import hideFooter from '../script/hideFooter';
+import { useData } from 'vitepress';
 
 export default {
     ...DefaultTheme,
@@ -28,14 +30,17 @@ export default {
     },
     setup() {
         const route = useRoute();
+        const { frontmatter } = useData()
         onMounted(() => {
             setViewer(); // 图片预览
-            setGiscus(); // 评论容器
-            setWatch(); // 主题监听，用于改变评论容器主题
+            setGiscus(frontmatter); // 评论容器
+            setThemeWatch(); // 主题监听，用于改变评论容器主题
+            hideFooter(frontmatter); // 非首页隐藏页脚
         });
         watch(() => route.path, () => nextTick(() => {
             setViewer(); // 图片预览
-            setGiscus(); // 评论容器
+            setGiscus(frontmatter); // 评论容器
+            hideFooter(frontmatter); // 非首页隐藏页脚
         }));
     }
 };

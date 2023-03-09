@@ -1,16 +1,26 @@
 import giscus from '@giscus/vue';
-import { createApp, h } from 'vue';
+import { createApp, h, Ref } from 'vue';
+import { PageData } from 'vitepress';
 
-// 添加评论容器
-const setGiscus = () => {
-    // 如果是首页，则不添加
-    if (!location.pathname || location.pathname === '/') return
-    const dark: boolean = !!document.querySelector('html').className;
+/**
+ * 添加评论容器
+ * @param frontmatter 文章的前言
+ */
+const setGiscus = (frontmatter?: Ref<PageData['frontmatter']>) => {
     // 删除原有评论容器
-    let old = document.getElementById('giscus');
-    if (old) {
-        old.parentNode.removeChild(old);
+    let oldCommentContainer = document.getElementById('giscus');
+    if (oldCommentContainer) {
+        oldCommentContainer.parentNode.removeChild(oldCommentContainer);
     }
+    // 如果 comment 为 false，则不加载评论
+    if (!!frontmatter?.value && (frontmatter?.value.comment !== undefined && !frontmatter?.value.comment)) {
+        return;
+    }
+    // 如果是首页，则不添加
+    if (!location.pathname || location.pathname === '/') {
+        return;
+    }
+    const dark: boolean = !!document.querySelector('html').className;
     // 获取父容器，并创建评论容器
     let docContent = document.getElementsByClassName('content-container')[0],
         bindGiscus = document.createElement('div');
@@ -47,9 +57,9 @@ const setGiscus = () => {
 };
 
 // 监听页面主题，更改评论容器的主题
-const setWatch = () => {
-    let element = document.querySelector('html');
-    let observer = new MutationObserver(mutations => {
+const setThemeWatch = () => {
+    const element = document.querySelector('html');
+    const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'attributes') {
                 let comment: Element = document.getElementById('comment');
@@ -62,4 +72,4 @@ const setWatch = () => {
     });
 };
 
-export { setGiscus, setWatch };
+export { setGiscus, setThemeWatch };
