@@ -74,6 +74,7 @@ export default defineConfig({
                     { text: '面试与笔试模拟', link: '/simulation/' }
                 ]
             },
+            { text: '杂谈', link: '/tittle-tattle/' },
         ],
         // 左上角标题图标
         logo: '/logo.jpg',
@@ -86,7 +87,7 @@ export default defineConfig({
             '/learn/': learnSidebar,
             '/bugs/': bugsSidebar,
             '/test/': testSidebar,
-            '/simulation/': simulationItems
+            '/simulation/': simulationItems,
         }
     }
 });
