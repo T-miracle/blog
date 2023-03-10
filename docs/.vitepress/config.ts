@@ -38,7 +38,7 @@ export default defineConfig({
             }
         }
     },
-    // lastUpdated: true,
+    lastUpdated: true,
     // 主题配置
     themeConfig: {
         footer: {

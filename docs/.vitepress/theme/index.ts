@@ -11,6 +11,8 @@ import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
 import vScratchPaper from '../components/vScratchPaper.vue';
+import vImageViewer from '../components/vImageViewer.vue';
+import {ElTabs, ElTabPane} from 'element-plus'
 import hideFooter from '../script/hideFooter';
 import { useData } from 'vitepress';
 
@@ -23,6 +25,9 @@ export default {
         ctx.app.component('vPageTips', vPageTips);
         ctx.app.component('vDisplayList', vDisplayList);
         ctx.app.component('vScratchPaper', vScratchPaper);
+        ctx.app.component('vImageViewer', vImageViewer);
+        ctx.app.component('ElTabs', ElTabs);
+        ctx.app.component('ElTabPane', ElTabPane);
         // 设置全局返回顶部按钮
         vitepressBackToTop({
             threshold: 300

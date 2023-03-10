@@ -18,7 +18,7 @@
 <script setup lang="ts">
     const { list } = defineProps<{
         list: { img: string, link: string, title: string, desc: string }[]
-    }>()
+    }>();
 </script>
 
 <style scoped lang="scss">
