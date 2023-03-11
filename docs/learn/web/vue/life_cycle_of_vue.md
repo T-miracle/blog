@@ -34,9 +34,12 @@ Vue 生命周期总共可以分为这几个阶段：创建前后, 载入前后,�
 |  `activated`  | `keep-alive` 缓存的组件激活（重新进入）时 | <Badge type="tip" text="✔"/> | <Badge type="tip" text="✔"/> |     |
 | `deactivated` | `keep-alive` 缓存的组件停用（再次离开）时 | <Badge type="tip" text="✔"/> | <Badge type="tip" text="✔"/> |     |
 
-|     其他生命周期      |        描述         |
-|:---------------:|:-----------------:|
-| `errorCaptured` | 捕获一个来自子孙组件的错误时被调用 |
+|      其他生命周期       |                           描述                           |               vue2                |             vue3             | 备注  |
+|:-----------------:|:------------------------------------------------------:|:---------------------------------:|:----------------------------:|:---:|
+|  `errorCaptured`  |                   捕获一个来自后代组件的错误时被调用                    | <Badge type="tip" text="2.5.0+"/> | <Badge type="tip" text="✔"/> |     |
+|  `renderTracked`  | 调试钩子，当组件渲染过程中追踪到响应式依赖时调用<br/>仅在开发模式下可用，且在服务器端渲染期间不会被调用 | <Badge type="danger" text="没有"/>  | <Badge type="tip" text="✔"/> |     |
+| `renderTriggered` | 调试钩子，当响应式依赖的变更触发了组件渲染时调用<br/>仅在开发模式下可用，且在服务器端渲染期间不会被调用 | <Badge type="danger" text="没有"/>  | <Badge type="tip" text="✔"/> |     |
+| `serverPrefetch`  |            异步函数，在组件实例在服务器上被渲染之前调用，仅在 SSR 可用            | <Badge type="danger" text="没有"/>  | <Badge type="tip" text="✔"/> |     |
 
 ## 生命周期整体流程图
 
@@ -168,7 +171,7 @@ unmounted ▶ <div id="child" data-v-d003c437="" data-v-8216dc0a=""> ▶ Proxy {
 
 可见在 Vue3 中：
 
-|      生命周期       |                  组件状态                   |                  数据状态                   |      触发时机      |
+|     当生命周期为      |                  组件状态                   |                  数据状态                   |      触发时机      |
 |:---------------:|:---------------------------------------:|:---------------------------------------:|:--------------:|
 |     `setup`     | <badge type="danger" text="undefined"/> | <badge type="danger" text="undefined"/> |     进入组件时      |
 | `beforeCreate`  |   <badge type="danger" text="null"/>    |    <badge type="danger" text="未加载"/>    |     组件开始创建     |

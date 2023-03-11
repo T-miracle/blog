@@ -2,7 +2,7 @@
 
 ## 公司要求
 
-![](../../public/images/2023-02-02-nanning-vue.jpg)
+<vImageViewer alt="查看招聘要求" src="/images/2023-02-02-nanning-vue.jpg"/>
 
 ## 面试过程
 
