@@ -1,4 +1,4 @@
-# html中DOCTYPE头的作用是什么？
+# HTML中DOCTYPE头的作用是什么？
 
 ## 概述
 

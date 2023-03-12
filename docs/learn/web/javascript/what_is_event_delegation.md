@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import eventDelegation from './demoComponents/eventDelegation.vue';
+    import eventDelegation from './components/eventDelegation.vue';
 </script>
 
 # 什么是事件委托？它有什么用？

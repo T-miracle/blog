@@ -7,7 +7,7 @@ titleTemplate: 记录一些编程知识、问题处理以及面试笔试模拟
 hero:
     name: Tmiracle的知识博客
     text: 记录编程知识、问题处理以及面试笔试模拟
-    tagline: "用爱学IT，用心写BUG； \n遇事不决gayhub，疑难杂题问AI。"
+    tagline: "用爱学IT，用心写BUG； \n遇事不决Gayhub，疑难杂题问AI。"
     actions:
         - theme: brand 
           text: "开始学习"
