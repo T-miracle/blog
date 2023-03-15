@@ -6,9 +6,9 @@ import {
     infoIcon,
     javaBaseIcon,
     javaIcon,
-    jsIcon,
+    jsIcon, mySQLIcon,
     rearEndIcon,
-    springBootIcon, springIcon,
+    springBootIcon, springIcon, sqlIcon,
     vueIcon,
     webIcon, wxMiniprogramIcon
 } from '../icons';
@@ -23,6 +23,7 @@ import { DefaultTheme } from 'vitepress/types/default-theme';
 import ideaItems from './learn/idea';
 import springItems from './learn/spring';
 import wxMiniprogramItems from './learn/wx-miniprogram';
+import mysqlItems from './learn/mysql';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -98,6 +99,17 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                         items: springbootItems
                     },
                 ]
+            }
+        ]
+    },
+    {
+        text: sqlIcon + '数据库',
+        collapsed: false,
+        items: [
+            {
+                text: mySQLIcon + 'MySQL',
+                collapsed: true,
+                items: mysqlItems
             }
         ]
     },
