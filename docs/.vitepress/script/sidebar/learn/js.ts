@@ -8,6 +8,11 @@ const jsItems: DefaultTheme.SidebarItem[] = [
             { text: '🏴 引用类型之间有什么区别', link: '/learn/web/javascript/what_is_the_difference_between_reference_types' }
         ]
     },
+    {
+        text: '🔸 数组的常用使用方式', items: [
+            { text: '🔸 对象数组根据属性查找相应的对象', link: '/learn/web/javascript/array_of_objects_find_value_with_key.md' }
+        ]
+    },
     { text: '🚩 深拷贝和浅拷贝的区别', link: '/learn/web/javascript/the_difference_between_deep_copy_and_shallow_copy' },
     { text: '🚩 什么是闭包？', link: '/learn/web/javascript/what_is_closure' },
     { text: '🚩 谈谈原型与原型链', link: '/learn/web/javascript/prototype_and_prototype_chains' },
