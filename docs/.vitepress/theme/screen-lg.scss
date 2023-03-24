@@ -1,0 +1,27 @@
+/* 大屏 */
+@media (min-width: 1440px) {
+  .VPSidebar, .VPNavBar.has-sidebar .title {
+    padding-left: min(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)) !important;
+  }
+
+  .group {
+    width: 100% !important;
+  }
+
+  .VPContent.has-sidebar {
+    padding-right: 0 !important;
+
+    .VPDoc.has-aside {
+      .container {
+        .content-container {
+          max-width: unset !important;
+        }
+
+        .aside {
+          max-width: 480px !important;
+          width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + 480px - 32px) !important;
+        }
+      }
+    }
+  }
+}

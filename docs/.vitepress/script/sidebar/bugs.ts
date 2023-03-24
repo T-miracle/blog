@@ -28,6 +28,12 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
                 ]
             }
         ]
+    },
+    {
+        text: '待分类',
+        items: [
+
+        ]
     }
 ];
 
