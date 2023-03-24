@@ -1,3 +1,5 @@
+$darkTableBorderColor: #7f8c8d;
+
 @mixin scrollbarStyle {
   scrollbar-color: rgba(100, 100, 100, 0.8) transparent;
 
@@ -14,11 +16,26 @@
 
 /* 暗黑主题 */
 .dark {
+  .go-to-top {
+    background-color: #313131;
+  }
+
   .vp-doc {
     table {
-      thead th {
+      > thead th {
         background-color: #372f59;
         color: white;
+        border-color: $darkTableBorderColor;
+      }
+
+      > tbody {
+        td {
+          border-color: $darkTableBorderColor;
+
+          &.info {
+            background-color: rgba(0, 0, 0, .4);
+          }
+        }
       }
     }
 

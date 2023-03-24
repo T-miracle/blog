@@ -1,5 +1,4 @@
 import DefaultTheme from 'vitepress/theme';
-import './index.scss';
 import { useRoute } from 'vitepress';
 import { nextTick, onMounted, watch } from 'vue';
 import 'element-plus/dist/index.css'
@@ -15,6 +14,8 @@ import vImageViewer from '../components/vImageViewer.vue';
 import {ElTabs, ElTabPane} from 'element-plus'
 import hideFooter from '../script/hideFooter';
 import { useData } from 'vitepress';
+// 自定义样式，放最后，加深权重
+import './index.scss';
 
 export default {
     ...DefaultTheme,

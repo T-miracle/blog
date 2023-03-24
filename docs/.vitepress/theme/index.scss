@@ -1,6 +1,8 @@
 @import "dark-theme";
 @import "screen-lg";
 
+$tableBorderColor: #7f8c8d;
+
 .VPContent {
     .VPHome {
         .main {
@@ -38,13 +40,31 @@
     }
 
     table {
-        thead th {
+        > thead th {
             background-color: #9980FA;
             color: white;
+            border-color: $tableBorderColor;
         }
 
-        td {
-            white-space: nowrap;
+        > tbody {
+            td {
+                white-space: nowrap;
+                border-color: $tableBorderColor;
+
+                &.info {
+                    background-color: white;
+
+                    > .table-title {
+                        margin-top: 0;
+                        font-weight: bold;
+                        font-size: 1.2em;
+                    }
+
+                    > table {
+                        margin: 10px 0;
+                    }
+                }
+            }
         }
     }
 
