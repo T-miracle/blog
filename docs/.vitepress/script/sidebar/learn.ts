@@ -1,6 +1,6 @@
 import {
     conceptIcon,
-    cssIcon, editorIcon, githubIcon,
+    cssIcon, editorIcon, githubIcon, hBuilderXIcon,
     htmlIcon,
     httpIcon, ideaIcon,
     infoIcon,
@@ -24,6 +24,7 @@ import ideaItems from './learn/idea';
 import springItems from './learn/spring';
 import wxMiniprogramItems from './learn/wx-miniprogram';
 import mysqlItems from './learn/mysql';
+import hBuilderXItems from './learn/hbuilderx';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -121,7 +122,12 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 text: ideaIcon + 'IntelliJ IDEA',
                 collapsed: true,
                 items: ideaItems
-            }
+            },
+            {
+                text: hBuilderXIcon + 'HBuilder X',
+                collapsed: true,
+                items: hBuilderXItems
+            },
         ]
     }
 ];
