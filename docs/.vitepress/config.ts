@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress';
 import taskLists from 'markdown-it-task-lists';
 import mathjax3 from 'markdown-it-mathjax3';
-import learnSidebar from './script/sidebar/learn';
-import bugsSidebar from './script/sidebar/bugs';
-import testSidebar from './script/sidebar/test';
-import simulationItems from './script/sidebar/simulation';
-import { qqGroupIcon } from './script/icons';
+import learnSidebar from './theme/scripts/sidebar/learn';
+import bugsSidebar from './theme/scripts/sidebar/bugs';
+import testSidebar from './theme/scripts/sidebar/test';
+import simulationItems from './theme/scripts/sidebar/simulation';
+import { qqGroupIcon } from './theme/scripts/icons';
 
 const customElements: string[] = [ 'mjx-container' ];
 

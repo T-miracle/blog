@@ -1,14 +1,14 @@
 import {
     conceptIcon,
-    cssIcon, editorIcon, githubIcon, hBuilderXIcon,
+    cssIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
     htmlIcon,
     httpIcon, ideaIcon,
     infoIcon,
     javaBaseIcon,
     javaIcon,
-    jsIcon, mySQLIcon,
+    jsIcon, mySQLIcon, npmIcon,
     rearEndIcon,
-    springBootIcon, springIcon, sqlIcon,
+    springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon,
     vueIcon,
     webIcon, wxMiniprogramIcon
 } from '../icons';
@@ -71,6 +71,11 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 items: wxMiniprogramItems
             },
             {
+                text: uniAppIcon + 'uni-app',
+                collapsed: true,
+                items: []
+            },
+            {
                 text: githubIcon + '开源项目收集',
                 link: '/learn/web/github/open_source_project_collection'
             }
@@ -112,6 +117,24 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 collapsed: true,
                 items: mysqlItems
             }
+        ]
+    },
+    {
+        text: versionControlIcon + '版本控制',
+        collapsed: false,
+        items: [
+            {
+                text: gitIcon + 'Git',
+                collapsed: true,
+                items: []
+            },
+            {
+                text: npmIcon + 'NPM',
+                collapsed: true,
+                items: [
+                    { text: '🔹 NPM常用命令', link: '/learn/version_control/npm/npm_common_commands.md' }
+                ]
+            },
         ]
     },
     {

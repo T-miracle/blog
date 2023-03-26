@@ -43,13 +43,13 @@ $darkTableBorderColor: #7f8c8d;
       background-color: #4a5657;
     }
 
-    svg.icon {
-      fill: white;
-    }
-
     [class*="language-"] pre {
       @include scrollbarStyle;
     }
+  }
+
+  svg.icon {
+    fill: white;
   }
 
   &, * {

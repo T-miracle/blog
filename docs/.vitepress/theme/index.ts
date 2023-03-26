@@ -1,21 +1,20 @@
 import DefaultTheme from 'vitepress/theme';
-import { useRoute } from 'vitepress';
-import { nextTick, onMounted, watch } from 'vue';
-import 'element-plus/dist/index.css'
+import 'element-plus/dist/index.css';
 import 'vitepress-plugin-back-to-top/dist/style.css';
 import vitepressBackToTop from 'vitepress-plugin-back-to-top';
-import setViewer from '../script/viewer';
-import { setGiscus, setThemeWatch } from '../script/giscus';
 import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
 import vScratchPaper from '../components/vScratchPaper.vue';
-import vImageViewer from '../components/vImageViewer.vue';
-import {ElTabs, ElTabPane} from 'element-plus'
-import hideFooter from '../script/hideFooter';
-import { useData } from 'vitepress';
+import vImageViewer from '../plugins/imageViewer/vImageViewer.vue';
+import { ElTabs, ElTabPane } from 'element-plus';
+import hideFooter from '../plugins/hideFooter/hideFooter';
+import { useData, useRoute } from 'vitepress';
 // 自定义样式，放最后，加深权重
-import './index.scss';
+import './styles/index.scss';
+import googleAnalysis from './scripts/googleAnalysis';
+import imageViewer from '../plugins/imageViewer/viewer';
+import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
 export default {
     ...DefaultTheme,
@@ -35,18 +34,20 @@ export default {
         });
     },
     setup() {
+        imageViewer(); // 图片预览
+        googleAnalysis(); // 谷歌分析
+        // 获取前言和路由
+        const { frontmatter } = useData();
         const route = useRoute();
-        const { frontmatter } = useData()
-        onMounted(() => {
-            setViewer(); // 图片预览
-            setGiscus(frontmatter); // 评论容器
-            setThemeWatch(); // 主题监听，用于改变评论容器主题
-            hideFooter(frontmatter); // 非首页隐藏页脚
+        hideFooter(frontmatter); // 隐藏页脚
+        // 评论组件
+        giscusTalk({
+            repo: 'T-miracle/blog',
+            repoId: 'R_kgDOJCf-FQ',
+            categoryId: 'DIC_kwDOJCf-Fc4CUohc',
+            mapping: 'pathname'
+        }, {
+            frontmatter, route
         });
-        watch(() => route.path, () => nextTick(() => {
-            setViewer(); // 图片预览
-            setGiscus(frontmatter); // 评论容器
-            hideFooter(frontmatter); // 非首页隐藏页脚
-        }));
     }
 };

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-    import setViewer from '../script/viewer';
+    import setViewer from './viewer';
     import { onMounted } from 'vue';
 
     const props = withDefaults(defineProps<{
