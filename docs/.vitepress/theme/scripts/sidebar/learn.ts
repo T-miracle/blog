@@ -1,4 +1,5 @@
 import {
+    androidStudioIcon,
     conceptIcon,
     cssIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
     htmlIcon,
@@ -25,6 +26,8 @@ import springItems from './learn/spring';
 import wxMiniprogramItems from './learn/wx-miniprogram';
 import mysqlItems from './learn/mysql';
 import hBuilderXItems from './learn/hbuilderx';
+import uniapp from './learn/uniapp';
+import androidStudioItems from './learn/android-studio';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -73,7 +76,7 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
             {
                 text: uniAppIcon + 'uni-app',
                 collapsed: true,
-                items: []
+                items: uniapp
             },
             {
                 text: githubIcon + '开源项目收集',
@@ -126,7 +129,9 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
             {
                 text: gitIcon + 'Git',
                 collapsed: true,
-                items: []
+                items: [
+                    { text: '🔸 Git常用命令', link: '/learn/version_control/git/git_common_commands.md' }
+                ]
             },
             {
                 text: npmIcon + 'NPM',
@@ -150,6 +155,11 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 text: hBuilderXIcon + 'HBuilder X',
                 collapsed: true,
                 items: hBuilderXItems
+            },
+            {
+                text: androidStudioIcon + 'Android Studio',
+                collapsed: true,
+                items: androidStudioItems
             },
         ]
     }
