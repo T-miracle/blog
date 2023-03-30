@@ -10,7 +10,7 @@
 
 流程图如下：
 
-![](../../../public/images/ajax-flow.png)
+![](/images/ajax-flow.png)
 
 下面举个例子：
 

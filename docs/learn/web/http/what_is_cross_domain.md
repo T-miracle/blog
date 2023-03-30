@@ -12,7 +12,7 @@
 - 主机相同（`host`）
 - 端口相同（`port`）
 
-![](../../../public/images/url.png)
+![](/images/url.png)
 
 反之非同源请求，也就是协议、端口、主机其中一项不相同的时候，这时候就会产生跨域
 
@@ -43,7 +43,7 @@
 
 只要后端实现了 `CORS`，就实现了跨域
 
-![](../../../public/images/CORS.png)
+![](/images/CORS.png)
 
 举两个例子：
 

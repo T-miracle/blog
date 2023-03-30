@@ -11,7 +11,7 @@
 
 看下图没有用`div`标签来布局
 
-![](../../../public/images/html-tags.png)
+![](/images/html-tags.png)
 
 如上图那个页面结构没有一个 `div`，都是采用`html 5`语义标签（用哪些标签，关键取决于你的设计目标）。
 

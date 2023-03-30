@@ -2,7 +2,7 @@
 
 首先，要进行以下配置：
 
-![](../../../public/images/HbuilderX-hotkeys.png)
+![](/images/HbuilderX-hotkeys.png)
 
 然后，在 `工具 - 自定义快捷键` 中，右侧栏填写以下 json 配置：
 
