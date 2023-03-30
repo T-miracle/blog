@@ -24,7 +24,7 @@
 // 在`directive`中定义
 <script>
     export default {
-        directive: {
+        directives: {
             focus: {
                 inserted: function(el) {
                     el.focus(); //页面完成加载之后自动让输入框获取焦点的小功能

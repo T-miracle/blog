@@ -1100,7 +1100,7 @@ vitepress-plugin-back-to-top@^1.0.1:
   dependencies:
     vue "^3.2.45"
 
-vitepress-plugin-comment-with-giscus@^1.0.1:
+vitepress-plugin-comment-with-giscus@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vitepress-plugin-comment-with-giscus/-/vitepress-plugin-comment-with-giscus-1.1.1.tgz#109d65d2549bc3088705bbeb5eea78d804742b6c"
   integrity sha512-zFdURX+Q6XIljVlM7LSL92Gd6D8hwnJr/KNCIcZ+kl7vyqjPz8DYPmkJiV1ErytR6RN/58lEQgl2UNQLSIk1ZQ==

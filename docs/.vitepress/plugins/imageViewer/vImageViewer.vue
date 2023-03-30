@@ -1,5 +1,5 @@
 <template>
-    <div class="image-viewer" :style="inline ? {display: 'inline-block'} : {}">
+    <div class="image-viewer" :style="inline ? {display: 'inline-block', margin: 0} : {}">
         <img class="hide-image-element" :src="src" alt="">
         <button @click="showImage">{{ alt }}</button>
     </div>

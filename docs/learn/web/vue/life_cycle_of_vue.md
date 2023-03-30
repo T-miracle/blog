@@ -43,9 +43,9 @@ Vue 生命周期总共可以分为这几个阶段：创建前后, 载入前后,�
 
 ## 生命周期整体流程图
 
-<vImageViewer src='/images/life-cycle.jpg' alt='点我查看vue2生命周期图'/>
+<vImageViewer src='/images/life-cycle.jpg' alt='点我查看vue2生命周期图' inline="true"/>
 
-<vImageViewer src='/images/lifecycle-vue3.png' alt='点我查看vue3生命周期图'/>
+<vImageViewer src='/images/lifecycle-vue3.png' alt='点我查看vue3生命周期图' inline="true"/>
 
 ## 各生命周期中组件与数据的加载状态
 

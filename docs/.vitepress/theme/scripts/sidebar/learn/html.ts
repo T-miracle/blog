@@ -6,11 +6,11 @@ const htmlItems: DefaultTheme.SidebarItem[] = [
     { text: '🔸HTML5新增了哪些新特性？', link: '/learn/web/html/what_new_features_have_been_added_in_html_5' },
     { text: '🔸语义化标签有哪些', link: '/learn/web/html/what_are_the_semantic_tags' },
     {
-        text: '🚩 cookie、localStorage、sessionStorage的区别',
+        text: '🔥 cookie、localStorage、sessionStorage的区别',
         link: '/learn/web/html/the_difference_between_cookie_localstorage_and_sessionstorage',
         collapsed: false,
         items: [
-            {text: '🚩 关于Cookie', link: '/learn/web/html/about_cookie.md'}
+            {text: '🔥 关于Cookie', link: '/learn/web/html/about_cookie.md'}
         ]
     },
 ];

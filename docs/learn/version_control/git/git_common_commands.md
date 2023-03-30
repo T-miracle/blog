@@ -27,12 +27,11 @@ git clone <repository> <directory>
 git clone --depth=<depth> <repository>
 # 克隆整个 Git 仓库，并将指定分支的代码检出到本地。
 # 这意味着除了指定分支的代码外，所有分支和提交历史都将被克隆到本地。
-# 例如：git clone --branch=main <repository> 将只复制 Git 仓库的 main 分支。
-git clone --branch=<branch> <repository>
+# 例如：git clone --branch -b main <repository> 将只复制 Git 仓库的 main 分支。
+git clone --branch -b <branch> <repository>
 # 仅克隆指定分支的提交历史，而不包括其他分支和提交历史。这样可以减少克隆所需的时间和空间。
-# 例如：git clone --single-branch=main <repository> 将只克隆 Git 仓库 main 分支的提交历史。
-git clone --single-branch=<branch> <repository>
-git clone -b <branch> --single-branch <repository>
+# 例如：git clone --single-branch -b main <repository> 将只克隆 Git 仓库 main 分支的提交历史。
+git clone --single-branch -b <branch> <repository>
 # 递归克隆 Git 仓库中所有的子模块（submodule）。
 git clone --recursive <repository>
 ```

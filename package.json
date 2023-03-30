@@ -18,9 +18,8 @@
     "vite": "^4.1.4",
     "vitepress": "^1.0.0-alpha.47",
     "vitepress-plugin-back-to-top": "^1.0.1",
+    "vitepress-plugin-comment-with-giscus": "^1.1.1",
     "vue": "^3.2.47"
   },
-  "dependencies": {
-    "vitepress-plugin-comment-with-giscus": "^1.0.1"
-  }
+  "dependencies": {}
 }

@@ -11,7 +11,7 @@ import {
     rearEndIcon,
     springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon,
     vueIcon,
-    webIcon, wxMiniprogramIcon
+    webIcon, webpackIcon, wxMiniprogramIcon
 } from '../icons';
 import htmlItems from './learn/html';
 import cssItems from './learn/css';
@@ -28,6 +28,7 @@ import mysqlItems from './learn/mysql';
 import hBuilderXItems from './learn/hbuilderx';
 import uniapp from './learn/uniapp';
 import androidStudioItems from './learn/android-studio';
+import webpackItems from './learn/webpack';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -77,6 +78,11 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 text: uniAppIcon + 'uni-app',
                 collapsed: true,
                 items: uniapp
+            },
+            {
+                text: webpackIcon + 'Webpack',
+                collapsed: true,
+                items: webpackItems
             },
             {
                 text: githubIcon + '开源项目收集',
