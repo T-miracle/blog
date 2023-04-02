@@ -11,7 +11,7 @@ IoC（Inversion of Control）即控制反转，是一种设计模式，也是 Sp
 
 ## Ioc是如何实现的
 
-Ioc 通过[依赖注入（Dependency Injection）](what_is_di.md)实现对象之间的解耦和依赖关系的管理。依赖注入是指在对象创建时，将对象所依赖的其他对象注入到它的属性中。
+Ioc 通过[依赖注入（Dependency Injection）](/learn/java/spring/what_is_di.md)实现对象之间的解耦和依赖关系的管理。依赖注入是指在对象创建时，将对象所依赖的其他对象注入到它的属性中。
 
 在 Spring 框架中，Ioc 由 Bean 容器实现。Bean 容器是一个对象工厂，它负责创建对象、维护对象之间的依赖关系和对象的生命周期。
 Bean 容器在启动时会读取配置文件或注解，然后根据配置信息创建和初始化对象，这些对象被称为 Bean。在创建 Bean 的过程中，Bean 容器会注入 Bean 所依赖的其他 Bean 实例，这样就可以实现对象之间的解耦和依赖关系的管理。

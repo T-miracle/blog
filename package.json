@@ -9,17 +9,17 @@
     "preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "@giscus/vue": "^2.2.8",
     "element-plus": "^2.2.32",
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
-    "viewerjs": "^1.11.2",
     "vite": "^4.1.4",
     "vitepress": "^1.0.0-alpha.47",
     "vitepress-plugin-back-to-top": "^1.0.1",
-    "vitepress-plugin-comment-with-giscus": "^1.1.1",
     "vue": "^3.2.47"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vitepress-plugin-comment-with-giscus": "^1.1.6",
+    "vitepress-plugin-image-viewer": "^1.0.0"
+  }
 }

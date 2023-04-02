@@ -2,7 +2,7 @@
 
 宏任务和微任务是JavaScript中非常重要的概念，它们用于描述代码执行时的任务队列。
 
-在JavaScript中，所有的任务都被加入到一个任务队列中，由[事件循环(`Event Loop`)](what_is_event_loop.md)负责调度执行。
+在JavaScript中，所有的任务都被加入到一个任务队列中，由[事件循环(`Event Loop`)](/learn/web/javascript/what_is_event_loop.md)负责调度执行。
 
 当JavaScript引擎空闲时，事件循环会从任务队列中取出任务，并按照顺序执行。
 

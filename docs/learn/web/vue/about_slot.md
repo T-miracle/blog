@@ -262,7 +262,7 @@ Vue 中的插槽（`Slot`）是一种功能强大的组件化技术，它允许�
 
 更详细请看：
 
-[作用域插槽的使用场景有哪些？](use_cases_for_scoped_slots.md)
+[作用域插槽的使用场景有哪些？](/learn/web/vue/use_cases_for_scoped_slots.md)
 
 ## `v-slot`简写
 

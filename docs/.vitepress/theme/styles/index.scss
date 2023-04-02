@@ -3,6 +3,15 @@
 
 $tableBorderColor: #7f8c8d;
 
+:root {
+    --vp-c-text-1: #2d3436;
+    --vp-c-text-2: #606569;
+}
+
+[class*='level-'].VPSidebarItem.is-link > .item > .link:hover .text {
+    color: #ff6348 !important;
+}
+
 .VPContent {
     .VPHome {
         .main {

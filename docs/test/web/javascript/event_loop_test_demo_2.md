@@ -1,3 +1,8 @@
+<script setup lang="ts">
+    import { ref } from 'vue';
+    const visible = ref<boolean>(false);
+</script>
+
 # 事件循环-测试题2
 
 ```js
@@ -31,4 +36,19 @@ console.log('script end');
 
 <v-scratch-paper />
 
-[查看答案](event_loop_test_demo_2_answer.md)
+<a href="#" @click="visible = true">查看答案</a>
+
+<vModal v-model="visible" title="参考答案">
+
+```js
+script
+async1
+async2
+promise1
+script
+async1
+promise2
+setTimeout
+```
+
+</vModal>

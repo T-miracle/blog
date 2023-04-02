@@ -52,8 +52,8 @@ console.log('结束')
 - **Web APIs**：`Web`应用接口，像`setTimeout`、`DOM`操作、`Ajax`请求、`Promise`请求之类的相关执行都放在里面
 - **Event Loop**：事件循环的执行状态
 - **Callback Queue**：回调队列
-  - **micro-task**：[微任务队列](what_is_macroTask_and_microTask.md)
-  - **macro-task**：[宏任务队列](what_is_macroTask_and_microTask.md)
+  - **micro-task**：[微任务队列](/learn/web/javascript/what_is_macroTask_and_microTask.md)
+  - **macro-task**：[宏任务队列](/learn/web/javascript/what_is_macroTask_and_microTask.md)
 - **Browser Console**：浏览器控制台
 
 ### 执行步骤

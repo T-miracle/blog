@@ -13,7 +13,10 @@ const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '🔥 watch和computed的区别', link: '/learn/web/vue/the_difference_between_watch_and_computed' },
     { text: '🔥 keep-live是什么？如何使用？', link: '/learn/web/vue/what_is_keep-live' },
     {
-        text: '🔥 插槽', link: '/learn/web/vue/about_slot.md', items: [ {
+        text: '🔥 插槽',
+        link: '/learn/web/vue/about_slot.md',
+        collapsed: false,
+        items: [ {
             text: '🔥 作用域插槽的使用场景', link: '/learn/web/vue/use_cases_for_scoped_slots.md'
         } ]
     },
