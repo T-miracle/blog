@@ -1109,9 +1109,9 @@ vitepress-plugin-comment-with-giscus@^1.1.6:
     "@giscus/vue" "^2.2.8"
 
 vitepress-plugin-image-viewer@^1.0.0:
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/vitepress-plugin-image-viewer/-/vitepress-plugin-image-viewer-1.0.8.tgz#a9ecd6a92aa1bf9f7af92eae65ecd651fc24d5c0"
-  integrity sha512-zFtAfg7E6sb+CAfWKAuAmBiW8Dg+gB/6bqaICofWEh4mmXqwhL5Tpa4SnXDO00bRFVu27pHxbNrsk6pPWW3Vew==
+  version "1.0.9"
+  resolved "https://registry.npmjs.org/vitepress-plugin-image-viewer/-/vitepress-plugin-image-viewer-1.0.9.tgz#1f68bd0cf111266a16e6fd4b66be8d97722ea99f"
+  integrity sha512-vNopJE0siBcXFT4sjE6oT2hqZ9tMcHCdF9j+T7oQFEC3jg1M5gOzk2W1FzaXWVEGnMyba/Tec/C5vQ8ww+L0OQ==
   dependencies:
     viewerjs "^1.11.3"
 
