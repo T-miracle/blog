@@ -121,4 +121,26 @@ git push --tags <remote>
 git push --force <remote> <branch> // [!code error]
 ```
 
+## 分支
 
+```shell {3,4}
+# 查看当前所在分支
+git branch
+# 创建新分支
+git branch <branch_name>
+# 删除指定分支
+git branch -d <branch_name>
+# 强制删除指定分支
+git branch -D <branch_name>
+# 重命名分支
+git branch -m <old_branch_name> <new_branch_name>
+```
+
+## 检出（切换分支）
+
+```shell {1-4}
+# 切换到指定的分支
+git checkout <branch_name>
+# 创建并切换到一个新的分支
+git checkout -b <new_branch_name>
+```
