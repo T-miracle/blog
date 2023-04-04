@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vitepress dev docs --host 127.0.0.1 --port 2333",
+    "run": "vitepress dev docs --host 127.0.0.1 --port 2333",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },
