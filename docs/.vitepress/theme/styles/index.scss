@@ -8,6 +8,10 @@ $tableBorderColor: #7f8c8d;
     --vp-c-text-2: #606569;
 }
 
+body {
+    font-weight: 300;
+}
+
 [class*='level-'].VPSidebarItem.is-link > .item > .link:hover .text {
     color: #ff6348 !important;
 }
@@ -31,6 +35,21 @@ $tableBorderColor: #7f8c8d;
 .vp-doc {
     h1 {
         text-align: center;
+    }
+
+    @for $i from 2 through 6 {
+        h#{$i}::before {
+            content: 'H#{$i}';
+            display: inline-block;
+            position: absolute;
+            font-size: 12px;
+            left: -20px;
+            color: orangered;
+        }
+
+        h#{$i}:hover::before {
+            display: none;
+        }
     }
 
     img {
