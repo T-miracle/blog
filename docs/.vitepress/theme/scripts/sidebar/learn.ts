@@ -37,7 +37,7 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
     },
     // {
     //     text: infoIcon + 'test',
-    //     link: '/test/index.md'
+    //     link: '/test/pendingTasks.md'
     // },
     {
         text: webIcon + '前端',

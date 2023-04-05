@@ -132,6 +132,10 @@ $tableBorderColor: #7f8c8d;
     display: none;
 }
 
+.viewer-backdrop {
+    background-color: rgba(0, 0, 0, .9);
+}
+
 /* 设置全局滚动条样式 */
 * {
     /*--ms-滚动条--*/

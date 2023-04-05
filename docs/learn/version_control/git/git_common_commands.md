@@ -55,6 +55,34 @@ git add -p
 git add --patch
 ```
 
+## 配置用户名与邮箱
+
+::: warning <badge type="warning" text="注意"/>
+> 如果没有配置用户名和邮箱，当进行提交时，Git会提示用户配置用户名和邮箱信息，如果仍然提交，提交记录中将不会显示作者的名字和电子邮件地址，而是显示一个默认的值。
+> 这可能会导致其他开发人员难以追踪提交记录，并使项目历史记录不易于管理。
+> 因此，为了维护清晰的项目历史记录，建议在第一次使用Git时设置用户名和邮箱信息。
+:::
+
+- 全局配置
+
+```shell
+# 配置全局用户名
+git config --global user.name "Your Name"
+# 配置全局邮箱
+git config --global user.email "your_email@example.com"
+```
+
+- 局部配置
+
+```shell
+# 配置局部用户名
+git config user.name "Your Name"
+# 配置局部邮箱
+git config user.email "your_email@example.com"
+```
+
+> <badge type="warning" text="注意"/> 项目提交时，用户名与邮箱会以局部配置优先
+
 ## 提交
 
 ```shell {3,4}

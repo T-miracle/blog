@@ -1,6 +1,7 @@
 # 忽略的文件
 yarn-error.log
 **/dist.zip
+scp
 
 # 忽略的文件夹
 .idea
