@@ -48,7 +48,7 @@ export default defineConfig({
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/T-miracle/blog' },
-            { icon: { svg: qqGroupIcon }, link: 'https://jq.qq.com/?_wv=1027&k=YX3jUWQe' },
+            { icon: { svg: qqGroupIcon }, link: 'https://jq.qq.com/?_wv=1027&k=YX3jUWQe' }
         ],
         lastUpdatedText: '上次更新于',
         sidebarMenuLabel: '菜单',
@@ -74,20 +74,22 @@ export default defineConfig({
                     { text: '面试与笔试模拟', link: '/simulation/' }
                 ]
             },
-            { text: '杂谈', link: '/tittle-tattle/' },
+            { text: '杂谈', link: '/tittle-tattle/' }
         ],
         // 左上角标题图标
         logo: '/logo.jpg',
-        // 右侧导航目录显示层级
-        outline: 'deep',
-        // 右侧导航目录显示文字
-        outlineTitle: '导航',
+        outline: {
+            // 右侧导航目录显示层级
+            level: 'deep',
+            // 右侧导航目录显示文字
+            label: '导航栏'
+        },
         // 左侧栏目录配置
         sidebar: {
             '/learn/': learnSidebar,
             '/bugs/': bugsSidebar,
             '/test/': testSidebar,
-            '/simulation/': simulationItems,
+            '/simulation/': simulationItems
         }
     }
 });

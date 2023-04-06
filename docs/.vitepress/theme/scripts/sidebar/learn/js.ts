@@ -4,11 +4,13 @@ const jsItems: DefaultTheme.SidebarItem[] = [
     {
         text: '🔥 JavaScript中有哪些数据类型？',
         link: '/learn/web/javascript/type_of_data.md',
+        collapsed: false,
         items: [
             { text: '⭐ 引用类型之间有什么区别', link: '/learn/web/javascript/what_is_the_difference_between_reference_types' }
         ]
     },
     { text: '🔸 数组的常用遍历函数', link: '/learn/web/javascript/common_traverse_functions_for_array.md' },
+    { text: '🔸 对象数据如何遍历？', link: '/learn/web/javascript/traverse_object.md' },
     { text: '🔥 深拷贝和浅拷贝的区别', link: '/learn/web/javascript/the_difference_between_deep_copy_and_shallow_copy' },
     { text: '🔥 什么是闭包？', link: '/learn/web/javascript/what_is_closure' },
     { text: '🔥 谈谈原型与原型链', link: '/learn/web/javascript/prototype_and_prototype_chains' },
@@ -18,8 +20,14 @@ const jsItems: DefaultTheme.SidebarItem[] = [
     { text: '🔥 谈谈事件循环 / 轮询（Event-Loop）', link: '/learn/web/javascript/what_is_event_loop' },
     { text: '🔥 谈谈宏任务与微任务', link: '/learn/web/javascript/what_is_macroTask_and_microTask' },
     { text: '⭐ 谈谈Proxy和Reflect', link: '/learn/web/javascript/Proxy_and_Reflect' },
-    { text: '🔥 ES6中的Promise', link: '/learn/web/javascript/what_is_promise' },
-    { text: '🔸 对象数据如何遍历？', link: '' },
+    {
+        text: '🔥 ES6 - Promise',
+        link: '/learn/web/javascript/what_is_promise',
+        collapsed: false,
+        items: [
+            { text: '🔥 什么是回调地狱？', link: '/learn/web/javascript/what_is_callback_hell.md' }
+        ]
+    },
     { text: '🔹 MutationObserver监听DOM', link: '/learn/web/javascript/mutationObserver_listens_to_dom' },
     { text: '⭐ requestAnimationFrame是什么？', link: '/learn/web/javascript/what_is_requestAnimationFrame' },
     { text: '⭐ GC垃圾回收机制', link: '/learn/web/javascript/garbage_collection_mechanism' }
