@@ -1,5 +1,0 @@
-7z a -tzip dist.zip ./docs/.vitepress/dist
-
-scp -r ./docs/.vitepress/dist.zip root@139.9.181.30:/var/www/blog
-
-ssh root@139.9.181.30
