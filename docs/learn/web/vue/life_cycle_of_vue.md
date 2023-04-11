@@ -1,7 +1,3 @@
-<script setup>
-    import parent from './components/parent.vue';
-</script>
-
 # Vue的生命周期
 
 ## 生命周期是什么
@@ -192,3 +188,7 @@ unmounted ▶ <div id="child" data-v-d003c437="" data-v-8216dc0a=""> ▶ Proxy {
 如果需要操作 DOM，我们应该在 `mounted` 中去进行，因为在此之前 DOM 没有挂载完
 
 如果是请求数据，应该在 `created` 中或之后进行
+
+<script setup>
+    import parent from './components/parent.vue';
+</script>

@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "element-plus": "^2.2.32",
+    "markdown-it-attrs": "^4.1.6",
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
@@ -19,6 +20,7 @@
     "vue": "^3.2.47"
   },
   "dependencies": {
+    "vitepress-plugin-codeblocks-fold": "1.0.12",
     "vitepress-plugin-comment-with-giscus": "^1.1.6",
     "vitepress-plugin-image-viewer": "^1.0.0"
   }

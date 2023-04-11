@@ -21,7 +21,7 @@
 :::code-group
 
 ```vue [Vue2]
-// 在`directive`中定义
+<!--/在`directive`中定义-->
 <script>
     export default {
         directives: {
@@ -36,7 +36,7 @@
 ```
 
 ```vue [Vue3]
-// 在 <script setup> 中，任何以 v 开头的驼峰式命名的变量都可以被用作一个自定义指令
+<!--在 <script setup> 中，任何以 v 开头的驼峰式命名的变量都可以被用作一个自定义指令-->
 <script setup lang="ts">
     // 在模板中启用 v-focus
     const vFocus = {

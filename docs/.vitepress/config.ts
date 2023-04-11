@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress';
 import taskLists from 'markdown-it-task-lists';
 import mathjax3 from 'markdown-it-mathjax3';
+import attrs from 'markdown-it-attrs';
 import learnSidebar from './theme/scripts/sidebar/learn';
 import bugsSidebar from './theme/scripts/sidebar/bugs';
 import testSidebar from './theme/scripts/sidebar/test';
@@ -29,6 +30,11 @@ export default defineConfig({
         config: (md) => {
             md.use(mathjax3);
             md.use(taskLists);
+            md.use(attrs, {
+                leftDelimiter: '>',
+                rightDelimiter: '<',
+                allowedAttributes: ['id', 'class', /^regex.*$/]
+            });
         }
     },
     vue: {

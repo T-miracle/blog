@@ -25,7 +25,8 @@ const jsItems: DefaultTheme.SidebarItem[] = [
         link: '/learn/web/javascript/what_is_promise',
         collapsed: false,
         items: [
-            { text: '🔥 什么是回调地狱？', link: '/learn/web/javascript/what_is_callback_hell.md' }
+            { text: '🔥 什么是回调地狱？', link: '/learn/web/javascript/what_is_callback_hell.md' },
+            { text: '⭐ promise.all()', link: '/learn/web/javascript/promise_all.md' },
         ]
     },
     { text: '🔹 MutationObserver监听DOM', link: '/learn/web/javascript/mutationObserver_listens_to_dom' },

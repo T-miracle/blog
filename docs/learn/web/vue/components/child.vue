@@ -58,12 +58,15 @@
     #child {
         margin: 10px 0;
         padding: 4px;
-        background-color: #e3e3e3;
+        background-color: rgba(200, 200, 200, 0.5);
+        color: #1e1e20;
 
         button {
+            color: #000;
             margin-left: 20px;
             border: 1px solid #7f8497;
             padding: 0 4px;
+            background-color: rgba(231, 231, 231, 0.66);
         }
     }
 </style>

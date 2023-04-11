@@ -28,10 +28,11 @@
         margin: 20px;
 
         button {
+            color: #000;
             border: 1px solid #606266;
             border-radius: 4px;
             padding: 2px 5px;
-            background-color: #e7e7e7;
+            background-color: rgba(231, 231, 231, 0.66);
         }
     }
 </style>

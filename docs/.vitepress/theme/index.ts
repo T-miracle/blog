@@ -10,12 +10,13 @@ import hideFooter from '../plugins/hideFooter/hideFooter';
 import { useData, useRoute } from 'vitepress';
 import googleAnalysis from './scripts/googleAnalysis';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
-import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue'
+import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
 import imageViewer from 'vitepress-plugin-image-viewer';
 import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
-// 自定义样式，放最后，加深权重
 import './styles/index.scss';
+import 'vitepress-plugin-codeblocks-fold/style/index.css';
+import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 
 export default {
     ...DefaultTheme,
@@ -49,5 +50,6 @@ export default {
         }, {
             frontmatter, route
         });
+        codeblocksFold({ frontmatter, route });
     }
 };
