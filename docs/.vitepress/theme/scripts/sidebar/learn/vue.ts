@@ -2,7 +2,6 @@ import { DefaultTheme } from 'vitepress/types/default-theme';
 
 const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '🔹 Vue自称渐进式框架，你如何理解“渐进式”的含义？', link: '/learn/web/vue/how_to_understand_the_meaning_of_progressive' },
-    { text: '⭐ 谈谈你对MVVM的理解', link: '/learn/web/vue/what_is_mvvm' },
     { text: '🔥 Vue的生命周期', link: '/learn/web/vue/life_cycle_of_vue' },
     { text: '🔥 路由模式Hash和History有什么区别？', link: '/learn/web/vue/the_difference_between_hash_and_history_in_routing_mode' },
     { text: '🔥 v-for为什么需要加key？', link: '/learn/web/vue/why_does_v-for_need_to_add_key' },

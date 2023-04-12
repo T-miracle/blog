@@ -16,7 +16,7 @@ import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
 import './styles/index.scss';
 import 'vitepress-plugin-codeblocks-fold/style/index.css';
-import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
+import codeblocksFold from '../plugins/codeblocks-fold/index';
 
 export default {
     ...DefaultTheme,

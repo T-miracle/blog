@@ -20,7 +20,7 @@
     "vue": "^3.2.47"
   },
   "dependencies": {
-    "vitepress-plugin-codeblocks-fold": "1.0.12",
+    "vitepress-plugin-codeblocks-fold": "^1.0.17",
     "vitepress-plugin-comment-with-giscus": "^1.1.6",
     "vitepress-plugin-image-viewer": "^1.0.0"
   }

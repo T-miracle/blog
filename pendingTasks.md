@@ -2,5 +2,5 @@
 
 - [ ] require.context()用法
 - [ ] Linux常用命令行
-- [ ] promise.all()
 - [ ] promise.race()
+- [ ] vue extends用法
