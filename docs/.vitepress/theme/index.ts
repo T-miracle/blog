@@ -7,7 +7,7 @@ import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
 import vScratchPaper from '../components/vScratchPaper.vue';
 import hideFooter from '../plugins/hideFooter/hideFooter';
-import { useData, useRoute } from 'vitepress';
+import { EnhanceAppContext, useData, useRoute} from 'vitepress';
 import googleAnalysis from './scripts/googleAnalysis';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
@@ -20,7 +20,7 @@ import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 
 export default {
     ...DefaultTheme,
-    enhanceApp(ctx) {
+    enhanceApp(ctx: EnhanceAppContext) {
         DefaultTheme.enhanceApp(ctx);
         // 注册全局组件
         ctx.app.component('vSetup', vSetup);
