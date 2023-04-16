@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "run": "vitepress dev docs --host 127.0.0.1 --port 2333",
+    "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },
@@ -15,13 +15,12 @@
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
     "vite": "^4.1.4",
-    "vitepress": "^1.0.0-alpha.47",
+    "vitepress": "1.0.0-alpha.47",
     "vitepress-plugin-back-to-top": "^1.0.1",
+    "vitepress-plugin-codeblocks-fold": "^1.2.9",
+    "vitepress-plugin-comment-with-giscus": "^1.1.7",
+    "vitepress-plugin-image-viewer": "^1.1.2",
     "vue": "^3.2.47"
   },
-  "dependencies": {
-    "vitepress-plugin-codeblocks-fold": "^1.0.17",
-    "vitepress-plugin-comment-with-giscus": "^1.1.6",
-    "vitepress-plugin-image-viewer": "^1.0.0"
-  }
+  "dependencies": {}
 }

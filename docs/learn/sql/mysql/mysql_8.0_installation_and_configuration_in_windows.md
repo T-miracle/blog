@@ -8,6 +8,8 @@
 
 MYSQL 官网地址：[点击进入](https://dev.mysql.com/downloads/mysql/)
 
+---
+
 ![](/images/mysql_8.0_download.png)
 
 ## 安装

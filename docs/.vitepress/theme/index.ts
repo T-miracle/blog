@@ -14,9 +14,9 @@ import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
 import imageViewer from 'vitepress-plugin-image-viewer';
 import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
-import './styles/index.scss';
-import 'vitepress-plugin-codeblocks-fold/style/index.css';
+import 'vitepress-plugin-codeblocks-fold/style/index.scss';
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
+import './styles/index.scss';
 
 export default {
     ...DefaultTheme,
@@ -35,13 +35,12 @@ export default {
         });
     },
     setup() {
-        googleAnalysis(); // 谷歌分析
         // 获取前言和路由
         const { frontmatter } = useData();
         const route = useRoute();
-        imageViewer(route); // 图片预览
-        hideFooter(frontmatter); // 隐藏页脚
-        // 评论组件
+        imageViewer(route);
+        codeblocksFold({ route, frontmatter })
+        hideFooter(frontmatter);
         giscusTalk({
             repo: 'T-miracle/blog',
             repoId: 'R_kgDOJCf-FQ',
@@ -50,6 +49,6 @@ export default {
         }, {
             frontmatter, route
         });
-        codeblocksFold({ frontmatter, route });
+        googleAnalysis();
     }
 };

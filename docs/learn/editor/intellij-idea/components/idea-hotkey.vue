@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table id="idea-hotkey-table">
+        <table class="table-w100">
             <thead>
                 <tr>
                     <th width="240">快捷键</th>
@@ -40,46 +40,6 @@
     </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style scoped lang="scss">
-    #idea-hotkey-table {
-        width: 100%;
-        display: table;
-        table-layout: fixed;
-
-        > thead, tbody {
-            width: 100%;
-        }
-
-        > thead {
-            > tr {
-                > th:first-child {
-                    text-align: center;
-                }
-            }
-        }
-
-        > tbody {
-            > tr.title {
-                > td {
-                    font-weight: 500;
-                    font-size: 1.2em;
-                    background-color: rgba(158, 206, 90, 0.25);
-                    padding: 10px 60px;
-                }
-            }
-
-            > tr:not(.title) {
-                background-color: transparent !important;
-
-                > td:first-child {
-                    text-align: center;
-                    font-weight: bold;
-                }
-            }
-        }
-    }
+  @import "./styles/w100-table.scss";
 </style>
