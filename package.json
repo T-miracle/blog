@@ -15,7 +15,7 @@
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
     "vite": "^4.1.4",
-    "vitepress": "1.0.0-alpha.47",
+    "vitepress": "^1.0.0-alpha.70",
     "vitepress-plugin-back-to-top": "^1.0.1",
     "vitepress-plugin-codeblocks-fold": "^1.2.9",
     "vitepress-plugin-comment-with-giscus": "^1.1.7",
