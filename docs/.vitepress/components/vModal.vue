@@ -11,25 +11,43 @@
 </template>
 
 <script setup lang="ts">
-    import { ElDialog } from 'element-plus';
-    import { onMounted, ref } from 'vue';
+    import {ElDialog} from 'element-plus';
+    import {onMounted, ref} from 'vue';
 
     // 数据：对话框默认宽度
-    const width = ref<string>('35%');
+    const width = ref<string>('42%');
 
     const isBigScreen = () => {
         return window.screen.width > 1400
     }
 
     onMounted(() => {
-        width.value = isBigScreen() ? '35%' : '90%';
+        width.value = isBigScreen() ? '42%' : '95%';
     });
 </script>
 
 <style scoped lang="scss">
-    .dialog-modal {
-        :deep(.el-dialog__body) {
-            padding: 0 20px 20px;
-        }
-    }
+	.dialog-modal {
+		:deep(.el-dialog) {
+			--el-dialog-bg-color: #ffffff;
+
+			.el-dialog__header > .el-dialog__title {
+				color: var(--vp-c-text-1);
+				font-weight: 450;
+			}
+
+			.el-dialog__body {
+				max-height: calc(100vh - 55px);
+				overflow: auto;
+				padding: 0 20px 20px;
+				color: var(--vp-c-text-1);
+			}
+		}
+	}
+
+	.dark .dialog-modal {
+		:deep(.el-dialog) {
+			--el-dialog-bg-color: #1e1e20;
+		}
+	}
 </style>
