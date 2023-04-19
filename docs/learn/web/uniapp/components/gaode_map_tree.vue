@@ -2,9 +2,10 @@
     <div class="tree-box">
         <el-tree :data="data" :props="props" node-key="label" :default-expanded-keys="expandKey">
             <template v-slot="{ node, data }">
-                <div @click="emits('node-click', data.label)" style="width: 100%">
+                <div @click="emits('node-click', data.label)" style="width: 100%; display: flex; align-items: center">
                     <el-icon :size="18" style="margin-right: 6px" v-html="data.type"/>
                     <span>{{ data.label }}</span>
+                    <span class="desc">{{ data.desc }}</span>
                 </div>
             </template>
         </el-tree>
@@ -15,12 +16,8 @@
     import {ElTree, ElIcon} from 'element-plus';
     import {reactive} from 'vue';
     import {
-        ignoreIcon,
-        jsIcon,
-        jsonIcon,
+        androidIcon,
         folderIcon,
-        mdIcon,
-        tsIcon,
         gradleIcon,
         xmlIcon
     } from '../../../../public/icons'
@@ -35,13 +32,13 @@
     interface Tree {
         label: string,
         type?: string,
-        func?: Function,
+        desc?: string,
         children?: Tree[]
     }
 
-    const expandKey = ['项目', 'app', 'src', 'main', 'assets', 'data']
+    const expandKey = ['项目', 'app', 'libs', 'src', 'main', 'assets', 'data']
 
-    const data: Tree[] = reactive([
+    const data: Tree[] = reactive<Tree[]>([
         {
             label: '项目',
             type: folderIcon,
@@ -52,7 +49,23 @@
                     children: [
                         {
                             label: 'libs',
-                            type: folderIcon
+                            type: folderIcon,
+                            children: [
+                                {
+                                    label: 'geolocation-amap-release.aar',
+                                    type: androidIcon
+                                },
+                                {
+                                    label: 'map-amap-release.aar',
+                                    type: androidIcon,
+                                    desc: '# vue页面需要'
+                                },
+                                {
+                                    label: 'weex_amap-release.aar',
+                                    type: androidIcon,
+                                    desc: '# nvue页面需要'
+                                },
+                            ]
                         },
                         {
                             label: 'src',
@@ -143,6 +156,14 @@
 			background-color: transparent;
 			color: white;
 			--el-tree-node-hover-bg-color: rgba(137, 221, 255, 0.25);
+
+			.desc {
+                margin-left: 10px;
+				font-weight: 400;
+				font-size: .8em;
+				color: rgba(185, 170, 170, 0.8);
+                transform: translateY(3px);
+			}
 
 			:deep(.el-tree-node__content:hover) {
 				background-color: rgba(137, 221, 255, 0.25) !important;

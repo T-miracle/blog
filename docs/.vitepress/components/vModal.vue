@@ -41,6 +41,10 @@
 				overflow: auto;
 				padding: 0 20px 20px;
 				color: var(--vp-c-text-1);
+
+				[class*="language-"] code {
+					font-size: 1em;
+				}
 			}
 		}
 	}
