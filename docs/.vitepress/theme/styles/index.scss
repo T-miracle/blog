@@ -38,7 +38,7 @@ body {
     }
 
     @for $i from 2 through 6 {
-        h#{$i}::before {
+        h#{$i}[tabindex]::before {
             content: 'H#{$i}';
             display: inline-block;
             position: absolute;
@@ -47,7 +47,7 @@ body {
             color: orangered;
         }
 
-        h#{$i}:hover::before {
+        h#{$i}[tabindex]:hover::before {
             display: none;
         }
     }

@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "element-plus": "^2.2.32",
-    "markdown-it-attrs": "^4.1.6",
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
