@@ -26,9 +26,9 @@ import springItems from './learn/spring';
 import wxMiniprogramItems from './learn/wx-miniprogram';
 import mysqlItems from './learn/mysql';
 import hBuilderXItems from './learn/hbuilderx';
-import uniapp from './learn/uniapp';
 import androidStudioItems from './learn/android-studio';
 import webpackItems from './learn/webpack';
+import uniappItems from "./learn/uniapp";
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -81,7 +81,7 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
             {
                 text: uniAppIcon + 'uni-app',
                 collapsed: true,
-                items: uniapp
+                items: uniappItems
             },
             {
                 text: webpackIcon + 'Webpack',
