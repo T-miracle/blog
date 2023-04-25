@@ -67,7 +67,9 @@ body {
 
     :not(pre) > code {
         background-color: #e2faff;
-        padding: 2px;
+        color: orangered;
+        font-weight: 600;
+        padding: 2px 4px;
         margin: 0 5px;
     }
 
