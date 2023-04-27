@@ -7,7 +7,7 @@ import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
 import vScratchPaper from '../components/vScratchPaper.vue';
 import hideFooter from '../plugins/hideFooter/hideFooter';
-import { EnhanceAppContext, useData, useRoute} from 'vitepress';
+import {EnhanceAppContext, useData, useRoute} from 'vitepress';
 import googleAnalysis from './scripts/googleAnalysis';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
@@ -36,10 +36,10 @@ export default {
     },
     setup() {
         // 获取前言和路由
-        const { frontmatter } = useData();
+        const {frontmatter} = useData();
         const route = useRoute();
         imageViewer(route);
-        codeblocksFold({ route, frontmatter })
+        codeblocksFold({route, frontmatter})
         hideFooter(frontmatter);
         giscusTalk({
             repo: 'T-miracle/blog',

@@ -10,7 +10,7 @@ const jsItems: DefaultTheme.SidebarItem[] = [
         ]
     },
     { text: '🔸 数组的常用遍历函数', link: '/learn/web/javascript/common_traverse_functions_for_array.md' },
-    { text: '🔸 对象数据如何遍历？', link: '/learn/web/javascript/traverse_object.md' },
+    { text: '🔸 对象数据如何获取第一个属性的值？', link: '/learn/web/javascript/object_get_first_value.md' },
     { text: '🔥 深拷贝和浅拷贝的区别', link: '/learn/web/javascript/the_difference_between_deep_copy_and_shallow_copy' },
     { text: '🔥 什么是闭包？', link: '/learn/web/javascript/what_is_closure' },
     { text: '🔥 谈谈原型与原型链', link: '/learn/web/javascript/prototype_and_prototype_chains' },
