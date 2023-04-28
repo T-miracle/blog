@@ -95,6 +95,57 @@
   git clone --recursive <repository>
   ```
 
+## 仓库管理
+
+- <badge type="tip" text="常用"/>添加一个新的远程仓库
+
+  ```shell
+  # `remote_name` 表示远程仓库的名称，`remote_url` 表示远程仓库的 URL
+  git remote add [remote_name] [remote_url]
+  ```
+  
+- 查看远程仓库的详细信息，包括名称和 URL
+
+  ```shell
+  git remote -v
+  ```
+
+- 将一个远程仓库重命名为另一个名称
+
+  ```shell
+  git remote rename [old_name] [new_name]
+  ```
+
+- 删除一个远程仓库
+
+  ```shell
+  git remote remove [remote_name]
+  ```
+
+- 显示一个远程仓库的详细信息，包括分支的跟踪关系
+
+  ```shell
+  git remote show [remote_name]
+  ```
+
+- 从远程仓库中获取最新的提交信息，但不会自动合并到本地分支中
+
+  ```shell
+  git remote update
+  ```
+
+- 删除本地不存在的远程分支
+
+  ```shell
+  git remote prune [remote_name]
+  ```
+
+- 修改远程仓库的 URL
+
+  ```shell
+  git remote set-url [remote_name] [new_url]
+  ```
+
 ### 查看文件状态
 
 - <badge type="tip" text="常用"/>查看工作区和暂存区的文件状态。

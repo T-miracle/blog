@@ -5,3 +5,4 @@
 - [ ] promise.race()
 - [ ] vue extends用法
 - [ ] vue options自定义
+- [ ] 
