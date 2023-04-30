@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'vitepress/types/default-theme';
-import { jsIcon, questionBankIcon, webIcon } from '../icons';
+import { jsIcon, questionBankIcon, webIcon } from './icons';
 
 const testSidebar: DefaultTheme.SidebarItem[] = [
     {

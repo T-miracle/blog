@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'vitepress/types/default-theme';
-import { jobIcon } from '../icons';
+import { jobIcon } from './icons';
 
 const simulationItems: DefaultTheme.SidebarItem[] = [
     {

@@ -1,7 +1,7 @@
 import {
     androidStudioIcon,
     conceptIcon,
-    cssIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
+    cssIcon, deployIcon, dockerIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
     htmlIcon,
     httpIcon, ideaIcon,
     infoIcon,
@@ -12,7 +12,7 @@ import {
     springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon,
     vueIcon,
     webIcon, webpackIcon, wxMiniprogramIcon
-} from '../icons';
+} from './icons';
 import htmlItems from './learn/html';
 import cssItems from './learn/css';
 import jsItems from './learn/js';
@@ -129,6 +129,15 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 text: mySQLIcon + 'MySQL',
                 collapsed: true,
                 items: mysqlItems
+            }
+        ]
+    },
+    {
+        text: deployIcon + '部署',
+        collapsed: false,
+        items: [
+            {
+                text: dockerIcon + 'Docker',
             }
         ]
     },
