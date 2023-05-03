@@ -29,6 +29,7 @@ import hBuilderXItems from './learn/hbuilderx';
 import androidStudioItems from './learn/android-studio';
 import webpackItems from './learn/webpack';
 import uniappItems from "./learn/uniapp";
+import dockerItems from "./learn/dockerItems";
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -138,6 +139,8 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
         items: [
             {
                 text: dockerIcon + 'Docker',
+                collapsed: true,
+                items: dockerItems
             }
         ]
     },
