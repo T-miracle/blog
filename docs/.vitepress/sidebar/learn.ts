@@ -1,4 +1,5 @@
 import {
+    androidIcon,
     androidStudioIcon,
     conceptIcon,
     cssIcon, deployIcon, dockerIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
@@ -29,7 +30,8 @@ import hBuilderXItems from './learn/hbuilderx';
 import androidStudioItems from './learn/android-studio';
 import webpackItems from './learn/webpack';
 import uniappItems from "./learn/uniapp";
-import dockerItems from "./learn/dockerItems";
+import dockerItem from "./learn/docker";
+import androidItems from "./learn/android";
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -83,6 +85,11 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 text: uniAppIcon + 'uni-app',
                 collapsed: true,
                 items: uniappItems
+            },
+            {
+                text: androidIcon + 'Android',
+                collapsed: true,
+                items: androidItems
             },
             {
                 text: webpackIcon + 'Webpack',
@@ -140,7 +147,7 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
             {
                 text: dockerIcon + 'Docker',
                 collapsed: true,
-                items: dockerItems
+                items: dockerItem
             }
         ]
     },
