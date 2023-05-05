@@ -4,7 +4,7 @@
 
 一般 `aapt` 是下载 Android SDK 后，在 `build-tools` 中自带的
 
-可以通过 `Android Studio` 自动获取下载 或者 去[官网下载](https://developer.android.com/studio)
+可以通过 Android Studio 自动获取下载 或者 去[官网下载](https://developer.android.com/studio)
 
 ![](/images/aapt-path.png)
 
@@ -14,9 +14,17 @@
 aapt dump badging your_app.apk
 ```
 
-其中，your_app.apk 是要反编译的 APK 文件名
+其中，`your_app.apk` 是要反编译的 APK 文件名
 
-执行命令后，将显示 APK 文件的所有信息，包括 versionCode 和 versionName
+执行命令后，将显示 APK 文件的所有信息，包括 `versionCode` 和 `versionName`
+
+::: warning 注意
+有时候，直接反编译 `.apk` 文件会失败，可以更改 `.apk` 后缀为 `.zip` 然后进行解压，再使用以上命令反编译解压后的文件夹
+
+```shell
+aapt dump badging your_app_folder
+```
+:::
 
 输出信息如下：
 
@@ -24,7 +32,7 @@ aapt dump badging your_app.apk
 package: name='com.your.app' versionCode='112233' versionName='1.0.1'
 ```
 
-其中，com.your.app 是应用程序的包名，versionCode 是应用程序的版本代码，versionName 是应用程序的版本名称
+其中，`com.your.app` 是应用程序的包名，`versionCode` 是应用程序的版本代码，`versionName` 是应用程序的版本名称
 
 
 
