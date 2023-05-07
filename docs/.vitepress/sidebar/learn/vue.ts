@@ -22,7 +22,8 @@ const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '⭐ Diff 算法', link: '/learn/web/vue/diff_algorithm' },
     { text: '🔸 Vue项目配置路径别名', link: '/learn/web/vue/configure_path_aliases' },
     { text: '🔥 Vue打包部署Nginx后页面路径刷新404的问题', link: '/learn/web/vue/nginx_path_refresh_404_problem' },
-    { text: '🔥 vue项目上线打包时如何做性能优化', link: '/learn/web/vue/vue_project_packaging_optimization.md' }
+    { text: '🔥 vue项目上线打包时如何做性能优化', link: '/learn/web/vue/vue_project_packaging_optimization.md' },
+    { text: '🔹 Vue3 Teleport组件的使用以及适用场景', link: '/learn/web/vue/vue3_teleport.md' },
 ];
 
 export default vueItems;
