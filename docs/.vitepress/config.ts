@@ -26,6 +26,10 @@ export default defineConfig({
     markdown: {
         // 代码块显示行数
         // lineNumbers: true,
+        // theme: {
+        //     light: 'github-light',
+        //     dark: 'github-dark'
+        // },
         config: (md) => {
             md.use(mathjax3);
             md.use(taskLists);

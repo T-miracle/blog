@@ -78,10 +78,12 @@ ajax({
     dataType: 'json',
     data: {},
     url: 'https://example.com/demo.json',
-    success: function (text, xml) {//请求成功后的回调函数
+    //请求成功后的回调函数
+    success: function (text, xml) {
         console.log(text)
     },
-    fail: function (status) {////请求失败后的回调函数
+    //请求失败后的回调函数
+    fail: function (status) {
         console.log(status)
     }
 })

@@ -40,15 +40,17 @@ body {
     @for $i from 2 through 6 {
         h#{$i}[tabindex]::before {
             content: 'H#{$i}';
+            margin-right: 5px;
             display: inline-block;
-            position: absolute;
+            //position: absolute;
             font-size: 12px;
-            left: -20px;
-            color: orangered;
+            //left: -20px;
+            color: limegreen;
         }
 
         h#{$i}[tabindex]:hover::before {
-            display: none;
+            display: inline-block;
+            color: orangered;
         }
     }
 
