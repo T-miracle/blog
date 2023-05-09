@@ -24,6 +24,7 @@ const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '🔥 Vue打包部署Nginx后页面路径刷新404的问题', link: '/learn/web/vue/nginx_path_refresh_404_problem' },
     { text: '🔥 vue项目上线打包时如何做性能优化', link: '/learn/web/vue/vue_project_packaging_optimization.md' },
     { text: '🔹 Vue3 Teleport组件的使用以及适用场景', link: '/learn/web/vue/vue3_teleport.md' },
+    { text: '🔸 透传属性（穿透属性）', link: '/learn/web/vue/fallthrough_attributes.md' },
 ];
 
 export default vueItems;

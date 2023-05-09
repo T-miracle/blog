@@ -95,7 +95,7 @@
   git clone --recursive <repository>
   ```
 
-## 仓库管理
+### 仓库管理
 
 - <badge type="tip" text="常用"/>添加一个新的远程仓库
 
