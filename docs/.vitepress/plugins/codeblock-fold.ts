@@ -1,0 +1,175 @@
+import { nextTick, onMounted, Ref, watch } from 'vue';
+import { PageData, Route } from 'vitepress';
+
+type vitepressAPI = {
+    frontmatter: Ref<PageData['frontmatter']>,
+    route: Route
+}
+
+/**
+ * 设置代码块折叠功能
+ * @param frontmatter 前言
+ * @param defaultAllFold 默认全部折叠
+ * @param height 高度
+ */
+const cbf = (frontmatter: Ref<PageData['frontmatter']>, defaultAllFold: boolean, height: number) => {
+    // 获取前言值
+    let fm: number[] | boolean = true;
+    if (frontmatter.value && frontmatter.value.cbf !== undefined) {
+        fm = frontmatter.value.cbf;
+    }
+    // 获取文章里的所有代码块
+    const codeblocks = document.querySelectorAll('.vp-doc [class*="language-"]');
+    // console.log(codeblocks);
+    // 遍历给代码块添加折叠
+    codeblocks.forEach((el: Element, index: number) => {
+        const element = el as HTMLElement;
+        if (element.offsetHeight !== 0 && element.offsetHeight <= height) {
+            return;
+        }
+        if (Array.isArray(fm)) { // 如果是数组
+            if (defaultAllFold) {
+                if (fm.indexOf(index + 1) === -1) {
+                    judge(element, height);
+                }
+            } else {
+                if (fm.indexOf(index + 1) !== -1) {
+                    judge(element, height);
+                }
+            }
+        } else { // 如果是布尔值
+            if (defaultAllFold && fm) {
+                judge(element, height);
+            }
+        }
+    });
+};
+
+/**
+ * 兼容代码块组
+ * @param el 元素
+ * @param defaultAllFold 默认全部折叠
+ * @param height 限制高度
+ */
+const observer = (el: HTMLElement, height: number) => {
+    new MutationObserver((mutations, observer) => {
+        mutations.forEach((mutation) => {
+            const _el = mutation.target as HTMLElement;
+            if (mutation.attributeName === 'class' && _el.classList.contains('active') && _el.offsetHeight > height) {
+                fold(el, height);
+            }
+        });
+    }).observe(el, {
+        attributeFilter: [ 'class' ]
+    });
+};
+
+/**
+ * 判断是否是代码块组中未显示的代码块
+ * @param el 元素
+ * @param height 高度
+ */
+const judge = (el: HTMLElement, height: number) => {
+    const displayStatus: string = window.getComputedStyle(el, null).getPropertyValue('display');
+    const isDetailBlock: boolean = el.parentElement.classList.contains('details');
+    console.log(isDetailBlock)
+    if (displayStatus === 'none' || isDetailBlock) {
+        observer(el, height);
+    } else {
+        fold(el, height);
+    }
+};
+
+/**
+ * 折叠与展开
+ * @param el 代码块元素
+ * @param height 限制高度
+ */
+const fold = (el: HTMLElement, height: number) => {
+    if (el.classList.contains('fold')) {
+        return;
+    }
+    el.classList.add('fold')
+    const pre = el.querySelector('pre')!;
+    pre.style.height = height + 'px';
+    pre.style.overflow = 'hidden';
+    el.style.borderRadius = '8px 8px 0 0';
+    const foldBtn = document.createElement('div');
+    const mask = document.createElement('div');
+    mask.className = 'codeblocks-mask';
+    foldBtn.className = 'fold-btn';
+    foldBtn.insertAdjacentHTML('afterbegin', `<svg t="1680893932803" class="fold-btn-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1473" width="16" height="16"><path d="M553.1392 778.88512l451.61472-451.61472c22.64576-22.64576 22.64576-59.4176 0-82.14016-22.64576-22.64576-59.4176-22.64576-82.14016 0l-410.5472 410.61888-410.61888-410.624c-22.64576-22.64576-59.4176-22.64576-82.14016 0-22.64576 22.64576-22.64576 59.4176 0 82.14016l451.69152 451.69152a58.08128 58.08128 0 0 0 82.14016-0.07168z" p-id="1474"></path></svg>`);
+    el.appendChild(mask);
+    el.appendChild(foldBtn);
+    // 添加折叠事件
+    foldBtn.onclick = () => {
+        const maskElement = el.querySelector('.codeblocks-mask') as HTMLElement;
+        const iconElement = el.querySelector('.fold-btn-icon') as HTMLElement;
+        foldBtnEvent({ pre, foldBtn, iconElement, maskElement }, height);
+    }
+};
+
+/**
+ * 折叠事件
+ * @param els 元素对象
+ * @param height 高度
+ */
+const foldBtnEvent = (els: { pre: HTMLElement, foldBtn: HTMLElement, iconElement: HTMLElement, maskElement: HTMLElement }, height: number) => {
+    const { pre, foldBtn, iconElement, maskElement } = els;
+    if (pre!.classList.contains('expand')) { // 折叠
+        const oldPos = foldBtn.getBoundingClientRect().top;
+        pre!.style.height = height + 'px';
+        pre!.classList.remove('expand');
+        maskElement.style.height = '48px';
+        iconElement.classList.remove('turn');
+        // 保持按钮位置并滚动页面
+        window.scrollTo(0, foldBtn.getBoundingClientRect().top + window.scrollY - oldPos);
+    } else { // 展开
+        pre!.style.height = 'auto';
+        pre!.classList.add('expand');
+        maskElement.style.height = '20px';
+        iconElement.classList.add('turn');
+    }
+};
+
+const rebindListener = (height: number) => {
+    // console.log('重新绑定监听...')
+    const codeblocks = document.querySelectorAll('.vp-doc [class*="language-"]');
+    codeblocks.forEach(el => {
+        const foldBtn = el.querySelector('.fold-btn') as HTMLElement;
+        // console.log(`--->`, foldBtn?.onclick)
+        if(foldBtn && !foldBtn.onclick) {
+            foldBtn.onclick=  () => {
+                const pre = el.querySelector('pre') as HTMLElement;
+                const maskElement = el.querySelector('.codeblocks-mask') as HTMLElement;
+                const iconElement = el.querySelector('.fold-btn-icon') as HTMLElement;
+                foldBtnEvent({ pre, foldBtn, iconElement, maskElement }, height);
+            }
+        }
+    })
+}
+
+/**
+ * Set codeblocks folding.  设置代码块折叠
+ * @param vitepressObj route and frontmatter.  路由与前言
+ * @param defaultAllFold Collapse all by default?  默认全部折叠？
+ * @param height The height of the folded codeblocks（default 400px）.  折叠后的代码块高度（默认 400px）
+ */
+const codeblocksFold = (vitepressObj: vitepressAPI, defaultAllFold: boolean = true, height: number = 400) => {
+    // console.log(`初始化`)
+    const { frontmatter, route } = vitepressObj;
+    onMounted(() => {
+        // console.log('onMounted...')
+        cbf(frontmatter, defaultAllFold, height);
+        rebindListener(height);
+    });
+    watch(() => route.path, () => {
+        // console.log('watch route...')
+        nextTick(() => {
+            cbf(vitepressObj.frontmatter, defaultAllFold, height);
+            rebindListener(height);
+        }).then();
+    });
+};
+
+export default codeblocksFold;

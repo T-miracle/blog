@@ -37,6 +37,8 @@ body {
         text-align: center;
     }
 
+    $fontColor: #3f3f3f, #32cd32, #ff8439, #8680ff, #ffeaa7, #dfe6e9;
+
     @for $i from 2 through 6 {
         h#{$i}[tabindex]::before {
             content: 'H#{$i}';
@@ -45,12 +47,13 @@ body {
             //position: absolute;
             font-size: 12px;
             //left: -20px;
-            color: limegreen;
+            opacity: .85;
+            color: nth($fontColor, $i);
         }
 
         h#{$i}[tabindex]:hover::before {
             display: inline-block;
-            color: orangered;
+            opacity: 1;
         }
     }
 
@@ -73,6 +76,15 @@ body {
         font-weight: 600;
         padding: 2px 4px;
         margin: 0 5px;
+    }
+
+    .custom-block.details {
+        color: var(--vp-c-text-1);
+
+        code {
+            background-color: #d7f5fc;
+            color: orangered;
+        }
     }
 
     table {

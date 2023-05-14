@@ -1159,9 +1159,9 @@ vitepress-plugin-back-to-top@^1.0.1:
     vue "^3.2.45"
 
 vitepress-plugin-codeblocks-fold@^1.2.9:
-  version "1.2.13"
-  resolved "https://registry.npmjs.org/vitepress-plugin-codeblocks-fold/-/vitepress-plugin-codeblocks-fold-1.2.13.tgz#6d689b8ea5e788557a94ecc14951b55856fbc1df"
-  integrity sha512-9hJr3jUl/56yVmZq0J8dF447LilMyHgSv8GF7+7bLZJKmn+hD4eSoedZiLX2m67EcRodBUi7PGTWNL3P8FDhKg==
+  version "1.2.14"
+  resolved "https://registry.npmjs.org/vitepress-plugin-codeblocks-fold/-/vitepress-plugin-codeblocks-fold-1.2.14.tgz#b6136c5b11e44c7f44f31dd93f755d0aa1761950"
+  integrity sha512-J1JEBF4M+Cq/X/w2e98U1PfS1kNFwJa3a32Yu1TZtw54PudY/LWmgq+TRGFIbTOFiSnhIRoEVKudfa1gJKKEDg==
 
 vitepress-plugin-comment-with-giscus@^1.1.7:
   version "1.1.7"
