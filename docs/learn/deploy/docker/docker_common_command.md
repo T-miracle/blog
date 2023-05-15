@@ -52,9 +52,11 @@ docker [命令] --help
 
 ## 镜像命令
 
-### docker images
+### 罗列本地镜像
 
-**列出本地主机上的镜像**
+```shell
+docker images
+```
 
 ::: details 选项参数说明
 - `-a`：列出本地所有的镜像（含历史镜像）
@@ -67,21 +69,26 @@ docker [命令] --help
 docker image ls
 ```
 
-### docker run 
+### 运行镜像创建容器
 
 ```shell
 docker run [image]
 ```
 
-**运行相应的镜像**。如果没有，则自动从镜像源下载。
+如果本地没有找到相应镜像，则自动从镜像源下载。
 
-### docker ps
+### 罗列容器
 
-**列出当前运行中的容器**
+```shell
+# 列出当前运行中的容器
+docker ps
+```
 
-### docker pull
+### 拉取远程仓库的镜像
 
-**拉取远程仓库的镜像。** 
+```shell
+docker pull [镜像名称]
+```
 
 默认拉取最新版本，如果想要拉取具体某个版本，可以在镜像名后加上 `:[版本号]` 来限制，例如：
 
@@ -90,13 +97,17 @@ docker run [image]
 docker pull redis:6.0.8
 ```
 
-### docker push
+### 上传镜像
 
-上传镜像
+```shell
+docker push
+```
 
-### docker search
+### 在远程仓库中搜索镜像
 
-**在远程仓库中搜索镜像（模糊搜索）**
+```shell
+docker search
+```
 
 查询默认列出25个数据。如果不想列出太多数据，可以使用 `--limit` 限制查询条数
 
