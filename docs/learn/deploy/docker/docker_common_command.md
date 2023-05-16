@@ -58,8 +58,8 @@ docker [命令] --help
 docker images
 ```
 
-::: details 选项参数说明
-- `-a`：列出本地所有的镜像（含历史镜像）
+::: info 选项参数说明
+- <badge text="常用" type="tip"/>`-a`：列出本地所有的镜像（含历史镜像）
 - `-q`：仅列出本地镜像的 id
 :::
 
@@ -72,10 +72,86 @@ docker image ls
 ### 运行镜像创建容器
 
 ```shell
-docker run [image]
+docker run [镜像名称]
 ```
 
 如果本地没有找到相应镜像，则自动从镜像源下载。
+
+::: info 选项参数说明
+
+- <badge text="常用" type="tip"/>`-it`：运行一个容器并启动一个交互式会话
+
+  ```shell
+  docker run -it [镜像名称] [命令]
+  ```
+  
+  例如：
+
+  ```shell
+  docker run -it ubuntu bash
+  ```
+
+- <badge text="常用" type="tip"/>`-p`：运行一个容器并将宿主机的端口映射到容器内的端口
+
+  ```shell
+  docker run -p [宿主机端口]:[容器端口] [镜像名称]
+  ```
+
+  例如：
+
+  ```shell
+  docker run -p 80:8080 nginx
+  ```
+  
+- <badge text="常用" type="tip"/>`-d`：后台运行一个容器
+
+  ```shell
+  docker run -d [镜像名称]
+  ```
+
+  例如：
+
+  ```shell
+  docker run -d redis
+  ```
+  
+- <badge text="常用" type="tip"/>`-v`：挂载一个本地目录到容器内
+
+  ```shell
+  docker run -v [宿主机目录/文件]:[容器目录/文件] [镜像名称]
+  ```
+
+  例如：
+
+  ```shell
+  docker run -v /path/to/dist/dir:/path/to/container/dir nginx
+  ```
+  
+- <badge text="常用" type="tip"/>`--name`：指定容器名称
+
+  ```shell
+  docker run --name [自定义容器名称] [镜像名称]
+  ```
+
+  例如：
+
+  ```shell
+  docker run --name my_nginx_container nginx
+  ```
+  
+- `-e`：设置环境变量
+
+  ```shell
+  docker run -e [变量名]=[变量值] [镜像名称]
+  ```
+
+  例如：
+
+  ```shell
+  docker run -e MYSQL_ROOT_PASSWORD=pass123 mysql
+  ```
+
+:::
 
 ### 罗列容器
 
@@ -87,10 +163,10 @@ docker ps
 ### 拉取远程仓库的镜像
 
 ```shell
-docker pull [镜像名称]
+docker pull [镜像名称[:版本号]]
 ```
 
-默认拉取最新版本，如果想要拉取具体某个版本，可以在镜像名后加上 `:[版本号]` 来限制，例如：
+不附加版本号默认拉取最新版本。如果想要拉取具体某个版本，可以在镜像名后加上 `[:版本号]` 来限制，例如：
 
 ```shell
 # 表示拉取 redis 6.0.8 版本
@@ -115,3 +191,29 @@ docker search
 docker search --limit 5 [镜像模糊名称]
 ```
 
+### 导出镜像
+
+```shell
+docker export
+```
+
+### 导入镜像
+
+```shell
+docker import
+```
+
+### 提交镜像
+
+```shell
+docker commit [选项参数] [容器] [仓库[:版本号]]
+```
+
+::: info 选项参数说明
+
+- `-a`（`--author`的简写）：指定新镜像的作者信息。
+- `-c`（`--change`的简写）：在提交过程中执行额外的 Dockerfile 指令。
+- `-m`（`--message`的简写）：提交的描述信息。
+- `-p`（`--pause`的简写）：在提交之前暂停容器的运行。
+
+:::

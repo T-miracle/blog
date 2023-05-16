@@ -37,23 +37,18 @@ body {
         text-align: center;
     }
 
-    $fontColor: #3f3f3f, #32cd32, #ff8439, #8680ff, #ffeaa7, #dfe6e9;
+    $fontColor: #1a76ff, #00c200, #f16418, #5a55c0, #ffeaa7, #dfe6e9;
 
-    @for $i from 2 through 6 {
-        h#{$i}[tabindex]::before {
-            content: 'H#{$i}';
-            margin-right: 5px;
-            display: inline-block;
+    @for $i from 1 through 6 {
+        h#{$i}[tabindex] {
+            //content: 'H#{$i}';
+            //margin-right: 5px;
+            //display: inline-block;
             //position: absolute;
-            font-size: 12px;
+            //font-size: 12px;
             //left: -20px;
             opacity: .85;
             color: nth($fontColor, $i);
-        }
-
-        h#{$i}[tabindex]:hover::before {
-            display: inline-block;
-            opacity: 1;
         }
     }
 
@@ -78,7 +73,7 @@ body {
         margin: 0 5px;
     }
 
-    .custom-block.details {
+    .custom-block {
         color: var(--vp-c-text-1);
 
         code {
