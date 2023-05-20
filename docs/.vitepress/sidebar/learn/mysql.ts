@@ -8,7 +8,8 @@ const mysqlItems: DefaultTheme.SidebarItem[] = [
         items: [
             { text: '🔸 ZIP 方式安装的配置方法', link: '/learn/sql/mysql/mysql_8.0_zip_configuration.md' }
         ]
-    }
+    },
+    { text: '🔸 MySQL 8.0 以上版本忘记密码重置方式', link: '/learn/sql/mysql/mysql_8.0_reset_password.md' }
 ];
 
 export default mysqlItems;
