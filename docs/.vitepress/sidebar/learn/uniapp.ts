@@ -13,6 +13,10 @@ const uniappItems: DefaultTheme.SidebarItem[] = [
             {
                 text: '🔹 uni-app 离线打包 APK 体积比云打包大的原因',
                 link: '/learn/web/uniapp/the_reason_for_the_large_volume_of_offline_packaging.md'
+            },
+            {
+                text: '🔹 解决离线打包的APK在H5页面中无法调用相机和相册',
+                link: '/learn/web/uniapp/offline_packaging_h5_cant_use_camera_and_album.md'
             }
         ]
     }

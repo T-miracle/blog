@@ -4,7 +4,7 @@
 
 可能是因为选择了多个 ndk 架构
 
-```
+```nim
 android {
     ndk {
         abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a'

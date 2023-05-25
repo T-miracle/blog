@@ -8,7 +8,7 @@
 
 <vModal title="build.gradle" v-model="visible['build.gradle']">
 
-```js
+```nim
 dependencies {
   // implementation('com.amap.api:location:6.2.0') // 高德地图
   implementation('com.amap.api:3dmap:9.5.0') // 高德地图
