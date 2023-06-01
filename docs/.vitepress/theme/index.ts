@@ -17,6 +17,7 @@ import 'viewerjs/dist/viewer.min.css';
 import 'vitepress-plugin-codeblocks-fold/style/index.scss';
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 import './styles/index.scss';
+import {toRefs} from "vue";
 
 export default {
     ...DefaultTheme,
@@ -36,7 +37,7 @@ export default {
     },
     setup() {
         // 获取前言和路由
-        const {frontmatter} = useData();
+        const {frontmatter} = toRefs(useData());
         const route = useRoute();
         imageViewer(route);
         codeblocksFold({route, frontmatter})
