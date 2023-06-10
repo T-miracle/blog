@@ -10,7 +10,6 @@
     -webkit-line-clamp: 2;
     /* 需要设置高度 */
     height: 48px;
-    display: -webkit-box;
     -webkit-box-orient: vertical;
 }
 ```
