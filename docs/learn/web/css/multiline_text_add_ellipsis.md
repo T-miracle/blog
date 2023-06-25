@@ -2,6 +2,7 @@
 
 ```css
 .box {
+    display: -webkit-box;
     /* 将元素设置为超出隐藏 */
     overflow: hidden;
     /* 文本设置为省略号 */
