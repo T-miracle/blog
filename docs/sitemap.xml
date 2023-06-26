@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Created By http://www.zhetao.com/sitemapcreator,  URLs: 77 Generated at: 2023-04-02 04:07:37 -->
+
+  <url>
+    <loc>https://blog.namichong.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/bugs/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/test/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/simulation/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/tittle-tattle/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/concept/what_is_front_end_engineering.html</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/concept/what_is_the_opp_development_model.html</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/html/the_role_of_the_doctype_header_in_html.html</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/html/the_role_of_meta_tags_in_html.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/html/what_new_features_have_been_added_in_html_5.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/html/what_are_the_semantic_tags.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/html/the_difference_between_cookie_localstorage_and_sessionstorage.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/html/about_cookie.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/css/flex.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/css/what_are_the_classic_layout_methods.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/css/what_is_bfc.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/css/the_use_of_drop_shadow.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/css/modify_scrollbar_style.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_macroTask_and_microTask.html</loc>
+    <priority>0.94</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_event_loop.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/use_cases_for_scoped_slots.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/diff_algorithm.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/nginx_path_refresh_404_problem.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/java/spring/what_is_di.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/the_difference_between_hash_and_history_in_routing_mode.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/why_does_v-for_need_to_add_key.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/about_slot.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/java/spring/what_is_ioc.html</loc>
+    <priority>0.93</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/css/font-synthesis_property.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/type_of_data.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_the_difference_between_reference_types.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/common_traverse_functions_for_array.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/the_difference_between_deep_copy_and_shallow_copy.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_closure.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/prototype_and_prototype_chains.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/the_difference_between_var_let_and_const.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_ajax_and_how_do_you_implement_one.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_event_delegation.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/Proxy_and_Reflect.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_promise.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/mutationObserver_listens_to_dom.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/what_is_requestAnimationFrame.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/javascript/garbage_collection_mechanism.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/how_to_understand_the_meaning_of_progressive.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/what_is_mvvm.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/life_cycle_of_vue.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/why_cant_v-for_be_used_in_the_same_element_as_v-if.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/use_dynamic_components_in_v-for.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/What_is_the_command_for_and_How_to_customize_a_command.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/which_priority_is_higher_between_props_and_data_in_vue.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/the_difference_between_watch_and_computed.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/what_is_keep-live.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/configure_path_aliases.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/vue/vue_project_packaging_optimization.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/http/tcp_and_ip_protocol.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/http/what_is_three-way_handshake_and_four-way_wave.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/http/what_is_cross_domain.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/wx-miniprogram/app_json.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/uniapp/build_new_project.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/uniapp/packaging_offline_with_android_studio.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/web/github/open_source_project_collection.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/version_control/git/git_common_commands.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/version_control/npm/npm_common_commands.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/editor/intellij-idea/multi_line_cursor_selection_and_editing.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/learn/editor/hbuilderx/hot_key_change.html</loc>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/simulation/interview/2023-03-11-nanning-web.html</loc>
+    <priority>0.56</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/simulation/interview/2023-03-06-nanning-vue.html</loc>
+    <priority>0.56</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/simulation/interview/2023-02-02-nanning-vue.html</loc>
+    <priority>0.56</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/test/web/javascript/event_loop_test_demo_1.html</loc>
+    <priority>0.56</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/simulation/written_examination/2023-02-09-nanning-java.html</loc>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/test/web/javascript/event_loop_test_demo_2.html</loc>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/bugs/web/typescript/warning_ts2307.html</loc>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/bugs/web/element-ui/messagebox_report_error_uncaught_(in_promise)_cancel.html</loc>
+    <priority>0.54</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/test/web/javascript/event_loop_test_demo_1_answer.html</loc>
+    <priority>0.53</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/test/web/javascript/event_loop_test_demo_2_answer.html</loc>
+    <priority>0.53</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.namichong.com/tittle-tattle/2023/2023-03-09.html</loc>
+    <priority>0.52</priority>
+  </url>
+
+</urlset>
