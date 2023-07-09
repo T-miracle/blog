@@ -52,24 +52,65 @@ docker [命令] --help
 
 ## 镜像命令
 
-### 罗列本地镜像
+### `images` 罗列本地镜像
 
 ```shell
-docker images
+docker images [选项] [镜像名称[:版本标签]]
 ```
 
 ::: info 选项参数说明
-- <badge text="常用" type="tip"/>`-a`：列出本地所有的镜像（含历史镜像）
-- `-q`：仅列出本地镜像的 id
+
+- <badge text="常用" type="tip"/>列出本地所有的镜像
+
+  ```shell
+  docker images
+  ```
+  
+  该命令等同于：
+  
+  ```shell
+  docker image ls
+  ```
+
+- <badge text="常用" type="tip"/>`-a`：列出本地所有的镜像（含历史镜像），包括中间层镜像
+
+  ```shell
+  docker images -a
+  ```
+
+  等同于：
+
+  ```shell
+  docker images --all
+  ```
+
+- <badge text="常用" type="tip"/>`-q`：仅列出本地镜像的 id
+
+  ```shell
+  docker images -q
+  ```
+
+  等同于：
+
+  ```shell
+  docker images --quiet
+  ```
+  
+- `--digests` 列出镜像的摘要信息
+
+  ```shell
+  docker images --digests
+  ```
+ 
+- `--no-trunc` 列出所有镜像的完整信息
+
+  ```shell
+  docker images --no-trunc
+  ```
+
 :::
 
-该命令等同于：
-
-```shell
-docker image ls
-```
-
-### 运行镜像创建容器
+### `run` 运行镜像创建容器
 
 ```shell
 docker run [镜像名称]
@@ -153,7 +194,7 @@ docker run [镜像名称]
 
 :::
 
-### 罗列容器
+### `ps` 罗列容器
 
 ```shell
 # 列出当前运行中的容器
@@ -183,7 +224,31 @@ docker ps
 
 :::
 
-### 拉取远程仓库的镜像
+### `start` 启动容器
+
+```shell
+docker start [容器id]
+```
+
+等同于：
+
+```shell
+docker container start [容器id]
+```
+
+可以同时启动多个容器
+
+```shell
+docker start [容器1 id] [容器2 id]
+```
+
+### `stop` 停止容器
+
+```shell
+docker stop [容器id]
+```
+
+### `pull` 拉取远程仓库的镜像
 
 ```shell
 docker pull [镜像名称[:版本号]]
@@ -196,13 +261,13 @@ docker pull [镜像名称[:版本号]]
 docker pull redis:6.0.8
 ```
 
-### 上传镜像
+### `push` 上传镜像
 
 ```shell
 docker push
 ```
 
-### 在远程仓库中搜索镜像
+### `search` 在远程仓库中搜索镜像
 
 ```shell
 docker search
@@ -214,19 +279,19 @@ docker search
 docker search --limit 5 [镜像模糊名称]
 ```
 
-### 导出镜像
+### `export` 导出镜像
 
 ```shell
 docker export
 ```
 
-### 导入镜像
+### `import` 导入镜像
 
 ```shell
 docker import
 ```
 
-### 提交镜像
+### `commit` 提交镜像
 
 ```shell
 docker commit [选项参数] [容器] [仓库[:版本号]]
