@@ -1,5 +1,5 @@
 import {DefaultTheme} from 'vitepress/types/default-theme';
-import {bugIcon, elementIcon, tsIcon, webIcon} from './icons';
+import {bugIcon, elementIcon, tsIcon, uniAppIcon, webIcon} from './icons';
 
 const bugsSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -37,7 +37,17 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
                         link: '/bugs/web/element-ui/el-avatar_not_update_after_refetching_the_data'
                     },
                 ]
-            }
+            },
+            {
+                text: uniAppIcon + 'uni-app',
+                collapsed: true,
+                items: [
+                    {
+                        text: '🔹 新安装包覆盖安装，新增加的页面无法跳转',
+                        link: '/bugs/web/uniapp/overwrite_install_newly_added_page_cannot_jump.md'
+                    },
+                ]
+            },
         ]
     },
     {
