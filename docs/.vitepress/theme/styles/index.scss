@@ -111,21 +111,6 @@ body {
 			}
 		}
 	}
-
-	[class*="language-"] pre {
-		// max-height: 60vh;
-		// overflow-y: auto;
-		/*--ms-滚动条--*/
-		scrollbar-width: auto;
-		scrollbar-color: rgba(255, 255, 255, 0.8) transparent;
-
-		/*-webkit-滑块*/
-		&::-webkit-scrollbar-thumb {
-			outline: 2px solid #292b30;
-			border: 2px transparent solid;
-			background-color: rgb(246, 246, 246);
-		}
-	}
 }
 
 

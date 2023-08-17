@@ -17,6 +17,10 @@ const uniappItems: DefaultTheme.SidebarItem[] = [
             {
                 text: '🔹 解决离线打包的APK在H5页面中无法调用相机和相册',
                 link: '/learn/web/uniapp/offline_packaging_h5_cant_use_camera_and_album.md'
+            },
+            {
+                text: '🔹 uni-app App端与嵌套web-view之间的通讯',
+                link: '/learn/web/uniapp/communication_between_app_and_nested_webview.md'
             }
         ]
     }

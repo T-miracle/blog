@@ -4,6 +4,7 @@
 - [ ] Linux常用命令行
 - [ ] vue extends用法
 - [ ] vue options自定义
+- [ ] vue 组件复用
 - [ ] 重绘与回流
 - [ ] JS的堆栈
 - [ ] 如何封装全局v-loading
@@ -18,7 +19,7 @@
 - [ ] Vue的双向绑定是如何实现的？
 - [ ] 什么是webservice？
 - [ ] 什么是webSocket？
-- [ ] for wait .. of 的使用
+- [ ] for wait ... of 的使用
 - [ ] 网页瀑布流的实现
 - [ ] 浏览器输入域名后都发生了什么？
 - [ ] 大文件断点续传
