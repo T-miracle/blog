@@ -19,7 +19,7 @@
 - 如果是 html 项目
 
 ```html
-<script type="text/javascript" src="uni.webview.1.5.2.js"></script>-->
+<script type="text/javascript" src="uni.webview.1.5.4.js"></script>-->
 <script>
   // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
   document.addEventListener('UniAppJSBridgeReady', function() {
@@ -34,7 +34,7 @@
 
 ```js
 // 在 main.js 中引入
-import 'uni.webview.1.5.2.js';
+import 'uni.webview.1.5.4.js';
 ```
 
 ## 使用
