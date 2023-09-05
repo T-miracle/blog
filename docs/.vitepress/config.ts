@@ -67,6 +67,7 @@ export default defineConfig({
         },
         nav: [
             {text: '编程知识', link: '/learn/'},
+            {text: '技术文档汉化', link: '/translation-docs/'},
             {text: 'BUG处理', link: '/bugs/'},
             {
                 text: '题库',
