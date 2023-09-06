@@ -1,16 +1,16 @@
 ---
 layout: home
 
-title: Tmiracle的知识博客
-titleTemplate: 记录一些编程知识、问题处理以及面试笔试模拟
-
 hero:
-    name: Tmiracle的知识博客
-    text: 记录编程知识、问题处理以及面试笔试模拟
+    name: Tmiracle の 技术小站
+    text: 翻译国外技术文档，记录编程知识
     tagline: "用爱学IT，用心写BUG； \n遇事不决Gayhub，疑难杂题问AI。"
     actions:
         - theme: brand 
-          text: "开始学习"
+          text: "技术文档翻译"
+          link: /translation-docs/
+        - theme: brand 
+          text: "学习编程知识"
           link: /learn/
         - theme: alt
           text: "Github"
@@ -20,10 +20,8 @@ hero:
           link: https://jq.qq.com/?_wv=1027&k=YX3jUWQe
 
 features:
+    - title: "技术文档翻译"
+      details: 目前我正在逐步翻译一些国外的技术文档，以便之后自己查阅，如果你也有这个想法，欢迎加入我
     - title: "编程知识"
-      details: 记录编程方面的各种基础知识、常见面试题 或 各种奇思妙想的编程技巧
-    - title: "BUG 处理"
-      details: 持续记录开发过程中遇到的各种问题与解决方式
-    - title: "题库"
-      details: 这里有一些模拟测试题，或者是面试、笔试的模拟，大家可以相互讨论
+      details: 记录编程道路上所需的重点知识，以及各种奇思妙想的编程技巧
 ---

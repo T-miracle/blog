@@ -11,8 +11,8 @@ const customElements: string[] = ['mjx-container'];
 
 export default defineConfig({
     lang: "zh-cn",
-    title: 'Tmiracle的知识博客',
-    description: '记录编程知识、问题处理以及面试笔试模拟',
+    title: 'Tmiracle の 技术小站',
+    description: '翻译国外技术文档，记录编程知识',
     titleTemplate: 'Tmiracle',
     // 左上角标题的图标
     head: [
@@ -66,9 +66,9 @@ export default defineConfig({
             next: '下一篇'
         },
         nav: [
-            {text: '编程知识', link: '/learn/'},
-            {text: '技术文档汉化', link: '/translation-docs/'},
-            {text: 'BUG处理', link: '/bugs/'},
+            {text: '技术文档翻译', link: '/translation-docs/'},
+            {text: '学习编程知识', link: '/learn/'},
+            {text: 'Fix Bugs', link: '/bugs/'},
             {
                 text: '题库',
                 items: [

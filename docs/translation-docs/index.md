@@ -1,6 +1,5 @@
 ---
 layout: page
-footer: false
 ---
 
 <Doc/>

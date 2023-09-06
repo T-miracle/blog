@@ -1,9 +1,9 @@
 <template>
-    <h1 class="doc-h1">技术文档汉化</h1>
+    <h1 class="doc-h1">技术文档翻译</h1>
     <div class="doc-container">
         <el-input class="doc-container__filter" size="large" placeholder="筛选文档" v-model="filterText"/>
         <div class="doc-container__item" v-for="item in filterDocs" :key="item.title">
-            <a class="doc-container__item-link" :href="item.link" target="_blank">
+            <a class="doc-container__item-link" :href="urlPrefix + item.link" target="_blank">
                 <img :src="item.logo" alt="">
                 <span>{{ item.title }}</span>
             </a>
@@ -13,12 +13,14 @@
 
 <script setup lang="ts">
     import {ElInput} from "element-plus";
-    import {computed, ref} from "vue";
+    import {computed, onMounted, ref} from "vue";
+
+    const urlPrefix = ref('https://blog.namichong.com/translation-docs');
 
     const docs = ref([
         {
             title: 'IntelliJ 平台插件 SDK 文档（翻译中...）',
-            link: '/translation-docs/intellij-platform-sdk/index.html',
+            link: '/intellij-platform-sdk/index.html',
             logo: '/images/JetBrains-SDK.svg'
         }
     ]);
