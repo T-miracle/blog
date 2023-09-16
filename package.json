@@ -9,10 +9,13 @@
     "preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@unocss/preset-rem-to-px": "^0.55.7",
     "element-plus": "^2.2.32",
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-task-lists": "^2.1.1",
     "sass": "^1.58.3",
+    "unocss": "^0.55.7",
     "vite": "^4.1.4",
     "vitepress": "^1.0.0-alpha.70",
     "vitepress-plugin-back-to-top": "^1.0.1",

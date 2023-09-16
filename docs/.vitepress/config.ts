@@ -6,6 +6,7 @@ import bugsSidebar from './sidebar/bugs';
 import testSidebar from './sidebar/test';
 import simulationItems from './sidebar/simulation';
 import {qqGroupIcon} from './sidebar/icons';
+import UnoCSS from 'unocss/vite';
 
 const customElements: string[] = ['mjx-container'];
 
@@ -18,6 +19,11 @@ export default defineConfig({
     head: [
         ['link', {rel: 'icon', href: '/logo.jpg'}]
     ],
+    vite: {
+        plugins: [
+            UnoCSS()
+        ]
+    },
     // 开启黑暗主题按钮
     appearance: true,
     // URL清除.html后缀
@@ -67,7 +73,7 @@ export default defineConfig({
         },
         nav: [
             {text: '技术文档翻译', link: '/translation-docs/'},
-            {text: '学习编程知识', link: '/learn/'},
+            {text: '我的知识库', link: '/learn/'},
             {text: 'Fix Bugs', link: '/bugs/'},
             {
                 text: '题库',

@@ -8,8 +8,14 @@ $tableBorderColor: #7f8c8d;
 	--vp-c-text-2: #606569;
 }
 
-body {
-	font-weight: 400;
+@font-face {
+	font-family: "SmileySans";
+	src: url("https://namichong.obs.cn-south-1.myhuaweicloud.com/CDN/SmileySans-Oblique.ttf.woff2") format("truetype");
+}
+
+html, body {
+	font-size: 16px;
+	font-weight: 500;
 	font-family: Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 

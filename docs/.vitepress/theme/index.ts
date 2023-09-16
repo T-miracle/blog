@@ -18,6 +18,7 @@ import 'vitepress-plugin-codeblocks-fold/style/index.scss';
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 import './styles/index.scss';
 import {toRefs} from "vue";
+import 'virtual:uno.css';
 
 export default {
     ...DefaultTheme,
