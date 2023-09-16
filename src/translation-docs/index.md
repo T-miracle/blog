@@ -9,5 +9,5 @@ layout: page
 </script>
 
 <style lang="scss" scoped>
-    @import "docs/.vitepress/theme/styles/index.scss";
+    @import "../.vitepress/theme/styles/index.scss";
 </style>

@@ -11,6 +11,9 @@ import UnoCSS from 'unocss/vite';
 const customElements: string[] = ['mjx-container'];
 
 export default defineConfig({
+    cacheDir: './cache',
+    srcDir: './src',
+    outDir: './dist',
     lang: "zh-cn",
     title: 'Tmiracle の 技术小站',
     description: '翻译国外技术文档，记录编程知识',

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true, // js/ts 混用时设为false
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noImplicitThis": true, // js/ts 混用时设为false
+    "baseUrl": ".",
+    "lib": ["esnext", "dom", "dom.iterable"]
+  },
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    ".vitepress",
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.vue",
+    ".vitepress/**/*.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}
