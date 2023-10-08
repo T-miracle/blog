@@ -31,7 +31,7 @@
             title: 'IntelliJ 平台插件 SDK 文档（翻译中...）',
             link: '/intellij-platform-sdk/index.html',
             logo: '/images/JetBrains-SDK.svg',
-            github: 'https://github.com/T-miracle/intellij-sdk-docs'
+            github: 'https://github.com/T-miracle/intellij-sdk-docs/discussions'
         }
     ]);
 

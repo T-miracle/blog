@@ -25,7 +25,8 @@ export default defineConfig({
         presetWebFonts({
             provider: 'none',
             fonts: {
-                SmileySans: 'SmileySans'
+                SmileySans: 'SmileySans',
+                ColaBear: 'ColaBear'
             }
         })
     ],
