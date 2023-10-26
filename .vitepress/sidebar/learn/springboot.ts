@@ -1,4 +1,6 @@
-const springbootItems = [
+import { DefaultTheme } from 'vitepress/types/default-theme';
+
+const springbootItems: DefaultTheme.SidebarItem[] = [
 
 ];
 

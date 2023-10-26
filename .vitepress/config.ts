@@ -1,4 +1,4 @@
-import {defineConfig} from 'vitepress';
+import { defineConfig } from 'vitepress';
 import taskLists from 'markdown-it-task-lists';
 import mathjax3 from 'markdown-it-mathjax3';
 import learnSidebar from './sidebar/learn';
@@ -35,8 +35,9 @@ export default defineConfig({
     markdown: {
         // 代码块显示行数
         // lineNumbers: true,
+        theme: 'monokai',
         // theme: {
-        //     light: 'github-light',
+        //     light: 'github-dark',
         //     dark: 'github-dark'
         // },
         config: (md) => {
@@ -66,7 +67,9 @@ export default defineConfig({
             {icon: 'github', link: 'https://github.com/T-miracle/blog'},
             {icon: {svg: qqGroupIcon}, link: 'https://jq.qq.com/?_wv=1027&k=YX3jUWQe'}
         ],
-        lastUpdatedText: '上次更新于',
+        lastUpdated: {
+            text: '上次更新于'
+        },
         sidebarMenuLabel: '菜单',
         returnToTopLabel: '返回顶部',
         darkModeSwitchLabel: '切换白天/黑夜主题',

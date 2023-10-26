@@ -160,6 +160,10 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 collapsed: true,
                 items: [
                     { text: '🔸 Git常用命令', link: '/learn/version_control/git/git_common_commands.md' },
+                    {
+                        text: '🔸 Git将项目的某个目录分离成新的项目，并保留历史提交信息',
+                        link: '/learn/version_control/git/git_detached_directory_and_keep_historical_submission_records.md'
+                    },
                 ]
             },
             {
