@@ -28,7 +28,7 @@
             class="text-center font-500 text-[var(--vp-home-hero-name-color)] mt-10 text-32 line-height-40 md:text-40
                 md:line-height-48 lg:text-48 lg:line-height-56 select-none cursor-pointer"
         >
-            <span class="mx-10">Tmiracle の 技术小站</span>
+            <span class="mx-10 text-blue-5">Tmiracle の 技术小站</span>
         </div>
         <!--跳转按钮-->
         <div class="relative w-full md:w-560 h-100% flex justify-center flex-wrap mt-20">

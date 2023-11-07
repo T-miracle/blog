@@ -2,22 +2,31 @@
 @import "screen-lg";
 
 $tableBorderColor: #7f8c8d;
-$defaultFontFamily: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, sans-serif;
+$defaultFontFamily: RecMonoCasual, SanJiLuRongTi, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, sans-serif;
 
 :root {
 	--vp-c-text-1: #2d3436;
 	--vp-c-text-2: #606569;
 	--vp-code-block-bg: #292b30;
+	--vp-code-tab-text-color: white;
+	--vp-code-tab-active-text-color: lightgreen;
+	--vp-code-tab-hover-text-color: white;
+ 	--vp-code-tab-active-bar-color: lightgreen;
 }
 
 @font-face {
-	font-family: "SmileySans";
-	src: url("https://namichong.obs.cn-south-1.myhuaweicloud.com/CDN/SmileySans-Oblique.ttf.woff2") format("truetype");
+	font-family: "SanJiLuRongTi";
+	src: url("https://namichong.obs.cn-south-1.myhuaweicloud.com/CDN/SanJiLuRongTi-2.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: "ColaBear";
-	src: url("https://namichong.obs.cn-south-1.myhuaweicloud.com/CDN/colabear.ttf") format("truetype");
+	font-family: SanJiLuRongTi-Cu;
+	src: url("https://namichong.obs.cn-south-1.myhuaweicloud.com/CDN/SanJiLuRongTi-Cu-2.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "RecMonoCasual";
+	src: url("https://namichong.obs.cn-south-1.myhuaweicloud.com/CDN/RecMonoCasual-Regular-1.085.ttf") format("truetype");
 }
 
 html, body {
@@ -32,7 +41,6 @@ html, body {
 
 .container .title {
 	font-size: 20px;
-	font-family: SmileySans, $defaultFontFamily;
 }
 
 .VPContent {
@@ -82,6 +90,14 @@ html, body {
 
 	.VPBadge {
 		margin-right: 5px;
+	}
+
+	code {
+		font-family: $defaultFontFamily;
+	}
+
+	strong, b {
+		font-family: SanJiLuRongTi-Cu, $defaultFontFamily;
 	}
 
 	:not(pre) > code {
