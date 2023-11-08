@@ -79,15 +79,9 @@ const data: Tree[] = reactive([
 </script>
 
 <style scoped lang="scss">
-    .dark {
-        .tree-box {
-            background-color: #161618;
-        }
-    }
     .tree-box {
         margin: 10px 0;
         padding: 10px;
-        background-color: #292b30;
         border-radius: 8px;
 
         > .el-tree {
