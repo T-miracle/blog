@@ -32,6 +32,12 @@
             link: '/intellij-platform-sdk/index.html',
             logo: '/images/JetBrains-SDK.svg',
             github: 'https://github.com/T-miracle/intellij-sdk-docs/discussions'
+        },
+        {
+            title: 'Kotlin 中文文档（翻译中...）',
+            link: '/kotlin-docs/index.html',
+            logo: '/images/Kotlin.svg',
+            github: 'https://github.com/T-miracle/kotlin-docs-cn/discussions'
         }
     ]);
 

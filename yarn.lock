@@ -379,9 +379,9 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@lit-labs/ssr-dom-shim@^1.0.0", "@lit-labs/ssr-dom-shim@^1.1.0":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@lit-labs/ssr-dom-shim/-/ssr-dom-shim-1.1.1.tgz#64df34e2f12e68e78ac57e571d25ec07fa460ca9"
-  integrity sha512-kXOeFbfCm4fFf2A3WwVEeQj55tMZa8c8/f9AKHMobQMkzNUfUj+antR3fRPaZJawsa1aZiP/Da3ndpZrwEe4rQ==
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@lit-labs/ssr-dom-shim/-/ssr-dom-shim-1.1.2.tgz#d693d972974a354034454ec1317eb6afd0b00312"
+  integrity sha512-jnOD+/+dSrfTWYfSXBXlo5l5f0q1UuJo3tkbMDCYA2lKUYq79jaxqtGEvnRoh049nt1vdo1+45RinipU6FGY2g==
 
 "@lit/reactive-element@^1.3.0", "@lit/reactive-element@^1.6.0":
   version "1.6.3"
@@ -471,9 +471,9 @@
   integrity sha512-jxiZQFpb+NlH5kjW49vXxvxTjeeqlbsnTAdBTKpzEdPs9itay7MscYXz3Fo9VYFEsfQ6LJFitHad3faerLAjCw==
 
 "@types/trusted-types@^2.0.2":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@types/trusted-types/-/trusted-types-2.0.4.tgz#2b38784cd16957d3782e8e2b31c03bc1d13b4d65"
-  integrity sha512-IDaobHimLQhjwsQ/NMwRVfa/yL7L/wriQPMhw1ZJall0KX6E1oxk29XMDeilW5qTIg5aoiqf5Udy8U/51aNoQQ==
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@types/trusted-types/-/trusted-types-2.0.6.tgz#d12451beaeb9c3838f12024580dc500b7e88b0ad"
+  integrity sha512-HYtNooPvUY9WAVRBr4u+4Qa9fYD1ze2IUlAD3HoA6oehn1taGwBx3Oa52U4mTslTS+GAExKpaFu39Y5xUEwfjg==
 
 "@types/web-bluetooth@^0.0.16":
   version "0.0.16"
@@ -1818,9 +1818,9 @@ vitepress-plugin-codeblocks-fold@^1.2.9:
   integrity sha512-zFZ3Brzbz3DiAG9y/eUp1/Vbkops7HkwRha64JD90xkZ30iNvW+9cDpiu1bLPOnvqBG/xx8RmxePPnJuRYPUdQ==
 
 vitepress-plugin-comment-with-giscus@^1.1.7:
-  version "1.1.9"
-  resolved "https://registry.npmjs.org/vitepress-plugin-comment-with-giscus/-/vitepress-plugin-comment-with-giscus-1.1.9.tgz#e288a6ac6df05a8c86158b26e347fb38ceca62bc"
-  integrity sha512-fZgAFifKnra5E6X0asFrOubw3U8QKjWh0f2ZzmnbAErKLKRw8E2hE1uaMxgL92boDJVMh5SN6iEWVuPsLvbQ+g==
+  version "1.1.10"
+  resolved "https://registry.npmjs.org/vitepress-plugin-comment-with-giscus/-/vitepress-plugin-comment-with-giscus-1.1.10.tgz#8630814b6a46c91c71aad41bcf46cd17e0decc43"
+  integrity sha512-xqkORWt5oQSaMCwehj2AvLjjDrilWV723MjipbCwZrI5HcxnA3Zb7InZF7cRvKNWxZm8q0MJ49wosioBLXhVKw==
   dependencies:
     "@giscus/vue" "^2.2.8"
 
