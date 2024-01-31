@@ -134,7 +134,7 @@ export default defineConfig({
 
 路由懒加载的方式有两种，一种是 `require` 另一种是 `import` 。
 
-当路由按需加载后，那么Vue服务在第一次加载时的压力就能够相应的小一些，不会出现超长白屏P0问题。
+当路由按需加载后，那么Vue服务在第一次加载时的压力就能够相应的小一些，不会出现超长白屏的问题。
 
 下面是两种路由懒加载的写法：
 
@@ -145,7 +145,7 @@ component: resolve => (require([ '@/components/HelloWorld' ], resolve))
 component: () => import('@/components/HelloWorld')
 ```
 
-## UI框架如需加载
+## UI框架按需加载
 
 像`Element UI`和`Ant Design`这类框架，尽量不要一次性全部加载，应该使用按需加载或者自动按需加载的插件
 
@@ -182,7 +182,8 @@ export default defineConfig({
 
 ## 优化图片
 
-优化图片可以减少图片的体积，从而加快图片的加载速度。
+- 可以减少图片的体积，从而加快图片的加载速度。
+- 也可以使用云服务的对象存储，并绑定CDN
 
 ## 去除 `.map`文件
 
@@ -198,7 +199,7 @@ module.exports ={
 
 使用 CDN 可以将静态资源部署到全球多个地点，从而加速资源的加载。
 
-## 服务器端渲染
+## 服务器端渲染（SSR）
 
 使用服务器端渲染可以在首次加载页面时将页面完全渲染出来，从而提高应用程序的加载速度和 SEO。
 

@@ -24,8 +24,12 @@ export default defineConfig({
     ],
     vite: {
         plugins: [
+            // @ts-ignore
             UnoCSS()
         ]
+    },
+    sitemap: {
+        hostname: 'https://blog.namichong.com'
     },
     // 开启黑暗主题按钮
     appearance: true,
