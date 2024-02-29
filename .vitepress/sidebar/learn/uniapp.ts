@@ -21,6 +21,10 @@ const uniappItems: DefaultTheme.SidebarItem[] = [
             {
                 text: '🔹 uni-app App端与嵌套web-view之间的通讯',
                 link: '/learn/web/uniapp/communication_between_app_and_nested_webview.md'
+            },
+            {
+                text: '🔹 uni-app 获取当前元素与完整页面顶部的距离',
+                link: '/learn/web/uniapp/distance_from_current_element_to_full_page_top.md'
             }
         ]
     }

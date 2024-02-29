@@ -25,6 +25,7 @@ const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '🔥 vue项目上线打包时如何做性能优化', link: '/learn/web/vue/vue_project_packaging_optimization.md' },
     { text: '🔹 Vue3 Teleport组件的使用以及适用场景', link: '/learn/web/vue/vue3_teleport.md' },
     { text: '🔸 透传属性（穿透属性）', link: '/learn/web/vue/fallthrough_attributes.md' },
+    { text: '🔸 Vue2 在 watch 上使用防抖或节流函数', link: '/learn/web/vue/debounce_or_throttle_function_on_watch.md' },
 ];
 
 export default vueItems;
