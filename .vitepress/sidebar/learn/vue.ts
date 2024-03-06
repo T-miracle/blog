@@ -27,6 +27,7 @@ const vueItems: DefaultTheme.SidebarItem[] = [
     { text: '🔸 透传属性（穿透属性）', link: '/learn/web/vue/fallthrough_attributes.md' },
     { text: '🔸 Vue2 在 watch 上使用防抖或节流函数', link: '/learn/web/vue/debounce_or_throttle_function_on_watch.md' },
     { text: '🔸 Vue2 和 Vue3 在双向绑定上的区别', link: '/learn/web/vue/the-difference-between-vue2-and-vue3-in-two-way-binding.md' },
+    { text: '🔸 Vue2 组件选项 extends 的用法', link: '/learn/web/vue/component-extends.md' },
 ];
 
 export default vueItems;

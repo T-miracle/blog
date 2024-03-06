@@ -5,7 +5,6 @@
 - [ ] Linux常用命令行
 - [ ] vue extends用法
 - [ ] vue options自定义
-- [ ] vue 组件复用
 - [ ] 重绘与回流
 - [ ] JS的堆栈
 - [ ] 如何封装全局v-loading
