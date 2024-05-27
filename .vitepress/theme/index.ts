@@ -1,7 +1,5 @@
 import DefaultTheme from 'vitepress/theme';
 import 'element-plus/dist/index.css';
-import 'vitepress-plugin-back-to-top/dist/style.css';
-import vitepressBackToTop from 'vitepress-plugin-back-to-top';
 import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
@@ -31,16 +29,12 @@ export default {
         ctx.app.component('vScratchPaper', vScratchPaper);
         ctx.app.component('vImageViewer', vImageViewer);
         ctx.app.component('vModal', vModal);
-        // 设置全局返回顶部按钮
-        vitepressBackToTop({
-            threshold: 300
-        });
     },
     setup() {
         // 获取前言和路由
         const { frontmatter } = toRefs(useData());
         const route = useRoute();
-        imageViewer(route);
+        imageViewer(route, '.vp-doc', { toolbar: true });
         codeblocksFold({ route, frontmatter })
         hideFooter(frontmatter);
         giscusTalk({

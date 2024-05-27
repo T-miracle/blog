@@ -8,7 +8,7 @@ cbf: false
 
 出问题之前的 `build.gradle` 配置：
 
-```nim
+```js
 android {
     namespace 'com.xxx.xxxxxx'
     compileSdk 33
@@ -33,15 +33,15 @@ android {
 
 修改之后的配置：
 
-```nim
+```js
 android {
     namespace 'com.xxx.xxxxxx'
-    compileSdk 32 // [!code hl]
+    compileSdk 32 // [!code highlight]
 
     defaultConfig {
         applicationId "com.xxx.xxxxxx"
         minSdkVersion 21
-        targetSdkVersion 32 // [!code hl]
+        targetSdkVersion 32 // [!code highlight]
         versionCode 113320013
         versionName "1.13.13"
         multiDexEnabled true

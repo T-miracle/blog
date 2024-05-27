@@ -9,3 +9,4 @@ node_modules
 .vscode
 **/dist
 **/cache
+/pnpm-lock.yaml
