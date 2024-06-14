@@ -25,6 +25,10 @@ const uniappItems: DefaultTheme.SidebarItem[] = [
             {
                 text: '🔹 uni-app 获取当前元素与完整页面顶部的距离',
                 link: '/learn/web/uniapp/distance_from_current_element_to_full_page_top.md'
+            },
+            {
+                text: '🔹 uni-app App端调用键盘会导致页面上移的问题',
+                link: '/learn/web/uniapp/uniapp_keyboard_causes_page_to_move_up.md'
             }
         ]
     }
