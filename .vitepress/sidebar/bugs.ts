@@ -46,6 +46,10 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
                     {
                         text: '🔹 头像组件第一次地址加载报错后，数据再次获取后无法重新加载',
                         link: '/bugs/web/element-ui/el-avatar_not_update_after_refetching_the_data'
+                    },
+                    {
+                        text: '🔹 el-form 自定义一个非输入选择的值的规则，但是无法生效的问题',
+                        link: '/bugs/web/element-ui/el-form_customize_rule.md'
                     }
                 ]
             },

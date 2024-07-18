@@ -113,6 +113,6 @@ observer.observe(element, {
 ```
 
 <vPageTips :links="[
-        {text: 'MutationObserver详细介绍', link: 'https://juejin.cn/post/6949832945683136542'}
+        { text: 'MutationObserver详细介绍', link: 'https://juejin.cn/post/6949832945683136542' }
     ]"
 />
