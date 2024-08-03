@@ -13,7 +13,7 @@ const setHideFooter = (frontmatter: Ref<PageData['frontmatter']>) => {
             || (frontmatterObj.footer !== undefined && !frontmatterObj.footer)
         );
     const footer = document.getElementsByClassName('VPFooter')[0];
-    flag ? footer.setAttribute('style', 'display: none') : footer.removeAttribute('style');
+    flag ? footer?.setAttribute('style', 'display: none') : footer?.removeAttribute('style');
 };
 
 const hideFooter = (frontmatter: Ref<PageData['frontmatter']>) => {

@@ -17,6 +17,7 @@ import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 import './styles/index.scss';
 import { toRefs } from "vue";
 import 'virtual:uno.css';
+import 'overlayscrollbars/overlayscrollbars.css';
 
 export default {
     ...DefaultTheme,

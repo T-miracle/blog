@@ -15,20 +15,27 @@
         <div class="w-full flex justify-center mt-8 xl:mt-20">
             <!--带边框的Logo-->
             <div
-                class="w-auto flex flex-col justify-center border-4 border-solid border-gray-8 rounded-full
-                    overflow-hidden p-4 z-16 select-none bg-white"
+                class="w-auto flex flex-col justify-center border-2 border-solid border-#dbdddf rounded-full
+                    overflow-hidden z-16 select-none bg-white"
             >
-                <div class="w-2xl h-2xl md:w-3xl md:h-3xl xl:w-4xl xl:h-4xl">
-                    <img class="w-100% h-100% cursor-pointer" src="/logo.jpg" alt="">
+                <div class="w-6xl h-6xl rounded-full overflow-hidden">
+                    <img
+                        class="w-100% h-100% cursor-pointer pointer-events-none"
+                        src="/logo.png"
+                        alt=""
+                    >
                 </div>
             </div>
         </div>
         <!--标题-->
         <div
-            class="text-center font-500 text-[var(--vp-home-hero-name-color)] mt-10 text-32 line-height-40 md:text-40
-                md:line-height-48 lg:text-48 lg:line-height-56 select-none cursor-pointer"
+            class="text-center font-600 text-[var(--vp-home-hero-name-color)] mt-10 text-32 line-height-40 md:text-36
+                md:line-height-48 lg:text-40 lg:line-height-56 select-none cursor-pointer"
         >
-            <span class="mx-10 text-blue-5">Tmiracle の 技术小站</span>
+            <span class="mx-10 text-blue-5 font-bold">Tmiracle</span>
+        </div>
+        <div class="text-center">
+            <span class="font-bold">全沾 BUG 开发者，Ctrl CV 工程师</span>
         </div>
         <!--跳转按钮-->
         <div class="relative w-full md:w-560 h-100% flex justify-center flex-wrap mt-20">
@@ -38,7 +45,7 @@
                 type="primary"
                 @click="goPage('/translation-docs/')"
             >
-                <img class="w-24 h-24 mr-8" src="/images/fanyi.png" alt="">
+                <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/fanyi.png" alt="">
                 <span class="h-24 line-height-24">技术文档翻译</span>
             </el-button>
             <el-button
@@ -47,7 +54,7 @@
                 type="success"
                 @click="goPage('/learn/')"
             >
-                <img class="w-24 h-24 mr-8" src="/images/shuben.png" alt="">
+                <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/shuben.png" alt="">
                 <span class="h-24 line-height-24">我的知识库</span>
             </el-button>
             <a class="relative mx-10 my-4 w-full sm:w-240 flex" href="https://github.com/T-miracle" target="_blank">
@@ -56,17 +63,21 @@
                     class="w-full flex items-center"
                     type="default"
                 >
-                    <img class="w-24 h-24 mr-8" src="/images/github.png" alt="">
+                    <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/github.png" alt="">
                     <span class="h-24 line-height-24">Github</span>
                 </el-button>
             </a>
-            <a class="relative mx-10 my-4 w-full sm:w-240 flex" href="https://jq.qq.com/?_wv=1027&k=YX3jUWQe" target="_blank">
+            <a
+                class="relative mx-10 my-4 w-full sm:w-240 flex"
+                href="https://jq.qq.com/?_wv=1027&k=YX3jUWQe"
+                target="_blank"
+            >
                 <el-button
                     size="large"
                     class="w-full flex items-center"
                     type="default"
                 >
-                    <img class="w-24 h-24 mr-8" src="/images/QQqun.png" alt="">
+                    <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/QQqun.png" alt="">
                     <span class="h-24 line-height-24">QQ群</span>
                 </el-button>
             </a>
@@ -94,5 +105,9 @@
 </template>
 
 <style scoped lang="scss">
-
+    .vp-doc {
+        img {
+            box-shadow: none;
+        }
+    }
 </style>

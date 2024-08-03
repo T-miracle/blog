@@ -1,7 +1,9 @@
 // uno.config.ts
 import {
     defineConfig,
-    presetUno, presetWebFonts,
+    presetUno,
+    presetWebFonts,
+    presetAttributify,
     transformerDirectives,
     transformerVariantGroup
 } from 'unocss';
@@ -19,6 +21,7 @@ export default defineConfig({
     },
     presets: [
         presetUno(),
+        presetAttributify({ /* preset options */ }),
         presetRemToPx({
             baseFontSize: 4
         }),

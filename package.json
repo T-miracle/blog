@@ -24,5 +24,9 @@
     "vitepress-plugin-comment-with-giscus": "^1.1.15",
     "vitepress-plugin-image-viewer": "^1.1.4",
     "vue": "^3.4.26"
+  },
+  "dependencies": {
+    "overlayscrollbars": "^2.10.0",
+    "overlayscrollbars-vue": "^0.5.9"
   }
 }

@@ -15,12 +15,12 @@ export default defineConfig({
     srcDir: './src',
     outDir: './dist',
     lang: 'zh-cn',
-    title: 'Tmiracle の 技术小站',
-    description: '翻译国外技术文档，记录编程知识',
-    titleTemplate: 'Tmiracle',
+    title: 'Hi! Tmiracle',
+    description: '编程导航，国外技术文档翻译，编程知识记录',
+    titleTemplate: ':title | Hi! Tmiracle',
     // 左上角标题的图标
     head: [
-        [ 'link', { rel: 'icon', href: '/logo.jpg' } ]
+        [ 'link', { rel: 'icon', href: '/logo.png' } ]
     ],
     vite: {
         plugins: [
@@ -83,6 +83,7 @@ export default defineConfig({
             next: '下一篇'
         },
         nav: [
+            // { text: '实用资源导航', link: '/nav/' },
             { text: '技术文档翻译', link: '/translation-docs/' },
             { text: '我的知识库', link: '/learn/' },
             { text: 'Fix Bugs', link: '/bugs/' },
@@ -96,7 +97,7 @@ export default defineConfig({
             { text: '杂谈', link: '/tittle-tattle/' }
         ],
         // 左上角标题图标
-        logo: '/logo.jpg',
+        logo: '/logo.png',
         outline: {
             // 右侧导航目录显示层级
             level: 'deep',
