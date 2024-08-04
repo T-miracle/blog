@@ -1,4 +1,4 @@
-import { DefineComponent } from 'vue';
+import { DefineComponent, ShallowRef } from 'vue';
 
 export type Classify = 'all' | 'frontend' | 'backend' | 'database' | 'devops' | 'tools' | 'others';
 
@@ -9,15 +9,15 @@ export type NavItem = {
 
 export type project = {
     name: string;
-    icon: string | DefineComponent<{}, {}, any>;
+    icon: string | ShallowRef<DefineComponent<{}, {}, any>>;
     description: string;
-    link: string;
+    link: string | { name: string, url: string, github?: string }[];
     github?: string;
 }
 
 export type Nav = {
     name: string;
-    icon: string | DefineComponent<{}, {}, any>;
+    icon: string | ShallowRef<DefineComponent<{}, {}, any>>;
     description: string;
     classify: Classify;
     children: NavItem[];

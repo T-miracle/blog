@@ -38,11 +38,20 @@
             <span class="font-bold">全沾 BUG 开发者，Ctrl CV 工程师</span>
         </div>
         <!--跳转按钮-->
-        <div class="relative w-full md:w-560 h-100% flex justify-center flex-wrap mt-20">
+        <div class="relative w-full md:w-560 h-100% grid grid-cols-2 grid-row-2 gap-8 mt-20">
             <el-button
                 size="large"
-                class="w-full sm:w-240 mx-10 my-4 flex items-center"
+                class="w-full m-0! flex items-center"
                 type="primary"
+                @click="goPage('/nav/')"
+            >
+                <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/nav.svg" alt="">
+                <span class="h-24 line-height-24"> 实用资源导航</span>
+            </el-button>
+            <el-button
+                size="large"
+                class="w-full m-0! flex items-center"
+                type="warning"
                 @click="goPage('/translation-docs/')"
             >
                 <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/fanyi.png" alt="">
@@ -50,25 +59,15 @@
             </el-button>
             <el-button
                 size="large"
-                class="w-full sm:w-240 mx-10 my-4 flex items-center"
+                class="w-full m-0! flex items-center"
                 type="success"
                 @click="goPage('/learn/')"
             >
                 <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/shuben.png" alt="">
                 <span class="h-24 line-height-24">我的知识库</span>
             </el-button>
-            <a class="relative mx-10 my-4 w-full sm:w-240 flex" href="https://github.com/T-miracle" target="_blank">
-                <el-button
-                    size="large"
-                    class="w-full flex items-center"
-                    type="default"
-                >
-                    <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/github.png" alt="">
-                    <span class="h-24 line-height-24">Github</span>
-                </el-button>
-            </a>
             <a
-                class="relative mx-10 my-4 w-full sm:w-240 flex"
+                class="relative w-full m-0! flex"
                 href="https://jq.qq.com/?_wv=1027&k=YX3jUWQe"
                 target="_blank"
             >

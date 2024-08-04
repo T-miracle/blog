@@ -1,6 +1,7 @@
 ---
 layout: page
 footer: false
+title: 资源导航
 ---
 
 <Nav/>

@@ -23,21 +23,98 @@
                 </OverlayScrollbarsComponent>
             </div>
             <div class="relative h-full px-20 flex-1">
-                <div class="relative border" v-for="item in navItem" :key="item.title">
+                <div class="relative border mb-40" v-for="item in navItem" :key="item.title">
                     <div class="text-2em font-bold line-height-2em mb-12">
-                        <span>{{ item.title }}</span>
+                        <span class="text-#555555 dark:text-#dfe4ea">{{ item.title }}</span>
                     </div>
                     <div class="relative grid gap-20" xl="grid-cols-3" md="grid-cols-2">
-                        <div class="rounded-8 p-12" border="& 1 solid" v-for="project in item.children">
+                        <div
+                            class="rounded-8 p-12 bg-white transform transition-all transition-250"
+                            hover="shadow-emerald shadow-md transition-all transition-250"
+                            shadow="sm gray"
+                            dark="bg-#2c2e2f shadow-neutral"
+                            v-for="project in item.children"
+                        >
                             <div class="grid grid-cols-[56px_auto]">
                                 <el-image
-                                    class="w-40 h-40"
+                                    class="w-40 h-40 rounded-4"
                                     v-if="typeof project.icon === 'string'"
                                     :src="project.icon"
+                                    fit="contain"
                                 />
                                 <Component class="w-40 h-40 text-24" v-else :is="project.icon"/>
                                 <div>
-                                    <div class="text-1.2em font-bold">{{ project.name }}</div>
+                                    <div class="text-1.12em">{{ project.name }}</div>
+                                    <div class="line-clamp-2 h-30" text="gray-400 .8em" line-height-15>
+                                        {{ project.description }}
+                                    </div>
+                                    <div class="mt-8 flex items-center justify-start flex-row-reverse">
+                                        <el-button
+                                            v-if="typeof project.link === 'string'"
+                                            class="ml-8 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
+                                            size="small"
+                                            color="#9095E8"
+                                            @click.stop="openLink(project.link)"
+                                            auto-insert-space
+                                        >
+                                            访问
+                                        </el-button>
+                                        <el-dropdown
+                                            class="ml-8"
+                                            v-else
+                                            size="small"
+                                        >
+                                            <el-button
+                                                class="ml-8 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
+                                                color="#9095E8"
+                                                size="small"
+                                                auto-insert-space
+                                            >
+                                                <span class="tracking-2">访问</span>
+                                                <el-icon class="el-icon--right">
+                                                    <arrow-down/>
+                                                </el-icon>
+                                            </el-button>
+                                            <template #dropdown>
+                                                <el-dropdown-item
+                                                    class="relative"
+                                                    dark="bg-#2c2e2f! hover:bg-#3E4042!"
+                                                    rounded="first:[3px_3px_0_0] last:[0_0_3px_3px]"
+                                                    v-for="item in project.link"
+                                                    :key="item.name"
+                                                >
+                                                    <div class="w-full flex items-center flex-row-reverse z-2">
+                                                        <el-button
+                                                            class="w-full ml-12 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
+                                                            size="small"
+                                                            color="#9095E8"
+                                                            @click.stop="openLink(item.url)"
+                                                            auto-insert-space
+                                                        >
+                                                            {{ item.name }}
+                                                        </el-button>
+                                                        <div
+                                                            class="cursor-pointer shrink-0  w-18 h-18"
+                                                            hover="opacity-80"
+                                                            title="Github"
+                                                            @click.stop="openLink(item.github)"
+                                                        >
+                                                            <githubIcon v-if="item.github" class="w-18 h-18"/>
+                                                        </div>
+                                                    </div>
+                                                </el-dropdown-item>
+                                            </template>
+                                        </el-dropdown>
+                                        <div
+                                            class="cursor-pointer"
+                                            hover="opacity-80"
+                                            v-if="project.github"
+                                            title="Github"
+                                            @click.stop="openLink(project.github)"
+                                        >
+                                            <githubIcon class="w-18 h-18"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -49,16 +126,18 @@
 </template>
 
 <script setup lang="ts">
-    import { ElImage, ElInput, ElMenu, ElMenuItem } from 'element-plus';
+    import { ElButton, ElDropdown, ElDropdownItem, ElIcon, ElImage, ElInput, ElMenu, ElMenuItem } from 'element-plus';
+    import { ArrowDown } from '@element-plus/icons-vue';
     import { computed, reactive, ref } from 'vue';
     import NavList from './classify/index';
     import { Nav } from './type';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
+    import githubIcon from '@/icon/githubIcon.vue';
 
     const filterText = ref('');
 
     // 导航列表
-    const navList: Nav[] = reactive(NavList);
+    const navList = reactive<Nav[]>(NavList);
 
     const defaultNav = ref<string>(NavList[0].name);
 
@@ -68,6 +147,10 @@
 
     function selectMenuHandler(index: string) {
         defaultNav.value = index;
+    }
+
+    function openLink(link: string | undefined) {
+        link && window.open(link, '_blank');
     }
 </script>
 

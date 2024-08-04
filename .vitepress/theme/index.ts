@@ -33,7 +33,7 @@ export default {
     },
     setup() {
         // 获取前言和路由
-        const { frontmatter } = toRefs(useData());
+        const { frontmatter } = useData();
         const route = useRoute();
         imageViewer(route, '.vp-doc', { toolbar: true });
         codeblocksFold({ route, frontmatter })

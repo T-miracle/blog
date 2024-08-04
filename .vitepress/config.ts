@@ -7,6 +7,7 @@ import testSidebar from './sidebar/test';
 import simulationItems from './sidebar/simulation';
 import { qqGroupIcon } from './sidebar/icons';
 import UnoCSS from 'unocss/vite';
+import path from 'path';
 
 const customElements: string[] = [ 'mjx-container' ];
 
@@ -23,6 +24,12 @@ export default defineConfig({
         [ 'link', { rel: 'icon', href: '/logo.png' } ]
     ],
     vite: {
+        resolve: {
+            alias: {
+                '@': path.join(__dirname, '../src/'),
+                '@img': path.join(__dirname, '../src/public/images/'),
+            }
+        },
         plugins: [
             // @ts-ignore
             UnoCSS()
@@ -69,7 +76,7 @@ export default defineConfig({
                 '<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2022008261号-1</a>'
         },
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/T-miracle/blog' },
+            { icon: 'github', link: 'https://github.com/T-miracle' },
             { icon: { svg: qqGroupIcon }, link: 'https://jq.qq.com/?_wv=1027&k=YX3jUWQe' }
         ],
         lastUpdated: {
@@ -83,18 +90,18 @@ export default defineConfig({
             next: '下一篇'
         },
         nav: [
-            // { text: '实用资源导航', link: '/nav/' },
+            { text: '实用资源导航', link: '/nav/' },
             { text: '技术文档翻译', link: '/translation-docs/' },
             { text: '我的知识库', link: '/learn/' },
-            { text: 'Fix Bugs', link: '/bugs/' },
             {
-                text: '题库',
+                text: '其他',
                 items: [
+                    { text: '问题处理', link: '/bugs/' },
                     { text: '测试题', link: '/test/' },
-                    { text: '面试与笔试模拟', link: '/simulation/' }
+                    { text: '杂谈', link: '/tittle-tattle/' }
+                    // { text: '面试与笔试模拟', link: '/simulation/' }
                 ]
-            },
-            { text: '杂谈', link: '/tittle-tattle/' }
+            }
         ],
         // 左上角标题图标
         logo: '/logo.png',
@@ -109,7 +116,7 @@ export default defineConfig({
             '/learn/': learnSidebar,
             '/bugs/': bugsSidebar,
             '/test/': testSidebar,
-            '/simulation/': simulationItems
+            // '/simulation/': simulationItems
         }
     }
 });

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true, // js/ts 混用时设为false
+    "strict": true,
+    // js/ts 混用时设为false
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -10,19 +11,30 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "noImplicitThis": true, // js/ts 混用时设为false
+    "noImplicitThis": true,
     "baseUrl": ".",
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "paths": {
+      "@/*":[ "./src/*" ],
+      "@img/*":[ "./src/public/images/*" ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ]
   },
   "include": [
     "src",
     "src/**/*.ts",
     "src/**/*.vue",
     "src/**/*.d.ts",
+    "src/**/*.md",
     ".vitepress",
     ".vitepress/**/*.ts",
     ".vitepress/**/*.vue",
     ".vitepress/**/*.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

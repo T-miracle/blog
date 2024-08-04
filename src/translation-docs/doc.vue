@@ -1,21 +1,22 @@
 <template>
-    <h1 class="doc-h1">技术文档翻译</h1>
-    <div class="doc-container">
-        <el-input class="doc-container__filter" size="large" placeholder="筛选文档" v-model="filterText"/>
-        <div class="doc-container__item" v-for="item in filterDocs" :key="item.title">
-            <a class="doc-container__item-link" :href="urlPrefix + item.link" target="_blank">
-                <img :src="item.logo" alt="">
-                <div class="box-right">
-                    <div class="title">{{ item.title }}</div>
-                    <div class="links">
-                        <a @click.stop :href="item.github" target="_blank">
-                            <img src="/images/github.png" alt="" style="width: 1.2em; height: 1.2em;">
-                            加入翻译社区
-                        </a>
+    <div class="relative vp-doc">
+        <h1 class="doc-h1">技术文档翻译</h1>
+        <div class="doc-container">
+            <el-input class="doc-container__filter" size="large" placeholder="筛选文档" v-model="filterText"/>
+            <div class="doc-container__item" v-for="item in filterDocs" :key="item.title">
+                <a class="doc-container__item-link" :href="urlPrefix + item.link" target="_blank">
+                    <img :src="item.logo" alt="">
+                    <div class="box-right">
+                        <div class="title">{{ item.title }}</div>
+                        <div class="links">
+                            <a @click.stop :href="item.github" target="_blank">
+                                <img src="/images/github.png" alt="" style="width: 1.2em; height: 1.2em;">
+                                <span>加入翻译社区</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-            </a>
+                </a>
+            </div>
         </div>
     </div>
 </template>
