@@ -194,6 +194,28 @@ docker run [镜像名称]
 
 :::
 
+### `exec` 在已运行的容器中执行新的命令
+
+```shell
+docker exec [选项] [容器名称] [其他命令]
+```
+
+::: info 选项参数说明
+
+- <badge text="常用" type="tip"/>`-i`（`--interactive` 的简写）：保持标准输入处于打开状态，即使没有附加到终端
+
+- <badge text="常用" type="tip"/>`-t`（`--tty` 的简写）：配一个伪终端
+
+  通常 `-i` 和 `-t` 配合一起使用，例如：
+
+  ```shell
+  docker exec -it nginx bash
+  ```
+
+- `-d`（`--detach` 的简写）：在后台运行命令
+
+:::
+
 ### `ps` 罗列容器
 
 ```shell

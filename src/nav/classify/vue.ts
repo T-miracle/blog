@@ -1,5 +1,6 @@
 import { Nav } from '../type';
 import vueIcon from '@/icon/vueIcon.vue';
+import VueIcon from '@/icon/vueIcon.vue';
 import piniaIcon from '@img/pinia.png';
 import { shallowRef } from 'vue';
 
@@ -10,7 +11,7 @@ export default {
     classify: 'frontend',
     children: [
         {
-            title: '框架 & 教程',
+            title: '框架',
             children: [
                 {
                     name: 'Vue 官方文档',
@@ -30,6 +31,25 @@ export default {
                     ]
                 },
                 {
+                    name: 'NuxtJS 官方文档',
+                    icon: 'https://files.codelife.cc/icons/nuxtjs.svg',
+                    description: 'NuxtJS 让你构建你的下一个 Vue.js 应用程序变得更有信心。这是一个 开源 的框架，让 web 开发变得简单而强大。',
+                    link: 'https://www.nuxtjs.cn/',
+                    github: 'https://github.com/nuxt/nuxt.js'
+                },
+                {
+                    name: 'Vitepress',
+                    icon: 'https://files.codelife.cc/user-website-icon/20230307/KH3KXfA-CzCBQ2cHu3_re9851.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+                    description: '由 Vite 和 Vue 驱动的静态站点生成器',
+                    link: 'https://vitepress.dev/zh/guide/what-is-vitepress',
+                    github: 'https://github.com/vuejs/vitepress'
+                }
+            ]
+        },
+        {
+            title: '工具库',
+            children: [
+                {
                     name: 'Vue Router 官方文档',
                     icon: shallowRef(vueIcon),
                     description: '为 Vue.js 提供富有表现力、可配置的、方便的路由。',
@@ -43,7 +63,7 @@ export default {
                             name: 'v3.x（适用于 Vue2）',
                             url: 'https://v3.router.vuejs.org/zh/',
                             github: 'https://github.com/vuejs/vue-router'
-                        },
+                        }
                     ]
                 },
                 {
@@ -69,25 +89,11 @@ export default {
                     description: '用于 Vue3 的符合直觉的 Vue.js 状态管理库。',
                     link: 'https://pinia.vuejs.org/zh/',
                     github: 'https://github.com/vuejs/pinia'
-                },
-                {
-                    name: 'NuxtJS 官方文档',
-                    icon: 'https://files.codelife.cc/icons/nuxtjs.svg',
-                    description: 'NuxtJS 让你构建你的下一个 Vue.js 应用程序变得更有信心。这是一个 开源 的框架，让 web 开发变得简单而强大。',
-                    link: 'https://www.nuxtjs.cn/',
-                    github: 'https://github.com/nuxt/nuxt.js'
-                },
-                {
-                    name: 'Vitepress',
-                    icon: 'https://files.codelife.cc/user-website-icon/20230307/KH3KXfA-CzCBQ2cHu3_re9851.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
-                    description: '由 Vite 和 Vue 驱动的静态站点生成器',
-                    link: 'https://vitepress.dev/zh/guide/what-is-vitepress',
-                    github: 'https://github.com/vuejs/vitepress'
                 }
             ]
         },
         {
-            title: '优秀的组件库',
+            title: '通用开源库',
             children: [
                 {
                     name: 'Element UI/Plus',
@@ -95,16 +101,53 @@ export default {
                     description: 'Element，一套为开发者、设计师和产品经理准备的基于 Vue.js 的桌面端组件库',
                     link: [
                         {
-                            name: 'Element UI',
+                            name: 'Element UI（适用于 Vue2）',
                             url: 'https://element.eleme.cn/#/zh-CN',
                             github: 'https://github.com/ElemeFE/element'
                         },
                         {
-                            name: 'Element Plus',
+                            name: 'Element Plus（适用于 Vue3）',
                             url: 'https://element-plus.org/zh-CN/component/overview.html',
                             github: 'https://github.com/element-plus/element-plus'
                         }
                     ]
+                },
+                {
+                    name: 'Vxe Table',
+                    icon: 'https://vxetable.cn/logo.png',
+                    description: '一个基于 Vue 的高性能表格组件',
+                    link: 'https://vxetable.cn/',
+                    github: 'https://github.com/x-extends/vxe-table'
+                }
+            ]
+        },
+        {
+            title: 'Vue2 开源库',
+            children: [
+                {
+                    name: 'vue-countTo',
+                    icon: VueIcon,
+                    description: '一个数字自增长动画的组件。',
+                    github: 'https://github.com/PanJiaChen/vue-countTo'
+                },
+                {
+                    name: 'vue-grid-layout',
+                    icon: 'https://jbaysolutions.github.io/vue-grid-layout/assets/img/logo.png',
+                    description: '一个用于 Vue.js 的可拖拽和可调整大小的网格布局组件。',
+                    link: 'https://jbaysolutions.github.io/vue-grid-layout/',
+                    github: 'https://github.com/jbaysolutions/vue-grid-layout'
+                }
+            ]
+        },
+        {
+            title: 'Vue3 开源库',
+            children: [
+                {
+                    name: 'Vue3 Marquee',
+                    icon: VueIcon,
+                    description: '适用于您的 Vue 3/Nuxt 3 应用程序的简单动态跑马灯组件。',
+                    link: 'https://vue3-marquee.vercel.app/',
+                    github: 'https://github.com/megasanjay/vue3-marquee'
                 }
             ]
         }

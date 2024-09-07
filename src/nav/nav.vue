@@ -1,10 +1,10 @@
 <template>
     <div class="relative h-[calc(100vh-var(--vp-nav-height))] vp-doc max-w-1200 mx-auto">
-        <div class="h-80 flex justify-center items-center sticky top-[var(--vp-nav-height)] z-1 bg-[var(--vp-c-bg)]">
+        <div class="h-80 flex justify-center items-center z-1 px-12">
             <el-input class="filter" size="large" placeholder="资源名称筛选" v-model="filterText"/>
         </div>
-        <div class="relative w-full flex">
-            <div class="relative w-94 h-[calc(100vh-(var(--vp-nav-height)+80px))] pd-20 shrink-0 sticky top-[calc(var(--vp-nav-height)+80px)]">
+        <div class="relative w-full flex h-[calc(100vh-(var(--vp-nav-height)+80px))]">
+            <div class="relative w-94 pd-20 shrink-0 h-full">
                 <OverlayScrollbarsComponent class="h-full" :options="{ scrollbars: { autoHide: 'leave' } }">
                     <el-menu
                         class="sidebar !my-0 bg-transparent"
@@ -22,7 +22,10 @@
                     </el-menu>
                 </OverlayScrollbarsComponent>
             </div>
-            <div class="relative h-full px-20 flex-1">
+            <OverlayScrollbarsComponent
+                class="relative h-full px-20 flex-1"
+                :options="{ scrollbars: { visibility: 'hidden' } }"
+            >
                 <div class="relative border mb-40" v-for="item in navItem" :key="item.title">
                     <div class="text-2em font-bold line-height-2em mb-12">
                         <span class="text-#555555 dark:text-#dfe4ea">{{ item.title }}</span>
@@ -45,7 +48,12 @@
                                 <Component class="w-40 h-40 text-24" v-else :is="project.icon"/>
                                 <div>
                                     <div class="text-1.12em">{{ project.name }}</div>
-                                    <div class="line-clamp-2 h-30" text="gray-400 .8em" line-height-15>
+                                    <div
+                                        class="line-clamp-2 h-30"
+                                        text="gray-400 .8em"
+                                        line-height-15
+                                        :title="project.description"
+                                    >
                                         {{ project.description }}
                                     </div>
                                     <div class="mt-8 flex items-center justify-start flex-row-reverse">
@@ -61,7 +69,7 @@
                                         </el-button>
                                         <el-dropdown
                                             class="ml-8"
-                                            v-else
+                                            v-if="Array.isArray(project.link)"
                                             size="small"
                                         >
                                             <el-button
@@ -94,7 +102,7 @@
                                                             {{ item.name }}
                                                         </el-button>
                                                         <div
-                                                            class="cursor-pointer shrink-0  w-18 h-18"
+                                                            class="cursor-pointer shrink-0 w-18 h-18"
                                                             hover="opacity-80"
                                                             title="Github"
                                                             @click.stop="openLink(item.github)"
@@ -120,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </OverlayScrollbarsComponent>
         </div>
     </div>
 </template>

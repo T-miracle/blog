@@ -1,6 +1,7 @@
 import { Nav } from '../type';
 import RustIcon from '@/icon/rustIcon.vue';
 import CourseIcon from '@img/rust.jpg';
+import DioxusIcon from '@img/dioxus.png';
 import { shallowRef } from 'vue';
 
 export default {
@@ -10,7 +11,7 @@ export default {
     classify: 'backend',
     children: [
         {
-            title: '框架 & 教程',
+            title: '教程',
             children: [
                 {
                     name: 'Rust 官方文档',
@@ -24,6 +25,18 @@ export default {
                     icon: shallowRef(CourseIcon),
                     description: '这可能是最好的 Rust 教程',
                     link: 'https://course.rs/about-book.html'
+                }
+            ]
+        },
+        {
+            title: '框架',
+            children: [
+                {
+                    name: 'Dioxus',
+                    icon: DioxusIcon,
+                    description: '使用单个代码库构建 Web、桌面和移动应用，以及更多。零配置启动、集成的热重载和基于信号的状态管理。使用服务器功能添加后端功能，并使用我们的 CLI 进行捆绑。',
+                    link: 'https://dioxuslabs.com/',
+                    github: 'https://github.com/DioxusLabs/dioxus'
                 }
             ]
         }

@@ -5,8 +5,8 @@ import js from './js';
 import css from './css';
 
 export default [
-    vue,
     js,
     css,
+    vue,
     rust,
 ] as Nav[];

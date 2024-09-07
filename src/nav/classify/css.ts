@@ -1,5 +1,6 @@
 import { Nav } from '../type';
 import cssIcon from '@/icon/cssIcon.vue';
+import PostcssIcon from '@img/postcss.png';
 import { shallowRef } from 'vue';
 
 export default {
@@ -9,7 +10,7 @@ export default {
     classify: 'frontend',
     children: [
         {
-            title: '框架 & 教程',
+            title: '教程',
             children: [
                 {
                     name: 'UnoCSS',
@@ -23,7 +24,7 @@ export default {
                         },
                         {
                             name: '中文文档',
-                            url: 'https://unocss.nodejs.cn/',
+                            url: 'https://unocss.nodejs.cn/'
                         }
                     ]
                 },
@@ -39,10 +40,16 @@ export default {
                         },
                         {
                             name: '中文文档',
-                            url: 'https://tailwind.nodejs.cn/',
+                            url: 'https://tailwind.nodejs.cn/'
                         }
                     ]
-                },
+                }
+
+            ]
+        },
+        {
+            title: '工具',
+            children: [
                 {
                     name: 'Sass',
                     icon: 'https://files.codelife.cc/icons/5a64939010ad6072939fcfb6.png',
@@ -56,6 +63,22 @@ export default {
                         {
                             name: '中文文档',
                             url: 'https://sass.nodejs.cn/'
+                        }
+                    ]
+                },
+                {
+                    name: 'PostCSS',
+                    icon: PostcssIcon,
+                    description: '一个用 JavaScript 工具和插件转换 CSS 代码的工具。',
+                    link: [
+                        {
+                            name: '官方文档',
+                            url: 'https://postcss.org/',
+                            github: 'https://github.com/postcss/postcss'
+                        },
+                        {
+                            name: '中文文档',
+                            url: 'https://postcss.nodejs.cn/'
                         }
                     ]
                 }
