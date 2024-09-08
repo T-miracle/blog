@@ -15,7 +15,7 @@ import 'viewerjs/dist/viewer.min.css';
 import 'vitepress-plugin-codeblocks-fold/style/index.scss';
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 import './styles/index.scss';
-import { toRefs } from "vue";
+import { toRefs } from 'vue';
 import 'virtual:uno.css';
 import 'overlayscrollbars/overlayscrollbars.css';
 
@@ -36,7 +36,7 @@ export default {
         const { frontmatter } = useData();
         const route = useRoute();
         imageViewer(route, '.vp-doc', { toolbar: true });
-        codeblocksFold({ route, frontmatter })
+        codeblocksFold({ route, frontmatter });
         hideFooter(frontmatter);
         giscusTalk({
             repo: 'T-miracle/blog',

@@ -8,5 +8,5 @@ export default [
     js,
     css,
     vue,
-    rust,
+    rust
 ] as Nav[];

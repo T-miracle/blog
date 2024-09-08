@@ -9,7 +9,7 @@ export type NavItem = {
 
 export type project = {
     name: string;
-    icon: string | ShallowRef<DefineComponent<{}, {}, any>>;
+    icon: string | ShallowRef<DefineComponent>;
     description: string;
     link: string | { name: string, url: string, github?: string }[];
     github?: string;
@@ -17,7 +17,7 @@ export type project = {
 
 export type Nav = {
     name: string;
-    icon: string | ShallowRef<DefineComponent<{}, {}, any>>;
+    icon: string | ShallowRef<DefineComponent>;
     description: string;
     classify: Classify;
     children: NavItem[];

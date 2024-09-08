@@ -4,7 +4,6 @@ import mathjax3 from 'markdown-it-mathjax3';
 import learnSidebar from './sidebar/learn';
 import bugsSidebar from './sidebar/bugs';
 import testSidebar from './sidebar/test';
-import simulationItems from './sidebar/simulation';
 import { qqGroupIcon } from './sidebar/icons';
 import UnoCSS from 'unocss/vite';
 import path from 'path';
@@ -27,11 +26,10 @@ export default defineConfig({
         resolve: {
             alias: {
                 '@': path.join(__dirname, '../src/'),
-                '@img': path.join(__dirname, '../src/public/images/'),
+                '@img': path.join(__dirname, '../src/public/images/')
             }
         },
         plugins: [
-            // @ts-ignore
             UnoCSS()
         ]
     },
@@ -115,8 +113,7 @@ export default defineConfig({
         sidebar: {
             '/learn/': learnSidebar,
             '/bugs/': bugsSidebar,
-            '/test/': testSidebar,
-            // '/simulation/': simulationItems
+            '/test/': testSidebar
         }
     }
 });

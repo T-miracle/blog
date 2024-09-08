@@ -23,7 +23,7 @@
                         class="w-100% h-100% cursor-pointer pointer-events-none"
                         src="/logo.png"
                         alt=""
-                    >
+                    />
                 </div>
             </div>
         </div>
@@ -45,7 +45,11 @@
                 type="primary"
                 @click="goPage('/nav/')"
             >
-                <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/nav.svg" alt="">
+                <img
+                    class="w-24 h-24 mr-8 shadow-none pointer-events-none"
+                    src="/images/nav.svg"
+                    alt=""
+                />
                 <span class="h-24 line-height-24"> 实用资源导航</span>
             </el-button>
             <el-button
@@ -54,7 +58,11 @@
                 type="warning"
                 @click="goPage('/translation-docs/')"
             >
-                <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/fanyi.png" alt="">
+                <img
+                    class="w-24 h-24 mr-8 shadow-none pointer-events-none"
+                    src="/images/fanyi.png"
+                    alt=""
+                />
                 <span class="h-24 line-height-24">技术文档翻译</span>
             </el-button>
             <el-button
@@ -63,7 +71,11 @@
                 type="success"
                 @click="goPage('/learn/')"
             >
-                <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/shuben.png" alt="">
+                <img
+                    class="w-24 h-24 mr-8 shadow-none pointer-events-none"
+                    src="/images/shuben.png"
+                    alt=""
+                />
                 <span class="h-24 line-height-24">我的知识库</span>
             </el-button>
             <a
@@ -74,9 +86,13 @@
                 <el-button
                     size="large"
                     class="w-full flex items-center"
-                    type="default"
+                    type="info"
                 >
-                    <img class="w-24 h-24 mr-8 shadow-none pointer-events-none" src="/images/QQqun.png" alt="">
+                    <img
+                        class="w-24 h-24 mr-8 shadow-none pointer-events-none"
+                        src="/images/QQqun.png"
+                        alt=""
+                    />
                     <span class="h-24 line-height-24">QQ群</span>
                 </el-button>
             </a>
@@ -85,7 +101,9 @@
         <div class="relative w-screen h-100% xl:w-screen-xl flex flex-wrap mt-20">
             <div class="flex-shrink-0 w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 p-10">
                 <article class="h-100% flex flex-col bg-[var(--vp-c-bg-soft)] rounded-12 p-24 shadow-lg">
-                    <h2 class="font-600 line-height-24 text-16 mt-0! pt-10! border-t-0!">技术文档翻译</h2>
+                    <h2 class="font-600 line-height-24 text-16 mt-0! pt-10! border-t-0!">
+                        技术文档翻译
+                    </h2>
                     <p class="h-100% flex-1 font-500 pt-8 text-14 line-height-24 text-[var(--vp-c-text-2)]">
                         目前我正在逐步翻译一些国外的技术文档，以便之后自己查阅，如果你也有这个想法，欢迎加入我
                     </p>
@@ -93,7 +111,9 @@
             </div>
             <div class="flex-shrink-0 w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 p-10">
                 <article class="h-100% flex flex-col bg-[var(--vp-c-bg-soft)] rounded-12 p-24 shadow-lg">
-                    <h2 class="font-600 line-height-24 text-16 mt-0! pt-10! border-t-0!">我的知识库</h2>
+                    <h2 class="font-600 line-height-24 text-16 mt-0! pt-10! border-t-0!">
+                        我的知识库
+                    </h2>
                     <p class="h-100% flex-1 font-500 pt-8 text-14 line-height-24 text-[var(--vp-c-text-2)]">
                         记录编程道路上所需的重点知识，以及各种奇思妙想的编程技巧
                     </p>

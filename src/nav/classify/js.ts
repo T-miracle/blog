@@ -10,6 +10,7 @@ import visactorIcon from '@img/visactor.png';
 import OverlayScrollbarsIcon from '@img/OverlayScrollbars.png';
 import SwiperIcon from '@img/swiper-logo.svg';
 import EslintIcon from '@img/eslint.svg';
+import terserIcon from '@img/terser-logo.svg';
 import WebpackIcon from '@/icon/webpackIcon.vue';
 
 export default {
@@ -36,7 +37,7 @@ export default {
                 },
                 {
                     name: 'TypeScript 文档',
-                    icon: tsIcon,
+                    icon: shallowRef(tsIcon),
                     description: 'JavaScript 的超集，为大型应用提供了更好的可维护性和可读性',
                     link: [
                         {
@@ -57,7 +58,7 @@ export default {
             children: [
                 {
                     name: 'Vite',
-                    icon: ViteIcon,
+                    icon: shallowRef(ViteIcon),
                     description: '一个由原生 ESM 驱动的 Web 开发构建工具',
                     link: [
                         {
@@ -73,7 +74,7 @@ export default {
                 },
                 {
                     name: 'Webpack',
-                    icon: WebpackIcon,
+                    icon: shallowRef(WebpackIcon),
                     description: '一个现代 JavaScript 应用程序的静态模块打包器',
                     link: [
                         {
@@ -89,7 +90,7 @@ export default {
                 },
                 {
                     name: 'Babel',
-                    icon: BabelIcon,
+                    icon: shallowRef(BabelIcon),
                     description: '一个 JavaScript 编译器，可将 ECMAScript 2015+ 代码转换为向后兼容的 JavaScript 版本',
                     link: [
                         {
@@ -105,7 +106,7 @@ export default {
                 },
                 {
                     name: 'Eslint',
-                    icon: EslintIcon,
+                    icon: shallowRef(EslintIcon),
                     description: '一个插件化的 JavaScript 代码检测工具，可帮助你查找和修复 JavaScript 代码中的问题。',
                     link: [
                         {
@@ -118,6 +119,13 @@ export default {
                             url: 'https://eslint.nodejs.cn/'
                         }
                     ]
+                },
+                {
+                    name: 'Terser',
+                    icon: shallowRef(terserIcon),
+                    description: 'JavaScript 解析器、混淆器和压缩工具包，适用于 ES6+',
+                    link: 'https://terser.org/',
+                    github: 'https://terser.org/'
                 }
             ]
         },
@@ -142,35 +150,35 @@ export default {
                 },
                 {
                     name: 'Echarts',
-                    icon: echartIcon,
+                    icon: shallowRef(echartIcon),
                     description: '一个基于 JavaScript 的开源可视化图表库',
                     link: 'https://echarts.apache.org/zh/index.html',
                     github: 'https://github.com/apache/echarts'
                 },
                 {
                     name: 'Axios',
-                    icon: axiosIcon,
+                    icon: shallowRef(axiosIcon),
                     description: '基于 Promise 的 HTTP 客户端，可同时在浏览器和 node.js 中使用',
                     link: 'https://axios-http.com/zh/',
                     github: 'https://github.com/axios/axios'
                 },
                 {
                     name: 'Swiper',
-                    icon: SwiperIcon,
+                    icon: shallowRef(SwiperIcon),
                     description: '这可能是最全能的移动端轮播图实现，当然Web端也可以使用',
                     link: 'https://swiperjs.com/',
                     github: 'https://github.com/nolimits4web/swiper'
                 },
                 {
                     name: 'VTable 方格艺术家',
-                    icon: visactorIcon,
+                    icon: shallowRef(visactorIcon),
                     description: 'VTable，不只是一款高性能的多维数据分析表格，更是一个在行列间创作的方格艺术家。',
                     link: 'https://visactor.io/',
                     github: 'https://github.com/VisActor/VTable'
                 },
                 {
                     name: 'OverlayScrollbars',
-                    icon: OverlayScrollbarsIcon,
+                    icon: shallowRef(OverlayScrollbarsIcon),
                     description: '一个滚动条插件，隐藏本机滚动条，提供自定义样式的覆盖滚动条，并保留本机功能和感觉。',
                     link: 'https://visactor.io/',
                     github: 'https://github.com/KingSora/OverlayScrollbars'

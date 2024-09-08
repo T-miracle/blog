@@ -2,6 +2,7 @@ import { Nav } from '../type';
 import vueIcon from '@/icon/vueIcon.vue';
 import VueIcon from '@/icon/vueIcon.vue';
 import piniaIcon from '@img/pinia.png';
+import splitpanesIcon from '@/icon/splitpanesIcon.vue';
 import { shallowRef } from 'vue';
 
 export default {
@@ -85,7 +86,7 @@ export default {
                 },
                 {
                     name: 'Pinia 官方文档',
-                    icon: piniaIcon,
+                    icon: shallowRef(piniaIcon),
                     description: '用于 Vue3 的符合直觉的 Vue.js 状态管理库。',
                     link: 'https://pinia.vuejs.org/zh/',
                     github: 'https://github.com/vuejs/pinia'
@@ -118,6 +119,13 @@ export default {
                     description: '一个基于 Vue 的高性能表格组件',
                     link: 'https://vxetable.cn/',
                     github: 'https://github.com/x-extends/vxe-table'
+                },
+                {
+                    name: 'Splitpanes',
+                    icon: shallowRef(splitpanesIcon),
+                    description: '一个 Vue.js 可靠、简单且可触摸的窗格分割器/缩放器。兼容 Vue 3。',
+                    link: 'https://antoniandre.github.io/splitpanes/',
+                    github: 'https://github.com/antoniandre/splitpanes'
                 }
             ]
         },
@@ -126,7 +134,7 @@ export default {
             children: [
                 {
                     name: 'vue-countTo',
-                    icon: VueIcon,
+                    icon: shallowRef(VueIcon),
                     description: '一个数字自增长动画的组件。',
                     github: 'https://github.com/PanJiaChen/vue-countTo'
                 },
@@ -143,8 +151,15 @@ export default {
             title: 'Vue3 开源库',
             children: [
                 {
+                    name: 'Varlet UI',
+                    icon: 'https://varletjs.org/varlet_icon.png',
+                    description: '一个基于 Vue3 开发的 Material Design 组件库，全面拥抱 Vue3 生态，支持移动端和桌面端，由 varletjs 组织维护。支持 Typescript、按需引入、暗黑模式、主题定制、国际化，并提供 VSCode 插件保障良好的开发体验。',
+                    link: 'https://varletjs.org/#/zh-CN/index',
+                    github: 'https://github.com/varletjs/varlet'
+                },
+                {
                     name: 'Vue3 Marquee',
-                    icon: VueIcon,
+                    icon: shallowRef(VueIcon),
                     description: '适用于您的 Vue 3/Nuxt 3 应用程序的简单动态跑马灯组件。',
                     link: 'https://vue3-marquee.vercel.app/',
                     github: 'https://github.com/megasanjay/vue3-marquee'

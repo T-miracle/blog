@@ -33,7 +33,7 @@ export default {
             children: [
                 {
                     name: 'Dioxus',
-                    icon: DioxusIcon,
+                    icon: shallowRef(DioxusIcon),
                     description: '使用单个代码库构建 Web、桌面和移动应用，以及更多。零配置启动、集成的热重载和基于信号的状态管理。使用服务器功能添加后端功能，并使用我们的 CLI 进行捆绑。',
                     link: 'https://dioxuslabs.com/',
                     github: 'https://github.com/DioxusLabs/dioxus'
