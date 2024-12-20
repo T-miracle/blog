@@ -1,5 +1,5 @@
 import { Project } from '../type';
-import VueIcon from '@/icon/VueIcon.vue';
+import VueIcon from '@/icon/vueIcon.vue';
 import piniaIcon from '@img/pinia.png';
 import VueUseIcon from '@img/VueUse.svg';
 import splitpanesIcon from '@/icon/splitpanesIcon.vue';
