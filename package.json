@@ -19,7 +19,7 @@
     "overlayscrollbars-vue": "^0.5.9",
     "viewerjs": "^1.11.6",
     "vitepress": "^1.1.4",
-    "vitepress-plugin-codeblocks-fold": "^1.2.29",
+    "vitepress-plugin-codeblocks-fold": "^1.2.31",
     "vitepress-plugin-comment-with-giscus": "^1.1.15",
     "vitepress-plugin-image-viewer": "^1.1.4",
     "vue": "^3.4.26"
