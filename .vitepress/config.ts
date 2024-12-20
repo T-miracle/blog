@@ -30,6 +30,7 @@ export default defineConfig({
             }
         },
         plugins: [
+            // @ts-expect-error unocss plugin
             UnoCSS()
         ]
     },
@@ -88,9 +89,9 @@ export default defineConfig({
             next: '下一篇'
         },
         nav: [
-            { text: '实用资源导航', link: '/nav/' },
-            { text: '技术文档翻译', link: '/translation-docs/' },
             { text: '我的知识库', link: '/learn/' },
+            { text: '文档翻译', link: '/translation-docs/' },
+            { text: '资源导航', link: '/nav/' },
             {
                 text: '其他',
                 items: [

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 文档翻译 
+title: 文档翻译
 ---
 
 <Doc/>

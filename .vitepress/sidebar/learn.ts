@@ -29,9 +29,9 @@ import mysqlItems from './learn/mysql';
 import hBuilderXItems from './learn/hbuilderx';
 import androidStudioItems from './learn/android-studio';
 import webpackItems from './learn/webpack';
-import uniappItems from "./learn/uniapp";
-import dockerItem from "./learn/docker";
-import androidItems from "./learn/android";
+import uniappItems from './learn/uniapp';
+import dockerItem from './learn/docker';
+import androidItems from './learn/android';
 
 const learnSidebar: DefaultTheme.SidebarItem[] = [
     {
@@ -95,10 +95,6 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                 text: webpackIcon + 'Webpack',
                 collapsed: true,
                 items: webpackItems
-            },
-            {
-                text: githubIcon + '开源项目收集',
-                link: '/learn/web/github/open_source_project_collection'
             }
         ]
     },
@@ -163,14 +159,14 @@ const learnSidebar: DefaultTheme.SidebarItem[] = [
                     {
                         text: '🔸 Git将项目的某个目录分离成新的项目，并保留历史提交信息',
                         link: '/learn/version_control/git/git_detached_directory_and_keep_historical_submission_records.md'
-                    },
+                    }
                 ]
             },
             {
                 text: githubIcon + 'Github',
                 collapsed: true,
                 items: [
-                    { text: '🔹 README 说明文件美化教程', link: '/learn/version_control/github/readme_beautify.md' },
+                    { text: '🔹 README 说明文件美化教程', link: '/learn/version_control/github/readme_beautify.md' }
                 ]
             },
             {

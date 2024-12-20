@@ -17,6 +17,11 @@ export default defineConfig({
     theme: {
         colors: {
             // ...
+        },
+        extend: {
+            screens: {
+                '960px': '960px'
+            }
         }
     },
     presets: [
@@ -36,4 +41,4 @@ export default defineConfig({
         transformerDirectives(),
         transformerVariantGroup()
     ]
-})
+});
