@@ -1,6 +1,7 @@
 import { DefineComponent, ShallowRef } from 'vue';
 
 export const projectTypeArray = [
+    'AI',
     'HTML',
     'CSS',
     'JavaScript',
