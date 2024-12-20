@@ -7,7 +7,7 @@ import BabelIcon from '@img/babel.png';
 import ViteIcon from '@img/vite.svg';
 import LitIcon from '@img/lit.png';
 import GithubIcon from '@img/github.png';
-import NpmIcon from '@img/npm.png';
+import NpmIcon from '@img/NPM.png';
 import visactorIcon from '@img/visactor.png';
 import OverlayScrollbarsIcon from '@img/OverlayScrollbars.png';
 import SwiperIcon from '@img/swiper-logo.svg';
