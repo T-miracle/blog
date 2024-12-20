@@ -2,7 +2,7 @@ import { Project } from '../type';
 import vueIcon from '@/icon/vueIcon.vue';
 import VueIcon from '@/icon/vueIcon.vue';
 import piniaIcon from '@img/pinia.png';
-import VueUseIcon from '@img/vueuse.svg';
+import VueUseIcon from '@img/VueUse.svg';
 import splitpanesIcon from '@/icon/splitpanesIcon.vue';
 import { shallowRef } from 'vue';
 
