@@ -13,7 +13,7 @@ import OverlayScrollbarsIcon from '@img/OverlayScrollbars.png';
 import SwiperIcon from '@img/swiper-logo.svg';
 import EslintIcon from '@img/eslint.svg';
 import terserIcon from '@img/terser-logo.svg';
-import PromiseMirrorIcon from '@img/Prosemirror.svg';
+import PromiseMirrorIcon from '@img/ProseMirror.svg';
 import GSAPIcon from '@img/GSAP.svg';
 import FloatingUIIcon from '@img/Floating-UI.ico';
 import WebpackIcon from '@/icon/webpackIcon.vue';

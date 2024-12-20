@@ -1,6 +1,5 @@
 import { Project } from '../type';
-import vueIcon from '@/icon/vueIcon.vue';
-import VueIcon from '@/icon/vueIcon.vue';
+import VueIcon from '@/icon/VueIcon.vue';
 import piniaIcon from '@img/pinia.png';
 import VueUseIcon from '@img/VueUse.svg';
 import splitpanesIcon from '@/icon/splitpanesIcon.vue';
@@ -9,7 +8,7 @@ import { shallowRef } from 'vue';
 export default [
     {
         name: 'Vue',
-        icon: shallowRef(vueIcon),
+        icon: shallowRef(VueIcon),
         description: '渐进式 JavaScript 框架。易学易用，性能出色，适用场景丰富的 Web 前端框架。',
         type: [ 'Vue2', 'Vue3', '框架' ],
         level: 100,
@@ -63,7 +62,7 @@ export default [
     },
     {
         name: 'Vue Router',
-        icon: shallowRef(vueIcon),
+        icon: shallowRef(VueIcon),
         description: '为 Vue.js 提供富有表现力、可配置的、方便的路由。',
         type: [ 'Vue2', 'Vue3', '框架' ],
         level: 50,
@@ -82,7 +81,7 @@ export default [
     },
     {
         name: 'Vuex',
-        icon: shallowRef(vueIcon),
+        icon: shallowRef(VueIcon),
         description: '一个专为 Vue.js 应用程序开发的状态管理模式 + 库。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。',
         type: [ 'Vue2', 'Vue3', '框架' ],
         level: 50,
