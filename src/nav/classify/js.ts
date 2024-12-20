@@ -13,11 +13,11 @@ import OverlayScrollbarsIcon from '@img/OverlayScrollbars.png';
 import SwiperIcon from '@img/swiper-logo.svg';
 import EslintIcon from '@img/eslint.svg';
 import terserIcon from '@img/terser-logo.svg';
-import PromiseMirrorIcon from '@img/prosemirror.svg';
+import PromiseMirrorIcon from '@img/Prosemirror.svg';
 import GSAPIcon from '@img/GSAP.svg';
 import FloatingUIIcon from '@img/Floating-UI.ico';
 import WebpackIcon from '@/icon/webpackIcon.vue';
-import SnabbdomIcon from '@img/snabbdom.png';
+import SnabbdomIcon from '@img/Snabbdom.png';
 
 export default [
     {
