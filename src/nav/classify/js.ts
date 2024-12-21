@@ -8,7 +8,7 @@ import WebpackIcon from '@/icon/webpackIcon.vue';
 export default [
     {
         name: 'GSAP',
-        icon: '/images/gsap.png',
+        icon: '/images/GSAP.svg',
         description: 'GSAP 是一个高性能、高度可定制的动画库，用于创建流畅的动画效果。',
         type: [ 'JavaScript' ],
         link: 'https://gsap.com/',
