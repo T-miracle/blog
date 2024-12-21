@@ -1,3 +1,4 @@
+import { h } from 'vue';
 import DefaultTheme from 'vitepress/theme';
 import 'element-plus/dist/index.css';
 import vSetup from '../components/vSetup.vue';
@@ -15,12 +16,11 @@ import 'viewerjs/dist/viewer.min.css';
 import 'vitepress-plugin-codeblocks-fold/style/index.scss';
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 import './styles/index.scss';
-import { toRefs } from 'vue';
 import 'virtual:uno.css';
-import 'overlayscrollbars/overlayscrollbars.css';
+import App from './App.vue';
 
 export default {
-    ...DefaultTheme,
+    Layout: () => h(App),
     enhanceApp(ctx: EnhanceAppContext) {
         DefaultTheme.enhanceApp(ctx);
         // 注册全局组件

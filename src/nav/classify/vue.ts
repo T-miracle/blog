@@ -1,7 +1,5 @@
 import { Project } from '../type';
 import VueIcon from '@/icon/vueIcon.vue';
-import piniaIcon from '@img/pinia.png';
-import VueUseIcon from '@img/VueUse.svg';
 import splitpanesIcon from '@/icon/splitpanesIcon.vue';
 import { shallowRef } from 'vue';
 
@@ -10,7 +8,7 @@ export default [
         name: 'Vue',
         icon: shallowRef(VueIcon),
         description: '渐进式 JavaScript 框架。易学易用，性能出色，适用场景丰富的 Web 前端框架。',
-        type: [ 'Vue2', 'Vue3', '框架' ],
+        type: [ 'Vue2', 'Vue3', 'JavaScript', '框架' ],
         level: 100,
         link: [
             {
@@ -27,7 +25,7 @@ export default [
     },
     {
         name: 'VueUse',
-        icon: shallowRef(VueUseIcon),
+        icon: '/images/VueUse.svg',
         description: 'Vue 2 和 3 的基本Vue组合实用程序集合',
         type: [ 'Vue2', 'Vue3' ],
         level: 50,
@@ -100,7 +98,7 @@ export default [
     },
     {
         name: 'Pinia',
-        icon: shallowRef(piniaIcon),
+        icon: '/images/pinia.png',
         description: '用于 Vue3 的符合直觉的 Vue.js 状态管理库。',
         type: [ 'Vue3', '框架' ],
         level: 50,

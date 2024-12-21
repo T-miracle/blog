@@ -33,15 +33,12 @@ import uniappItems from './learn/uniapp';
 import dockerItem from './learn/docker';
 import androidItems from './learn/android';
 
-const learnSidebar: DefaultTheme.SidebarItem[] = [
+const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
     {
+        icon: infoIcon,
         text: infoIcon + '关于',
         link: '/learn/'
     },
-    // {
-    //     text: infoIcon + 'test',
-    //     link: '/test/pendingTasks.md'
-    // },
     {
         text: webIcon + '前端',
         collapsed: false,

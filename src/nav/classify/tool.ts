@@ -1,11 +1,9 @@
-import { shallowRef } from 'vue';
 import { Project } from '../type';
-import chatgptIcon from '@img/chatgpt.png';
 
 export default [
     {
         name: 'ChatGPT',
-        icon: shallowRef(chatgptIcon),
+        icon: '/images/chatgpt.png',
         description: '随机图片链接生成',
         type: [ '工具', 'AI' ],
         level: 99,

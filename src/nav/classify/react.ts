@@ -5,7 +5,7 @@ export default [
         name: 'React',
         icon: 'https://files.codelife.cc/website/react.svg',
         description: '用于构建用户界面的 JavaScript 库',
-        type: [ 'React', '框架' ],
+        type: [ 'React', 'JavaScript', '框架' ],
         level: 90,
         link: [
             {

@@ -1,5 +1,3 @@
-import PostcssIcon from '@img/postcss.png';
-import { shallowRef } from 'vue';
 import { Project } from '@/nav/type';
 
 export default [
@@ -59,7 +57,7 @@ export default [
     },
     {
         name: 'PostCSS',
-        icon: shallowRef(PostcssIcon),
+        icon: '/images/postcss.png',
         description: '一个用 JavaScript 工具和插件转换 CSS 代码的工具。',
         type: [ 'CSS' ],
         link: [

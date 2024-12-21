@@ -27,6 +27,7 @@ html, body {
     font-size: 16px;
     font-weight: 500;
     font-family: $defaultFontFamily;
+    scroll-behavior: smooth;
 }
 
 [class*='level-'].VPSidebarItem.is-link > .item > .link:hover .text {
@@ -139,7 +140,6 @@ html, body {
     }
 }
 
-
 .group {
     user-select: none;
 
@@ -178,58 +178,10 @@ html, body {
     background-color: rgba(0, 0, 0, .9);
 }
 
-/* 设置全局滚动条样式 */
-* {
-    /*--ms-滚动条--*/
-    scrollbar-width: auto;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-
-    /*-webkit-滚动条*/
-    &::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-        background-color: transparent;
-    }
-
-    /*-webkit-滑块*/
-    &::-webkit-scrollbar-thumb {
-        height: 50px;
-        outline-offset: -2px;
-        outline: 2px white solid;
-        border-radius: 4px;
-        border: 2px transparent solid;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    /*-webkit-滑块hover效果*/
-    &::-webkit-scrollbar-thumb:hover {
-        height: 50px;
-        border-radius: 4px;
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    /*-webkit-滚动框*/
-    &::-webkit-scrollbar-track-piece {
-        -webkit-border-radius: 0;
-        background-color: transparent;
-    }
-
-    /* -webkit-滑轨 */
-    &::-webkit-scrollbar-track {
-        right: 0;
-        background-color: transparent;
-    }
-
-    /* -webkit-滑轨两头的按钮 */
-    &::-webkit-scrollbar-button {
-        // display: none;
-        height: 8px;
-        width: 8px;
-        background-color: transparent;
-    }
-
-    /* -webkit-边角 */
-    &::-webkit-scrollbar-corner {
-        background-color: transparent;
-    }
+.star-point-bg {
+    background-color: unset !important;
+    backdrop-filter: saturate(50%) blur(4px);
+    -webkit-backdrop-filter: saturate(50%) blur(4px);
+    background-image: radial-gradient(transparent 1px, var(--vp-c-bg-soft) 1px);
+    background-size: 4px 4px;
 }

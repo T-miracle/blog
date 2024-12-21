@@ -3,26 +3,12 @@ import tsIcon from '../../icon/tsIcon.vue';
 import { shallowRef } from 'vue';
 import echartIcon from '@/icon/echartIcon.vue';
 import axiosIcon from '@/icon/axiosIcon.vue';
-import BabelIcon from '@img/babel.png';
-import ViteIcon from '@img/vite.svg';
-import LitIcon from '@img/lit.png';
-import GithubIcon from '@img/github.png';
-import NpmIcon from '@img/NPM.png';
-import visactorIcon from '@img/visactor.png';
-import OverlayScrollbarsIcon from '@img/OverlayScrollbars.png';
-import SwiperIcon from '@img/swiper-logo.svg';
-import EslintIcon from '@img/eslint.svg';
-import terserIcon from '@img/terser-logo.svg';
-import PromiseMirrorIcon from '@img/ProseMirror.svg';
-import GSAPIcon from '@img/GSAP.svg';
-import FloatingUIIcon from '@img/Floating-UI.ico';
 import WebpackIcon from '@/icon/webpackIcon.vue';
-import SnabbdomIcon from '@img/Snabbdom.png';
 
 export default [
     {
         name: 'GSAP',
-        icon: shallowRef(GSAPIcon),
+        icon: '/images/gsap.png',
         description: 'GSAP 是一个高性能、高度可定制的动画库，用于创建流畅的动画效果。',
         type: [ 'JavaScript' ],
         link: 'https://gsap.com/',
@@ -30,7 +16,7 @@ export default [
     },
     {
         name: 'Snabbdom',
-        icon: shallowRef(SnabbdomIcon),
+        icon: '/images/Snabbdom.png',
         description: '一个精简化、模块化、功能强大、性能卓越的虚拟 DOM 库',
         level: -1,
         type: [ 'JavaScript' ],
@@ -38,7 +24,7 @@ export default [
     },
     {
         name: 'Viewer.js',
-        icon: shallowRef(GithubIcon),
+        icon: '/images/github.png',
         description: '极其强大的图片预览JavaScript库',
         type: [ 'JavaScript' ],
         link: 'https://fengyuanchen.github.io/viewerjs/',
@@ -46,7 +32,7 @@ export default [
     },
     {
         name: 'Floating UI',
-        icon: shallowRef(FloatingUIIcon),
+        icon: '/images/Floating-UI.ico',
         description: '用于创建浮动元素的底层工具箱，可创建提示气泡、弹出窗口、下拉菜单等',
         type: [ 'JavaScript' ],
         link: 'https://floating-ui.com/',
@@ -81,7 +67,7 @@ export default [
     },
     {
         name: 'Vite',
-        icon: shallowRef(ViteIcon),
+        icon: '/images/vite.svg',
         description: '一个由原生 ESM 驱动的 Web 开发构建工具',
         type: [ '构建工具' ],
         level: 15,
@@ -117,7 +103,7 @@ export default [
     },
     {
         name: 'Babel',
-        icon: shallowRef(BabelIcon),
+        icon: '/images/babel.png',
         description: '一个 JavaScript 编译器，可将 ECMAScript 2015+ 代码转换为向后兼容的 JavaScript 版本',
         type: [ 'JavaScript' ],
         link: [
@@ -134,7 +120,7 @@ export default [
     },
     {
         name: 'Eslint',
-        icon: shallowRef(EslintIcon),
+        icon: '/images/eslint.svg',
         description: '一个插件化的 JavaScript 代码检测工具，可帮助你查找和修复 JavaScript 代码中的问题。',
         type: [ 'JavaScript' ],
         level: 10,
@@ -152,7 +138,7 @@ export default [
     },
     {
         name: 'Terser',
-        icon: shallowRef(terserIcon),
+        icon: '/images/terser-logo.svg',
         description: 'JavaScript 解析器、混淆器和压缩工具包，适用于 ES6+',
         type: [ 'JavaScript' ],
         link: 'https://terser.org/',
@@ -204,7 +190,7 @@ export default [
     },
     {
         name: 'Swiper',
-        icon: shallowRef(SwiperIcon),
+        icon: '/images/swiper-logo.svg',
         description: '这可能是最全能的移动端轮播图实现，当然 Web 端也可以使用',
         type: [ 'JavaScript' ],
         link: 'https://swiperjs.com/',
@@ -212,7 +198,7 @@ export default [
     },
     {
         name: 'VTable 方格艺术家',
-        icon: shallowRef(visactorIcon),
+        icon: '/images/visactor.png',
         description: 'VTable，不只是一款高性能的多维数据分析表格，更是一个在行列间创作的方格艺术家。',
         type: [ 'JavaScript' ],
         link: 'https://visactor.io/',
@@ -220,7 +206,7 @@ export default [
     },
     {
         name: 'OverlayScrollbars',
-        icon: shallowRef(OverlayScrollbarsIcon),
+        icon: '/images/OverlayScrollbars.png',
         description: '一个滚动条插件，隐藏本机滚动条，提供自定义样式的覆盖滚动条，并保留本机功能和感觉。',
         type: [ 'JavaScript' ],
         link: 'https://visactor.io/',
@@ -236,7 +222,7 @@ export default [
     },
     {
         name: 'Lit',
-        icon: shallowRef(LitIcon),
+        icon: '/images/lit.png',
         description: 'Lit 是一个简单的库，用于构建快速、轻量级的web组件。',
         type: [ 'JavaScript' ],
         link: 'https://lit.dev/',
@@ -244,7 +230,7 @@ export default [
     },
     {
         name: 'NPM',
-        icon: shallowRef(NpmIcon),
+        icon: '/images/NPM.png',
         description: '一个 JavaScript 包管理工具，也是 Node.js 的默认包管理器。 NPM 允许开发者轻松地下载、安装、共享、管理项目的依赖库和工具。',
         type: [ 'JavaScript', 'NodeJs' ],
         level: 40,
@@ -261,7 +247,7 @@ export default [
     },
     {
         name: 'PromiseMirror',
-        icon: shallowRef(PromiseMirrorIcon),
+        icon: '/images/ProseMirror.svg',
         description: '一个基于TypeScript的高度自定义构建富文本编辑器的框架',
         type: [ 'TypeScript', '框架' ],
         link: 'https://prosemirror.net/',

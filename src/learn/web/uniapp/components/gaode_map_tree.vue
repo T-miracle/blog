@@ -1,9 +1,21 @@
 <template>
     <div class="tree-box">
-        <el-tree :data="data" :props="props" node-key="label" :default-expanded-keys="expandKey">
-            <template v-slot="{ node, data }">
-                <div @click="emits('node-click', data.label)" style="width: 100%; display: flex; align-items: center">
-                    <el-icon :size="18" style="margin-right: 6px" v-html="data.type"/>
+        <el-tree
+            :data="data"
+            :props="props"
+            node-key="label"
+            :default-expanded-keys="expandKey"
+        >
+            <template #default="{ node, data }">
+                <div
+                    style="width: 100%; display: flex; align-items: center"
+                    @click="emits('node-click', data.label)"
+                >
+                    <el-icon
+                        :size="18"
+                        style="margin-right: 6px"
+                        v-html="data.type"
+                    />
                     <span>{{ data.label }}</span>
                     <span class="desc">{{ data.desc }}</span>
                 </div>
@@ -13,16 +25,16 @@
 </template>
 
 <script setup lang="ts">
-    import {ElTree, ElIcon} from 'element-plus';
-    import {reactive} from 'vue';
+    import { ElTree, ElIcon } from 'element-plus';
+    import { reactive } from 'vue';
     import {
         androidIcon,
         folderIcon,
         gradleIcon,
         xmlIcon
-    } from '../../../../public/icons'
+    } from '@/public/icons';
 
-    const emits = defineEmits(['node-click'])
+    const emits = defineEmits([ 'node-click' ]);
 
     const props = {
         children: 'children',
@@ -36,7 +48,7 @@
         children?: Tree[]
     }
 
-    const expandKey = ['项目', 'app', 'libs', 'src', 'main', 'assets', 'data']
+    const expandKey = [ '项目', 'app', 'libs', 'src', 'main', 'assets', 'data' ];
 
     const data: Tree[] = reactive<Tree[]>([
         {
@@ -64,7 +76,7 @@
                                     label: 'weex_amap-release.aar',
                                     type: androidIcon,
                                     desc: '# nvue页面需要'
-                                },
+                                }
                             ]
                         },
                         {
@@ -123,17 +135,17 @@
                                 {
                                     label: 'AndroidManifest.xml',
                                     type: xmlIcon
-                                },
+                                }
                             ]
                         },
                         {
                             label: 'build.gradle',
                             type: gradleIcon
-                        },
+                        }
                     ]
-                },
+                }
             ]
-        },
+        }
 
     ]);
 

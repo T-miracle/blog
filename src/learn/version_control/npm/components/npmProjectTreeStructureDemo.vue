@@ -1,8 +1,17 @@
 <template>
     <div class="tree-box">
-        <el-tree :data="data" :props="props" node-key="label" :default-expanded-keys="['lib']">
-            <template v-slot="{ node, data }">
-                <el-icon :size="18" style="margin-right: 6px" v-html="data.type"/>
+        <el-tree
+            :data="data"
+            :props="props"
+            node-key="label"
+            :default-expanded-keys="['lib']"
+        >
+            <template #default="{ node, data }">
+                <el-icon
+                    :size="18"
+                    style="margin-right: 6px"
+                    v-html="data.type"
+                />
                 <span>{{ data.label }}</span>
             </template>
         </el-tree>
@@ -10,71 +19,71 @@
 </template>
 
 <script setup lang="ts">
-import { ElTree, ElIcon } from 'element-plus';
-import { reactive } from 'vue';
-import { ignoreIcon, jsIcon, jsonIcon, folderIcon, mdIcon, tsIcon } from '../../../../public/icons'
+    import { ElTree, ElIcon } from 'element-plus';
+    import { reactive } from 'vue';
+    import { ignoreIcon, jsIcon, jsonIcon, folderIcon, mdIcon, tsIcon } from '@/public/icons';
 
-const props = {
-    children: 'children',
-    label: 'label'
-};
+    const props = {
+        children: 'children',
+        label: 'label'
+    };
 
-interface Tree {
-    label: string,
-    type: string,
-    children?: Tree[]
-}
-
-const data: Tree[] = reactive([
-    {
-        label: 'lib',
-        type: folderIcon,
-        children: [
-            {
-                label: 'index.ts',
-                type: tsIcon
-            },
-            {
-                label: 'index.js',
-                type: jsIcon
-            },
-            {
-                label: 'index.d.ts',
-                type: tsIcon
-            }
-        ]
-    },
-    {
-        label: 'node_modules',
-        type: folderIcon,
-        children: [
-            {
-                label: '一些依赖文件...',
-                type: folderIcon
-            }
-        ]
-    },
-    {
-        label: '.gitignore',
-        type: ignoreIcon
-    },
-    {
-        label: 'package.json',
-        type: jsonIcon
-    },
-    {
-        label: 'package-lock.json',
-        type: jsonIcon
-    },
-    {
-        label: 'README.md',
-        type: mdIcon
-    },
-    {
-        label: 'tsconfig.json',
-        type: jsonIcon
+    interface Tree {
+        label: string,
+        type: string,
+        children?: Tree[]
     }
-]);
+
+    const data: Tree[] = reactive([
+        {
+            label: 'lib',
+            type: folderIcon,
+            children: [
+                {
+                    label: 'index.ts',
+                    type: tsIcon
+                },
+                {
+                    label: 'index.js',
+                    type: jsIcon
+                },
+                {
+                    label: 'index.d.ts',
+                    type: tsIcon
+                }
+            ]
+        },
+        {
+            label: 'node_modules',
+            type: folderIcon,
+            children: [
+                {
+                    label: '一些依赖文件...',
+                    type: folderIcon
+                }
+            ]
+        },
+        {
+            label: '.gitignore',
+            type: ignoreIcon
+        },
+        {
+            label: 'package.json',
+            type: jsonIcon
+        },
+        {
+            label: 'package-lock.json',
+            type: jsonIcon
+        },
+        {
+            label: 'README.md',
+            type: mdIcon
+        },
+        {
+            label: 'tsconfig.json',
+            type: jsonIcon
+        }
+    ]);
 
 </script>
 

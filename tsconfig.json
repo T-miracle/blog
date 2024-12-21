@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "strict": true,
-    // js/ts 混用时设为false
+    "allowJs": true,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
