@@ -237,8 +237,8 @@ export default [
         link: 'https://www.npmjs.com/'
     },
     {
-        name: 'Excaliraw',
-        icon: 'https://excalidraw.com/apple-touch-icon.png',
+        name: 'Excalidraw',
+        icon: '/images/Excalidraw.png',
         description: '一个开源的虚拟手绘风格白板。支持协作并且端到端加密。',
         type: [ '工具', 'JavaScript' ],
         level: 79,
