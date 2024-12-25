@@ -27,7 +27,7 @@ html, body {
     font-size: 16px;
     font-weight: 500;
     font-family: $defaultFontFamily;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
 }
 
 [class*='level-'].VPSidebarItem.is-link > .item > .link:hover .text {

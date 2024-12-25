@@ -36,7 +36,7 @@ export default {
         const { frontmatter } = useData();
         const route = useRoute();
         imageViewer(route, '.vp-doc', { toolbar: true });
-        codeblocksFold({ route, frontmatter });
+        codeblocksFold();
         hideFooter(frontmatter);
         giscusTalk({
             repo: 'T-miracle/blog',
