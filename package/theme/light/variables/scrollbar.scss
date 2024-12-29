@@ -1,0 +1,89 @@
+@mixin scrollbar {
+    .os-scrollbar {
+        cursor: pointer;
+        // The size of the scrollbar
+        // 滚动条的大小
+        --os-size: 10px;
+        // The axis-perpendicular padding of the scrollbar (horizontal: padding-y, vertical: padding-x)
+        // 滚动条的轴垂直内边距（水平：padding-y，垂直：padding-x）
+        --os-padding-perpendicular: 1px;
+        // The axis padding of the scrollbar (horizontal: padding-x, vertical: padding-y)
+        // 滚动条的轴内边距（水平：padding-x，垂直：padding-y）
+        --os-padding-axis: 0;
+        // The border radius of the scrollbar track
+        // 滚动条轨道的边框圆角
+        --os-track-border-radius: 0;
+        // The background of the scrollbar track
+        // 滚动条轨道的背景
+        --os-track-bg: none;
+        // The :hover background of the scrollbar track
+        // 滚动条轨道的 hover 背景
+        --os-track-bg-hover: none;
+        // The :active background of the scrollbar track
+        // 滚动条轨道的 active 背景
+        --os-track-bg-active: none;
+        // The border of the scrollbar track
+        // 滚动条轨道的边框
+        --os-track-border: none;
+        // The :hover background of the scrollbar track
+        // 滚动条轨道的 hover 边框
+        --os-track-border-hover: none;
+        // The :active background of the scrollbar track
+        // 滚动条轨道的 active 边框
+        --os-track-border-active: none;
+        // The border radius of the scrollbar handle
+        // 滚动条本身的边框圆角
+        --os-handle-border-radius: 0;
+        // The background of the scrollbar handle
+        // 滚动条本身的背景
+        --os-handle-bg: rgba(0, 0, 0, 0.08);
+        // The :hover background of the scrollbar handle
+        // 滚动条本身的 hover 背景
+        --os-handle-bg-hover: rgba(0, 0, 0, 0.12);
+        // The :active background of the scrollbar handle
+        // 滚动条本身的 active 背景
+        --os-handle-bg-active: rgba(0, 0, 0, 0.12);
+        // The border of the scrollbar handle
+        // 滚动条本身的边框
+        --os-handle-border: 1px solid rgba(0, 0, 0, 0.12);
+        // The :hover border of the scrollbar handle
+        // 滚动条本身的 hover 边框
+        --os-handle-border-hover: 1px solid rgba(0, 0, 0, 0.12);
+        // The :active border of the scrollbar handle
+        // 滚动条本身的 active 边框
+        --os-handle-border-active: 1px solid rgba(0, 0, 0, 0.12);
+        // The min size of the scrollbar handle
+        // 滚动条本身的最小尺寸
+        --os-handle-min-size: 33px;
+        // The max size of the scrollbar handle
+        // 滚动条本身的最大尺寸
+        --os-handle-max-size: none;
+        // The axis-perpendicular size of the scrollbar handle (horizontal: height, vertical: width)
+        // 滚动条本身的轴垂直尺寸（水平：高度，垂直：宽度）
+        --os-handle-perpendicular-size: 100%;
+        // The :hover axis-perpendicular size of the scrollbar handle (horizontal: height, vertical: width)
+        // 滚动条本身的 hover 轴垂直尺寸（水平：高度，垂直：宽度）
+        --os-handle-perpendicular-size-hover: 100%;
+        // The :active axis-perpendicular size of the scrollbar handle (horizontal: height, vertical: width)
+        // 滚动条本身的 active 轴垂直尺寸（水平：高度，垂直：宽度）
+        --os-handle-perpendicular-size-active: 100%;
+        // Increases the interactive area of the scrollbar handle.
+        // 增加滚动条本身的交互区域
+        --os-handle-interactive-area-offset: 0;
+    }
+
+    .os-theme-custom {
+        --os-size: 12px;
+    }
+
+    // Horizontal scrollbar
+    // 水平滚动条
+    .os-theme-custom.os-scrollbar-horizontal {
+        --os-size: 12px;
+    }
+    // Vertical scrollbar
+    // 垂直滚动条
+    .os-theme-custom.os-scrollbar-vertical {
+        --os-size: 12px;
+    }
+}

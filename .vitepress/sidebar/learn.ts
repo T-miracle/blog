@@ -37,7 +37,8 @@ const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
     {
         icon: infoIcon,
         text: infoIcon + '关于',
-        link: '/learn/'
+        link: '/learn/',
+        items: []
     },
     {
         text: webIcon + '前端',
@@ -152,10 +153,10 @@ const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
                 text: gitIcon + 'Git',
                 collapsed: true,
                 items: [
-                    { text: '🔸 Git常用命令', link: '/learn/version_control/git/git_common_commands.md' },
+                    { text: '🔸 Git常用命令', link: '/learn/version_control/git/git_common_commands' },
                     {
                         text: '🔸 Git将项目的某个目录分离成新的项目，并保留历史提交信息',
-                        link: '/learn/version_control/git/git_detached_directory_and_keep_historical_submission_records.md'
+                        link: '/learn/version_control/git/git_detached_directory_and_keep_historical_submission_records'
                     }
                 ]
             },
@@ -163,21 +164,21 @@ const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
                 text: githubIcon + 'Github',
                 collapsed: true,
                 items: [
-                    { text: '🔹 README 说明文件美化教程', link: '/learn/version_control/github/readme_beautify.md' }
+                    { text: '🔹 README 说明文件美化教程', link: '/learn/version_control/github/readme_beautify' }
                 ]
             },
             {
                 text: npmIcon + 'NPM',
                 collapsed: true,
                 items: [
-                    { text: '🔹 NPM常用命令', link: '/learn/version_control/npm/npm_common_commands.md' },
+                    { text: '🔹 NPM常用命令', link: '/learn/version_control/npm/npm_common_commands' },
                     {
                         text: '🔸 devDependencies 和 dependencies 的区别',
-                        link: '/learn/version_control/npm/the_difference_between_devDependencies_and_dependencies.md'
+                        link: '/learn/version_control/npm/the_difference_between_devDependencies_and_dependencies'
                     },
                     {
                         text: '🔸 NPM 上传开源项目（或插件）',
-                        link: '/learn/version_control/npm/npm_upload_project.md'
+                        link: '/learn/version_control/npm/npm_upload_project'
                     }
                 ]
             }

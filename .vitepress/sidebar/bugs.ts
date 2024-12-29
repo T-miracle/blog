@@ -17,7 +17,7 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
                 items: [
                     {
                         text: '🔹 img 标签加载对象存储图片后再使用 canvas 调用当前图片，导致图片跨域的问题',
-                        link: '/bugs/web/html/canvas-use-object-storage-image-cross-domain.md'
+                        link: '/bugs/web/html/canvas-use-object-storage-image-cross-domain'
                     }
                 ]
             },
@@ -49,7 +49,7 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
                     },
                     {
                         text: '🔹 el-form 自定义一个非输入选择的值的规则，但是无法生效的问题',
-                        link: '/bugs/web/element-ui/el-form_customize_rule.md'
+                        link: '/bugs/web/element-ui/el-form_customize_rule'
                     }
                 ]
             },
@@ -59,7 +59,7 @@ const bugsSidebar: DefaultTheme.SidebarItem[] = [
                 items: [
                     {
                         text: '🔹 新安装包覆盖安装，新增加的页面无法跳转',
-                        link: '/bugs/web/uniapp/overwrite_install_newly_added_page_cannot_jump.md'
+                        link: '/bugs/web/uniapp/overwrite_install_newly_added_page_cannot_jump'
                     }
                 ]
             }

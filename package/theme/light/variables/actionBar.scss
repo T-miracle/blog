@@ -1,0 +1,9 @@
+// 操作条
+@mixin actionBar {
+    --action-bar-size: 2.1rem;
+    --action-bar-bg: #F7F8FA;
+    --action-bar-border-color: #EBECF0;
+    --action-bar-btn-hover-bg: #DBDCDE;
+    --action-bar-btn-focus-bg: #3573F0;
+    --action-bar-btn-current-select-bg: #DBDCDE;
+}

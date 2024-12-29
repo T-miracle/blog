@@ -1,9 +1,18 @@
 <template>
-    <div v-if="modelValue" class="modal" @click="closeModal">
+    <div
+        v-if="modelValue"
+        class="modal"
+        @click="closeModal"
+    >
         <teleport to="body">
             <div class="modal-content">
                 <h2>模态框内容</h2>
-                <button class="btn" @click="closeModal">关闭</button>
+                <button
+                    class="btn"
+                    @click="closeModal"
+                >
+                    关闭
+                </button>
             </div>
         </teleport>
     </div>
@@ -25,7 +34,7 @@
 
 <style scoped>
     .modal {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 999;
@@ -35,7 +44,7 @@
     }
 
     .modal-content {
-        position: fixed;
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

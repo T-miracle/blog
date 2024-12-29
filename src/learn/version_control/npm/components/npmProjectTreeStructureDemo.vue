@@ -89,6 +89,7 @@
 
 <style scoped lang="scss">
     .tree-box {
+        background-color: #292b30;
         margin: 10px 0;
         padding: 10px;
         border-radius: 8px;

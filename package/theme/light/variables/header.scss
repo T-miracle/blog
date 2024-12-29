@@ -1,0 +1,8 @@
+@mixin header {
+    --header-size: 2.2rem;
+    --header-border-color: #EBECF0;
+    --header-bg: linear-gradient(90deg, #F7F7F8 0%, #F5E0D5 5%, #F7F8FA 20%, #F7F8FA 100%);
+    --header-nav-color: #333;
+    --header-nav-popup-hover-bg: #D4E2FF;
+    --header-title-font: 700 1rem 'Poppins',sans-serif;
+}

@@ -15,6 +15,11 @@ export default [
             }
         },
         rules: {
+            // 允许any类型
+            '@typescript-eslint/no-explicit-any': 'off',
+            // 允许未使用的变量
+            "@typescript-eslint/no-unused-expressions": "off",
+
             /** 空格 */
             // 数组括号前后的空格
             'array-bracket-spacing': [ 'error', 'always' ],
@@ -69,6 +74,8 @@ export default [
             'vue/no-v-for-template-key-on-child': 'off',
             // 禁用 v-text、v-html、v-on 指令在组件上
             'vue/no-v-text-v-html-on-component': 'off',
+            // 允许 v-html 指令
+            'vue/ no-v-html': 'allow',
 
             /** 其他 */
             // 强制使用强类型判断（例如 `===` 和 `!==`）

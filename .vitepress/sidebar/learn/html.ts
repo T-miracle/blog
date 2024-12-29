@@ -10,8 +10,8 @@ const htmlItems: DefaultTheme.SidebarItem[] = [
         link: '/learn/web/html/the_difference_between_cookie_localstorage_and_sessionstorage',
         collapsed: false,
         items: [
-            {text: '🔥 关于Cookie', link: '/learn/web/html/about_cookie.md'}
+            { text: '🔥 关于Cookie', link: '/learn/web/html/about_cookie' }
         ]
-    },
+    }
 ];
 export default htmlItems;

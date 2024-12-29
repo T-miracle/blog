@@ -3,14 +3,14 @@ import { DefaultTheme } from 'vitepress/types/default-theme';
 const jsItems: DefaultTheme.SidebarItem[] = [
     {
         text: '🔥 JavaScript中有哪些数据类型？',
-        link: '/learn/web/javascript/type_of_data.md',
+        link: '/learn/web/javascript/type_of_data',
         collapsed: false,
         items: [
             { text: '⭐ 引用类型之间有什么区别', link: '/learn/web/javascript/what_is_the_difference_between_reference_types' }
         ]
     },
-    { text: '🔸 数组的常用遍历函数', link: '/learn/web/javascript/common_traverse_functions_for_array.md' },
-    { text: '🔸 对象数据如何获取第一个属性的值？', link: '/learn/web/javascript/object_get_first_value.md' },
+    { text: '🔸 数组的常用遍历函数', link: '/learn/web/javascript/common_traverse_functions_for_array' },
+    { text: '🔸 对象数据如何获取第一个属性的值？', link: '/learn/web/javascript/object_get_first_value' },
     { text: '🔥 深拷贝和浅拷贝的区别', link: '/learn/web/javascript/the_difference_between_deep_copy_and_shallow_copy' },
     { text: '🔥 什么是闭包？', link: '/learn/web/javascript/what_is_closure' },
     { text: '🔥 谈谈原型与原型链', link: '/learn/web/javascript/prototype_and_prototype_chains' },
@@ -25,8 +25,8 @@ const jsItems: DefaultTheme.SidebarItem[] = [
         link: '/learn/web/javascript/what_is_promise',
         collapsed: false,
         items: [
-            { text: '🔥 什么是回调地狱？', link: '/learn/web/javascript/what_is_callback_hell.md' },
-            { text: '⭐ promise.all()', link: '/learn/web/javascript/promise_all.md' },
+            { text: '🔥 什么是回调地狱？', link: '/learn/web/javascript/what_is_callback_hell' },
+            { text: '⭐ promise.all()', link: '/learn/web/javascript/promise_all' }
         ]
     },
     { text: '🔹 MutationObserver监听DOM', link: '/learn/web/javascript/mutationObserver_listens_to_dom' },

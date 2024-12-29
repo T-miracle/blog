@@ -1,0 +1,18 @@
+@use './variables/header' as *;
+@use 'variables/actionBar' as *;
+@use './variables/scrollbar' as *;
+@use './variables/sidebar' as *;
+@use './variables/footer' as *;
+
+html, body {
+    font-size: 16px;
+}
+
+:root {
+    @include header;
+    @include actionBar;
+    @include sidebar;
+    @include footer;
+}
+
+@include scrollbar;

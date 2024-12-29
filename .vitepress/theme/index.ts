@@ -1,4 +1,3 @@
-import { h } from 'vue';
 import DefaultTheme from 'vitepress/theme';
 import 'element-plus/dist/index.css';
 import vSetup from '../components/vSetup.vue';
@@ -13,14 +12,13 @@ import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
 import imageViewer from 'vitepress-plugin-image-viewer';
 import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
-import 'vitepress-plugin-codeblocks-fold/style/index.scss';
-import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
-import './styles/index.scss';
+// import './styles/index.scss';
 import 'virtual:uno.css';
-import App from './App.vue';
+import NanoTheme from '../../package/index';
 
 export default {
-    Layout: () => h(App),
+    ...NanoTheme,
+    // ...DefaultTheme,
     enhanceApp(ctx: EnhanceAppContext) {
         DefaultTheme.enhanceApp(ctx);
         // 注册全局组件
@@ -36,7 +34,6 @@ export default {
         const { frontmatter } = useData();
         const route = useRoute();
         imageViewer(route, '.vp-doc', { toolbar: true });
-        codeblocksFold({ frontmatter, route });
         hideFooter(frontmatter);
         giscusTalk({
             repo: 'T-miracle/blog',

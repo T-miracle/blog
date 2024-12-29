@@ -1,16 +1,16 @@
 <template>
     <div class="relative nav">
-        <div class="relative left z-10 w-full star-point-bg nav-filter">
+        <div class="relative left z-10 w-full star-point-bg">
             <div
-                class="max-w-1200 mx-auto p-20"
-                un-flex="~ items-center gap-8 lg:gap-20"
+                class="w-full p-5"
+                un-flex="~ items-center gap-2 lg:gap-5"
             >
-                <div class="w-160">
-                    <h2 class="m-0! p-0! border-none! text-18! lg:text-24!">
+                <div class="w-40">
+                    <h2 class="m-0! p-0! border-none! text-4.5! lg:text-6!">
                         资源导航
                     </h2>
                 </div>
-                <div class="w-160">
+                <div class="w-40">
                     <ElInput
                         v-model="filter"
                         class="w-full mb-0! filter"
@@ -18,7 +18,7 @@
                         clearable
                     />
                 </div>
-                <div class="w-200">
+                <div class="w-50">
                     <ClientOnly>
                         <ElSelect
                             v-model="typeList"
@@ -43,48 +43,48 @@
         </div>
         <div
             v-if="list.length !== 0"
-            class="relative grid gap-20 p-20 pt-0 max-w-1200 mx-auto"
+            class="relative grid gap-5 p-5 pt-0 w-full"
             xl="grid-cols-3"
             md="grid-cols-2"
         >
             <div
                 v-for="project in list"
                 :key="project.name"
-                class="relative rounded-8 p-12 bg-white transform transition-all transition-250"
+                class="relative rounded-2 p-3 bg-white transform transition-all transition-250"
                 hover="shadow-emerald shadow-md transition-all transition-250"
-                border="~ solid 1 gray-300 dark:gray-700"
+                border="~ solid .25 gray-300 dark:gray-700"
                 shadow="sm gray"
                 dark="bg-#2c2e2f shadow-neutral"
             >
                 <div class="relative">
-                    <div class="grid grid-cols-[56px_auto]">
+                    <div class="grid grid-cols-[3rem_auto]">
                         <el-image
                             v-if="typeof project.icon === 'string'"
-                            class="w-40 h-40 rounded-4 border-none"
+                            class="w-10 h-10 rounded-1 border-none"
                             :src="project.icon"
                             fit="contain"
                         />
                         <Component
                             :is="project.icon"
                             v-else
-                            class="w-40 h-40 text-24"
+                            class="w-10 h-10 text-6"
                         />
                         <div class="relative flex flex-col">
                             <div class="text-1.12em">
                                 {{ project.name }}
                             </div>
                             <div
-                                class="line-clamp-2 h-30"
+                                class="line-clamp-2 h-8 whitespace-pre-wrap"
                                 un-text="gray-400 .72em"
-                                line-height-15
+                                line-height-3.75
                                 :title="project.description"
                             >
                                 {{ project.description }}
                             </div>
                         </div>
                     </div>
-                    <div class="mt-8 flex justify-between">
-                        <div class="flex items-center justify-start gap-8">
+                    <div class="mt-2 flex justify-between">
+                        <div class="flex items-center justify-start gap-2">
                             <ElTag
                                 v-for="tag in project.type"
                                 :key="tag"
@@ -97,7 +97,7 @@
                         <div class="flex items-center justify-start flex-row-reverse">
                             <el-button
                                 v-if="typeof project.link === 'string'"
-                                class="ml-8 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
+                                class="ml-2 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
                                 size="small"
                                 color="#9095E8"
                                 auto-insert-space
@@ -108,16 +108,16 @@
                             <ClientOnly>
                                 <el-dropdown
                                     v-if="Array.isArray(project.link)"
-                                    class="ml-8"
+                                    class="ml-2"
                                     size="small"
                                 >
                                     <el-button
-                                        class="ml-8 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
+                                        class="ml-2 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
                                         color="#9095E8"
                                         size="small"
                                         auto-insert-space
                                     >
-                                        <span class="tracking-2">访问</span>
+                                        <span class="tracking-.5">访问</span>
                                         <el-icon class="el-icon--right">
                                             <arrow-down/>
                                         </el-icon>
@@ -132,7 +132,7 @@
                                         >
                                             <div class="w-full flex items-center flex-row-reverse z-2">
                                                 <el-button
-                                                    class="w-full ml-12 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
+                                                    class="w-full ml-3 text-white dark:text-gray-8 hover:text-white hover:dark:text-gray-8"
                                                     size="small"
                                                     color="#9095E8"
                                                     auto-insert-space
@@ -141,14 +141,14 @@
                                                     {{ it.name }}
                                                 </el-button>
                                                 <div
-                                                    class="cursor-pointer shrink-0 w-18 h-18"
+                                                    class="cursor-pointer shrink-0 w-4.5 h-4.5"
                                                     hover="opacity-80"
                                                     title="Github"
                                                     @click.stop="openLink(it.github)"
                                                 >
                                                     <githubIcon
                                                         v-if="it.github"
-                                                        class="w-18 h-18"
+                                                        class="w-4.5 h-4.5"
                                                     />
                                                 </div>
                                             </div>
@@ -163,7 +163,7 @@
                                 title="Github"
                                 @click.stop="openLink(project.github)"
                             >
-                                <githubIcon class="w-18 h-18"/>
+                                <githubIcon class="w-4.5 h-4.5"/>
                             </div>
                         </div>
                     </div>
@@ -235,21 +235,12 @@
     .nav :deep(img) {
         box-shadow: unset;
     }
-
-    .nav-filter {
-        @media screen and (min-width: 960px) {
-            & {
-                position: sticky;
-                top: var(--vp-nav-height);
-            }
-        }
-    }
 </style>
 
 <style lang="scss">
     .flex-option-list {
         .el-scrollbar__view.el-select-dropdown__list {
-            max-width: 80vw;
+            max-width: 80%;
             display: flex;
             flex-wrap: wrap;
 

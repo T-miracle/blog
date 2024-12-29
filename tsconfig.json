@@ -14,8 +14,18 @@
     "noImplicitThis": true,
     "baseUrl": ".",
     "paths": {
-      "@/*":[ "./src/*" ],
-      "@img/*":[ "./src/public/images/*" ]
+      "@/*": [
+        "./src/*"
+      ],
+      "@NanoUI/*": [
+        "./package/components/*"
+      ],
+      "@NanoIcon/*": [
+        "./package/icon/*"
+      ],
+      "@store/*": [
+        "./package/store/*"
+      ]
     },
     "lib": [
       "esnext",

@@ -26,7 +26,9 @@ export default defineConfig({
         resolve: {
             alias: {
                 '@': path.join(__dirname, '../src/'),
-                '@img': path.join(__dirname, '../src/public/images/')
+                '@NanoUI': path.join(__dirname, '../package/components/'),
+                '@NanoIcon': path.join(__dirname, '../package/icon/'),
+                '@store': path.join(__dirname, '../package/store/')
             }
         },
         plugins: [
@@ -45,12 +47,12 @@ export default defineConfig({
     markdown: {
         // 代码块显示行数
         // lineNumbers: true,
-        theme: 'monokai',
+        // theme: 'monokai',
         // lineNumbers: true,
-        // theme: {
-        //     light: 'github-dark',
-        //     dark: 'github-dark'
-        // },
+        theme: {
+            light: 'github-light',
+            dark: 'github-dark'
+        },
         config: (md) => {
             md.use(mathjax3);
             md.use(taskLists);
@@ -88,9 +90,8 @@ export default defineConfig({
             }
         },
         footer: {
-            message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2022-present Tmiracle <br/>' +
-                '<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2022008261号-1</a>'
+            message: 'Released under the MIT License. <br/> Copyright © 2022-present Tmiracle',
+            copyright: '<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2022008261号-1</a>'
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/T-miracle' },
