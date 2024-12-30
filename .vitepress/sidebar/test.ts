@@ -4,7 +4,8 @@ import { jsIcon, questionBankIcon, webIcon } from './icons';
 const testSidebar: DefaultTheme.SidebarItem[] = [
     {
         text: questionBankIcon + '测试题库',
-        link: '/test/'
+        link: '/test/',
+        items: []
     },
     {
         text: webIcon + '前端',

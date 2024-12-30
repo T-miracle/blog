@@ -1,52 +1,21 @@
 <template>
     <div
         class="absolute left-[var(--action-bar-size)] top-0 z-20 h-full w-[var(--sidebar-size)]"
-        un-border="r-solid r-1px r-[var(--sidebar-border-color)]"
         un-p="t-[var(--header-size)] b-[var(--footer-size)]"
+        un-border="r-solid r-1px r-[var(--sidebar-border-color)]"
         style="background: var(--sidebar-bg)"
     >
-        <OverlayScrollbarsComponent
-            :key="key"
-            ref="scrollbar"
-            class="w-full h-full"
-            :options="scrollbarOptions"
-            defer
-        >
-            <div
-                class="relative py-3 px-3 w-auto!"
-                @click.stop
-            >
-                <NanoSidebarDirTree
-                    :key="key"
-                    :list="sidebarGroups"
-                />
+        <div class="relative w-full h-full">
+            <div class="absolute top-0 left-0 w-full h-full z-1" un-border="b-1px b-solid b-[var(--sidebar-border-color)]">
+                <NanoSidebarDir/>
             </div>
-        </OverlayScrollbarsComponent>
+            <div class="absolute bottom-0 left-0 w-full h-0"></div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
-    // @ts-expect-error vitepress sidebar
-    import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar';
-    import NanoSidebarDirTree from '@NanoUI/NanoSidebarDirTree/index.vue';
-    import scrollbarOptions from '../../config/scrollbarOptions';
-    import { ref, watch } from 'vue';
-
-    const { sidebarGroups, hasSidebar } = useSidebar();
-    const key = ref(0);
-
-    watch(
-        sidebarGroups,
-        () => {
-            // console.log('sidebarGroups', sidebarGroups.value);
-            key.value += 1;
-        },
-        {
-            immediate: true,
-            deep: true
-        }
-    );
+    import NanoSidebarDir from '@NanoUI/NanoSidebarDir/index.vue';
 </script>
 
 <style scoped lang="scss">

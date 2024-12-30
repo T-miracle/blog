@@ -3,6 +3,7 @@
 @use './variables/scrollbar' as *;
 @use './variables/sidebar' as *;
 @use './variables/footer' as *;
+@use './variables/content' as *;
 
 html, body {
     font-size: 16px;
@@ -16,3 +17,4 @@ html, body {
 }
 
 @include scrollbar;
+@include content;

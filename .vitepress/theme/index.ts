@@ -1,4 +1,3 @@
-import DefaultTheme from 'vitepress/theme';
 import 'element-plus/dist/index.css';
 import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
@@ -14,13 +13,13 @@ import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
 // import './styles/index.scss';
 import 'virtual:uno.css';
-import NanoTheme from '../../package/index';
+import { theme, install } from '../../package/index';
 
 export default {
-    ...NanoTheme,
+    Layout: theme,
     // ...DefaultTheme,
     enhanceApp(ctx: EnhanceAppContext) {
-        DefaultTheme.enhanceApp(ctx);
+        install(ctx);
         // 注册全局组件
         ctx.app.component('vSetup', vSetup);
         ctx.app.component('vPageTips', vPageTips);

@@ -1,5 +1,5 @@
 <template>
-    <div class="relative nav">
+    <div ref="navBox" class="relative nav">
         <div class="relative left z-10 w-full star-point-bg">
             <div
                 class="w-full p-5"
@@ -42,10 +42,9 @@
             </div>
         </div>
         <div
+            ref="listBox"
             v-if="list.length !== 0"
             class="relative grid gap-5 p-5 pt-0 w-full"
-            xl="grid-cols-3"
-            md="grid-cols-2"
         >
             <div
                 v-for="project in list"
@@ -193,7 +192,7 @@
         ElTag
     } from 'element-plus';
     import { ArrowDown } from '@element-plus/icons-vue';
-    import { reactive, ref, watch } from 'vue';
+    import { onMounted, onUnmounted, reactive, ref, watch } from 'vue';
     import projects from './classify/index';
     import githubIcon from '@/icon/githubIcon.vue';
     import { Project, projectTypeArray } from '@/nav/type';
@@ -223,6 +222,30 @@
             window.open(link, '_blank');
         }
     }
+
+    const navBox = ref<HTMLDivElement | null>(null);
+    const listBox = ref<HTMLDivElement | null>(null);
+    const resizeObserver = ref<ResizeObserver | null>(null);
+    onMounted(() => {
+        resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+            entries.forEach((entry: ResizeObserverEntry) => {
+                if (entry.target === navBox.value) {
+                    const { clientWidth } = entry.target;
+                    if (clientWidth > 1280) {
+                        listBox.value?.style.setProperty('grid-template-columns', 'repeat(3, 1fr)');
+                    } else if (clientWidth > 768) {
+                        listBox.value?.style.setProperty('grid-template-columns', 'repeat(2, 1fr)');
+                    } else {
+                        listBox.value?.style.setProperty('grid-template-columns', 'repeat(1, 1fr)');
+                    }
+                }
+            });
+        });
+        navBox.value && resizeObserver.value.observe(navBox.value);
+    });
+    onUnmounted(() => {
+        resizeObserver.value?.disconnect();
+    });
 </script>
 
 <style scoped lang="scss">

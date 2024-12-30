@@ -1,5 +1,5 @@
 <template>
-    <div class="relative h-screen w-screen">
+    <div class="absolute h-screen w-screen">
         <NanoHeader/>
         <NanoBody/>
         <NanoFooter/>

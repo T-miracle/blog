@@ -6,13 +6,13 @@
         style="background: var(--sidebar-bg)"
     >
         <div class="relative h-full w-full">
-            <VPDocAsideOutline/>
+            <NanoOutline/>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import VPDocAsideOutline from 'vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue';
+    import NanoOutline from '@NanoUI/NanoOutline/index.vue';
 </script>
 
 <style scoped lang="scss">

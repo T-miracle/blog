@@ -1,6 +1,6 @@
 <template>
     <div
-        class="absolute left-0 top-0 z-20 h-screen w-[var(--action-bar-size)]"
+        class="absolute left-0 top-0 z-20 h-full w-[var(--action-bar-size)]"
         un-border="r-1px r-solid r-[var(--action-bar-border-color)]"
         un-p="t-[var(--header-size)] b-[var(--footer-size)]"
         un-flex="~ col items-center justify-between"

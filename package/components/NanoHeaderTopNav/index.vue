@@ -5,7 +5,7 @@
             :key="nav.link"
         >
             <div
-                class="relative w-full h-full line-height-[var(--header-size)]"
+                class="relative w-full h-full flex-center text-[calc(var(--header-size)*.4)]"
                 v-if="!isEmpty(nav.items)"
                 @click.stop="popups[index]?.open()"
                 @mouseenter="popups[index]?.open()"
@@ -24,7 +24,9 @@
                         @click.stop="popups[index]?.close()"
                     >
                         <a :href="subNav.link">
-                            <p class="text-3.6 line-height-6 whitespace-nowrap">{{ subNav.text }}</p>
+                            <p class="text-[calc(var(--header-size)*.4)] line-height-6 whitespace-nowrap">
+                                {{ subNav.text }}
+                            </p>
                         </a>
                     </div>
                 </NanoPopup>
