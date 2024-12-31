@@ -1,7 +1,7 @@
 <template>
     <div
         class="absolute bg-white mx-auto vp-doc"
-        un-h="[calc(100vh-var(--header-size)-var(--footer-size))]"
+        un-h="[calc(100%-var(--header-size)-var(--footer-size))]"
         un-top="[var(--header-size)]"
         :style="mainClass"
     >
