@@ -2,5 +2,9 @@
 export default {
     scrollbars: {
         theme: 'os-theme-x'
+    },
+    overflow: {
+        x: 'scroll',
+        y: 'hidden'
     }
 };

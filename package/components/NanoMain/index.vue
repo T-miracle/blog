@@ -2,9 +2,8 @@
     <div
         class="absolute bg-white mx-auto vp-doc"
         un-h="[calc(100vh-var(--header-size)-var(--footer-size))]"
-        un-w="[calc(100vw-var(--action-bar-size)*2-var(--sidebar-size)*2)]"
         un-top="[var(--header-size)]"
-        un-left="[calc(var(--action-bar-size)+var(--sidebar-size))]"
+        :style="mainClass"
     >
         <!--content area-->
         <div class="relative w-full h-full">
@@ -31,14 +30,37 @@
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
-    import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+    import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
     import { onContentUpdated, useRoute } from 'vitepress';
     import emitter from '../../emitter';
+    import { controllerStore } from '@store/controller';
+
+    const ctl = controllerStore();
 
     const scrollbars = ref<any | null>(null);
     const article = ref<HTMLElement | null>(null);
 
     const route = useRoute();
+
+    const mainClass = computed(() => {
+        if (ctl.articleFullscreen) {
+            return {
+                width: '100%',
+                left: 0
+            };
+        }
+        if (ctl.hideRightSidebar) {
+            return {
+                width: 'calc(100% - var(--action-bar-size) - var(--sidebar-left-size))',
+                left: 'calc(var(--action-bar-size) + var(--sidebar-left-size))'
+            };
+        } else {
+            return {
+                width: 'calc(100% - var(--action-bar-size) * 2 - var(--sidebar-left-size) - var(--sidebar-right-size))',
+                left: 'calc(var(--action-bar-size) + var(--sidebar-left-size))'
+            };
+        }
+    });
 
     // Listen for routing changes and scroll to the top
     watch(() => route.path, () => {
@@ -52,7 +74,7 @@
     function hashChange() {
         if (location.hash) {
             const _hashText = decodeURIComponent(location.hash.replace('#', ''));
-            console.log('scroll-to-hash', _hashText);
+            // console.log('scroll-to-hash', _hashText);
             emitter.emit('scroll-to-hash', _hashText);
         }
     }
@@ -61,7 +83,7 @@
         setTimeout(() => {
             hashChange();
         }, 240);
-    })
+    });
 
     onMounted(() => {
         setTimeout(() => {

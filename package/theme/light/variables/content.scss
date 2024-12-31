@@ -22,6 +22,31 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
             border: unset;
         }
 
+        h1 {
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.65em;
+        }
+
+        h4 {
+            font-size: 1.5em;
+        }
+
+        h5 {
+            font-size: 1.35em;
+        }
+
+        h6 {
+            font-size: 1.2em;
+        }
+
         ul, ol {
             padding-left: 2em;
         }
@@ -34,6 +59,10 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
 
         pre > code {
             font-size: .875em !important;
+        }
+
+        div[class*="language-"] {
+            margin: 1em 0;
         }
 
         .header-anchor::before {

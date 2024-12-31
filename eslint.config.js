@@ -49,7 +49,6 @@ export default [
             'template-curly-spacing': [ 'error', 'always' ],
             // vue 插槽表达式空格
             'vue/mustache-interpolation-spacing': [ 'error', 'always' ],
-            'vue/html-closing-bracket-spacing': [ 'error', { 'startTag': 'never', 'endTag': 'never', 'selfClosingTag': 'never' } ],
 
             /** 数组、对象对齐 */
             // 确保数组的多行格式对齐
@@ -75,7 +74,18 @@ export default [
             // 禁用 v-text、v-html、v-on 指令在组件上
             'vue/no-v-text-v-html-on-component': 'off',
             // 允许 v-html 指令
-            'vue/ no-v-html': 'allow',
+            'vue/no-v-html': 'off',
+            // 闭合标签去除多余的空格
+            'vue/html-closing-bracket-spacing': [ 'error', {
+                'startTag': 'never',
+                'endTag': 'never',
+                'selfClosingTag': 'never'
+            } ],
+            // 闭合标签换行
+            'vue/html-closing-bracket-newline': [ 'error', {
+                'singleline': 'never',
+                'multiline': 'always'
+            } ],
 
             /** 其他 */
             // 强制使用强类型判断（例如 `===` 和 `!==`）

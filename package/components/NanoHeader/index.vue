@@ -8,7 +8,7 @@
         <!--header left-->
         <div class="relative flex-center gap-.8">
             <NanoLogo/>
-            <NanoHeaderTopNav/>
+            <NanoHeaderTopNav v-if="!ctl.hideHeaderTopNav"/>
         </div>
         <!--header right-->
         <div class="relative flex flex-row-reverse">
@@ -21,6 +21,8 @@
     import NanoLogo from '@NanoUI/NanoLogo/index.vue';
     import NanoHeaderTopNav from '@NanoUI/NanoHeaderTopNav/index.vue';
     import NanoWindowController from '@NanoUI/NanoWindowController/index.vue';
+    import { controllerStore } from '@store/controller';
+    const ctl = controllerStore();
 </script>
 
 <style scoped lang="scss">

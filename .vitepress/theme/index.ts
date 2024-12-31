@@ -3,7 +3,6 @@ import vSetup from '../components/vSetup.vue';
 import vPageTips from '../components/vPageTips.vue';
 import vDisplayList from '../components/vDisplayList.vue';
 import vScratchPaper from '../components/vScratchPaper.vue';
-import hideFooter from '../plugins/hideFooter/hideFooter';
 import { EnhanceAppContext, useData, useRoute } from 'vitepress';
 import googleAnalysis from './scripts/googleAnalysis';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
@@ -33,7 +32,6 @@ export default {
         const { frontmatter } = useData();
         const route = useRoute();
         imageViewer(route, '.vp-doc', { toolbar: true });
-        hideFooter(frontmatter);
         giscusTalk({
             repo: 'T-miracle/blog',
             repoId: 'R_kgDOJCf-FQ',

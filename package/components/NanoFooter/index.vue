@@ -5,11 +5,11 @@
         un-flex="~ items-center justify-between shrink-0"
         style="background: var(--footer-bg);"
     >
-        <div class="relative h-full min-w-0 flex-1 flex items-center px-4">
-            <NanoPaths/>
+        <div class="relative h-full min-w-0 grow flex items-center px-4">
+            <NanoPaths v-if="!ctl.hidePaths"/>
         </div>
-        <div class="relative h-full min-w-0 flex-1 flex items-center flex-row-reverse px-4">
-            <NanoCopyright/>
+        <div class="relative h-full min-w-0 grow flex items-center flex-row-reverse px-4">
+            <NanoCopyright v-if="!ctl.hideCopyright"/>
         </div>
     </footer>
 </template>
@@ -17,6 +17,8 @@
 <script setup lang="ts">
     import NanoCopyright from '@NanoUI/NanoCopyright/index.vue';
     import NanoPaths from '@NanoUI/NanoPaths/index.vue';
+    import { controllerStore } from '@store/controller';
+    const ctl = controllerStore();
 </script>
 
 <style scoped lang="scss">

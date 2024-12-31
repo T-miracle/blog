@@ -1,5 +1,6 @@
 @mixin sidebar {
-    --sidebar-size: 20vw;
+    --sidebar-left-size: 20%;
+    --sidebar-right-size: 20%;
     --sidebar-bg: #F7F8FA;
     --sidebar-border-color: #EBECF0;
     --sidebar-hover-bg: rgba(223, 225, 229, 0.36);

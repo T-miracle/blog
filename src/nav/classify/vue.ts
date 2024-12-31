@@ -51,7 +51,7 @@ export default [
     },
     {
         name: 'Vitepress',
-        icon: 'https://files.codelife.cc/user-website-icon/20230307/KH3KXfA-CzCBQ2cHu3_re9851.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+        icon: 'https://vitepress.dev/vitepress-logo-mini.svg',
         description: '由 Vite 和 Vue 驱动的静态站点生成器',
         type: [ '框架' ],
         level: 5,
