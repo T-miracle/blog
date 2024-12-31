@@ -1,5 +1,8 @@
 <template>
-    <p v-html="theme.footer.copyright"/>
+    <p
+        class="text-gray-500 text-[calc(var(--footer-size)*.4)] underline"
+        v-html="theme.footer.copyright"
+    />
 </template>
 
 <script setup lang="ts">

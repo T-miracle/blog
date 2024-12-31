@@ -6,8 +6,6 @@
         un-top="[var(--header-size)]"
         un-left="[calc(var(--action-bar-size)+var(--sidebar-size))]"
     >
-        <!--draggable line-->
-        <div class="absolute z-2 left-0 top-0 h-full w-.25 bg-transparent cursor-col-resize"/>
         <!--content area-->
         <div class="relative w-full h-full">
             <OverlayScrollbarsComponent
@@ -17,12 +15,12 @@
                 defer
             >
                 <article
-                    ref="content"
-                    class="px-10 py-6 VPDoc text-3.5"
+                    ref="article"
+                    class="px-10 py-6 VPDoc text-4"
                     :class="[ 'w-full' ]"
                     style="white-space: wrap;"
                 >
-                    <Content/>
+                    <Content ref="content"/>
                 </article>
             </OverlayScrollbarsComponent>
         </div>
@@ -33,30 +31,55 @@
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
-    import { onMounted, ref, watch } from 'vue';
-    import { useRoute } from 'vitepress';
+    import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+    import { onContentUpdated, useRoute } from 'vitepress';
     import emitter from '../../emitter';
 
     const scrollbars = ref<any | null>(null);
-    const content = ref<HTMLElement | null>(null);
+    const article = ref<HTMLElement | null>(null);
 
     const route = useRoute();
 
     // Listen for routing changes and scroll to the top
     watch(() => route.path, () => {
-        scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: 0 });
+        nextTick(() => {
+            scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: 0 });
+        });
+    }, {
+        immediate: true
     });
 
+    function hashChange() {
+        if (location.hash) {
+            const _hashText = decodeURIComponent(location.hash.replace('#', ''));
+            console.log('scroll-to-hash', _hashText);
+            emitter.emit('scroll-to-hash', _hashText);
+        }
+    }
+
+    onContentUpdated(() => {
+        setTimeout(() => {
+            hashChange();
+        }, 240);
+    })
+
     onMounted(() => {
+        setTimeout(() => {
+            hashChange();
+        }, 240);
+        // Listen for scroll-to-hash events
         emitter.on('scroll-to-hash', (hash: string) => {
+            if (hash === '' || hash === null || hash === undefined) {
+                return;
+            }
             const target = document.getElementById(hash);
             if (!target) {
                 return;
             }
-            // Gets the distance of the target element relative to the top of the content viewport
+            // Gets the distance of the target element relative to the top of the article viewport
             const targetTop =
                 target.getBoundingClientRect().top -
-                content.value!.getBoundingClientRect().top -
+                article.value!.getBoundingClientRect().top -
                 Number.parseInt(
                     getComputedStyle(document.documentElement)
                         .fontSize.replace('px', '')
@@ -64,6 +87,10 @@
             // Scroll to target element
             scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: targetTop, behavior: 'smooth' });
         });
+    });
+
+    onUnmounted(() => {
+        emitter.off('scroll-to-hash');
     });
 </script>
 

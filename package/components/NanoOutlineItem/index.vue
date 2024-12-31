@@ -1,7 +1,12 @@
 <template>
     <ul class="VPDocOutlineItem" :class="root ? 'relative z-1' : 'px-4'">
         <li v-for="{ children, link, title } in headers">
-            <a class="block text-[0.875rem] font-400 select-none py-.6" :href="link" @click="onClick" :title="title">
+            <a
+                class="block text-[0.875rem] font-400 select-none py-.6"
+                :href="link"
+                :title="title"
+                @click="onClick"
+            >
                 {{ title }}
             </a>
             <template v-if="children?.length">

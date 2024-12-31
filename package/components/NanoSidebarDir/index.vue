@@ -1,11 +1,25 @@
 <template>
     <div class="relative w-full h-full">
         <div
-            class="shrink-0 relative text-3.25 w-full px-4 py-1 font-550"
+            class="shrink-0 relative w-full"
             :class="{ 'shadow-insert' : shadowShow }"
+            un-h="[var(--sidebar-header-height)]"
             un-flex="~ justify-between items-center"
         >
-            <p class="font-550">目录</p>
+            <p class="shrink-0 px-4 font-550 font-size-[var(--sidebar-header-font-size)]">目录</p>
+            <div
+                class="flex-1 px-4 opacity-0 hover:opacity-100 transition-opacity duration-100"
+                un-flex="~ justify-start gap-1 row-reverse"
+            >
+                <button
+                    class="relative text-gray-300 flex-center rounded-1"
+                    un-w="[var(--sidebar-header-button-size)]"
+                    un-h="[var(--sidebar-header-button-size)]"
+                    un-hover="bg-[var(--sidebar-header-button-hover-bg)]"
+                >
+                    <WindowMinimize class="w-3/4 h-full fill-[var(--sidebar-header-button-color)]"/>
+                </button>
+            </div>
         </div>
         <OverlayScrollbarsComponent
             :key="key"
@@ -34,13 +48,14 @@
     import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar';
     import NanoSidebarDirTree from '@NanoUI/NanoSidebarDirTree/index.vue';
     import scrollbarOptions from '../../config/scrollbarOptions';
-    import { onMounted, ref, watch } from 'vue';
+    import { ref, watch } from 'vue';
     import { sidebarStore } from '@store/sidebar';
     import { useRoute } from 'vitepress';
     import { debounce } from 'lodash-es';
+    import WindowMinimize from '@NanoIcon/windowMinimize.vue';
 
     const key = ref(0);
-    const { sidebarGroups, hasSidebar } = useSidebar();
+    const { sidebarGroups } = useSidebar();
     const route = useRoute();
     const { path } = route;
     const store = sidebarStore();
@@ -61,20 +76,19 @@
     const shadowShow = ref(false);
     const scroll = debounce((e: any) => {
         shadowShow.value = e.elements().viewport.scrollTop > 0;
-    }, 100, { leading: true, trailing: true });
+    }, 80, { leading: true, trailing: true });
 </script>
 
 <style scoped lang="scss">
     .shadow-insert::before {
         position: absolute;
-        bottom: -4px;
+        bottom: -1px;
         left: 0;
-        border-bottom: 2px;
         display: block;
         content: '';
-        height: 10px;
         width: 100%;
-        box-shadow: inset 0 4px 4px -4px rgba(0, 0, 0, 0.05);
+        height: 1px;
+        background-color: var(--sidebar-border-color);
         overflow: hidden;
         touch-action: none;
         pointer-events: none;

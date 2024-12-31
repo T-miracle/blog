@@ -5,13 +5,18 @@
         un-flex="~ items-center justify-between shrink-0"
         style="background: var(--footer-bg);"
     >
-        <div/>
-        <div class="flex items-center flex-col-reverse"/>
+        <div class="relative h-full min-w-0 flex-1 flex items-center px-4">
+            <NanoPaths/>
+        </div>
+        <div class="relative h-full min-w-0 flex-1 flex items-center flex-row-reverse px-4">
+            <NanoCopyright/>
+        </div>
     </footer>
 </template>
 
 <script setup lang="ts">
-
+    import NanoCopyright from '@NanoUI/NanoCopyright/index.vue';
+    import NanoPaths from '@NanoUI/NanoPaths/index.vue';
 </script>
 
 <style scoped lang="scss">

@@ -9,7 +9,6 @@
 
 <script setup lang="ts">
     import NanoSidebarDirTree from '@NanoUI/NanoSidebarDirItemTree/index.vue';
-    import type { DefaultTheme } from 'vitepress/theme';
     import { SidebarItem } from '@store/sidebar';
 
     defineProps<{

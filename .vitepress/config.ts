@@ -112,7 +112,7 @@ export default defineConfig({
             { text: '文档翻译', link: '/translation-docs/' },
             { text: '资源导航', link: '/nav/' },
             {
-                text: '其他',
+                text: '更多内容',
                 items: [
                     { text: '问题处理', link: '/bugs/' },
                     { text: '测试题', link: '/test/' },

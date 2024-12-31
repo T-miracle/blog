@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { DefaultTheme } from 'vitepress';
 import { v4 } from 'uuid';
 import { cloneDeep, toArray } from 'lodash-es';
-import { setTreeAllParentNodesByFoundNode } from '../utils/tree';
+import { getNodePathsByFindNode, setTreeAllParentNodesByFoundNode } from '../utils/tree';
 
 export type SidebarItem = {
     id?: string
@@ -51,7 +51,14 @@ export const sidebarStore = defineStore('sidebar', {
                 (node: SidebarItem) => node.collapsed = false
             );
             this.currentId = node?.id ?? '';
+        },
+        getCurrentPaths() {
+            return getNodePathsByFindNode(
+                this.sidebar,
+                'items',
+                (node: SidebarItem) => node.id === this.currentId
+            );
         }
     },
-    // persist: true
+    persist: true
 });

@@ -13,7 +13,7 @@ pinia.use(piniaPluginPersistedstate);
 
 export const theme = () => h(App);
 
-export const install = async (app: EnhanceAppContext) => {
-    app.app.use(pinia);
+export const install = (app: EnhanceAppContext) => {
     DefaultTheme.enhanceApp(app);
+    app.app.use(pinia);
 };

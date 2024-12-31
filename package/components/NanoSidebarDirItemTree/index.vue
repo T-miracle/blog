@@ -54,7 +54,9 @@
     const collapse = () => {
         item.link && router.go(item.link);
         item.collapsed = !item.collapsed;
-        store.currentId = item.id!;
+        store.$patch({
+            currentId: item.id
+        });
     };
 
     const setClass = computed(() => {

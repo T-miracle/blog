@@ -27,18 +27,22 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
         }
 
         :not(pre) > code {
-            font-size: 1em !important;
+            font-size: .875em !important;
             margin: 0 .2em !important;
             padding: .12em .5em !important;
         }
 
         pre > code {
-            font-size: 1em !important;
+            font-size: .875em !important;
         }
 
         .header-anchor::before {
             display: none !important;
             cursor: none !important;
+        }
+
+        blockquote > p {
+            font-size: 1em !important;
         }
     }
 }

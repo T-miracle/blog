@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
     import NanoOutlineItem from '@NanoUI/NanoOutlineItem/index.vue';
-    import { ref, shallowRef } from 'vue';
+    import { shallowRef } from 'vue';
     import { onContentUpdated, useData } from 'vitepress';
     // @ts-expect-error outline
     import { getHeaders, type MenuItem } from 'vitepress/dist/client/theme-default/composables/outline';
@@ -37,9 +37,6 @@
     onContentUpdated(() => {
         headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
     });
-
-    const container = ref();
-    const marker = ref();
 </script>
 
 <style scoped lang="scss">

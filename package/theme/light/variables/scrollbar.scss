@@ -86,4 +86,9 @@
     .os-theme-custom.os-scrollbar-vertical {
         --os-size: 12px;
     }
+
+    .os-theme-x.os-scrollbar-horizontal {
+        top: 0;
+        --os-size: 4px;
+    }
 }

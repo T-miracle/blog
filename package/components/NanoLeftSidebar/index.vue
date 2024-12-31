@@ -11,6 +11,8 @@
             </div>
             <div class="absolute bottom-0 left-0 w-full h-0"></div>
         </div>
+        <!--draggable line-->
+        <div class="absolute z-2 right--1 top-0 h-full w-1 bg-transparent cursor-col-resize"/>
     </div>
 </template>
 
