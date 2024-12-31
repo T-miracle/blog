@@ -48,12 +48,6 @@
                 width: '100%',
                 left: 0
             };
-        }
-        if (ctl.hideRightSidebar) {
-            return {
-                width: 'calc(100% - var(--action-bar-size) - var(--sidebar-left-size))',
-                left: 'calc(var(--action-bar-size) + var(--sidebar-left-size))'
-            };
         } else {
             return {
                 width: 'calc(100% - var(--action-bar-size) * 2 - var(--sidebar-left-size) - var(--sidebar-right-size))',

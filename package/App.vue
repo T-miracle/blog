@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
     import NanoContainer from '@NanoUI/NanoContainer/index.vue';
-    import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
+    import { onBeforeUnmount, onMounted, ref } from 'vue';
     import { controllerStore } from '@store/controller';
 
     const ctl = controllerStore();
@@ -53,18 +53,8 @@
                     ctl.hideHeaderTopNav = false;
                     ctl.hidePaths = false;
                     ctl.hideCopyright = false;
-                } else if (clientWidth >= 768) {
-                    htmlEl.style.setProperty('font-size', '12px');
-                    ctl.allowDrag = false;
-                    ctl.articleFullscreen = false;
-                    ctl.hideLeftSidebar = false;
-                    ctl.hideRightSidebar = true;
-                    ctl.hideActionBar = true;
-                    ctl.hideHeaderTopNav = true;
-                    ctl.hidePaths = true;
-                    ctl.hideCopyright = true;
                 } else {
-                    htmlEl.style.setProperty('font-size', '10px');
+                    htmlEl.style.setProperty('font-size', '12px');
                     ctl.allowDrag = false;
                     ctl.articleFullscreen = true;
                     ctl.hideLeftSidebar = true;
