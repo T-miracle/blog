@@ -18,8 +18,8 @@
     const resizeObserver = ref<ResizeObserver | null>(null);
 
     onMounted(() => {
+        const htmlEl = document.documentElement;
         resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
-            const htmlEl = document.documentElement;
             for (const entry of entries) {
                 const { target } = entry;
                 const { clientWidth } = target as HTMLElement;
@@ -68,7 +68,7 @@
                 }, 100);
             }
         });
-        resizeObserver.value.observe(root.value as HTMLElement);
+        resizeObserver.value.observe(htmlEl);
     });
 
     onBeforeUnmount(() => {
