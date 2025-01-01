@@ -2,7 +2,9 @@
 export default {
     scrollbars: {
         theme: 'os-theme-x',
-        touchSupport: true
+        touchSupport: true,
+        autoHide: 'never',
+        autoHideSuspend: true
     },
     overflow: {
         x: 'scroll',

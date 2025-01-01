@@ -2,6 +2,8 @@
 export default {
     scrollbars: {
         theme: 'os-theme-custom',
-        touchSupport: true
+        touchSupport: true,
+        autoHide: 'never',
+        autoHideSuspend: true
     }
 };
