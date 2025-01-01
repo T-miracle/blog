@@ -28,7 +28,7 @@
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
     import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
-    import { useRoute } from 'vitepress';
+    import { onContentUpdated, useRoute } from 'vitepress';
     import emitter from '../../emitter';
 
     const route = useRoute();
@@ -44,7 +44,23 @@
         immediate: true
     });
 
+    function hashChange() {
+        if (location.hash) {
+            const _hashText = decodeURIComponent(location.hash.replace('#', ''));
+            emitter.emit('scroll-to-hash', _hashText);
+        }
+    }
+
+    onContentUpdated(() => {
+        setTimeout(() => {
+            hashChange();
+        }, 240);
+    });
+
     onMounted(() => {
+        setTimeout(() => {
+            hashChange();
+        }, 240);
         // Listen for scroll-to-hash events
         emitter.on('scroll-to-hash', (hash: string) => {
             if (hash === '' || hash === null || hash === undefined) {
