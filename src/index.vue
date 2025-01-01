@@ -32,10 +32,10 @@
             class="text-center font-120 text-[var(--vp-home-hero-name-color)] mt-2.5 text-8 line-height-5 md:text-9
                 md:line-height-12 lg:text-10 lg:line-height-14 select-none cursor-pointer"
         >
-            <span class="mx-2.5 text-blue-1.25 font-bold font-[Helvetica_Neue]">Tmiracle</span>
+            <span class="mx-2.5 text-blue-1.25 font-550 font-[Helvetica_Neue]">Tmiracle</span>
         </div>
         <div class="text-center">
-            <span class="font-bold">全沾 BUG 开发者，Ctrl CV 工程师</span>
+            <strong>全沾 BUG 开发者，Ctrl CV 工程师</strong>
         </div>
         <!--跳转按钮-->
         <div class="relative w-full md:w-140 h-full grid grid-cols-2 grid-row-2 gap-2 mt-5">

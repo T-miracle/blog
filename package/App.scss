@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("font/JetBrainsMono-Regular.woff2") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains Mono Bold";
+    src: url("font/JetBrainsMono-Bold.woff2") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains Mono Italic";
+    src: url("font/JetBrainsMono-Italic.woff2") format("truetype");
+}
+
+$fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+
+* {
+    font-family: "JetBrains Mono", $fontFamily;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+em, i {
+    font-family: "JetBrains Mono Italic", $fontFamily;
+}
+
+strong, b, h1, h2, h3, h4, h5, h6 {
+    font-family: "JetBrains Mono Bold", $fontFamily;
+}
+
+pre > code {
+    font-family: "JetBrains Mono", $fontFamily;
+}
+
+#app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: unset;
+    cursor: pointer;
+    border: none;
+}

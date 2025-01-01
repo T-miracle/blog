@@ -1,6 +1,6 @@
 <template>
     <div
-        class="grow h-full bg-white min-w-0 vp-doc"
+        class="grow z-2 h-full bg-white min-w-0 vp-doc"
     >
         <!--content area-->
         <div class="relative w-full h-full">
@@ -33,6 +33,7 @@
 
     const route = useRoute();
     const scrollbars = ref<any | null>(null);
+    const article = ref<HTMLElement | null>(null);
 
     // Listen for routing changes and scroll to the top
     watch(() => route.path, () => {

@@ -25,7 +25,10 @@
                         un-hover="rounded-1.5 bg-[var(--header-nav-popup-hover-bg)]"
                         @click.stop="popups[index]?.close()"
                     >
-                        <a :href="subNav.link">
+                        <a
+                            :href="subNav.link"
+                            @click="changeFooterPath(subNav.text)"
+                        >
                             <p class="text-[calc(var(--header-size)*.4)] line-height-6 whitespace-nowrap">
                                 {{ subNav.text }}
                             </p>
@@ -38,6 +41,7 @@
                 :href="nav.link"
                 class="text-[var(--header-nav-color)] text-[calc(var(--header-size)*.4)] cursor-default"
                 un-hover="underline"
+                @click="changeFooterPath(nav.text)"
             >
                 <nav class="whitespace-nowrap">{{ nav.text }}</nav>
             </a>
@@ -51,6 +55,7 @@
     import { isEmpty } from 'lodash-es';
     import { ref, watch } from 'vue';
     import { sidebarStore } from '@store/sidebar';
+    import emitter from '../../emitter';
 
     const { theme } = useData();
     const route = useRoute();
@@ -61,6 +66,10 @@
     const navList = theme.value.nav;
 
     const store = sidebarStore();
+
+    function changeFooterPath(title: string) {
+        emitter.emit('change-path', title);
+    }
 
     watch(() => store.sidebar, () => {
         if (store.sidebar.length > 0) {

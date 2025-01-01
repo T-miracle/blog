@@ -6,6 +6,7 @@ export const controllerStore = defineStore('controller', {
         hideLeftSidebar: false,
         hideRightSidebar: false,
         hideLeftActionBar: false,
+        showDirModal: false,
         hideRightActionBar: false,
         hideHeaderTopNav: false,
         hidePaths: false,

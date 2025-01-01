@@ -4,15 +4,18 @@
 
 ```json {3-7}
 {
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"]，
-      "@assets/*": ["./src/assets/*"]，
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+            "@assets/*": [
+                "./src/assets/*"
+            ]
+        }
     }
-  }
 }
-
 ```
 
 > <badge type="warning" text="注意"/> 如果你是使用 TypeScript 开发的项目，则应该在 `tsconfig.json` 中配置

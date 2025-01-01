@@ -1,12 +1,17 @@
 <template>
-    <div class="relative w-full h-full">
+    <div
+        v-show="openStatus"
+        class="relative w-full grow min-h-0"
+    >
         <div
             class="shrink-0 relative w-full"
             :class="{ 'shadow-insert' : shadowShow }"
             un-h="[var(--sidebar-header-height)]"
             un-flex="~ justify-between items-center"
         >
-            <p class="shrink-0 px-4 font-550 font-size-[var(--sidebar-header-font-size)]">目录</p>
+            <p class="shrink-0 px-4 font-550 font-size-[var(--sidebar-header-font-size)] select-none">
+                目录
+            </p>
             <div
                 class="flex-1 px-4 opacity-0 hover:opacity-100 transition-opacity duration-100"
                 un-flex="~ justify-start gap-1 row-reverse"
@@ -16,6 +21,7 @@
                     un-w="[var(--sidebar-header-button-size)]"
                     un-h="[var(--sidebar-header-button-size)]"
                     un-hover="bg-[var(--sidebar-header-button-hover-bg)]"
+                    @click="openStatus = false"
                 >
                     <WindowMinimize class="w-3/4 h-full fill-[var(--sidebar-header-button-color)]"/>
                 </button>
@@ -26,8 +32,8 @@
             ref="scrollbar"
             class="w-full h-[calc(100%-2rem)]"
             :options="scrollbarOptions"
-            @os-scroll="scroll"
             defer
+            @os-scroll="scroll"
         >
             <div
                 class="float-left pb-3 px-3 min-w-full w-auto"
@@ -48,11 +54,12 @@
     import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar';
     import NanoSidebarDirTree from '@NanoUI/NanoSidebarDirTree/index.vue';
     import scrollbarOptions from '../../config/scrollbarOptions';
-    import { ref, watch } from 'vue';
+    import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
     import { sidebarStore } from '@store/sidebar';
-    import { useRoute } from 'vitepress';
+    import { useData, useRoute } from 'vitepress';
     import { debounce } from 'lodash-es';
     import WindowMinimize from '@NanoIcon/windowMinimize.vue';
+    import emitter from '../../emitter';
 
     const key = ref(0);
     const { sidebarGroups } = useSidebar();
@@ -77,6 +84,28 @@
     const scroll = debounce((e: any) => {
         shadowShow.value = e.elements().viewport.scrollTop > 0;
     }, 80, { leading: true, trailing: true });
+
+
+    const { frontmatter } = useData();
+    const openStatus = ref<boolean>(true);
+
+    watch(() => frontmatter.value?.layout, (value) => {
+        openStatus.value = !value;
+    }, { immediate: true });
+
+    onMounted(() => {
+        emitter.on('toggle-dir-open-status', () => {
+            openStatus.value = !openStatus.value;
+        });
+    });
+
+    onBeforeUnmount(() => {
+        emitter.off('toggle-dir-open-status');
+    });
+
+    defineExpose({
+        openStatus
+    });
 </script>
 
 <style scoped lang="scss">

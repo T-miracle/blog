@@ -19,8 +19,6 @@
 </template>
 
 <script setup>
-    import { computed } from 'vue';
-
     const { modelValue } = defineProps({
         modelValue: Boolean
     });
@@ -34,7 +32,7 @@
 
 <style scoped>
     .modal {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         z-index: 999;

@@ -1,5 +1,8 @@
 <template>
-    <div ref="navBox" class="relative nav">
+    <div
+        ref="navBox"
+        class="relative nav"
+    >
         <div class="relative left z-10 w-full star-point-bg">
             <div
                 class="w-full p-5"
@@ -42,8 +45,8 @@
             </div>
         </div>
         <div
-            ref="listBox"
             v-if="list.length !== 0"
+            ref="listBox"
             class="relative grid gap-5 p-5 pt-0 w-full"
         >
             <div
@@ -231,9 +234,12 @@
             entries.forEach((entry: ResizeObserverEntry) => {
                 if (entry.target === navBox.value) {
                     const { clientWidth } = entry.target;
-                    if (clientWidth > 1280) {
+                    console.log(clientWidth);
+                    if (clientWidth >= 1440) {
+                        listBox.value?.style.setProperty('grid-template-columns', 'repeat(4, 1fr)');
+                    } else if (clientWidth >= 1280) {
                         listBox.value?.style.setProperty('grid-template-columns', 'repeat(3, 1fr)');
-                    } else if (clientWidth > 768) {
+                    } else if (clientWidth >= 768) {
                         listBox.value?.style.setProperty('grid-template-columns', 'repeat(2, 1fr)');
                     } else {
                         listBox.value?.style.setProperty('grid-template-columns', 'repeat(1, 1fr)');

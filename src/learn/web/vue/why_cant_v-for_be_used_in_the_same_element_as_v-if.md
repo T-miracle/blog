@@ -6,24 +6,24 @@
 
 ```ts{9-12}
 export function genElement (el: ASTElement, state: CodegenState): string {
-  if (el.parent) {
-    el.pre = el.pre || el.parent.pre
-  }
-  if (el.staticRoot && !el.staticProcessed) {
-    return genStatic(el, state)
-  } else if (el.once && !el.onceProcessed) {
-    return genOnce(el, state)
-  } else if (el.for && !el.forProcessed) {
-    return genFor(el, state)
-  } else if (el.if && !el.ifProcessed) {
-    return genIf(el, state)
-  } else if (el.tag === 'template' && !el.slotTarget && !state.pre) {
-    return genChildren(el, state) || 'void 0'
-  } else if (el.tag === 'slot') {
-    return genSlot(el, state)
-  } else {
-    // component or element
-    ...
+    if (el.parent) {
+        el.pre = el.pre || el.parent.pre
+    }
+    if (el.staticRoot && !el.staticProcessed) {
+        return genStatic(el, state)
+    } else if (el.once && !el.onceProcessed) {
+        return genOnce(el, state)
+    } else if (el.for && !el.forProcessed) {
+        return genFor(el, state)
+    } else if (el.if && !el.ifProcessed) {
+        return genIf(el, state)
+    } else if (el.tag === 'template' && !el.slotTarget && !state.pre) {
+        return genChildren(el, state) || 'void 0'
+    } else if (el.tag === 'slot') {
+        return genSlot(el, state)
+    } else {
+        // component or element
+    }
 }
 ```
 
@@ -50,16 +50,19 @@ export function genElement (el: ASTElement, state: CodegenState): string {
 如果条件出现在循环内部，可通过计算属性`computed`提前过滤掉那些不需要显示的项
 
 ::: code-group
+
 ```js [Vue2]
 computed: {
     items: function() {
-      return this.list.filter(item => item.isShow)
+        return this.list.filter(item => item.isShow)
     }
 }
 ```
+
 ```ts [Vue3]
 const items = computed(() => {
     return list.filter(item => item.isShow)
 })
 ```
+
 :::

@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme';
-import './theme/defalut.scss';
+import './App.scss';
 import { EnhanceAppContext } from 'vitepress';
 import App from './App.vue';
 import { h } from 'vue';

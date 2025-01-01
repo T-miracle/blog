@@ -2,17 +2,11 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
 
 // article content style
 @mixin content {
-    .VPDoc {
-        * {
-            font-family: "JetBrains Mono", $fontFamily !important;
-        }
-
-        strong, b {
-            font-weight: "JetBrains Mono Bold", $fontFamily !important;
-        }
-
-        em, i {
-            font-style: "JetBrains Mono Italic", $fontFamily !important;
+    article.VPDoc {
+        table {
+            tr {
+                background: transparent !important;
+            }
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -22,29 +16,38 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
             border: unset;
         }
 
+        $fontColor: #1a76ff, #00c200, #f16418, #5a55c0, #ffeaa7, #dfe6e9;
+
+        @for $i from 1 through 6 {
+            h#{$i}[tabindex] {
+                opacity: .85;
+                color: nth($fontColor, $i);
+            }
+        }
+
         h1 {
             font-size: 2em;
             margin-top: 0;
         }
 
         h2 {
-            font-size: 1.8em;
+            font-size: 1.6em;
         }
 
         h3 {
-            font-size: 1.65em;
+            font-size: 1.4em;
         }
 
         h4 {
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
 
         h5 {
-            font-size: 1.35em;
+            font-size: 1.2em;
         }
 
         h6 {
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         ul, ol {
@@ -72,6 +75,15 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
 
         blockquote > p {
             font-size: 1em !important;
+        }
+
+        a {
+            color: #008cff;
+            text-decoration: underline;
+
+            &:hover {
+                color: orangered;
+            }
         }
     }
 }

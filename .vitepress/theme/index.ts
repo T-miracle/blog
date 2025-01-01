@@ -12,7 +12,8 @@ import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
 // import './styles/index.scss';
 import 'virtual:uno.css';
-import { theme, install } from '../../package/index';
+import '../../package/App.scss';
+import { theme, install } from '../../package/App';
 
 export default {
     Layout: theme,
