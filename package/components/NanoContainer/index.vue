@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute h-full w-full">
+    <div class="absolute h-full w-full flex flex-col">
         <NanoHeader/>
         <NanoBody/>
         <NanoFooter/>

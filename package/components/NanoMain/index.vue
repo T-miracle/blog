@@ -1,9 +1,6 @@
 <template>
     <div
-        class="absolute bg-white mx-auto vp-doc"
-        un-h="[calc(100%-var(--header-size)-var(--footer-size))]"
-        un-top="[var(--header-size)]"
-        :style="mainClass"
+        class="grow h-full bg-white min-w-0 vp-doc"
     >
         <!--content area-->
         <div class="relative w-full h-full">
@@ -30,31 +27,12 @@
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
-    import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+    import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
     import { onContentUpdated, useRoute } from 'vitepress';
     import emitter from '../../emitter';
-    import { controllerStore } from '@store/controller';
-
-    const ctl = controllerStore();
-
-    const scrollbars = ref<any | null>(null);
-    const article = ref<HTMLElement | null>(null);
 
     const route = useRoute();
-
-    const mainClass = computed(() => {
-        if (ctl.articleFullscreen) {
-            return {
-                width: '100%',
-                left: 0
-            };
-        } else {
-            return {
-                width: 'calc(100% - var(--action-bar-size) * 2 - var(--sidebar-left-size) - var(--sidebar-right-size))',
-                left: 'calc(var(--action-bar-size) + var(--sidebar-left-size))'
-            };
-        }
-    });
+    const scrollbars = ref<any | null>(null);
 
     // Listen for routing changes and scroll to the top
     watch(() => route.path, () => {

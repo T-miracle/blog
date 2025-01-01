@@ -1,6 +1,6 @@
 <template>
     <header
-        class="absolute top-0 left-0 z-100 w-full h-[var(--header-size)]"
+        class="shrink-0 z-100 w-full h-[var(--header-size)]"
         un-flex="~ justify-between"
         un-border="b-solid b-1px b-[var(--header-border-color)]"
         style="--s: var(--header-size); background: var(--header-bg)"

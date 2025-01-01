@@ -1,8 +1,7 @@
 <template>
     <div
-        class="absolute right-[var(--action-bar-size)] top-0 z-20 h-full w-[var(--sidebar-right-size)]"
+        class="shrink-0 z-20 h-full w-[var(--sidebar-right-size)]"
         un-border="l-solid l-1px l-[var(--sidebar-border-color)]"
-        un-p="t-[var(--header-size)] b-[var(--footer-size)]"
         style="background: var(--sidebar-bg)"
     >
         <div class="relative h-full w-full">

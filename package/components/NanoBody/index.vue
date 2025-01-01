@@ -1,9 +1,11 @@
 <template>
-    <NanoLeftActionBar v-if="!ctl.hideActionBar"/>
-    <NanoLeftSidebar v-if="!ctl.hideLeftSidebar"/>
-    <NanoMain/>
-    <NanoRightSidebar v-if="!ctl.hideRightSidebar"/>
-    <NanoRightActionBar v-if="!ctl.hideActionBar"/>
+    <div class="relative grow flex items-stretch min-h-0">
+        <NanoLeftActionBar v-if="!ctl.hideLeftActionBar"/>
+        <NanoLeftSidebar v-if="!ctl.hideLeftSidebar"/>
+        <NanoMain/>
+        <NanoRightSidebar v-if="!ctl.hideRightSidebar"/>
+        <NanoRightActionBar v-if="!ctl.hideRightActionBar"/>
+    </div>
 </template>
 
 <script setup lang="ts">

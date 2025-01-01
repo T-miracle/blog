@@ -1,6 +1,6 @@
 <template>
     <div
-        class="absolute right-0 top-0 z-20 h-full  w-[var(--action-bar-size)]"
+        class="shrink-0 z-20 h-full w-[var(--action-bar-size)]"
         un-border="l-1px l-solid l-[var(--action-bar-border-color)]"
         style="background: var(--action-bar-bg)"
     />
