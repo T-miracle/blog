@@ -24,7 +24,7 @@
                 const { target } = entry;
                 const { clientWidth } = target as HTMLElement;
                 if (clientWidth < 1280) {
-                    htmlEl.style.setProperty('font-size', '12px');
+                    htmlEl.style.setProperty('font-size', '13px');
                     ctl.allowDrag = false;
                     ctl.hideLeftSidebar = true;
                     ctl.hideRightSidebar = true;

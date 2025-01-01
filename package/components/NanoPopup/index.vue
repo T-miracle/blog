@@ -1,8 +1,7 @@
 <template>
     <div
-        class="[display:none] min-w-40 bg-white shadow-2xl"
+        class="absolute [display:none] z-100 min-w-40 bg-white shadow-2xl"
         :class="{ 'block!': visible }"
-        un-absolute="~"
         un-border="~ .25 solid rounded-2 [#B9BDC9]"
     >
         <slot/>

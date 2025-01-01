@@ -53,7 +53,7 @@
 
     function showTip() {
         ElMessage({
-            message: '功能建设中...',
+            message: '功能开发中...',
             type: 'error'
         });
     }

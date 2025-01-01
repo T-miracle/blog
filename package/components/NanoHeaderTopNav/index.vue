@@ -59,7 +59,6 @@
 
     const { theme } = useData();
     const route = useRoute();
-    // console.log('nav --->', theme.value.nav);
 
     const popups = ref<Array<any | null>>([]);
 

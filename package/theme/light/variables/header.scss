@@ -4,5 +4,9 @@
     --header-bg: linear-gradient(90deg, #F7F7F8 0%, #F5E0D5 5%, #F7F8FA 20%, #F7F8FA 100%);
     --header-nav-color: #333;
     --header-nav-popup-hover-bg: #D4E2FF;
-    --header-title-font: bold 1rem 'JetBrains Mono Bold',sans-serif !important;
+    --header-title-font-family: 'JetBrains Mono Bold' !important;
+
+    @media screen and (max-width: 1280px) {
+        --header-size: 2.6rem;
+    }
 }

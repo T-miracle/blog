@@ -8,7 +8,12 @@
             :src="theme.logo"
             alt="logo"
         />
-        <span style="font: var(--header-title-font)">{{ site.title }}</span>
+        <span
+            class="font-bold text-[calc(var(--header-size)*.4)]"
+            style="font-family: var(--header-title-font-family), serif"
+        >
+            {{ site.title }}
+        </span>
     </a>
 </template>
 

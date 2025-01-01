@@ -4,4 +4,8 @@
     --footer-border-color: #EBECF0;
     --footer-path-text-color: #888888;
     --footer-path-text-hover-color: #333333;
+
+    @media screen and (max-width: 1280px) {
+        --footer-size: 2.4rem;
+    }
 }
