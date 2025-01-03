@@ -1,18 +1,17 @@
 <template>
     <header
-        class="shrink-0 w-full h-[var(--header-size)]"
+        class="relative shrink-0 w-full h-[var(--header-size)] overflow-hidden"
         un-flex="~ justify-between"
-        un-border="b-solid b-1px b-[var(--header-border-color)]"
         style="--s: var(--header-size); background: var(--header-bg)"
     >
         <!--header left-->
-        <div class="relative flex-center gap-.8">
+        <div class="relative h-full flex-center gap-.8">
             <NanoLogo/>
             <NanoHeaderTopNav v-if="!ctl.hideHeaderTopNav"/>
             <NanoMiniHeaderTopNav v-else/>
         </div>
         <!--header right-->
-        <div class="relative flex flex-row-reverse">
+        <div class="relative h-full flex flex-row-reverse">
             <NanoWindowController/>
         </div>
     </header>

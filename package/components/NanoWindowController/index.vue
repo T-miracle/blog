@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full flex flex-row-reverse">
+    <div class="relative h-full flex flex-row-reverse">
         <div
             class="relative h-full flex"
             un-hover="bg-red-600"

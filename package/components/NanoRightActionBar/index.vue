@@ -1,6 +1,6 @@
 <template>
     <div
-        class="shrink-0 h-full w-[var(--action-bar-size)]"
+        class="relative shrink-0 h-full w-[var(--action-bar-size)]"
         un-border="l-1px l-solid l-[var(--action-bar-border-color)]"
         un-flex="~ col items-center justify-between"
         style="background: var(--action-bar-bg)"

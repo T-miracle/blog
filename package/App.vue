@@ -35,9 +35,9 @@
                     ctl.hidePaths = true;
                     ctl.hideCopyright = true;
                 } else {
-                    if (clientWidth >= 2560) {
+                    if (clientWidth >= 2440) {
                         htmlEl.style.setProperty('font-size', '18px');
-                    } else if (clientWidth >= 1920) {
+                    } else if (clientWidth >= 1600) {
                         htmlEl.style.setProperty('font-size', '16px');
                     } else {
                         htmlEl.style.setProperty('font-size', '14px');

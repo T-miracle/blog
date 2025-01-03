@@ -58,6 +58,7 @@
                 text: '💠' + title
             } ];
         });
+        scrollbar.value?.osInstance()?.destroy();
     });
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div
-        class="grow z-2 h-full bg-white min-w-0 vp-doc"
+        class="relative grow z-2 h-full bg-white min-w-0 vp-doc"
     >
         <!--content area-->
         <div class="relative w-full h-full">
@@ -85,6 +85,7 @@
 
     onUnmounted(() => {
         emitter.off('scroll-to-hash');
+        scrollbars.value?.osInstance()?.destroy();
     });
 </script>
 

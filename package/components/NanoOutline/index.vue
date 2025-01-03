@@ -75,6 +75,7 @@
     const shadowShow = ref(false);
     const headers = shallowRef<any[]>([]);
     const openStatus = ref<boolean>(true);
+    const scrollbar = ref<any | null>(null);
 
     const scroll = debounce((e: any) => {
         shadowShow.value = e.elements().viewport.scrollTop > 0;
@@ -102,6 +103,7 @@
 
     onBeforeUnmount(() => {
         emitter.off('toggle-structure-open-status');
+        scrollbar.value?.osInstance()?.destroy();
     });
 
     defineExpose({ openStatus });

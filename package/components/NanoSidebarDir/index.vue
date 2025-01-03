@@ -66,6 +66,7 @@
     const route = useRoute();
     const { path } = route;
     const store = sidebarStore();
+    const scrollbar = ref<any | null>(null);
 
     watch(
         () => [ sidebarGroups, path ],
@@ -101,6 +102,7 @@
 
     onBeforeUnmount(() => {
         emitter.off('toggle-dir-open-status');
+        scrollbar.value?.osInstance()?.destroy();
     });
 
     defineExpose({
