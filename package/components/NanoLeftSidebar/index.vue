@@ -1,7 +1,7 @@
 <template>
     <div
         class="relative shrink-0 h-full w-[var(--sidebar-left-size)]"
-        :class="{ 'w-0': !openStatus }"
+        :class="{ 'w-0!': !openStatus }"
         un-border="r-solid r-1px r-[var(--sidebar-border-color)]"
         un-flex="~ col"
         style="background: var(--sidebar-bg)"

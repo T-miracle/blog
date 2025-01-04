@@ -5,7 +5,7 @@
             <!--draggable line-->
             <div
                 ref="leftDraggableLine"
-                class="absolute z-2 right--1 top-0 h-full w-1 bg-transparent cursor-col-resize"
+                class="absolute z-2 right--1 top-0 h-full w-2 bg-transparent cursor-col-resize"
             />
         </NanoLeftSidebar>
         <NanoMain ref="main"/>
@@ -13,7 +13,7 @@
             <!--draggable line-->
             <div
                 ref="rightDraggableLine"
-                class="absolute z-2 left--1 top-0 h-full w-1 bg-transparent cursor-col-resize"
+                class="absolute z-2 left--1 top-0 h-full w-2 bg-transparent cursor-col-resize"
             />
         </NanoRightSidebar>
         <NanoRightActionBar v-if="!ctl.hideRightActionBar" ref="rightActionBar"/>
