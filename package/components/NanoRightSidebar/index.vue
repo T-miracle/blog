@@ -11,8 +11,7 @@
                 ref="outline"
             />
         </div>
-        <!--draggable line-->
-        <div class="absolute z-2 left--1 top-0 h-full w-1 bg-transparent cursor-col-resize"/>
+        <slot/>
     </div>
 </template>
 

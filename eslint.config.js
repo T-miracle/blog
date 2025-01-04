@@ -1,6 +1,6 @@
 import pluginVue from 'eslint-plugin-vue';
-import js from '@eslint/js'
-import ts from 'typescript-eslint'
+import js from '@eslint/js';
+import ts from 'typescript-eslint';
 
 export default [
     js.configs.recommended,
@@ -18,7 +18,7 @@ export default [
             // 允许any类型
             '@typescript-eslint/no-explicit-any': 'off',
             // 允许未使用的变量
-            "@typescript-eslint/no-unused-expressions": "off",
+            '@typescript-eslint/no-unused-expressions': 'off',
 
             /** 空格 */
             // 数组括号前后的空格
@@ -52,11 +52,16 @@ export default [
 
             /** 数组、对象对齐 */
             // 确保数组的多行格式对齐
-            'array-bracket-newline': ['error', 'consistent'],
+            'array-bracket-newline': [ 'error', 'consistent' ],
             // 确保数组元素的换行方式一致
-            'array-element-newline': ['error', 'consistent'],
+            'array-element-newline': [ 'error', 'consistent' ],
             // 确保对象的多行格式对齐
-            'object-curly-newline': ['error', { multiline: true, consistent: true }],
+            'object-curly-newline': [ 'error', { multiline: true, consistent: true } ],
+            // 属性数量限制
+            'vue/max-attributes-per-line': [ 'error', {
+                'singleline': 4,
+                'multiline': 1
+            } ],
 
             /** Vue风格 */
             // 设置 Vue 模版中 <template> 标签中的代码缩进为 4 个空格，有一层默认缩进

@@ -10,8 +10,7 @@
             <NanoSidebarDir ref="dir"/>
             <div class="grow w-full h-0"/>
         </div>
-        <!--draggable line-->
-        <div class="absolute z-2 right--1 top-0 h-full w-1 bg-transparent cursor-col-resize"/>
+        <slot/>
     </div>
 </template>
 
