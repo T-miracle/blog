@@ -40,9 +40,16 @@
                 @click.stop
             >
                 <NanoSidebarDirTree
+                    v-if="store.sidebar.length"
                     :key="key"
                     :list="store.sidebar"
                 />
+                <div
+                    v-else
+                    class="text-gray-4 text-3.25 select-none px-1"
+                >
+                    暂无目录...
+                </div>
             </div>
         </OverlayScrollbarsComponent>
     </div>

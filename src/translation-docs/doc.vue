@@ -11,8 +11,9 @@
                 placeholder="筛选文档"
             />
             <div
+                ref="box"
                 class="relative w-full py-5"
-                un-grid="~ cols-1 md:cols-2 xl:cols-3 gap-5"
+                un-grid="~ gap-5"
             >
                 <a
                     v-for="item in filterDocs"
@@ -47,7 +48,7 @@
 
 <script setup lang="ts">
     import { ElInput } from 'element-plus';
-    import { computed, ref } from 'vue';
+    import { computed, onMounted, onUnmounted, ref } from 'vue';
 
     const docs = ref([
         {
@@ -71,6 +72,32 @@
     const filterDocs = computed(() => {
         return docs.value.filter(item => item.title?.toLowerCase().indexOf(filterText.value?.toLowerCase()) !== -1);
     });
+
+    const box = ref<HTMLDivElement | null>(null);
+    const resizeObserver = ref<ResizeObserver | null>(null);
+    onMounted(() => {
+        resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+            entries.forEach((entry: ResizeObserverEntry) => {
+                if (entry.target === box.value) {
+                    const { clientWidth } = entry.target;
+                    console.log(clientWidth);
+                    if (clientWidth >= 1440) {
+                        box.value?.style.setProperty('grid-template-columns', 'repeat(4, 1fr)');
+                    } else if (clientWidth >= 1280) {
+                        box.value?.style.setProperty('grid-template-columns', 'repeat(3, 1fr)');
+                    } else if (clientWidth >= 768) {
+                        box.value?.style.setProperty('grid-template-columns', 'repeat(2, 1fr)');
+                    } else {
+                        box.value?.style.setProperty('grid-template-columns', 'repeat(1, 1fr)');
+                    }
+                }
+            });
+        });
+        box.value && resizeObserver.value.observe(box.value);
+    });
+    onUnmounted(() => {
+        resizeObserver.value?.disconnect();
+    });
 </script>
 
 <style scoped lang="scss">
@@ -88,6 +115,7 @@
         padding: 5px 2.5px 12px;
 
         &__filter {
+            width: min(400px, 100%);
 
             :deep(.el-input__wrapper) {
                 background: transparent;

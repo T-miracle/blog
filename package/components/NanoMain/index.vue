@@ -1,6 +1,6 @@
 <template>
     <div
-        class="relative grow z-2 h-full bg-white min-w-0 vp-doc"
+        class="relative grow z-2 h-full bg-white min-w-0"
     >
         <!--content area-->
         <div class="relative w-full h-full">
@@ -12,7 +12,7 @@
             >
                 <article
                     ref="article"
-                    class="px-10 py-6 VPDoc text-4"
+                    class="px-10 py-6 vp-doc text-4"
                     :class="[ 'w-full' ]"
                     style="white-space: wrap;"
                 >

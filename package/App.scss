@@ -41,6 +41,10 @@ pre > code {
     font-family: "JetBrains Mono", $fontFamily;
 }
 
+:not(pre) > code {
+    font-family: "JetBrains Mono", $fontFamily;
+}
+
 #app {
     position: relative;
     width: 100vw;

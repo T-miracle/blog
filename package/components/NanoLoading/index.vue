@@ -29,6 +29,10 @@
         overflow: hidden;
         background-color: #e6dcdc;
 
+        @media screen and (max-width: 768px) {
+            max-width: 10em;
+        }
+
         &::before {
             content: '';
             display: block;

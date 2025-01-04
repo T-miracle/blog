@@ -2,7 +2,7 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
 
 // article content style
 @mixin content {
-    article.VPDoc {
+    article.vp-doc {
         table {
             tr {
                 background: transparent !important;
@@ -52,6 +52,10 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
 
         ul, ol {
             padding-left: 2em;
+
+            li {
+                margin: 1em 0;
+            }
         }
 
         :not(pre) > code {
@@ -73,11 +77,18 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
             cursor: none !important;
         }
 
+        .vp-code-group {
+            > .tabs {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
         blockquote > p {
             font-size: 1em !important;
         }
 
-        a {
+        a, a > code {
             color: #008cff;
             text-decoration: underline;
 

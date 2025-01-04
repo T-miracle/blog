@@ -1,6 +1,6 @@
 <template>
     <header
-        class="relative shrink-0 w-full h-[var(--header-size)] overflow-hidden"
+        class="relative shrink-0 w-full h-[var(--header-size)]"
         un-flex="~ justify-between"
         style="--s: var(--header-size); background: var(--header-bg)"
     >

@@ -45,7 +45,7 @@
             </div>
         </div>
         <div
-            v-if="list.length !== 0"
+            v-if="!loading && list.length !== 0"
             ref="listBox"
             class="relative grid gap-5 p-5 pt-0 w-full"
         >
@@ -173,7 +173,7 @@
             </div>
         </div>
         <div
-            v-else
+            v-if="loading"
             class="flex justify-center items-center min-h-[60vh]"
         >
             <div class="loader"/>
@@ -201,6 +201,7 @@
     import { Project, projectTypeArray } from '@/nav/type';
     import { every, includes, debounce } from 'lodash-es';
 
+    const loading = ref<boolean>(true);
     const filter = ref<string>('');
     const typeList = ref<string[]>([]);
     const projectList = reactive<Project[]>(projects);
@@ -246,6 +247,9 @@
                     }
                 }
             });
+            setTimeout(() => {
+                loading.value = false;
+            }, 500);
         });
         navBox.value && resizeObserver.value.observe(navBox.value);
     });

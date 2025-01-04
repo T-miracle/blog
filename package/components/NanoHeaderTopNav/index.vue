@@ -16,7 +16,7 @@
                 </nav>
                 <NanoPopup
                     :ref="el => popups[index] = el"
-                    class="px-2 py-1 top-[var(--header-size)] left-0"
+                    class="z-999 py-1 top-[var(--header-size)] left-0"
                 >
                     <div
                         v-for="subNav in nav.items"

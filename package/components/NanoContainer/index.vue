@@ -71,7 +71,7 @@
             }
             setTimeout(() => {
                 loading.value = false;
-            }, 1000);
+            }, 1200);
         });
         resizeObserver.value.observe(htmlEl);
     });
