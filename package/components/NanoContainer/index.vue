@@ -1,7 +1,7 @@
 <template>
     <div
         ref="root"
-        class="absolute top-5vh left-5vw h-90vh w-90vw flex flex-col"
+        class="nano-theme absolute top-5vh left-5vw h-90vh w-90vw flex flex-col"
         :class="{ 'top-0! left-0! w-screen! h-screen!': ctl.onlyFullscreen || ctl.fullscreen }"
     >
         <template v-if="!loading">
@@ -35,14 +35,12 @@
     const loading = ref(true);
 
     onMounted(() => {
-        const htmlEl = document.documentElement;
+        const rootEl = root.value!;
         resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
             for (const entry of entries) {
                 const { target } = entry;
                 const { clientWidth } = target as HTMLElement;
                 if (clientWidth < 1280) {
-                    htmlEl.style.setProperty('font-size', '13px');
-                    ctl.onlyFullscreen = true;
                     ctl.allowDrag = false;
                     ctl.hideLeftSidebar = true;
                     ctl.hideRightSidebar = true;
@@ -53,15 +51,7 @@
                     ctl.hidePaths = true;
                     ctl.hideCopyright = true;
                 } else {
-                    if (clientWidth >= 2440) {
-                        htmlEl.style.setProperty('font-size', '18px');
-                    } else if (clientWidth >= 1600) {
-                        htmlEl.style.setProperty('font-size', '16px');
-                    } else {
-                        htmlEl.style.setProperty('font-size', '14px');
-                    }
-                    ctl.onlyFullscreen = false;
-                    ctl.allowDrag = false;
+                    ctl.allowDrag = true;
                     ctl.hideLeftSidebar = false;
                     ctl.hideRightSidebar = false;
                     ctl.hideLeftActionBar = false;
@@ -76,7 +66,7 @@
                 loading.value = false;
             }, 1200);
         });
-        resizeObserver.value.observe(htmlEl);
+        resizeObserver.value.observe(rootEl!);
     });
 
     onBeforeUnmount(() => {

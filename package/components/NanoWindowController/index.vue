@@ -5,12 +5,12 @@
             un-hover="bg-red-600"
         >
             <button
-                class="group flex-center h-full w-[calc(var(--header-size)*1.5)]"
+                class="group flex-center h-full w-[calc(var(--s)*1.5)]"
                 @click="onlyShowIndex"
             >
                 <Component
                     :is="closeIcon"
-                    class="w-[calc(var(--header-size)*.4)] h-[calc(var(--header-size)*.4)] group-hover:fill-white"
+                    class="w-[calc(var(--s)*.4)] h-[calc(var(--s)*.4)] group-hover:fill-white"
                 />
             </button>
         </div>
@@ -20,12 +20,12 @@
             un-hover="bg-[#EAEBED]"
         >
             <button
-                class="group flex-center h-full w-[calc(var(--header-size)*1.5)]"
+                class="group flex-center h-full w-[calc(var(--s)*1.5)]"
                 @click="windowZoomOutAndIn"
             >
                 <Component
                     :is="windowZoomOut"
-                    class="w-[calc(var(--header-size)*.4)] h-[calc(var(--header-size)*.4)]"
+                    class="w-[calc(var(--s)*.4)] h-[calc(var(--s)*.4)]"
                 />
             </button>
         </div>
@@ -35,12 +35,12 @@
             un-hover="bg-[#EAEBED]"
         >
             <button
-                class="group flex-center h-full w-[calc(var(--header-size)*1.5)]"
+                class="group flex-center h-full w-[calc(var(--s)*1.5)]"
                 @click="showTip"
             >
                 <Component
                     :is="windowMinimize"
-                    class="w-[calc(var(--header-size)*.4)] h-[calc(var(--header-size)*.4)]"
+                    class="w-[calc(var(--s)*.4)] h-[calc(var(--s)*.4)]"
                 />
             </button>
         </div>

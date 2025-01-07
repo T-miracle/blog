@@ -4,7 +4,7 @@
         class="relative flex-center h-full cursor-pointer"
         @click="openDir"
     >
-        <p class="text-[calc(var(--footer-size)*.4)] line-height-[calc(var(--footer-size)*.4)]">
+        <p class="text-[calc(var(--s)*.4)]! line-height-[calc(var(--s)*.4)]">
             目录
         </p>
     </div>

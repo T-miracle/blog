@@ -1,9 +1,9 @@
 <template>
     <footer
-        class="relative shrink-0 w-full h-[var(--footer-size)] rounded-[0_0_6px_6px]"
+        class="nano-footer relative shrink-0 w-full h-[var(--s)] rounded-[0_0_6px_6px]"
+        :class="{ 'rounded-0!': ctl.onlyFullscreen }"
         un-border="t-solid t-1px t-[var(--footer-border-color)]"
         un-flex="~ items-center justify-between shrink-0"
-        style="background: var(--footer-bg);"
     >
         <div class="relative h-full min-w-0 grow flex items-center px-4">
             <NanoFooterDirOpenButton v-if="ctl.showDirModal"/>
@@ -24,5 +24,14 @@
 </script>
 
 <style scoped lang="scss">
+    .nano-footer {
+        background: var(--footer-bg);
+        --s: calc(var(--base-size) * 2.2);
+    }
 
+    @media screen and (max-width: 1280px) {
+        .nano-footer {
+            --s: calc(var(--base-size) * 2.8) !important;
+        }
+    }
 </style>

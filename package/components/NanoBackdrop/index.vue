@@ -2,7 +2,7 @@
     <transition name="fade">
         <div
             v-if="openStatus"
-            class="z-99 fixed w-screen h-screen bg-[rgba(0,0,0,.6)]"
+            class="z-99 absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,.6)] rounded-6px"
             un-transition="opacity duration-.2s"
             @click="close"
         />

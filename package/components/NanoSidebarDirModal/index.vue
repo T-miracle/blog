@@ -1,10 +1,12 @@
 <template>
     <div
         v-if="ctl.showDirModal"
-        class="nav-area absolute z-100 w-72% h-full bg-white flex flex-col overflow-hidden"
-        :class="{ 'open': openStatus }"
+        class="absolute top-0 left-0 z-100 w-0 h-full transition-all duration-250 ease-in-out overflow-hidden"
+        :class="{ 'w-80!': openStatus }"
     >
-        <NanoSidebarDir/>
+        <div class="h-full w-full bg-white flex flex-col rounded-[6px_0_0_6px]">
+            <NanoSidebarDir/>
+        </div>
     </div>
 </template>
 
@@ -35,23 +37,5 @@
 </script>
 
 <style scoped lang="scss">
-    .fade-enter-from,
-    .fade-leave-to {
-        opacity: 0;
-    }
 
-    .fade-leave-active {
-        transition-duration: .25s;
-    }
-
-    .nav-area {
-        transform: translateX(-100%);
-        transition: transform 0.25s ease;
-        overscroll-behavior: contain;
-    }
-
-    .nav-area.open {
-        transform: translateX(0);
-        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    }
 </style>

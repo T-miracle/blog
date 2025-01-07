@@ -9,12 +9,12 @@
             un-h="[var(--sidebar-header-height)]"
             un-flex="~ justify-between items-center"
         >
-            <p class="shrink-0 px-4 font-550 font-size-[var(--sidebar-header-font-size)] select-none">
+            <p class="shrink-0 px-[calc(var(--base-size)*1)] font-550 font-size-[var(--sidebar-header-font-size)] select-none">
                 结构
             </p>
             <div
-                class="flex-1 px-4 opacity-0 hover:opacity-100 transition-opacity duration-100"
-                un-flex="~ justify-start gap-1 row-reverse"
+                class="flex-1 px-[calc(var(--base-size)*1)] opacity-0 hover:opacity-100 transition-opacity duration-100"
+                un-flex="~ justify-start gap-[calc(var(--base-size)*.25)] row-reverse"
             >
                 <button
                     class="relative text-gray-300 flex-center rounded-1"
@@ -36,7 +36,7 @@
             @os-scroll="scroll"
         >
             <div
-                class="float-left pb-3 px-4 min-w-full w-auto"
+                class="float-left pb-[calc(var(--base-size)*.75)] px-[calc(var(--base-size)*1)] min-w-full w-auto"
                 @click.stop
             >
                 <NanoOutlineItem
@@ -46,7 +46,7 @@
                 />
                 <div
                     v-else
-                    class="text-gray-4 text-3.25 select-none"
+                    class="text-gray-4 text-[calc(var(--base-size)*.875)] select-none"
                 >
                     暂无结构...
                 </div>

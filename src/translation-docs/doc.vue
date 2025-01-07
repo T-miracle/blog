@@ -40,7 +40,7 @@
                         :src="item.logo"
                         alt=""
                     />
-                    <div class="text-[var(--vp-c-text-1)] font-bold">{{ item.title }}</div>
+                    <strong class="text-[var(--vp-c-text-1)]">{{ item.title }}</strong>
                 </a>
             </div>
         </div>

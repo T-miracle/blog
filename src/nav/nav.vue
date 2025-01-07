@@ -72,12 +72,12 @@
                             class="w-10 h-10 text-6"
                         />
                         <div class="relative flex flex-col">
-                            <div class="text-1.12em">
+                            <strong class="text-1.12em">
                                 {{ project.name }}
-                            </div>
+                            </strong>
                             <div
                                 class="line-clamp-2 h-8 whitespace-pre-wrap"
-                                un-text="gray-400 .72em"
+                                un-text="gray-400 .72em!"
                                 line-height-3.75
                                 :title="project.description"
                             >

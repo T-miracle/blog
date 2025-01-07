@@ -16,7 +16,7 @@
             >
                 <article
                     ref="article"
-                    class="px-10 py-6 vp-doc VPDoc text-4"
+                    class="vp-doc VPDoc p-[calc(var(--base-size)*1)] md:p-[var(--main-padding)] text-[var(--base-size)]"
                     :class="[ 'w-full' ]"
                     style="white-space: wrap;"
                 >

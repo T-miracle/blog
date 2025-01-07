@@ -3,10 +3,16 @@
 @use './variables/scrollbar' as *;
 @use './variables/sidebar' as *;
 @use './variables/footer' as *;
+@use './variables/main' as *;
 @use './variables/content' as *;
 
-html, body {
-    font-size: 16px;
+.nano-theme {
+    --scale: 0;
+    --base-size: calc((var(--scale) * 1px) + 14px);
+
+    * {
+        font-size: var(--base-size);
+    }
 }
 
 :root {
@@ -14,6 +20,7 @@ html, body {
     @include actionBar;
     @include sidebar;
     @include footer;
+    @include main;
 }
 
 @include scrollbar;

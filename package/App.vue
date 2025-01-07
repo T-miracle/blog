@@ -5,7 +5,7 @@
         :style="{ backgroundImage: `url(${ bgList[0] })` }"
     >
         <slot name="homePage">
-            <div class="w-80vw max-w-800px mb-8vh h-a flex-center flex-col rounded-xl py-10">
+            <div class="w-80vw max-w-800px mb-12vh h-a flex-center flex-col rounded-xl py-10">
                 <div class="relative w-60 h-60 max-w-80vw max-h-80vw" @click="goPage(aboutMePath)">
                     <img class="w-full w-full rounded-sm cursor-pointer" :src="logo" alt=""/>
                 </div>
@@ -49,8 +49,9 @@
 <script setup lang="ts">
     import NanoContainer from '@NanoUI/NanoContainer/index.vue';
     import { useData, useRouter } from 'vitepress';
-    import { computed, ref, watch } from 'vue';
+    import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
     import { DefaultTheme } from 'vitepress/types/default-theme';
+    import { controllerStore } from '@store/controller';
 
     const { frontmatter, site } = useData();
 
@@ -84,6 +85,29 @@
     watch(() => frontmatter.value.layout, (value) => {
         onlyShowIndex.value = value === 'home';
     }, { immediate: true, deep: true });
+
+    const ctl = controllerStore();
+    const resizeObserver = ref<ResizeObserver | null>(null);
+
+    onMounted(() => {
+        const htmlEl = document.documentElement!;
+        resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+            for (const entry of entries) {
+                const { target } = entry;
+                const { clientWidth } = target as HTMLElement;
+                if (clientWidth < 960) {
+                    ctl.onlyFullscreen = true;
+                } else {
+                    ctl.onlyFullscreen = false;
+                }
+            }
+        });
+        resizeObserver.value.observe(htmlEl);
+    });
+
+    onUnmounted(() => {
+        resizeObserver.value?.disconnect();
+    });
 </script>
 
 <style lang="scss">

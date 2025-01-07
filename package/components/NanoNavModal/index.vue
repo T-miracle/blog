@@ -1,42 +1,41 @@
 <template>
     <div
         v-if="ctl.hideHeaderTopNav"
-        class="nav-area fixed z-100 flex flex-col w-72vw h-screen bg-white p-4"
-        :class="{ 'open': openStatus }"
+        class="absolute top-0 left-0 z-100 w-0 h-full transition-all duration-250 ease-in-out overflow-hidden"
+        :class="{ 'w-80!': openStatus }"
     >
-        <div class="shrink-0 text-4">
-            <strong>导航</strong>
-        </div>
-        <div class="grow min-h-0 overflow-y-auto">
-            <div
-                v-for="nav in navList"
-                :key="nav.link"
-                class=""
-            >
-                <a
-                    v-if="nav.link"
-                    :href="nav.link"
-                    class="text-3.5"
-                    @click="close"
+        <div class="flex flex-col w-full h-full bg-white p-[var(--base-size)] rounded-[6px_0_0_6px]">
+            <div class="grow min-h-0 overflow-y-auto">
+                <div
+                    v-for="nav in navList"
+                    :key="nav.link"
+                    class="py-[calc(var(--base-size)*.25)]"
                 >
-                    {{ nav.text }}
-                </a>
-                <div v-else>
-                    <p class="text-3.5 text-gray">
-                        {{ nav.text }}
-                    </p>
-                    <div
-                        v-for="subNav in nav.items"
-                        :key="subNav.link"
-                        class="ml-6"
+                    <a
+                        v-if="nav.link"
+                        :href="nav.link"
+                        class="text-[calc(var(--base-size)*1.125)]!"
+                        @click="close"
                     >
-                        <a
-                            :href="subNav.link"
-                            class="text-3.5"
-                            @click="close"
+                        {{ nav.text }}
+                    </a>
+                    <div v-else>
+                        <p class="text-[calc(var(--base-size)*1.125)]! text-gray">
+                            {{ nav.text }}
+                        </p>
+                        <div
+                            v-for="subNav in nav.items"
+                            :key="subNav.link"
+                            class="ml-[calc(var(--base-size)*1.5)] py-[calc(var(--base-size)*.25)]"
                         >
-                            {{ subNav.text }}
-                        </a>
+                            <a
+                                :href="subNav.link"
+                                class="text-[calc(var(--base-size)*1.125)]!"
+                                @click="close"
+                            >
+                                {{ subNav.text }}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,14 +78,5 @@
 </script>
 
 <style scoped lang="scss">
-    .nav-area {
-        transform: translateX(-100%);
-        transition: transform 0.25s ease;
-        overscroll-behavior: contain;
-    }
 
-    .nav-area.open {
-        transform: translateX(0);
-        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    }
 </style>

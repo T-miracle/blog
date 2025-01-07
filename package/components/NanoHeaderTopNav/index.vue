@@ -1,27 +1,27 @@
 <template>
-    <div class="relative h-[var(--header-size)] flex items-center gap-4 px-4">
+    <div class="relative h-[var(--s)] flex items-center gap-4 px-[calc(var(--s)*0.2)]">
         <template
             v-for="(nav, index) in navList"
             :key="nav.link"
         >
             <div
                 v-if="!isEmpty(nav.items)"
-                class="relative w-full h-full flex-center text-[calc(var(--header-size)*.4)]"
+                class="relative w-full h-full flex-center"
                 @click.stop="popups[index]?.open()"
                 @mouseenter="popups[index]?.open()"
                 @mouseleave="popups[index]?.close()"
             >
-                <nav class="whitespace-nowrap cursor-default">
+                <nav class="whitespace-nowrap cursor-default text-[calc(var(--s)*.45)]!">
                     {{ nav.text }}
                 </nav>
                 <NanoPopup
                     :ref="el => popups[index] = el"
-                    class="z-999 py-1 top-[var(--header-size)] left-0"
+                    class="z-999 py-1 top-[var(--s)] left-0"
                 >
                     <div
                         v-for="subNav in nav.items"
                         :key="subNav.link"
-                        class="px-6 flex items-center"
+                        class="mx-[calc(var(--base-size)*.5)] px-[calc(var(--base-size)*1)] flex items-center"
                         un-hover="rounded-1.5 bg-[var(--header-nav-popup-hover-bg)]"
                         @click.stop="popups[index]?.close()"
                     >
@@ -29,7 +29,7 @@
                             :href="subNav.link"
                             @click="changeFooterPath(subNav.text)"
                         >
-                            <p class="text-[calc(var(--header-size)*.4)] line-height-6 whitespace-nowrap">
+                            <p class="text-[calc(var(--s)*.45)]! whitespace-nowrap">
                                 {{ subNav.text }}
                             </p>
                         </a>
@@ -39,11 +39,11 @@
             <a
                 v-else
                 :href="nav.link"
-                class="text-[var(--header-nav-color)] text-[calc(var(--header-size)*.4)] cursor-default"
+                class="text-[var(--header-nav-color)] text-[calc(var(--s)*.4)]! cursor-default"
                 un-hover="underline"
                 @click="changeFooterPath(nav.text)"
             >
-                <nav class="whitespace-nowrap">{{ nav.text }}</nav>
+                <nav class="whitespace-nowrap text-[calc(var(--s)*.45)]!">{{ nav.text }}</nav>
             </a>
         </template>
     </div>

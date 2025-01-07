@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex-center px-2 gap-4 whitespace-nowrap pointer-events-none">
+    <div class="relative flex-center px-[calc(var(--s)*0.25)] whitespace-nowrap pointer-events-none">
         <img
             class="w-[calc(var(--s)*0.72)] h-[calc(var(--s)*0.72)] rounded-[calc(var(--s)*.1)]"
             :src="theme.logo"

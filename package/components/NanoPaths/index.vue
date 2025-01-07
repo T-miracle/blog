@@ -5,22 +5,22 @@
         :options="onlyHorizontalScrollBarOptions"
         defer
     >
-        <div class="relative h-full flex flex-nowrap items-center gap-1">
+        <div class="relative h-full flex flex-nowrap items-center gap-[calc(var(--base-size)*.25)]">
             <div
                 v-for="(item, index) in paths"
                 :key="item.id"
-                class="h-full flex-center shrink-0 gap-1 cursor-default"
+                class="h-full flex-center shrink-0 gap-[calc(var(--base-size)*.25)] cursor-default"
                 un-text="[var(--footer-path-text-color)] hover:[var(--footer-path-text-hover-color)]"
             >
                 <div
-                    class="text-[calc(var(--footer-size)*.4)] flex items-center path"
+                    class="flex items-center path"
                 >
                     <p v-if="item.icon" class="flex items-center" v-html="item.icon"/>
-                    <p class="flex items-center" v-html="item.text"/>
+                    <p class="flex items-center text-[calc(var(--base-size)*.875)]!" v-html="item.text"/>
                 </div>
                 <FoldArrow
                     v-if="index < paths.length - 1"
-                    class="rotate--90 w-3.25 h-3.25"
+                    class="rotate--90 w-[calc(var(--base-size)*.875)] h-[calc(var(--base-size)*.875)]"
                 />
             </div>
         </div>
@@ -84,9 +84,9 @@
     .path {
         :deep(.icon) {
             display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            margin-right: .5rem;
+            width: calc(var(--base-size) * 1.125);
+            height: calc(var(--base-size) * 1.125);
+            margin-right: calc(var(--base-size) * .5);
         }
     }
 </style>

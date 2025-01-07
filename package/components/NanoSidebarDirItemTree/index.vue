@@ -2,13 +2,13 @@
     <div class="relative w-auto whitespace-nowrap">
         <div class="relative cursor-pointer select-none rounded-2">
             <div
-                class="flex items-center flex-nowrap gap-1 py-.6 w-auto"
+                class="flex items-center flex-nowrap gap-[calc(var(--base-size)*.25)] py-[calc(var(--base-size)*.125)] w-auto"
                 :class="setClass"
-                :style="{ paddingLeft: `${ level }rem` }"
+                :style="{ paddingLeft: `calc(var(--base-size)*${ level })` }"
                 un-hover="bg-[var(--sidebar-hover-bg)]"
                 @click.stop="collapse"
             >
-                <div class="w-4 h-4 shrink-0">
+                <div class="w-[calc(var(--base-size)*1)] h-[calc(var(--base-size)*1)] shrink-0">
                     <FoldArrow
                         v-if="!isEmpty(item.items)"
                         :class="[ !item.collapsed ? 'rotate-0' : 'rotate--90' ]"
@@ -17,7 +17,7 @@
                 </div>
                 <div class="menu-icon flex-center" v-html="item.icon"/>
                 <div
-                    class="text-.875rem"
+                    class="text-[calc(var(--base-size)*.975)]!"
                     :class="[ item.link ? '' : 'text-blue-500' ]"
                     v-text="item.text"
                 />
@@ -75,9 +75,9 @@
     .menu-icon {
         :deep(svg), :deep(img) {
             display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            margin-right: .5rem;
+            width: calc(var(--base-size)*1.125);
+            height: calc(var(--base-size)*1.125);
+            margin-right: calc(var(--base-size)*.25);
         }
     }
 </style>

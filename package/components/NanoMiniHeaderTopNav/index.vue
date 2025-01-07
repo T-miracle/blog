@@ -1,7 +1,7 @@
 <template>
-    <div class="relative h-[var(--header-size)] flex items-center px-4">
+    <div class="relative h-[var(--s)] flex items-center px-[calc(var(--s)*.15)]">
         <p
-            class="text-[calc(var(--header-size)*.4)] cursor-pointer"
+            class="text-[calc(var(--s)*.4)]! cursor-pointer"
             @click="openNavModal"
         >
             导航

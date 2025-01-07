@@ -1,20 +1,23 @@
 <template>
     <div
         v-show="openStatus"
-        class="relative w-full grow min-h-0"
+        class="relative w-full grow min-h-0 flex flex-col"
     >
         <div
+            v-if="!ctl.hideLeftSidebar"
             class="shrink-0 relative w-full"
             :class="{ 'shadow-insert' : shadowShow }"
             un-h="[var(--sidebar-header-height)]"
             un-flex="~ justify-between items-center"
         >
-            <p class="shrink-0 px-4 font-550 font-size-[var(--sidebar-header-font-size)] select-none">
+            <p
+                class="shrink-0 px-[var(--base-size)] font-550 font-size-[var(--sidebar-header-font-size)] select-none"
+            >
                 目录
             </p>
             <div
-                class="flex-1 px-4 opacity-0 hover:opacity-100 transition-opacity duration-100"
-                un-flex="~ justify-start gap-1 row-reverse"
+                class="flex-1 px-[var(--base-size)] opacity-0 hover:opacity-100 transition-opacity duration-100"
+                un-flex="~ justify-start gap-[calc(var(--base-size)*.25)] row-reverse"
             >
                 <button
                     class="relative text-gray-300 flex-center rounded-1"
@@ -27,31 +30,34 @@
                 </button>
             </div>
         </div>
-        <OverlayScrollbarsComponent
-            :key="key"
-            ref="scrollbar"
-            class="w-full h-[calc(100%-2rem)]"
-            :options="scrollbarOptions"
-            defer
-            @os-scroll="scroll"
-        >
-            <div
-                class="float-left pb-3 px-3 min-w-full w-auto"
-                @click.stop
+        <div class="grow w-full min-h-0">
+            <OverlayScrollbarsComponent
+                :key="key"
+                ref="scrollbar"
+                class="w-full h-full"
+                :options="scrollbarOptions"
+                defer
+                @os-scroll="scroll"
             >
-                <NanoSidebarDirTree
-                    v-if="store.sidebar.length"
-                    :key="key"
-                    :list="store.sidebar"
-                />
                 <div
-                    v-else
-                    class="text-gray-4 text-3.25 select-none px-1"
+                    class="float-left pb-[calc(var(--base-size)*.75)] px-[calc(var(--base-size)*.75)] min-w-full w-auto"
+                    :class="{ 'pt-[calc(var(--base-size)*.75)]' : ctl.hideLeftSidebar }"
+                    @click.stop
                 >
-                    暂无目录...
+                    <NanoSidebarDirTree
+                        v-if="store.sidebar.length"
+                        :key="key"
+                        :list="store.sidebar"
+                    />
+                    <div
+                        v-else
+                        class="text-gray-4 text-[calc(var(--base-size)*.8125)] select-none px-[calc(var(--base-size)*.25)]"
+                    >
+                        暂无目录...
+                    </div>
                 </div>
-            </div>
-        </OverlayScrollbarsComponent>
+            </OverlayScrollbarsComponent>
+        </div>
     </div>
 </template>
 
@@ -67,12 +73,14 @@
     import { debounce } from 'lodash-es';
     import WindowMinimize from '@NanoIcon/windowMinimize.vue';
     import emitter from '../../emitter';
+    import { controllerStore } from '@store/controller';
 
     const key = ref(0);
     const { sidebarGroups } = useSidebar();
     const route = useRoute();
     const { path } = route;
     const store = sidebarStore();
+    const ctl = controllerStore();
     const scrollbar = ref<any | null>(null);
 
     watch(
