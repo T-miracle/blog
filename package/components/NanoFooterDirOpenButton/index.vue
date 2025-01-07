@@ -1,5 +1,6 @@
 <template>
     <div
+        v-if="hasSidebar"
         class="relative flex-center h-full cursor-pointer"
         @click="openDir"
     >
@@ -11,6 +12,9 @@
 
 <script setup lang="ts">
     import emitter from '../../emitter';
+    // @ts-expect-error vitepress sidebar
+    import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar';
+    const { hasSidebar } = useSidebar();
 
     function openDir() {
         emitter.emit('open-dir-modal');

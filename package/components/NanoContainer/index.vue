@@ -1,7 +1,8 @@
 <template>
     <div
         ref="root"
-        class="absolute h-full w-full flex flex-col"
+        class="absolute top-5vh left-5vw h-90vh w-90vw flex flex-col"
+        :class="{ 'top-0! left-0! w-screen! h-screen!': ctl.onlyFullscreen || ctl.fullscreen }"
     >
         <template v-if="!loading">
             <NanoHeader/>
@@ -41,6 +42,7 @@
                 const { clientWidth } = target as HTMLElement;
                 if (clientWidth < 1280) {
                     htmlEl.style.setProperty('font-size', '13px');
+                    ctl.onlyFullscreen = true;
                     ctl.allowDrag = false;
                     ctl.hideLeftSidebar = true;
                     ctl.hideRightSidebar = true;
@@ -58,6 +60,7 @@
                     } else {
                         htmlEl.style.setProperty('font-size', '14px');
                     }
+                    ctl.onlyFullscreen = false;
                     ctl.allowDrag = false;
                     ctl.hideLeftSidebar = false;
                     ctl.hideRightSidebar = false;

@@ -2,11 +2,11 @@
     <div class="relative w-auto whitespace-nowrap">
         <div class="relative cursor-pointer select-none rounded-2">
             <div
-                @click.stop="collapse"
                 class="flex items-center flex-nowrap gap-1 py-.6 w-auto"
                 :class="setClass"
-                un-hover="bg-[var(--sidebar-hover-bg)]"
                 :style="{ paddingLeft: `${ level }rem` }"
+                un-hover="bg-[var(--sidebar-hover-bg)]"
+                @click.stop="collapse"
             >
                 <div class="w-4 h-4 shrink-0">
                     <FoldArrow
@@ -15,10 +15,11 @@
                         @click.stop="collapse"
                     />
                 </div>
+                <div class="menu-icon flex-center" v-html="item.icon"/>
                 <div
-                    class="menu-item"
+                    class="text-.875rem"
                     :class="[ item.link ? '' : 'text-blue-500' ]"
-                    v-html="item.text"
+                    v-text="item.text"
                 />
             </div>
         </div>
@@ -41,39 +42,38 @@
     import FoldArrow from '@NanoIcon/foldArrow.vue';
     import { isEmpty } from 'lodash-es';
     import { useRouter } from 'vitepress';
-    import { SidebarItem, sidebarStore } from '@store/sidebar';
-    import { computed } from 'vue';
+    import { sidebarStore } from '@store/sidebar';
+    import { computed, ref } from 'vue';
+    import { SidebarType } from '../../type';
 
-    const { item } = defineProps<{
-        item: SidebarItem
+    const props = defineProps<{
+        item: SidebarType
         level: number
     }>();
+
     const router = useRouter();
     const store = sidebarStore();
 
+    const item = ref<SidebarType>(props.item);
+
     const collapse = () => {
-        item.link && router.go(item.link);
-        item.collapsed = !item.collapsed;
+        item.value.link && router.go(item.value.link);
+        item.value.collapsed = !item.value.collapsed;
         store.$patch({
-            currentId: item.id
+            currentId: item.value.id
         });
     };
 
     const setClass = computed(() => {
         return [
-            store.currentId === item.id ? 'bg-[var(--sidebar-active-bg)]!' : ''
-        ]
+            store.currentId === item.value.id ? 'bg-[var(--sidebar-active-bg)]!' : ''
+        ];
     });
 </script>
 
 <style scoped lang="scss">
-    .menu-item {
-        width: auto;
-        display: flex;
-        align-items: center;
-        font-size: .875rem;
-
-        :deep(.icon) {
+    .menu-icon {
+        :deep(svg), :deep(img) {
             display: inline-block;
             width: 1rem;
             height: 1rem;

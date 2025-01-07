@@ -1,7 +1,7 @@
-import { DefaultTheme } from 'vitepress/types/default-theme';
+import { type SidebarType } from '../../../package/type';
 
-const hBuilderXItems: DefaultTheme.SidebarItem[] = [
-    { text: '🔹自用快捷键设置-仿IDEA', link: '/learn/editor/hbuilderx/hot_key_change' }
+const hBuilderXItems: SidebarType[] = [
+    { icon: '🔹', text: '自用快捷键设置-仿IDEA', link: '/learn/editor/hbuilderx/hot_key_change' }
 ];
 
 export default hBuilderXItems;

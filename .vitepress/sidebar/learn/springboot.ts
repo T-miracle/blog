@@ -1,6 +1,6 @@
-import { DefaultTheme } from 'vitepress/types/default-theme';
+import { type SidebarType } from '../../../package/type';
 
-const springbootItems: DefaultTheme.SidebarItem[] = [
+const springbootItems: SidebarType[] = [
 
 ];
 

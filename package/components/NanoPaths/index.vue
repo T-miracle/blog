@@ -14,8 +14,10 @@
             >
                 <div
                     class="text-[calc(var(--footer-size)*.4)] flex items-center path"
-                    v-html="item.text"
-                />
+                >
+                    <p v-if="item.icon" class="flex items-center" v-html="item.icon"/>
+                    <p class="flex items-center" v-html="item.text"/>
+                </div>
                 <FoldArrow
                     v-if="index < paths.length - 1"
                     class="rotate--90 w-3.25 h-3.25"
@@ -26,22 +28,38 @@
 </template>
 
 <script setup lang="ts">
-    import { type SidebarItem, sidebarStore } from '@store/sidebar';
+    import { sidebarStore } from '@store/sidebar';
     import { onMounted, ref, watch } from 'vue';
     import FoldArrow from '@NanoIcon/foldArrow.vue';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
     import onlyHorizontalScrollBarOptions from '../../config/horizontalTopScrollBarOptions';
     import { v4 } from 'uuid';
     import emitter from '../../emitter';
+    import { useData, useRoute } from 'vitepress';
+    import { flatMap } from 'lodash-es';
+    import { SidebarType } from '../../type';
 
-    const scrollbar = ref<any | null>(null);
+    const { path } = useRoute();
+    const { theme } = useData();
+
+    const scrollbar = ref<InstanceType<typeof OverlayScrollbarsComponent> | null>(null);
     const store = sidebarStore();
 
-    const paths = ref<SidebarItem[]>([]);
+    const paths = ref<SidebarType[]>([]);
+    const navList = theme.value.nav;
 
     watch(() => store.currentId, () => {
         if (store.currentId) {
             paths.value = store.getCurrentPaths();
+        } else {
+            const navFlat = flatMap(navList, e => e.items || e);
+            const currentNav = navFlat.find(e => e.link === path);
+            if (currentNav) {
+                paths.value = [ {
+                    id: v4(),
+                    text: '💠' + currentNav.text
+                } ];
+            }
         }
     }, { immediate: true });
 

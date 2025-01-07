@@ -10,5 +10,5 @@ title: 资源导航
 </script>
 
 <style lang="scss" scoped>
-    @import "../.vitepress/theme/styles/index.scss";
+
 </style>

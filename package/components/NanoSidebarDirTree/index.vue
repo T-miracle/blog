@@ -9,10 +9,10 @@
 
 <script setup lang="ts">
     import NanoSidebarDirTree from '@NanoUI/NanoSidebarDirItemTree/index.vue';
-    import { SidebarItem } from '@store/sidebar';
+    import { SidebarType } from '../../type';
 
     defineProps<{
-        list: SidebarItem[];
+        list: SidebarType[];
     }>();
 </script>
 

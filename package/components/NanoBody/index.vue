@@ -42,19 +42,21 @@
     const rightDraggableLine = ref<HTMLDivElement | null>();
 
     onMounted(() => {
-        dragChangeWidth({
-            parentEl: body.value!,
-            targetEl: leftSidebar.value!.$el,
-            dragEl: leftDraggableLine.value!,
-            otherEls: [ rightSidebar.value!.$el, leftActionBar.value!.$el, rightActionBar.value!.$el ]
-        });
-        dragChangeWidth({
-            parentEl: body.value!,
-            targetEl: rightSidebar.value!.$el,
-            dragEl: rightDraggableLine.value!,
-            otherEls: [ leftSidebar.value!.$el, leftActionBar.value!.$el, rightActionBar.value!.$el ],
-            reverseDirection: true
-        });
+        if (body.value && leftSidebar.value && rightSidebar.value && leftActionBar.value && rightActionBar.value) {
+            dragChangeWidth({
+                parentEl: body.value!,
+                targetEl: leftSidebar.value!.$el,
+                dragEl: leftDraggableLine.value!,
+                otherEls: [ rightSidebar.value!.$el, leftActionBar.value!.$el, rightActionBar.value!.$el ]
+            });
+            dragChangeWidth({
+                parentEl: body.value!,
+                targetEl: rightSidebar.value!.$el,
+                dragEl: rightDraggableLine.value!,
+                otherEls: [ leftSidebar.value!.$el, leftActionBar.value!.$el, rightActionBar.value!.$el ],
+                reverseDirection: true
+            });
+        }
     });
 </script>
 

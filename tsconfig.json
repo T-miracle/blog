@@ -17,6 +17,9 @@
       "@/*": [
         "./src/*"
       ],
+      "@img/*": [
+        "./src/public/images/*"
+      ],
       "@NanoUI/*": [
         "./package/components/*"
       ],

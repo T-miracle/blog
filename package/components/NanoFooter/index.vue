@@ -1,6 +1,6 @@
 <template>
     <footer
-        class="relative shrink-0 w-full h-[var(--footer-size)]"
+        class="relative shrink-0 w-full h-[var(--footer-size)] rounded-[0_0_6px_6px]"
         un-border="t-solid t-1px t-[var(--footer-border-color)]"
         un-flex="~ items-center justify-between shrink-0"
         style="background: var(--footer-bg);"

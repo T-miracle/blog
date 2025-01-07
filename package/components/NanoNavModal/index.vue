@@ -4,8 +4,8 @@
         class="nav-area fixed z-100 flex flex-col w-72vw h-screen bg-white p-4"
         :class="{ 'open': openStatus }"
     >
-        <div class="shrink-0 font-bold text-4">
-            导航
+        <div class="shrink-0 text-4">
+            <strong>导航</strong>
         </div>
         <div class="grow min-h-0 overflow-y-auto">
             <div
@@ -22,7 +22,7 @@
                     {{ nav.text }}
                 </a>
                 <div v-else>
-                    <p class="text-3.5">
+                    <p class="text-3.5 text-gray">
                         {{ nav.text }}
                     </p>
                     <div

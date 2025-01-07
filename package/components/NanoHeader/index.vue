@@ -1,6 +1,6 @@
 <template>
     <header
-        class="relative shrink-0 w-full h-[var(--header-size)]"
+        class="relative shrink-0 w-full h-[var(--header-size)] rounded-[6px_6px_0_0]"
         un-flex="~ justify-between"
         style="--s: var(--header-size); background: var(--header-bg)"
     >

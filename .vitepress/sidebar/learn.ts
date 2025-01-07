@@ -21,7 +21,6 @@ import vueItems from './learn/vue';
 import httpItems from './learn/http';
 import webConceptItems from './learn/webConcept';
 import springbootItems from './learn/springboot';
-import { DefaultTheme } from 'vitepress/types/default-theme';
 import ideaItems from './learn/idea';
 import springItems from './learn/spring';
 import wxMiniprogramItems from './learn/wx-miniprogram';
@@ -32,90 +31,107 @@ import webpackItems from './learn/webpack';
 import uniappItems from './learn/uniapp';
 import dockerItem from './learn/docker';
 import androidItems from './learn/android';
+import { type SidebarType } from '../../package/type';
 
-const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
+const learnSidebar: SidebarType[] = [
     {
         icon: infoIcon,
-        text: infoIcon + '关于',
+        text: '这是什么？',
         link: '/learn/',
         items: []
     },
     {
-        text: webIcon + '前端',
+        icon: webIcon,
+        text: '前端',
         collapsed: false,
         items: [
             {
-                text: conceptIcon + '概念',
+                icon: conceptIcon,
+                text: '概念',
                 collapsed: true,
                 items: webConceptItems
             },
             {
-                text: htmlIcon + 'HTML',
+                icon: htmlIcon,
+                text: 'HTML',
                 collapsed: true,
                 items: htmlItems
             },
             {
-                text: cssIcon + 'CSS',
+                icon: cssIcon,
+                text: 'CSS',
                 collapsed: true,
                 items: cssItems
             },
             {
-                text: jsIcon + 'JavaScript',
+                icon: jsIcon,
+                text: 'JavaScript',
                 collapsed: true,
                 items: jsItems
             },
             {
-                text: vueIcon + 'Vue',
+                icon: vueIcon,
+                text: 'Vue',
                 collapsed: true,
                 items: vueItems
             },
             {
-                text: httpIcon + 'HTTP',
+                icon: httpIcon,
+                text: 'HTTP',
                 collapsed: true,
                 items: httpItems
             },
             {
-                text: wxMiniprogramIcon + '微信小程序',
+                icon: wxMiniprogramIcon,
+                text: '微信小程序',
                 collapsed: true,
                 items: wxMiniprogramItems
             },
             {
-                text: uniAppIcon + 'uni-app',
+                icon: uniAppIcon,
+                text: 'uni-app',
                 collapsed: true,
                 items: uniappItems
             },
             {
-                text: androidIcon + 'Android',
+                icon: androidIcon,
+                text: 'Android',
                 collapsed: true,
                 items: androidItems
             },
             {
-                text: webpackIcon + 'Webpack',
+                icon: webpackIcon,
+                text: 'Webpack',
                 collapsed: true,
                 items: webpackItems
             }
         ]
     },
     {
-        text: rearEndIcon + '后端',
+        icon: rearEndIcon,
+        text: '后端',
         collapsed: false,
         items: [
             {
-                text: javaIcon + 'Java',
-                collapsed: false,
+                icon: javaIcon,
+                text: 'Java',
+                collapsed: true,
                 items: [
                     {
-                        text: javaBaseIcon + 'Java基础',
+                        icon: javaBaseIcon,
+                        text: 'Java基础',
                         collapsed: true,
                         items: []
                     },
                     {
-                        text: springIcon + 'Spring',
+                        icon: springIcon,
+                        text: 'Spring',
                         collapsed: true,
                         items: springItems
                     },
                     {
-                        text: springBootIcon + 'SpringBoot',
+                        icon: springBootIcon,
+                        text: 'SpringBoot',
                         collapsed: true,
                         items: springbootItems
                     }
@@ -124,60 +140,83 @@ const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
         ]
     },
     {
-        text: sqlIcon + '数据库',
+        icon: sqlIcon,
+        text: '数据库',
         collapsed: false,
         items: [
             {
-                text: mySQLIcon + 'MySQL',
+                icon: mySQLIcon,
+                text: 'MySQL',
                 collapsed: true,
                 items: mysqlItems
             }
         ]
     },
     {
-        text: deployIcon + '部署',
+        icon: deployIcon,
+        text: '部署',
         collapsed: false,
         items: [
             {
-                text: dockerIcon + 'Docker',
+                icon: dockerIcon,
+                text: 'Docker',
                 collapsed: true,
                 items: dockerItem
             }
         ]
     },
     {
-        text: versionControlIcon + '版本控制',
+        icon: versionControlIcon,
+        text: '版本控制',
         collapsed: false,
         items: [
             {
-                text: gitIcon + 'Git',
+                icon: gitIcon,
+                text: 'Git',
                 collapsed: true,
                 items: [
-                    { text: '🔸Git常用命令', link: '/learn/version_control/git/git_common_commands' },
                     {
-                        text: '🔸Git将项目的某个目录分离成新的项目，并保留历史提交信息',
+                        icon: '🔸',
+                        text: 'Git常用命令',
+                        link: '/learn/version_control/git/git_common_commands'
+                    },
+                    {
+                        icon: '🔸',
+                        text: 'Git将项目的某个目录分离成新的项目，并保留历史提交信息',
                         link: '/learn/version_control/git/git_detached_directory_and_keep_historical_submission_records'
                     }
                 ]
             },
             {
-                text: githubIcon + 'Github',
+                icon: githubIcon,
+                text: 'Github',
                 collapsed: true,
                 items: [
-                    { text: '🔹README 说明文件美化教程', link: '/learn/version_control/github/readme_beautify' }
+                    {
+                        icon: '🔹',
+                        text: 'README 说明文件美化教程',
+                        link: '/learn/version_control/github/readme_beautify'
+                    }
                 ]
             },
             {
-                text: npmIcon + 'NPM',
+                icon: npmIcon,
+                text: 'NPM',
                 collapsed: true,
                 items: [
-                    { text: '🔹NPM常用命令', link: '/learn/version_control/npm/npm_common_commands' },
                     {
-                        text: '🔸devDependencies 和 dependencies 的区别',
+                        icon: '🔹',
+                        text: 'NPM常用命令',
+                        link: '/learn/version_control/npm/npm_common_commands'
+                    },
+                    {
+                        icon: '🔸',
+                        text: 'devDependencies 和 dependencies 的区别',
                         link: '/learn/version_control/npm/the_difference_between_devDependencies_and_dependencies'
                     },
                     {
-                        text: '🔸NPM 上传开源项目（或插件）',
+                        icon: '🔸',
+                        text: 'NPM 上传开源项目（或插件）',
                         link: '/learn/version_control/npm/npm_upload_project'
                     }
                 ]
@@ -185,21 +224,25 @@ const learnSidebar: (DefaultTheme.SidebarItem & { icon?: string })[] = [
         ]
     },
     {
-        text: editorIcon + '编辑器',
+        icon: editorIcon,
+        text: '编辑器',
         collapsed: false,
         items: [
             {
-                text: ideaIcon + 'IntelliJ IDEA',
+                icon: ideaIcon,
+                text: 'IntelliJ IDEA',
                 collapsed: true,
                 items: ideaItems
             },
             {
-                text: hBuilderXIcon + 'HBuilder X',
+                icon: hBuilderXIcon,
+                text: 'HBuilder X',
                 collapsed: true,
                 items: hBuilderXItems
             },
             {
-                text: androidStudioIcon + 'Android Studio',
+                icon: androidStudioIcon,
+                text: 'Android Studio',
                 collapsed: true,
                 items: androidStudioItems
             }

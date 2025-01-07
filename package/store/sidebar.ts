@@ -1,35 +1,28 @@
 import { defineStore } from 'pinia';
-import { DefaultTheme } from 'vitepress';
 import { v4 } from 'uuid';
 import { cloneDeep, toArray } from 'lodash-es';
 import { getNodePathsByFindNode, setTreeAllParentNodesByFoundNode } from '../utils/tree';
-
-export type SidebarItem = {
-    id?: string
-    text?: string
-    link?: string
-    collapsed?: boolean
-    items?: SidebarItem[]
-}
+import { type SidebarType } from '../type';
 
 export const sidebarStore = defineStore('sidebar', {
     state: () => {
         return {
-            sidebar: [] as SidebarItem[],
+            sidebar: [] as SidebarType[],
             currentId: '' as string
         };
     },
     getters: {},
     actions: {
-        setSidebar(sidebar: DefaultTheme.SidebarItem[]) {
+        setSidebar(sidebar: SidebarType[]) {
             this.currentId = '';
-            const _sideabr: SidebarItem[] = toArray(cloneDeep(sidebar));
+            const _sidebar: SidebarType[] = toArray(cloneDeep(sidebar));
             // 递归目录树，添加id
-            const addId = (items: SidebarItem[]): SidebarItem[] => {
-                return items.map((item: DefaultTheme.SidebarItem) => {
+            const addId = (items: SidebarType[]): SidebarType[] => {
+                return items.map((item: SidebarType) => {
                     const id = v4()?.toString();
                     return {
                         id,
+                        icon: item.icon,
                         text: item.text,
                         link: item.link,
                         collapsed: item.collapsed ?? true,
@@ -37,7 +30,7 @@ export const sidebarStore = defineStore('sidebar', {
                     };
                 });
             };
-            this.sidebar = addId(_sideabr);
+            this.sidebar = addId(_sidebar);
         },
         positionSidebar(link: string) {
             if (!link) {
@@ -47,8 +40,8 @@ export const sidebarStore = defineStore('sidebar', {
             const node = setTreeAllParentNodesByFoundNode(
                 this.sidebar,
                 'items',
-                (node: SidebarItem) => node.link === _link,
-                (node: SidebarItem) => node.collapsed = false
+                (node: SidebarType) => node.link === _link,
+                (node: SidebarType) => node.collapsed = false
             );
             this.currentId = node?.id ?? '';
         },
@@ -56,7 +49,7 @@ export const sidebarStore = defineStore('sidebar', {
             return getNodePathsByFindNode(
                 this.sidebar,
                 'items',
-                (node: SidebarItem) => node.id === this.currentId
+                (node: SidebarType) => node.id === this.currentId
             );
         }
     },

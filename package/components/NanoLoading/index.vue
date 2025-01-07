@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div class="box rounded-6px">
         <div class="cat">
             <div class="cat__body"/>
             <div class="cat__body"/>
@@ -25,7 +25,7 @@
     .cat {
         position: relative;
         width: 100%;
-        max-width: 20em;
+        max-width: 16em;
         overflow: hidden;
         background-color: #e6dcdc;
 

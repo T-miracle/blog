@@ -31,6 +31,7 @@
                         un-transform="~ rotate--45"
                         un-border="~ 1 solid orange-300 dark:orange-700"
                         un-text="~ 4 orange-300 dark:orange-700"
+                        :class="{ 'border-emerald-300! dark:border-emerald-700! text-emerald-300!  dark:text-emerald-700!' : item.status === '已翻译' }"
                     >
                         {{ item.status }}
                     </div>
@@ -52,18 +53,22 @@
 
     const docs = ref([
         {
+            title: 'Kotlin 文档',
+            status: '翻译中',
+            link: 'https://docs.namichong.com/kotlin/',
+            logo: '/images/Kotlin.svg'
+        },
+        {
             title: 'IntelliJ 平台插件 SDK 文档',
             status: '翻译中',
             link: 'https://docs.namichong.com/intellij-platform-sdk/',
-            logo: '/images/JetBrains-SDK.svg',
-            github: 'https://github.com/T-miracle/intellij-sdk-docs/discussions'
+            logo: '/images/JetBrains-SDK.svg'
         },
         {
-            title: 'Kotlin 中文文档',
-            status: '翻译中',
-            link: 'https://docs.namichong.com/kotlin/',
-            logo: '/images/Kotlin.svg',
-            github: 'https://github.com/T-miracle/kotlin-docs-cn/discussions'
+            title: 'OverlayScrollbars',
+            status: '已翻译',
+            link: 'https://docs.namichong.com/overlayscrollbars/',
+            logo: '/images/OverlayScrollbars.png'
         }
     ]);
 
@@ -80,7 +85,7 @@
             entries.forEach((entry: ResizeObserverEntry) => {
                 if (entry.target === box.value) {
                     const { clientWidth } = entry.target;
-                    console.log(clientWidth);
+                    // console.log(clientWidth);
                     if (clientWidth >= 1440) {
                         box.value?.style.setProperty('grid-template-columns', 'repeat(4, 1fr)');
                     } else if (clientWidth >= 1280) {

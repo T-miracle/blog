@@ -8,7 +8,7 @@
     >
         <div class="relative w-full h-full flex flex-col">
             <NanoSidebarDir ref="dir"/>
-            <div class="grow w-full h-0"/>
+            <!--<div class="grow w-full min-h-0"/>-->
         </div>
         <slot/>
     </div>

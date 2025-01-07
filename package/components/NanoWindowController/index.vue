@@ -6,7 +6,7 @@
         >
             <button
                 class="group flex-center h-full w-[calc(var(--header-size)*1.5)]"
-                @click="showTip"
+                @click="onlyShowIndex"
             >
                 <Component
                     :is="closeIcon"
@@ -15,12 +15,13 @@
             </button>
         </div>
         <div
+            v-if="!ctl.onlyFullscreen"
             class="relative h-full flex"
             un-hover="bg-[#EAEBED]"
         >
             <button
                 class="group flex-center h-full w-[calc(var(--header-size)*1.5)]"
-                @click="showTip"
+                @click="windowZoomOutAndIn"
             >
                 <Component
                     :is="windowZoomOut"
@@ -29,6 +30,7 @@
             </button>
         </div>
         <div
+            v-if="!ctl.onlyFullscreen"
             class="relative h-full flex"
             un-hover="bg-[#EAEBED]"
         >
@@ -50,12 +52,26 @@
     import windowZoomOut from '@NanoIcon/windowZoomOut.vue';
     import windowMinimize from '@NanoIcon/windowMinimize.vue';
     import { ElMessage  } from 'element-plus';
+    import { useRouter } from 'vitepress';
+    import { controllerStore } from '@store/controller';
+
+    const ctl = controllerStore();
+
+    const router = useRouter();
 
     function showTip() {
         ElMessage({
             message: '功能开发中...',
             type: 'error'
         });
+    }
+
+    function onlyShowIndex() {
+        router.go('/');
+    }
+
+    function windowZoomOutAndIn() {
+        ctl.fullscreen = !ctl.fullscreen;
     }
 </script>
 

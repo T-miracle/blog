@@ -4,7 +4,11 @@
     >
         <!--content area-->
         <div class="relative w-full h-full">
+            <slot v-if="page.isNotFound" name="not-found">
+                <NotFound/>
+            </slot>
             <OverlayScrollbarsComponent
+                v-else
                 ref="scrollbars"
                 class="w-full h-full"
                 :options="scrollbarOptions"
@@ -12,7 +16,7 @@
             >
                 <article
                     ref="article"
-                    class="px-10 py-6 vp-doc text-4"
+                    class="px-10 py-6 vp-doc VPDoc text-4"
                     :class="[ 'w-full' ]"
                     style="white-space: wrap;"
                 >
@@ -28,9 +32,11 @@
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
     import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
-    import { onContentUpdated, useRoute } from 'vitepress';
+    import { onContentUpdated, useData, useRoute } from 'vitepress';
     import emitter from '../../emitter';
+    import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
 
+    const { page } = useData();
     const route = useRoute();
     const scrollbars = ref<any | null>(null);
     const article = ref<HTMLElement | null>(null);

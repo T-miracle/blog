@@ -1,12 +1,14 @@
-import { DefaultTheme } from 'vitepress/types/default-theme';
+import { type SidebarType } from '../../../package/type';
 
-const dockerItem: DefaultTheme.SidebarItem[] = [
+const dockerItem: SidebarType[] = [
     {
-        text: '🔸CentOS 安装 Docker',
+        icon: '🔸',
+        text: 'CentOS 安装 Docker',
         link: '/learn/deploy/docker/centos_install_docker'
     },
     {
-        text: '🔸Docker 常用命令',
+        icon: '🔸',
+        text: 'Docker 常用命令',
         link: '/learn/deploy/docker/docker_common_command'
     }
 ];

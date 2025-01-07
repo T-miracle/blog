@@ -1,7 +1,7 @@
-import { DefaultTheme } from 'vitepress/types/default-theme';
+import { type SidebarType } from '../../../package/type';
 
-const webpackItems: DefaultTheme.SidebarItem[] = [
-    { text: '💡配置自动扫包，无需import导入', link: '/learn/web/webpack/configure_automatic_package_scanning' }
+const webpackItems: SidebarType[] = [
+    { icon: '💡', text: '配置自动扫包，无需import导入', link: '/learn/web/webpack/configure_automatic_package_scanning' }
 ];
 
 export default webpackItems;

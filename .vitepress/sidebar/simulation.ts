@@ -1,9 +1,10 @@
-import { DefaultTheme } from 'vitepress/types/default-theme';
 import { jobIcon } from './icons';
+import { type SidebarType } from '../../package/type';
 
-const simulationItems: DefaultTheme.SidebarItem[] = [
+const simulationItems: SidebarType[] = [
     {
-        text: jobIcon + '页面说明',
+        icon: jobIcon,
+        text: '页面说明',
         link: '/simulation/'
     },
     {
@@ -15,7 +16,8 @@ const simulationItems: DefaultTheme.SidebarItem[] = [
         ]
     },
     {
-        text: '笔试题', items: [
+        text: '笔试题',
+        items: [
             { text: '2023-02-09 南宁 Java开发 4-8k', link: '/simulation/written_examination/2023-02-09-nanning-java' }
         ]
     }

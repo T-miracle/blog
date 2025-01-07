@@ -10,5 +10,5 @@ title: 文档翻译
 </script>
 
 <style lang="scss" scoped>
-    @import "../.vitepress/theme/styles/index.scss";
+
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="ctl.showDirModal"
-        class="nav-area fixed z-100 w-72vw h-screen bg-white flex flex-col"
+        class="nav-area absolute z-100 w-72% h-full bg-white flex flex-col overflow-hidden"
         :class="{ 'open': openStatus }"
     >
         <NanoSidebarDir/>
