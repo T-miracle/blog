@@ -6,11 +6,15 @@
     >
         <slot name="homePage">
             <div class="w-80vw max-w-800px mb-12vh h-a flex-center flex-col rounded-xl py-10">
-                <div class="relative w-60 h-60 max-w-80vw max-h-80vw" @click="goPage(aboutMePath)">
+                <div
+                    class="relative w-60 h-60 max-w-80vw max-h-80vw"
+                    style="filter: drop-shadow(0 0 16px rgba(0,0,0,.36));"
+                    @click="goPage(aboutMePath)"
+                >
                     <img class="w-full w-full rounded-sm cursor-pointer" :src="logo" alt=""/>
                 </div>
                 <div class="text-6 line-height-8 my-2 select-none">
-                    <strong class="font-800 text-white">{{ name }}</strong>
+                    <strong class="text-white">{{ name }}</strong>
                 </div>
                 <div class="text-4 line-height-4 mb-2 select-none">
                     <span class="text-gray-3">{{ motto }}</span>
@@ -22,7 +26,7 @@
                     <a
                         v-for="v in links"
                         :key="v.link"
-                        class="h-10 w-10 line-height-10 rounded-full hover:bg-[rgba(255,255,255,.12)]"
+                        class="h-10 w-10 line-height-10 rounded-full bg-transparent hover:bg-[rgba(255,255,255,.12)] transition-colors duration-240 ease-in-out"
                         un-text="center white 6"
                         :href="v.link"
                         target="_blank"

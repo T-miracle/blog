@@ -35,19 +35,19 @@
     const loading = ref(true);
 
     const windowStyle = computed(() => {
-        if (ctl.onlyFullscreen || ctl.fullscreen) {
+        if (!ctl.onlyFullscreen && !ctl.fullscreen) {
+            return {
+                width: '90vw',
+                height: '90vh',
+                top: '5vh',
+                left: '5vw'
+            };
+        } else {
             return {
                 width: '100vw',
                 height: '100vh',
                 top: '0',
                 left: '0'
-            };
-        } else {
-            return  {
-                width: '90vw',
-                height: '90vh',
-                top: '5vh',
-                left: '5vw'
             };
         }
     });

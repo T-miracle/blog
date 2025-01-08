@@ -1,5 +1,3 @@
-$fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-
 // article content style
 @mixin content {
     article.vp-doc {
@@ -59,9 +57,9 @@ $fontFamily: "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragi
         }
 
         :not(pre) > code {
-            font-size: .875em !important;
-            margin: 0 .2em !important;
-            padding: .12em .5em !important;
+            font-size: 1em !important;
+            margin: 0 .1em !important;
+            padding: .05em .5em !important;
         }
 
         pre > code {
