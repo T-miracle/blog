@@ -2,7 +2,7 @@
     <div
         ref="root"
         class="nano-theme absolute top-5vh left-5vw h-90vh w-90vw flex flex-col"
-        :class="{ 'top-0! left-0! w-screen! h-screen!': ctl.onlyFullscreen || ctl.fullscreen }"
+        :class="{ 'top-0! left-0! w-screen! h-screen!': fullscreen }"
     >
         <template v-if="!loading">
             <NanoHeader/>
@@ -25,7 +25,7 @@
     import NanoBackdrop from '@NanoUI/NanoBackdrop/index.vue';
     import NanoNavModal from '@NanoUI/NanoNavModal/index.vue';
     import NanoSidebarDirModal from '@NanoUI/NanoSidebarDirModal/index.vue';
-    import { onBeforeUnmount, onMounted, ref } from 'vue';
+    import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
     import { controllerStore } from '@store/controller';
 
     const ctl = controllerStore();
@@ -33,6 +33,10 @@
     const root = ref<HTMLElement | null>(null);
     const resizeObserver = ref<ResizeObserver | null>(null);
     const loading = ref(true);
+
+    const fullscreen = computed(() => {
+        return ctl.onlyFullscreen || ctl.fullscreen;
+    });
 
     onMounted(() => {
         const rootEl = root.value!;

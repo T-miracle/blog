@@ -95,11 +95,7 @@
             for (const entry of entries) {
                 const { target } = entry;
                 const { clientWidth } = target as HTMLElement;
-                if (clientWidth < 960) {
-                    ctl.onlyFullscreen = true;
-                } else {
-                    ctl.onlyFullscreen = false;
-                }
+                ctl.onlyFullscreen = clientWidth < 960;
             }
         });
         resizeObserver.value.observe(htmlEl);
