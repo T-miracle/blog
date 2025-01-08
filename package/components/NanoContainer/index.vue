@@ -1,8 +1,8 @@
 <template>
     <div
         ref="root"
-        class="nano-theme absolute top-5vh left-5vw h-90vh w-90vw flex flex-col"
-        :class="{ 'top-0! left-0! w-screen! h-screen!': fullscreen }"
+        class="nano-theme absolute flex flex-col"
+        :style="windowStyle"
     >
         <template v-if="!loading">
             <NanoHeader/>
@@ -34,10 +34,22 @@
     const resizeObserver = ref<ResizeObserver | null>(null);
     const loading = ref(true);
 
-    console.log('onlyFullscreen', ctl.onlyFullscreen);
-    console.log('fullscreen', ctl.fullscreen);
-    const fullscreen = computed(() => {
-        return ctl.onlyFullscreen || ctl.fullscreen;
+    const windowStyle = computed(() => {
+        if (ctl.onlyFullscreen || ctl.fullscreen) {
+            return {
+                width: '100vw',
+                height: '100vh',
+                top: '0',
+                left: '0'
+            };
+        } else {
+            return  {
+                width: '90vw',
+                height: '90vh',
+                top: '5vh',
+                left: '5vw'
+            };
+        }
     });
 
     onMounted(() => {
