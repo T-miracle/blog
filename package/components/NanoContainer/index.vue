@@ -34,6 +34,8 @@
     const resizeObserver = ref<ResizeObserver | null>(null);
     const loading = ref(true);
 
+    console.log('onlyFullscreen', ctl.onlyFullscreen);
+    console.log('fullscreen', ctl.fullscreen);
     const fullscreen = computed(() => {
         return ctl.onlyFullscreen || ctl.fullscreen;
     });
