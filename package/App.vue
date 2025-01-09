@@ -23,7 +23,7 @@
                     v-if="socialLinks.length > 0"
                     class="flex-center gap-2 flex-wrap rounded-full"
                 >
-                    <span
+                    <div
                         v-for="v in links"
                         :key="v.link"
                         class="h-10 w-10 line-height-10 rounded-full bg-transparent hover:bg-[rgba(255,255,255,.12)]"
