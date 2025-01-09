@@ -87,7 +87,6 @@
 
     onContentUpdated(() => {
         headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
-        console.log('headers', headers.value);
     });
 
     onMounted(() => {

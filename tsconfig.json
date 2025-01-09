@@ -45,7 +45,10 @@
     ".vitepress",
     ".vitepress/**/*.ts",
     ".vitepress/**/*.vue",
-    ".vitepress/**/*.d.ts"
+    ".vitepress/**/*.d.ts",
+    "package/**/*.ts",
+    "package/**/*.vue",
+    "package/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"

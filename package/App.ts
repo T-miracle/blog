@@ -15,5 +15,21 @@ export const theme = App;
 
 export const install = (app: EnhanceAppContext) => {
     DefaultTheme.enhanceApp(app);
-    app.app.use(pinia);
+    const { app: appInstance } = app;
+    appInstance.use(pinia);
+    appInstance.config.globalProperties.$go = function goPage(url: string, target: '_self' | '_blank' = '_self') {
+        if (url) {
+            if (target === '_blank') {
+                window.open(url);
+            } else {
+                app.router.go(url);
+            }
+        }
+    };
 };
+
+declare module 'vue' {
+    interface ComponentCustomProperties {
+        $go: (url: string, target?: '_self' | '_blank') => void;
+    }
+}

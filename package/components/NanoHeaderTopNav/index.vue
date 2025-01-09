@@ -1,5 +1,5 @@
 <template>
-    <div class="relative h-[var(--s)] flex items-center gap-4 px-[calc(var(--s)*0.2)]">
+    <div class="relative h-[var(--s)] flex items-center gap-4 px-[calc(var(--s)*0.2)] select-none">
         <template
             v-for="(nav, index) in navList"
             :key="nav.link"

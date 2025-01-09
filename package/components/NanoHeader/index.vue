@@ -6,13 +6,13 @@
         un-flex="~ justify-between"
     >
         <!--header left-->
-        <div class="relative h-full flex-center">
+        <div class="relative h-full flex-center" @mousedown.stop>
             <NanoLogo/>
             <NanoHeaderTopNav v-if="!ctl.hideHeaderTopNav"/>
             <NanoMiniHeaderTopNav v-else/>
         </div>
         <!--header right-->
-        <div class="relative h-full flex flex-row-reverse">
+        <div class="relative h-full flex flex-row-reverse" @mousedown.stop>
             <NanoWindowController/>
         </div>
     </header>

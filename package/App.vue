@@ -1,6 +1,6 @@
 <template>
     <div
-        class="relative h-screen w-screen flex-center"
+        class="fixed top-0 left-0 h-screen w-screen flex-center"
         style="background-size: cover; background-position: center; background-repeat: no-repeat;"
         :style="{ backgroundImage: `url(${ bgList[0] })` }"
     >
@@ -9,7 +9,7 @@
                 <div
                     class="relative w-60 h-60 max-w-80vw max-h-80vw"
                     style="filter: drop-shadow(0 0 16px rgba(0,0,0,.36));"
-                    @click="goPage(aboutMePath)"
+                    @click="$go(aboutMePath)"
                 >
                     <img class="w-full w-full rounded-sm cursor-pointer" :src="logo" alt=""/>
                 </div>
@@ -23,13 +23,13 @@
                     v-if="socialLinks.length > 0"
                     class="flex-center gap-2 flex-wrap rounded-full"
                 >
-                    <a
+                    <span
                         v-for="v in links"
                         :key="v.link"
-                        class="h-10 w-10 line-height-10 rounded-full bg-transparent hover:bg-[rgba(255,255,255,.12)] transition-colors duration-240 ease-in-out"
+                        class="h-10 w-10 line-height-10 rounded-full bg-transparent hover:bg-[rgba(255,255,255,.12)]"
+                        un-transition="colors duration-240 ease-in-out"
                         un-text="center white 6"
-                        :href="v.link"
-                        target="_blank"
+                        @click="$go(v.link, '_blank')"
                         v-html="v.icon"
                     />
                 </div>
@@ -39,7 +39,7 @@
                     un-border="~ solid 0.5 gray-4 rounded-2"
                     un-hover="border-white text-white"
                     un-transition="colors duration-300 ease"
-                    @click="goPage('/learn/')"
+                    @click="$go('/learn/')"
                 >
                     OPEN BLOG ->
                 </div>
@@ -52,18 +52,16 @@
 
 <script setup lang="ts">
     import NanoContainer from '@NanoUI/NanoContainer/index.vue';
-    import { useData, useRouter } from 'vitepress';
+    import { useData } from 'vitepress';
     import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
     import { DefaultTheme } from 'vitepress/types/default-theme';
     import { controllerStore } from '@store/controller';
 
     const { frontmatter, site } = useData();
 
-    console.log(useData().site.value);
+    // console.log(useData().site.value);
 
     const { logo, socialLinks, backgrounds: bgList, motto, name, aboutMePath } = site.value.themeConfig;
-
-    const router = useRouter();
 
     const links = computed(() => {
         return site.value?.themeConfig.socialLinks?.map((v: DefaultTheme.SocialLink) => {
@@ -79,10 +77,6 @@
             };
         }) || [];
     });
-
-    function goPage(url: string) {
-        url && router.go(url);
-    }
 
     const onlyShowIndex = ref<boolean>(false);
 

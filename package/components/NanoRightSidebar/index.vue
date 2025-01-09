@@ -1,6 +1,6 @@
 <template>
     <div
-        class="relative shrink-0 h-full w-[var(--sidebar-right-size)]"
+        class="relative shrink-0 h-full"
         :class="{ 'w-0!': !openStatus }"
         un-border="l-solid l-1px l-[var(--sidebar-border-color)]"
         style="background: var(--sidebar-bg)"

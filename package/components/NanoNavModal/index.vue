@@ -14,7 +14,7 @@
                     <a
                         v-if="nav.link"
                         :href="nav.link"
-                        class="text-[calc(var(--base-size)*1.125)]!"
+                        class="text-[calc(var(--base-size)*1.125)]! whitespace-nowrap text-ellipsis"
                         @click="close"
                     >
                         {{ nav.text }}
@@ -30,7 +30,7 @@
                         >
                             <a
                                 :href="subNav.link"
-                                class="text-[calc(var(--base-size)*1.125)]!"
+                                class="text-[calc(var(--base-size)*1.125)]! whitespace-nowrap text-ellipsis"
                                 @click="close"
                             >
                                 {{ subNav.text }}

@@ -1,16 +1,16 @@
 <template>
     <div
-        ref="root"
-        class="nano-theme absolute flex flex-col"
-        :style="windowStyle"
+        ref="container"
+        class="nano-theme absolute"
+        :style="{ ...layout.containerLayout, ...animation }"
     >
-        <template v-if="!loading">
-            <NanoHeader/>
+        <div v-show="!loading" class="relative w-full h-full flex flex-col">
+            <NanoHeader ref="header" @dblclick="ctl.fullscreen = !ctl.fullscreen"/>
             <NanoBody/>
             <NanoFooter/>
-        </template>
+        </div>
 
-        <NanoLoading v-else/>
+        <NanoLoading v-show="loading"/>
         <NanoBackdrop/>
         <NanoNavModal/>
         <NanoSidebarDirModal/>
@@ -27,33 +27,28 @@
     import NanoSidebarDirModal from '@NanoUI/NanoSidebarDirModal/index.vue';
     import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
     import { controllerStore } from '@store/controller';
+    import { contentLayoutStore, getWidthFromString } from '@store/contentLayout';
+    import { drag } from '../../utils/drag';
 
     const ctl = controllerStore();
+    const layout = contentLayoutStore();
 
-    const root = ref<HTMLElement | null>(null);
+    const container = ref<HTMLElement | null>(null);
+    const header = ref<InstanceType<typeof NanoHeader> | null>();
     const resizeObserver = ref<ResizeObserver | null>(null);
     const loading = ref(true);
+    const enableAnimation = ref(true);
 
-    const windowStyle = computed(() => {
-        if (!ctl.onlyFullscreen && !ctl.fullscreen) {
-            return {
-                width: '90vw',
-                height: '90vh',
-                top: '5vh',
-                left: '5vw'
-            };
-        } else {
-            return {
-                width: '100vw',
-                height: '100vh',
-                top: '0',
-                left: '0'
-            };
-        }
+    const animation = computed(() => {
+        return enableAnimation.value ? {
+            transition: 'top .12s, left .12s, width .12s, height .12s'
+        } : {
+            transition: 'width .12s, height .12s'
+        };
     });
 
     onMounted(() => {
-        const rootEl = root.value!;
+        const containerEl = container.value!;
         resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
             for (const entry of entries) {
                 const { target } = entry;
@@ -80,11 +75,67 @@
                     ctl.hideCopyright = false;
                 }
             }
-            setTimeout(() => {
-                loading.value = false;
-            }, 1200);
+            if (loading.value) {
+                setTimeout(() => {
+                    loading.value = false;
+                }, 1200);
+            }
         });
-        resizeObserver.value.observe(rootEl!);
+        resizeObserver.value.observe(containerEl!);
+
+        type OriginLayout = {
+            isFullscreen: boolean;
+            notFullScreenWidth: number;
+            screenWidth: number;
+            screenHeight: number;
+            left: number;
+            top: number;
+        };
+
+        drag<OriginLayout>({
+            el: header.value!.$el,
+            originalData: () => {
+                const { clientWidth, clientHeight } = document.documentElement;
+                const { offsetLeft, offsetTop } = containerEl;
+                const width = getWidthFromString(layout.container.changed?.width || layout.container.default?.width || '');
+                return {
+                    isFullscreen: ctl.fullscreen,
+                    notFullScreenWidth: width,
+                    screenWidth: clientWidth,
+                    screenHeight: clientHeight,
+                    left: offsetLeft,
+                    top: offsetTop
+                };
+            },
+            handlerFn: ({ x, y, originalData: { isFullscreen, notFullScreenWidth, screenWidth, screenHeight, left, top }, pointerWelt, initial }) => {
+                let newLeft = left + x;
+                const newTop = top + y;
+                if (isFullscreen) {
+                    ctl.fullscreen = false;
+                    newLeft = initial.x - (initial.x / screenWidth) * notFullScreenWidth + x;
+                }
+                if (!pointerWelt.top && !pointerWelt.bottom && newTop > 0) {
+                    layout.setContainerLayout({
+                        top: newTop / screenHeight * 100 + '%'
+                    });
+                } else {
+                    layout.setContainerLayout({
+                        top: pointerWelt.bottom ? '98%' : '0'
+                    });
+                }
+                if (!pointerWelt.left && !pointerWelt.right) {
+                    layout.setContainerLayout({
+                        left: newLeft / screenWidth * 100 + '%'
+                    });
+                } else {
+                    layout.setContainerLayout({
+                        left: pointerWelt.right ? '98%' : '0'
+                    });
+                }
+            },
+            beforeFn: () => enableAnimation.value = false,
+            afterFn: () => enableAnimation.value = true
+        });
     });
 
     onBeforeUnmount(() => {

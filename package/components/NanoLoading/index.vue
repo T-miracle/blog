@@ -1,5 +1,5 @@
 <template>
-    <div class="box rounded-6px">
+    <div class="box w-full h-full rounded-6px">
         <div class="cat">
             <div class="cat__body"/>
             <div class="cat__body"/>
