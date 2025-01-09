@@ -127,10 +127,6 @@
                     layout.setContainerLayout({
                         left: newLeft / screenWidth * 100 + '%'
                     });
-                } else {
-                    layout.setContainerLayout({
-                        left: pointerWelt.right ? '98%' : '0'
-                    });
                 }
             },
             beforeFn: () => enableAnimation.value = false,
