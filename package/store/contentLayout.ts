@@ -3,11 +3,11 @@ import { merge } from 'lodash-es';
 import { controllerStore } from '@store/controller';
 
 export type LayoutBaseInfo = {
-    top?: string;
-    left?: string;
+    top?: string | number;
+    left?: string | number;
     width?: string;
     height?: string;
-} | undefined;
+};
 
 export const contentLayoutStore = defineStore('contentLayout', {
     state: () => ({
@@ -18,25 +18,25 @@ export const contentLayoutStore = defineStore('contentLayout', {
                 width: '90vw',
                 height: '90vh'
             } as LayoutBaseInfo,
-            changed: undefined as LayoutBaseInfo
+            changed: undefined as LayoutBaseInfo | undefined
         },
         leftSidebar: {
             default: {
                 width: '20%',
                 height: undefined
             } as LayoutBaseInfo,
-            changed: undefined as LayoutBaseInfo
+            changed: undefined as LayoutBaseInfo | undefined
         },
         rightSidebar: {
             default: {
                 width: '20%',
                 height: undefined
             } as LayoutBaseInfo,
-            changed: undefined as LayoutBaseInfo
+            changed: undefined as LayoutBaseInfo | undefined
         }
     }),
     getters: {
-        containerLayout: (state) => {
+        containerLayout: (state): LayoutBaseInfo => {
             const ctl = controllerStore();
             return !ctl.onlyFullscreen && !ctl.fullscreen ?
                 merge({}, state.container.default, state.container.changed) :

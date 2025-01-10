@@ -21,7 +21,7 @@
     "overlayscrollbars": "^2.10.1",
     "overlayscrollbars-vue": "^0.5.9",
     "pinia": "^2.3.0",
-    "pinia-plugin-persistedstate": "^3.2.3",
+    "pinia-plugin-persistedstate": "3.2.3",
     "uuid": "^11.0.3",
     "viewerjs": "^1.11.7",
     "vitepress": "^1.5.0",

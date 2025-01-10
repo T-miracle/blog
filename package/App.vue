@@ -5,7 +5,7 @@
         :style="{ backgroundImage: `url(${ bgList[0] })` }"
     >
         <slot name="homePage">
-            <div class="w-80vw max-w-800px mb-12vh h-a flex-center flex-col rounded-xl py-10">
+            <div class="w-80vw max-w-800px mb-12vh h-a flex-center flex-col py-10">
                 <div
                     class="relative w-60 h-60 max-w-80vw max-h-80vw"
                     style="filter: drop-shadow(0 0 16px rgba(0,0,0,.36));"

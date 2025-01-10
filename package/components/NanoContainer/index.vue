@@ -2,10 +2,10 @@
     <div
         ref="container"
         class="nano-theme absolute"
-        :style="{ ...layout.containerLayout, ...animation }"
+        :style="{ ...containerLayout, ...animation }"
     >
         <div v-show="!loading" class="relative w-full h-full flex flex-col">
-            <NanoHeader ref="header" @dblclick="ctl.fullscreen = !ctl.fullscreen"/>
+            <NanoHeader ref="header" @dblclick.self="ctl.fullscreen = !ctl.fullscreen"/>
             <NanoBody/>
             <NanoFooter/>
         </div>
@@ -25,10 +25,11 @@
     import NanoBackdrop from '@NanoUI/NanoBackdrop/index.vue';
     import NanoNavModal from '@NanoUI/NanoNavModal/index.vue';
     import NanoSidebarDirModal from '@NanoUI/NanoSidebarDirModal/index.vue';
-    import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+    import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
     import { controllerStore } from '@store/controller';
-    import { contentLayoutStore, getWidthFromString } from '@store/contentLayout';
+    import { contentLayoutStore, getWidthFromString, LayoutBaseInfo } from '@store/contentLayout';
     import { drag } from '../../utils/drag';
+    import { debounce } from 'lodash-es';
 
     const ctl = controllerStore();
     const layout = contentLayoutStore();
@@ -46,6 +47,13 @@
             transition: 'width .12s, height .12s'
         };
     });
+
+    const containerLayout = ref<LayoutBaseInfo>(layout.containerLayout);
+
+    watch(containerLayout, debounce((val) => {
+        // console.log('containerLayout changed', val);
+        layout.setContainerLayout(val);
+    }, 200), { deep: true });
 
     onMounted(() => {
         const containerEl = container.value!;
@@ -81,7 +89,7 @@
                 }, 1200);
             }
         });
-        resizeObserver.value.observe(containerEl!);
+        resizeObserver.value.observe(containerEl);
 
         type OriginLayout = {
             isFullscreen: boolean;
@@ -107,7 +115,13 @@
                     top: offsetTop
                 };
             },
-            handlerFn: ({ x, y, originalData: { isFullscreen, notFullScreenWidth, screenWidth, screenHeight, left, top }, pointerWelt, initial }) => {
+            handlerFn: ({
+                x,
+                y,
+                originalData: { isFullscreen, notFullScreenWidth, screenWidth, screenHeight, left, top },
+                pointerWelt,
+                initial
+            }) => {
                 let newLeft = left + x;
                 const newTop = top + y;
                 if (isFullscreen) {
@@ -115,18 +129,12 @@
                     newLeft = initial.x - (initial.x / screenWidth) * notFullScreenWidth + x;
                 }
                 if (!pointerWelt.top && !pointerWelt.bottom && newTop > 0) {
-                    layout.setContainerLayout({
-                        top: newTop / screenHeight * 100 + '%'
-                    });
+                    containerLayout.value.top = newTop / screenHeight * 100 + '%';
                 } else {
-                    layout.setContainerLayout({
-                        top: pointerWelt.bottom ? '98%' : '0'
-                    });
+                    containerLayout.value.top = pointerWelt.bottom ? '98%' : '0';
                 }
                 if (!pointerWelt.left && !pointerWelt.right) {
-                    layout.setContainerLayout({
-                        left: newLeft / screenWidth * 100 + '%'
-                    });
+                    containerLayout.value.left = newLeft / screenWidth * 100 + '%';
                 }
             },
             beforeFn: () => enableAnimation.value = false,

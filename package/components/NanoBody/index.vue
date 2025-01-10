@@ -1,7 +1,7 @@
 <template>
     <div ref="container" class="relative grow flex items-stretch min-h-0">
         <NanoLeftActionBar v-if="!ctl.hideLeftActionBar" ref="leftActionBar"/>
-        <NanoLeftSidebar v-if="!ctl.hideLeftSidebar" ref="leftSidebar" :style="layout.leftSidebarLayout">
+        <NanoLeftSidebar v-if="!ctl.hideLeftSidebar" ref="leftSidebar" :style="leftSidebarLayout">
             <!--draggable line-->
             <div
                 ref="leftDraggableLine"
@@ -9,11 +9,11 @@
             />
         </NanoLeftSidebar>
         <NanoMain ref="main"/>
-        <NanoRightSidebar v-if="!ctl.hideRightSidebar" ref="rightSidebar" :style="layout.rightSidebarLayout">
+        <NanoRightSidebar v-if="!ctl.hideRightSidebar" ref="rightSidebar" :style="rightSidebarLayout">
             <!--draggable line-->
             <div
                 ref="rightDraggableLine"
-                class="absolute z-4 left--2 top-0 h-full w-2 bg-transparent cursor-col-resize"
+                class="absolute z-4 left-0 top-0 h-full w-2 bg-transparent cursor-col-resize"
             />
         </NanoRightSidebar>
         <NanoRightActionBar v-if="!ctl.hideRightActionBar" ref="rightActionBar"/>
@@ -27,13 +27,23 @@
     import NanoLeftActionBar from '@NanoUI/NanoLeftActionBar/index.vue';
     import NanoRightActionBar from '@NanoUI/NanoRightActionBar/index.vue';
     import { controllerStore } from '@store/controller';
-    import { onMounted, ref } from 'vue';
+    import { onMounted, ref, watch } from 'vue';
     import { drag } from '../../utils/drag';
     import { contentLayoutStore } from '@store/contentLayout';
+    import { debounce } from 'lodash-es';
 
     const ctl = controllerStore();
-
     const layout = contentLayoutStore();
+
+    const leftSidebarLayout = ref(layout.leftSidebarLayout);
+    const rightSidebarLayout = ref(layout.rightSidebarLayout);
+
+    watch(leftSidebarLayout, debounce((val) => {
+        layout.setLeftSidebarLayout(val);
+    }, 200), { deep: true });
+    watch(rightSidebarLayout, debounce((val) => {
+        layout.setRightSidebarLayout(val);
+    }, 200), { deep: true });
 
     const container = ref<HTMLElement | null>(null);
     const leftActionBar = ref<InstanceType<typeof NanoLeftActionBar> | null>();
@@ -80,9 +90,7 @@
                     if (newWidth < 120) {
                         return;
                     }
-                    layout.setLeftSidebarLayout({
-                        width: newWidth / cw * 100 + '%'
-                    });
+                    leftSidebarLayout.value = { width: newWidth / cw * 100 + '%' };
                 }
             });
             drag<OriginalDataType>({
@@ -97,9 +105,7 @@
                     if (newWidth < 120) {
                         return;
                     }
-                    layout.setRightSidebarLayout({
-                        width: newWidth / cw * 100 + '%'
-                    });
+                    rightSidebarLayout.value = { width: newWidth / cw * 100 + '%' };
                 }
             });
         }
