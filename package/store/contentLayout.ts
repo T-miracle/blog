@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import { merge } from 'lodash-es';
-import { controllerStore } from '@store/controller';
 
 export type LayoutBaseInfo = {
     top?: string | number;
@@ -37,15 +36,7 @@ export const contentLayoutStore = defineStore('contentLayout', {
     }),
     getters: {
         containerLayout: (state): LayoutBaseInfo => {
-            const ctl = controllerStore();
-            return !ctl.onlyFullscreen && !ctl.fullscreen ?
-                merge({}, state.container.default, state.container.changed) :
-                {
-                    top: 0,
-                    left: 0,
-                    width: '100vw',
-                    height: '100vh'
-                };
+            return merge({}, state.container.default, state.container.changed);
         },
         leftSidebarLayout: (state) => {
             return merge({}, state.leftSidebar.default, state.leftSidebar.changed);

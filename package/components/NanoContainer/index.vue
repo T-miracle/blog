@@ -2,7 +2,7 @@
     <div
         ref="container"
         class="nano-theme absolute"
-        :style="{ ...containerLayout, ...animation }"
+        :style="{ ...containerLayoutStyle, ...animation }"
     >
         <div v-show="!loading" class="relative w-full h-full flex flex-col">
             <NanoHeader ref="header" @dblclick.self="ctl.fullscreen = !ctl.fullscreen"/>
@@ -49,6 +49,15 @@
     });
 
     const containerLayout = ref<LayoutBaseInfo>(layout.containerLayout);
+
+    const containerLayoutStyle = computed(() => {
+        return !ctl.onlyFullscreen && !ctl.fullscreen ? containerLayout.value : {
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh'
+        };
+    });
 
     watch(containerLayout, debounce((val) => {
         // console.log('containerLayout changed', val);
