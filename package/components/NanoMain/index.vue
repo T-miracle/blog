@@ -16,9 +16,10 @@
             >
                 <article
                     ref="article"
-                    class="vp-doc VPDoc p-[calc(var(--base-size)*1)] md:p-[var(--main-padding)] text-[var(--base-size)]"
+                    class="vp-doc VPDoc text-[var(--base-size)]"
                     :class="[ 'w-full' ]"
                     style="white-space: wrap;"
+                    :style="{ padding: articlePadding }"
                 >
                     <Content ref="content"/>
                 </article>
@@ -63,6 +64,9 @@
         }, 240);
     });
 
+    const resizeObserver = ref<ResizeObserver | null>(null);
+    const articlePadding = ref<string>('calc(var(--base-size))');
+
     onMounted(() => {
         setTimeout(() => {
             hashChange();
@@ -86,6 +90,18 @@
                 );
             // Scroll to target element
             scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: targetTop, behavior: 'smooth' });
+        });
+
+        resizeObserver.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+            for (const entry of entries) {
+                const { target } = entry;
+                const { clientWidth } = target as HTMLElement;
+                if (clientWidth < 1280) {
+                    articlePadding.value = 'calc(var(--base-size))';
+                } else {
+                    articlePadding.value = 'calc(var(--base-size)) calc(var(--base-size) * 2)';
+                }
+            }
         });
     });
 

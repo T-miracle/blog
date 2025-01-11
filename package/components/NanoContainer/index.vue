@@ -4,8 +4,8 @@
         v-model:fullscreen="ctl.fullscreen"
         v-model:layout="containerLayout"
         :drag-el="headerEl"
-        :visible="visible"
-        :width-range="[ '20vw', '100vw' ]"
+        :visible="true"
+        :width-range="[ '22vw', '100vw' ]"
         :height-range="[ '60vh', '100vh' ]"
         class="nano-theme"
     >
@@ -42,7 +42,6 @@
     const header = ref<InstanceType<typeof NanoHeader> | null>();
     const resizeObserver = ref<ResizeObserver | null>(null);
     const loading = ref(true);
-    const visible = computed(() => !ctl.onlyFullscreen);
 
     const headerEl = computed(() => header.value?.$el);
     const containerLayout = computed({
@@ -85,8 +84,6 @@
             }
         });
         resizeObserver.value.observe(containerEl);
-
-
     });
 
     onBeforeUnmount(() => {

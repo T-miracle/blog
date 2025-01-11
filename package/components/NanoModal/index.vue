@@ -3,7 +3,7 @@
         <div
             v-if="visible"
             ref="modal"
-            class="absolute"
+            class="absolute rounded-6px shadow-[0_0_16px_4px_rgb(0,0,0,.24)]"
             :style="{ ...layoutStyle, transition }"
         >
             <slot/>
