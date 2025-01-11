@@ -1,6 +1,6 @@
 <template>
     <div
-        v-show="openStatus"
+        v-show="visible"
         class="relative w-full grow min-h-0"
     >
         <div
@@ -21,7 +21,7 @@
                     un-w="[var(--sidebar-header-button-size)]"
                     un-h="[var(--sidebar-header-button-size)]"
                     un-hover="bg-[var(--sidebar-header-button-hover-bg)]"
-                    @click="openStatus = false"
+                    @click="visible = false"
                 >
                     <WindowMinimize class="w-3/4 h-full fill-[var(--sidebar-header-button-color)]"/>
                 </button>
@@ -74,7 +74,7 @@
     const key = ref(0);
     const shadowShow = ref(false);
     const headers = shallowRef<any[]>([]);
-    const openStatus = ref<boolean>(true);
+    const visible = ref(!ctl.hideOutline);
     const scrollbar = ref<any | null>(null);
 
     const scroll = debounce((e: any) => {
@@ -82,7 +82,10 @@
     }, 80, { leading: true, trailing: true });
 
     watch(() => frontmatter.value?.layout, (value) => {
-        openStatus.value = !value;
+        if (ctl.hideOutline) {
+            return;
+        }
+        visible.value = !value;
     }, { immediate: true });
 
     onContentUpdated(() => {
@@ -97,7 +100,8 @@
         });
 
         emitter.on('toggle-structure-open-status', () => {
-            openStatus.value = !openStatus.value;
+            ctl.hideOutline = !ctl.hideOutline;
+            visible.value = !ctl.hideOutline;
         });
     });
 
@@ -106,7 +110,7 @@
         scrollbar.value?.osInstance()?.destroy();
     });
 
-    defineExpose({ openStatus });
+    defineExpose({ visible });
 </script>
 
 <style scoped lang="scss">

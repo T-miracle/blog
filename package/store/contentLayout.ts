@@ -59,13 +59,46 @@ export const contentLayoutStore = defineStore('contentLayout', {
     persist: true
 });
 
-export function getWidthFromString(value: string): number {
+/**
+ * Get the width of the element from the string value.
+ * @param {string} value - The value of the width.
+ * @returns {number} The width of the element.
+ */
+export function getWidthFromString(value?: string): number {
+    if (!value) {
+        return 0;
+    }
     if (value.endsWith('%')) {
         const percentage = parseFloat(value);
         return (document.documentElement.clientWidth * percentage) / 100;
     } else if (value.endsWith('vw')) {
         const vw = parseFloat(value);
         return (document.documentElement.clientWidth * vw) / 100;
+    } else if (value.endsWith('px')) {
+        return parseFloat(value);
+    } else {
+        return 0;
     }
-    return 0;
+}
+
+/**
+ * Get the height of the element from the string value.
+ * @param {string} value - The value of the height.
+ * @returns {number} The height of the element.
+ */
+export function getHeightFromString(value?: string): number {
+    if (!value) {
+        return 0;
+    }
+    if (value.endsWith('%')) {
+        const percentage = parseFloat(value);
+        return (document.documentElement.clientHeight * percentage) / 100;
+    } else if (value.endsWith('vh')) {
+        const vh = parseFloat(value);
+        return (document.documentElement.clientHeight * vh) / 100;
+    } else if (value.endsWith('px')) {
+        return parseFloat(value);
+    } else {
+        return 0;
+    }
 }

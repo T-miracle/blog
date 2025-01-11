@@ -1,7 +1,7 @@
 <template>
     <div
+        v-show="visible"
         class="relative shrink-0 h-full"
-        :class="{ 'w-0!': !openStatus }"
         un-border="r-solid r-1px r-[var(--sidebar-border-color)]"
         un-flex="~ col"
         style="background: var(--sidebar-bg)"
@@ -20,8 +20,8 @@
 
     const dir = ref<InstanceType<typeof NanoSidebarDir> | null>(null);
 
-    const openStatus = computed(() => {
-        return dir.value?.openStatus ?? false;
+    const visible = computed(() => {
+        return dir.value?.visible ?? false;
     });
 </script>
 

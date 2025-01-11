@@ -27,7 +27,7 @@
     import NanoLeftActionBar from '@NanoUI/NanoLeftActionBar/index.vue';
     import NanoRightActionBar from '@NanoUI/NanoRightActionBar/index.vue';
     import { controllerStore } from '@store/controller';
-    import { onMounted, ref, watch } from 'vue';
+    import { nextTick, ref, watch } from 'vue';
     import { drag } from '../../utils/drag';
     import { contentLayoutStore } from '@store/contentLayout';
     import { debounce } from 'lodash-es';
@@ -67,49 +67,61 @@
         raw: number;
     };
 
-    onMounted(() => {
-        if (container.value && leftSidebar.value && rightSidebar.value && leftActionBar.value && rightActionBar.value) {
-            const originalData = (): OriginalDataType => {
-                return {
-                    cw: container.value!.clientWidth,
-                    lsw: leftSidebar.value!.$el.clientWidth,
-                    rsw: rightSidebar.value!.$el.clientWidth,
-                    law: leftActionBar.value!.$el.clientWidth,
-                    raw: rightActionBar.value!.$el.clientWidth
-                };
-            };
-            drag<OriginalDataType>({
-                el: leftDraggableLine.value!,
-                originalData,
-                handlerFn: ({ x, originalData: { cw, law, lsw, rsw, raw } }) => {
-                    const newWidth = lsw + x;
-                    const otherElsWidth = law + raw + rsw;
-                    if (cw - otherElsWidth - 400 < newWidth) {
-                        return;
+    const originalData = (): OriginalDataType => {
+        return {
+            cw: container.value!.clientWidth,
+            lsw: leftSidebar.value!.$el.clientWidth,
+            rsw: rightSidebar.value!.$el.clientWidth,
+            law: leftActionBar.value!.$el.clientWidth,
+            raw: rightActionBar.value!.$el.clientWidth
+        };
+    };
+
+    watch(() => ctl.hideLeftSidebar, (val) => {
+        nextTick().then(() => {
+            if (!val) {
+                const el = leftDraggableLine.value!;
+                drag<OriginalDataType>({
+                    el,
+                    originalData,
+                    handlerFn: ({ x, originalData: { cw, law, lsw, rsw, raw } }) => {
+                        const newWidth = lsw + x;
+                        const otherElsWidth = law + raw + rsw;
+                        if (cw - otherElsWidth - 400 < newWidth) {
+                            return;
+                        }
+                        if (newWidth < 120) {
+                            return;
+                        }
+                        leftSidebarLayout.value = { width: newWidth / cw * 100 + '%' };
                     }
-                    if (newWidth < 120) {
-                        return;
+                });
+            }
+        });
+    }, { immediate: true });
+
+    watch(() => ctl.hideRightSidebar, (val) => {
+        nextTick().then(() => {
+            if (!val) {
+                const el = rightDraggableLine.value!;
+                drag<OriginalDataType>({
+                    el,
+                    originalData,
+                    handlerFn: ({ x, originalData: { cw, law, lsw, rsw, raw } }) => {
+                        const newWidth = rsw - x;
+                        const otherElsWidth = law + raw + lsw;
+                        if (cw - otherElsWidth - 400 < newWidth) {
+                            return;
+                        }
+                        if (newWidth < 120) {
+                            return;
+                        }
+                        rightSidebarLayout.value = { width: newWidth / cw * 100 + '%' };
                     }
-                    leftSidebarLayout.value = { width: newWidth / cw * 100 + '%' };
-                }
-            });
-            drag<OriginalDataType>({
-                el: rightDraggableLine.value!,
-                originalData,
-                handlerFn: ({ x, originalData: { cw, law, lsw, rsw, raw } }) => {
-                    const newWidth = rsw - x;
-                    const otherElsWidth = law + raw + lsw;
-                    if (cw - otherElsWidth - 400 < newWidth) {
-                        return;
-                    }
-                    if (newWidth < 120) {
-                        return;
-                    }
-                    rightSidebarLayout.value = { width: newWidth / cw * 100 + '%' };
-                }
-            });
-        }
-    });
+                });
+            }
+        });
+    }, { immediate: true });
 </script>
 
 <style scoped lang="scss">

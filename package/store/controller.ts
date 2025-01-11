@@ -12,7 +12,10 @@ export const controllerStore = defineStore('controller', {
         hideRightActionBar: false,
         hideHeaderTopNav: false,
         hidePaths: false,
-        hideCopyright: false
+        hideCopyright: false,
+        // ---------
+        hideDir: false,
+        hideOutline: false
     }),
     persist: true
 });

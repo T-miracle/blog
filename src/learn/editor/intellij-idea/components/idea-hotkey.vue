@@ -3,13 +3,17 @@
         <table class="table-w100">
             <thead>
                 <tr>
-                    <th width="240">快捷键</th>
+                    <th width="240">
+                        快捷键
+                    </th>
                     <th>解释</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="title">
-                    <td colspan="2">搜索 / 替换</td>
+                    <td colspan="2">
+                        搜索 / 替换
+                    </td>
                 </tr>
                 <tr>
                     <td>CTRL + F</td>
@@ -36,7 +40,9 @@
                     <td>通过 url 路径的字符串查找相关实现类</td>
                 </tr>
                 <tr class="title">
-                    <td colspan="2">光标移动</td>
+                    <td colspan="2">
+                        光标移动
+                    </td>
                 </tr>
                 <tr>
                     <td>CTRL + Home</td>
@@ -46,13 +52,22 @@
                     <td>CTRL + End</td>
                     <td>光标移动到编辑器最底层</td>
                 </tr>
+                <tr class="title">
+                    <td colspan="2">
+                        代码生成
+                    </td>
+                </tr>
+                <tr>
+                    <td>CTRL + ALT + T</td>
+                    <td>用...包围（if..else、try..catch、for 等）</td>
+                </tr>
             </tbody>
         </table>
     </div>
 </template>
 
+<script setup lang="ts">
+</script>
 <style scoped lang="scss">
   @import "./styles/w100-table.scss";
 </style>
-<script setup lang="ts">
-</script>

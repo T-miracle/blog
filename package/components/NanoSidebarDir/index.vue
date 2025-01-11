@@ -1,10 +1,9 @@
 <template>
     <div
-        v-show="openStatus"
+        v-show="visible"
         class="relative w-full grow min-h-0 flex flex-col"
     >
         <div
-            v-if="!ctl.hideLeftSidebar"
             class="shrink-0 relative w-full"
             :class="{ 'shadow-insert' : shadowShow }"
             un-h="[var(--sidebar-header-height)]"
@@ -24,7 +23,7 @@
                     un-w="[var(--sidebar-header-button-size)]"
                     un-h="[var(--sidebar-header-button-size)]"
                     un-hover="bg-[var(--sidebar-header-button-hover-bg)]"
-                    @click="openStatus = false"
+                    @click="visible = false"
                 >
                     <WindowMinimize class="w-3/4 h-full fill-[var(--sidebar-header-button-color)]"/>
                 </button>
@@ -103,15 +102,19 @@
 
 
     const { frontmatter } = useData();
-    const openStatus = ref<boolean>(true);
+    const visible = ref(!ctl.hideDir);
 
     watch(() => frontmatter.value?.layout, (value) => {
-        openStatus.value = !value;
+        if (ctl.hideDir) {
+            return;
+        }
+        visible.value = !value;
     }, { immediate: true });
 
     onMounted(() => {
         emitter.on('toggle-dir-open-status', () => {
-            openStatus.value = !openStatus.value;
+            ctl.hideDir = !ctl.hideDir;
+            visible.value = !ctl.hideDir;
         });
     });
 
@@ -121,7 +124,7 @@
     });
 
     defineExpose({
-        openStatus
+        visible
     });
 </script>
 

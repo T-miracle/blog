@@ -1,7 +1,7 @@
 <template>
     <div
+        v-show="visible"
         class="relative shrink-0 h-full"
-        :class="{ 'w-0!': !openStatus }"
         un-border="l-solid l-1px l-[var(--sidebar-border-color)]"
         style="background: var(--sidebar-bg)"
     >
@@ -23,8 +23,8 @@
 
     const outline = ref<InstanceType<typeof NanoOutline> | null>(null);
 
-    const openStatus = computed(() => {
-        return outline.value?.openStatus ?? false;
+    const visible = computed(() => {
+        return outline.value?.visible ?? false;
     });
 </script>
 
