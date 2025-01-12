@@ -13,6 +13,7 @@
                 class="w-full h-full"
                 :options="scrollbarOptions"
                 defer
+                @os-initialized="scrollbarInitialized"
             >
                 <article
                     ref="article"
@@ -21,14 +22,18 @@
                     style="white-space: wrap;"
                     :style="{ padding: articlePadding }"
                 >
-                    <Content ref="content"/>
+                    <Content/>
                 </article>
+                <slot name="contentAfter">
+                    <!--<NanoGiscus/>-->
+                </slot>
             </OverlayScrollbarsComponent>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+    // import NanoGiscus from '@NanoUI/NanoGiscus/index.vue';
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
@@ -39,7 +44,7 @@
 
     const { page } = useData();
     const route = useRoute();
-    const scrollbars = ref<any | null>(null);
+    const scrollbars = ref<InstanceType<typeof OverlayScrollbarsComponent> | null>(null);
     const article = ref<HTMLElement | null>(null);
 
     // Listen for routing changes and scroll to the top
@@ -51,6 +56,7 @@
         immediate: true
     });
 
+    // Listen for hash changes
     function hashChange() {
         if (location.hash) {
             const _hashText = decodeURIComponent(location.hash.replace('#', ''));
@@ -58,22 +64,28 @@
         }
     }
 
-    onContentUpdated(() => {
+    function scrollbarInitialized() {
+        // console.log('scrollbarInitialized');
         setTimeout(() => {
             hashChange();
-        }, 240);
+        }, 0);
+    }
+
+    onContentUpdated(() => {
+        // console.log('content updated');
+        setTimeout(() => {
+            hashChange();
+        }, 0);
     });
 
     const resizeObserver = ref<ResizeObserver | null>(null);
     const articlePadding = ref<string>('calc(var(--base-size))');
 
     onMounted(() => {
-        setTimeout(() => {
-            hashChange();
-        }, 240);
+        // console.log('mounted');
         // Listen for scroll-to-hash events
         emitter.on('scroll-to-hash', (hash: string) => {
-            if (hash === '' || hash === null || hash === undefined) {
+            if (!hash) {
                 return;
             }
             const target = document.getElementById(hash);
@@ -96,13 +108,16 @@
             for (const entry of entries) {
                 const { target } = entry;
                 const { clientWidth } = target as HTMLElement;
-                if (clientWidth < 1280) {
+                if (clientWidth < 768) {
                     articlePadding.value = 'calc(var(--base-size))';
                 } else {
                     articlePadding.value = 'calc(var(--base-size)) calc(var(--base-size) * 2)';
                 }
             }
         });
+        resizeObserver.value.observe(article.value!);
+
+        scrollbars.value?.osInstance()?.update();
     });
 
     onUnmounted(() => {

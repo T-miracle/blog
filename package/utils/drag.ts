@@ -1,4 +1,4 @@
-// Date: 2021-09-22
+// Drag move handler function
 export type HandlerFnParams<T> = {
     // x-axis moving distance
     x: number;
@@ -27,7 +27,7 @@ export type DragOptions<T> = {
     // Original data
     originalData: T | (() => T);
     // Handler function
-    handlerFn?: (pos: HandlerFnParams<T>) => void;
+    handlerFn?: (data: HandlerFnParams<T>) => void;
     // Before drag function
     beforeFn?: () => void;
     // After drag function
@@ -36,6 +36,12 @@ export type DragOptions<T> = {
 
 /**
  * Drag the element to change the width of the child element
+ * @param options Drag options
+ * @param options.el The element to be dragged
+ * @param options.originalData Original data (passed to handlerFn for use)
+ * @param options.handlerFn Handler function
+ * @param options.beforeFn Before drag do something
+ * @param options.afterFn After drag do something
  */
 export function drag<T>({ el, originalData, handlerFn, beforeFn, afterFn }: DragOptions<T>) {
     if (!el) {
@@ -49,7 +55,7 @@ export function drag<T>({ el, originalData, handlerFn, beforeFn, afterFn }: Drag
         const screenWith = document.documentElement.clientWidth;
         const screenHeight = document.documentElement.clientHeight;
 
-        const _originalData = originalData instanceof Function ? originalData() : originalData;
+        const _originalData = originalData instanceof Function ? originalData.bind(null)() : originalData;
 
         const dragEvent = (e: MouseEvent) => {
             const x = e.clientX - startX;
