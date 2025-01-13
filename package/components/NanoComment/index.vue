@@ -1,0 +1,53 @@
+<template>
+    <div v-if="type === 'artalk' && visible" class="relative w-full h-a my-12">
+        <div class="h-1px w-full bg-gray-300"/>
+        <strong class="block text-[calc(var(--base-size)*1.2)]! my-4!">大佬~留个评论吧~</strong>
+        <div id="comment"/>
+    </div>
+</template>
+
+<script setup lang="ts">
+    import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+    import { useData, useRoute } from 'vitepress';
+    import 'artalk/Artalk.css';
+    import Artalk from 'artalk';
+
+    const route = useRoute();
+    const { site: _site, frontmatter } = useData();
+    const { type, options: { server, site } } = _site.value.themeConfig.comments;
+    const artalk = ref<Artalk | null>(null);
+    const visible = ref(false);
+
+    function init() {
+        artalk.value?.destroy();
+        if (frontmatter.value.comment === false) {
+            visible.value = false;
+        } else {
+            visible.value = true;
+            nextTick(() => {
+                artalk.value = Artalk.init({
+                    el: '#comment',
+                    pageKey: route.path,
+                    server,
+                    site
+                });
+            });
+        }
+    }
+
+    watch(() => route.path, () => {
+        init();
+    });
+
+    onMounted(() => {
+        init();
+    });
+
+    onUnmounted(() => {
+        artalk.value?.destroy();
+    });
+</script>
+
+<style scoped lang="scss">
+
+</style>

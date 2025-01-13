@@ -12,6 +12,14 @@ export default {
     ],
     // 左上角标题图标
     logo: '/logo-op0.png',
+    // 评论配置
+    comments: {
+        type: 'artalk',
+        options: {
+            server: 'http://artalk.namichong.com',
+            site: 'Hi! Tmiracle'
+        }
+    },
     search: {
         provider: 'local',
         options: {

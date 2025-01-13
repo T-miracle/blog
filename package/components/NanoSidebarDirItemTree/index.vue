@@ -2,10 +2,11 @@
     <div class="relative w-auto whitespace-nowrap">
         <div class="relative cursor-pointer select-none rounded-2">
             <div
-                class="flex items-center flex-nowrap gap-[calc(var(--base-size)*.25)] py-[calc(var(--base-size)*.125)] w-auto"
+                class="py-[calc(var(--base-size)*.15)] w-auto"
                 :class="setClass"
                 :style="{ paddingLeft: `calc(var(--base-size)*${ level })` }"
                 un-hover="bg-[var(--sidebar-hover-bg)]"
+                un-flex="~ items-center nowrap gap-[calc(var(--base-size)*.25)]"
                 @click.stop="collapse"
             >
                 <div class="w-[calc(var(--base-size)*1)] h-[calc(var(--base-size)*1)] shrink-0">
@@ -18,7 +19,7 @@
                 <div class="menu-icon flex-center" v-html="item.icon"/>
                 <div
                     class="text-[calc(var(--base-size)*.975)]!"
-                    :class="[ item.link ? '' : 'text-blue-500' ]"
+                    :class="[ item.link ? 'text-gray-6' : 'text-blue-500' ]"
                     v-text="item.text"
                 />
             </div>

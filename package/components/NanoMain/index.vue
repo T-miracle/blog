@@ -15,25 +15,26 @@
                 defer
                 @os-initialized="scrollbarInitialized"
             >
-                <article
-                    ref="article"
-                    class="vp-doc VPDoc text-[var(--base-size)]"
-                    :class="[ 'w-full' ]"
-                    style="white-space: wrap;"
-                    :style="{ padding: articlePadding }"
-                >
-                    <Content/>
-                </article>
-                <slot name="contentAfter">
-                    <!--<NanoGiscus/>-->
-                </slot>
+                <div :style="{ padding: articlePadding }">
+                    <article
+                        ref="article"
+                        class="vp-doc VPDoc text-[var(--base-size)]"
+                        :class="[ 'w-full' ]"
+                        style="white-space: wrap;"
+                    >
+                        <Content/>
+                    </article>
+                    <slot name="contentAfter">
+                        <NanoComment/>
+                    </slot>
+                </div>
             </OverlayScrollbarsComponent>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    // import NanoGiscus from '@NanoUI/NanoGiscus/index.vue';
+    import NanoComment from '@NanoUI/NanoComment/index.vue';
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
