@@ -29,7 +29,7 @@
                         style="padding: calc(var(--base-size) * 2.5) calc(var(--base-size) * 1.5) 0"
                     >
                         <span class="text-gray">最后更新于：</span>
-                        <strong class="text-slate-4">{{ datetime }}</strong>
+                        <time class="text-slate-4" :datetime="isoDatetime">{{ datetime }}</time>
                     </div>
                     <slot name="contentAfter">
                         <NanoComment/>
@@ -94,6 +94,7 @@
     const date = computed(
         () => new Date(frontmatter.value.lastUpdated ?? page.value.lastUpdated)
     );
+    const isoDatetime = computed(() => date.value.toISOString());
 
     onMounted(() => {
         watchEffect(() => {
