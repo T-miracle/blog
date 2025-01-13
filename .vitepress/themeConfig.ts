@@ -16,7 +16,7 @@ export default {
     comments: {
         type: 'artalk',
         options: {
-            server: 'http://artalk.namichong.com',
+            server: 'https://artalk.namichong.com',
             site: 'Hi! Tmiracle'
         }
     },

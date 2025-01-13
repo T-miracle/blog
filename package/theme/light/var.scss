@@ -8,7 +8,7 @@
 
 .nano-theme {
     --scale: 0;
-    --base-size: calc((var(--scale) * 1px) + 16px);
+    --base-size: calc((var(--scale) * 1px) + 14px);
 
     * {
         font-size: var(--base-size);
