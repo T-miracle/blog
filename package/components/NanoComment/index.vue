@@ -1,7 +1,6 @@
 <template>
-    <div v-if="type === 'artalk' && visible" class="relative w-full h-a my-12">
-        <div class="h-1px w-full bg-gray-300"/>
-        <strong class="block text-[calc(var(--base-size)*1.2)]! my-4!">大佬~留个评论吧~</strong>
+    <div v-if="type === 'artalk' && visible" class="relative w-full h-a my-12 p-6 bg-#F7F8FA rounded-6px">
+        <strong class="block text-[calc(var(--base-size)*1.25)]! mb-4!">大佬~留个评论吧~</strong>
         <div id="comment"/>
     </div>
 </template>

@@ -24,6 +24,13 @@
                     >
                         <Content/>
                     </article>
+                    <div
+                        class="flex items-center justify-end"
+                        style="padding: calc(var(--base-size) * 2.5) calc(var(--base-size) * 1.5) 0"
+                    >
+                        <span class="text-gray">最后更新于：</span>
+                        <strong class="text-slate-4">{{ dayjs(page.lastUpdated).format('YYYY-MM-DD HH:mm') }}</strong>
+                    </div>
                     <slot name="contentAfter">
                         <NanoComment/>
                     </slot>
@@ -42,6 +49,7 @@
     import { onContentUpdated, useData, useRoute } from 'vitepress';
     import emitter from '../../emitter';
     import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
+    import dayjs from 'dayjs';
 
     const { page } = useData();
     const route = useRoute();
