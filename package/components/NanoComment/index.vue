@@ -47,6 +47,24 @@
     });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+    :deep(.artalk) {
+        > .atk-list {
+            .atk-list-header .atk-comment-count .atk-comment-count-num {
+                font-size: 16px !important;
+            }
 
+            > .atk-list-body {
+                min-height: 0;
+
+                .atk-list-no-comment {
+                    height: unset;
+                }
+            }
+        }
+
+        .atk-list-footer {
+            display: none;
+        }
+    }
 </style>
