@@ -29,7 +29,7 @@
                         style="padding: calc(var(--base-size) * 2.5) calc(var(--base-size) * 1.5) 0"
                     >
                         <span class="text-gray">最后更新于：</span>
-                        <strong class="text-slate-4">{{ dayjs(page.lastUpdated).format('YYYY-MM-DD HH:mm') }}</strong>
+                        <strong class="text-slate-4">{{ datetime }}</strong>
                     </div>
                     <slot name="contentAfter">
                         <NanoComment/>
@@ -45,16 +45,17 @@
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
-    import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+    import { computed, nextTick, onMounted, onUnmounted, ref, watch, watchEffect } from 'vue';
     import { onContentUpdated, useData, useRoute } from 'vitepress';
     import emitter from '../../emitter';
     import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
-    import dayjs from 'dayjs';
 
-    const { page } = useData();
+    const { page, theme, frontmatter } = useData();
     const route = useRoute();
     const scrollbars = ref<InstanceType<typeof OverlayScrollbarsComponent> | null>(null);
     const article = ref<HTMLElement | null>(null);
+
+    const datetime = ref('');
 
     // Listen for routing changes and scroll to the top
     watch(() => route.path, () => {
@@ -90,7 +91,20 @@
     const resizeObserver = ref<ResizeObserver | null>(null);
     const articlePadding = ref<string>('calc(var(--base-size))');
 
+    const date = computed(
+        () => new Date(frontmatter.value.lastUpdated ?? page.value.lastUpdated)
+    );
+
     onMounted(() => {
+        watchEffect(() => {
+            datetime.value = new Intl.DateTimeFormat(
+                undefined,
+                theme.value.lastUpdated?.formatOptions ?? {
+                    dateStyle: 'short',
+                    timeStyle: 'short'
+                }
+            ).format(date.value);
+        });
         // console.log('mounted');
         // Listen for scroll-to-hash events
         emitter.on('scroll-to-hash', (hash: string) => {
