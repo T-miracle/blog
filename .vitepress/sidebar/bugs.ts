@@ -1,10 +1,24 @@
-import { bugIcon, elementIcon, htmlIcon, tsIcon, uniAppIcon, webIcon } from './icons';
+import {
+    androidStudioIcon,
+    bugIcon,
+    editorIcon,
+    elementIcon,
+    hBuilderXIcon,
+    htmlIcon,
+    ideaIcon,
+    tsIcon,
+    uniAppIcon,
+    webIcon
+} from './icons';
 import { type SidebarType } from '../../package/type';
+import ideaItems from './learn/idea';
+import hBuilderXItems from './learn/hbuilderx';
+import androidStudioItems from './learn/android-studio';
 
 const bugsSidebar: SidebarType[] = [
     {
         icon: bugIcon,
-        text: 'BUG处理',
+        text: '问题处理',
         link: '/bugs/',
         items: []
     },
@@ -75,6 +89,19 @@ const bugsSidebar: SidebarType[] = [
                         link: '/bugs/web/uniapp/overwrite_install_newly_added_page_cannot_jump'
                     }
                 ]
+            }
+        ]
+    },
+    {
+        icon: editorIcon,
+        text: '编辑器',
+        collapsed: false,
+        items: [
+            {
+                icon: androidStudioIcon,
+                text: 'Android Studio',
+                collapsed: true,
+                items: androidStudioItems
             }
         ]
     },

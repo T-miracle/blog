@@ -24,6 +24,7 @@
     "overlayscrollbars-vue": "^0.5.9",
     "pinia": "^2.3.0",
     "pinia-plugin-persistedstate": "3.2.3",
+    "unocss": "^65.4.0",
     "uuid": "^11.0.3",
     "viewerjs": "^1.11.7",
     "vitepress": "^1.5.0",
@@ -37,11 +38,11 @@
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "@unocss/preset-rem-to-px": "^0.55.7",
+    "@vitejs/plugin-vue": "^5.2.1",
     "eslint": "^9.17.0",
     "eslint-plugin-vue": "^9.32.0",
     "sass": "1.62.1",
     "typescript-eslint": "^8.18.2",
-    "unocss": "^0.65.2",
     "vite": "^4.5.5"
   }
 }

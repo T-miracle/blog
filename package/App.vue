@@ -8,7 +8,11 @@
             <NanoDefaultHomepage/>
         </slot>
 
-        <NanoContainer v-if="!onlyShowIndex"/>
+        <NanoContainer v-if="!onlyShowIndex">
+            <template #content-footer>
+                <slot name="content-footer"/>
+            </template>
+        </NanoContainer>
     </div>
 </template>
 

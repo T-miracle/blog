@@ -27,6 +27,7 @@
                     >
                         <a
                             :href="subNav.link"
+                            :target="subNav.target"
                             @click="changeFooterPath(subNav.text)"
                         >
                             <p class="text-[calc(var(--s)*.45)]! whitespace-nowrap">
@@ -39,6 +40,7 @@
             <a
                 v-else
                 :href="nav.link"
+                :target="nav.target"
                 class="text-[var(--header-nav-color)] text-[calc(var(--s)*.4)]! cursor-default"
                 un-hover="underline"
                 @click="changeFooterPath(nav.text)"

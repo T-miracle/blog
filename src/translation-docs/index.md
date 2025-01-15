@@ -2,6 +2,7 @@
 layout: page
 title: 文档翻译
 comment: false
+lastUpdated: false
 ---
 
 <Doc/>

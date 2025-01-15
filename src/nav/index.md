@@ -2,6 +2,7 @@
 layout: page
 title: 资源导航
 comment: false
+lastUpdated: false
 ---
 
 <Nav/>

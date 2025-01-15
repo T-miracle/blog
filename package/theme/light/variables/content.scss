@@ -1,6 +1,10 @@
 // article content style
 @mixin content {
     article.vp-doc {
+        p > img {
+            box-shadow: 0 0 5px rgba(0, 0, 0, .24);
+        }
+
         table {
             tr {
                 background: transparent !important;

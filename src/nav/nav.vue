@@ -235,7 +235,7 @@
             entries.forEach((entry: ResizeObserverEntry) => {
                 if (entry.target === navBox.value) {
                     const { clientWidth } = entry.target;
-                    console.log(clientWidth);
+                    // console.log(clientWidth);
                     if (clientWidth >= 1440) {
                         listBox.value?.style.setProperty('grid-template-columns', 'repeat(4, 1fr)');
                     } else if (clientWidth >= 1280) {

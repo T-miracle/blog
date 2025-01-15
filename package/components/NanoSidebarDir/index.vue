@@ -100,21 +100,17 @@
         shadowShow.value = e.elements().viewport.scrollTop > 0;
     }, 80, { leading: true, trailing: true });
 
-
     const { frontmatter } = useData();
     const visible = ref(!ctl.hideDir);
 
     watch(() => frontmatter.value?.layout, (value) => {
-        if (ctl.hideDir) {
-            return;
-        }
-        visible.value = !value;
+        visible.value = !value && ctl.hideDir;
     }, { immediate: true });
 
     onMounted(() => {
         emitter.on('toggle-dir-open-status', () => {
-            ctl.hideDir = !ctl.hideDir;
-            visible.value = !ctl.hideDir;
+            visible.value = !visible.value;
+            ctl.hideDir = visible.value;
         });
     });
 

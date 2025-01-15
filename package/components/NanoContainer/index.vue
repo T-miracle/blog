@@ -11,7 +11,11 @@
     >
         <div v-show="!loading" class="relative w-full h-full flex flex-col">
             <NanoHeader ref="header" @dblclick.self="ctl.fullscreen = !ctl.fullscreen"/>
-            <NanoBody/>
+            <NanoBody>
+                <template #content-footer>
+                    <slot name="content-footer"/>
+                </template>
+            </NanoBody>
             <NanoFooter/>
         </div>
 

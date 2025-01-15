@@ -17,7 +17,8 @@ export default {
         type: 'artalk',
         options: {
             server: 'https://artalk.namichong.com',
-            site: 'Hi! Tmiracle'
+            site: 'Hi! Tmiracle',
+            editorTravel: true
         }
     },
     search: {
@@ -56,17 +57,11 @@ export default {
     },
     nav: [
         { text: '学习备忘录', link: '/learn/' },
+        { text: '问题处理', link: '/bugs/' },
+        { text: '捣鼓新玩意', link: '/new-tools/' },
         { text: '文档翻译', link: '/translation-docs/' },
         { text: '资源导航', link: '/nav/' },
-        {
-            text: '更多内容',
-            items: [
-                { text: '问题处理', link: '/bugs/' },
-                { text: '测试题', link: '/test/' },
-                { text: '杂谈', link: '/tittle-tattle/' }
-                // { text: '面试与笔试模拟', link: '/simulation/' }
-            ]
-        }
+        { text: '杂谈', link: '/tittle-tattle/' }
     ],
     outline: {
         level: 'deep',

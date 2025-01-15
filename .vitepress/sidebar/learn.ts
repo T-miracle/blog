@@ -239,12 +239,6 @@ const learnSidebar: SidebarType[] = [
                 text: 'HBuilder X',
                 collapsed: true,
                 items: hBuilderXItems
-            },
-            {
-                icon: androidStudioIcon,
-                text: 'Android Studio',
-                collapsed: true,
-                items: androidStudioItems
             }
         ]
     }

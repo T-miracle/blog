@@ -2,15 +2,17 @@
     <div ref="container" class="relative grow flex items-stretch min-h-0">
         <NanoLeftActionBar v-if="!ctl.hideLeftActionBar" ref="leftActionBar"/>
         <NanoLeftSidebar v-if="!ctl.hideLeftSidebar" ref="leftSidebar" :style="leftSidebarLayout">
-            <!--draggable line-->
             <div
                 ref="leftDraggableLine"
                 class="absolute z-4 right--2 top-0 h-full w-2 bg-transparent cursor-col-resize"
             />
         </NanoLeftSidebar>
-        <NanoMain ref="main"/>
+        <NanoMain ref="main">
+            <template #content-footer>
+                <slot name="content-footer"/>
+            </template>
+        </NanoMain>
         <NanoRightSidebar v-if="!ctl.hideRightSidebar" ref="rightSidebar" :style="rightSidebarLayout">
-            <!--draggable line-->
             <div
                 ref="rightDraggableLine"
                 class="absolute z-4 left-0 top-0 h-full w-2 bg-transparent cursor-col-resize"

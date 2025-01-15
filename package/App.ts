@@ -11,22 +11,22 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
-export const theme = App;
-
-export const install = (app: EnhanceAppContext) => {
-    DefaultTheme.enhanceApp(app);
-    const { app: appInstance } = app;
-    appInstance.use(pinia);
-    appInstance.config.globalProperties.$go = function goPage(url: string, target: '_self' | '_blank' = '_self') {
+const install = (ctx: EnhanceAppContext) => {
+    DefaultTheme.enhanceApp(ctx);
+    const { app, router } = ctx;
+    app.use(pinia);
+    app.config.globalProperties.$go = function goPage(url: string, target: '_self' | '_blank' = '_self') {
         if (url) {
             if (target === '_blank') {
                 window.open(url);
             } else {
-                app.router.go(url);
+                router.go(url);
             }
         }
     };
 };
+
+export { App, install };
 
 declare module 'vue' {
     interface ComponentCustomProperties {

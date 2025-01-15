@@ -22,7 +22,7 @@ export function setTreeAllParentNodesByFoundNode<T, K extends keyof T>(
             return true;
         }
         if (Array.isArray(node[childrenKey])) {
-            for (let child of node[childrenKey] as T[]) {
+            for (const child of node[childrenKey] as T[]) {
                 if (findNodeByFindFn(child, findFn)) {
                     setParentNodesFn(node);
                     return true;
@@ -32,7 +32,7 @@ export function setTreeAllParentNodesByFoundNode<T, K extends keyof T>(
         }
         return false;
     }
-    for (let node of tree) {
+    for (const node of tree) {
         findNodeByFindFn(node, findFn);
     }
     return _node;
@@ -52,14 +52,14 @@ export function getNodePathsByFindNode<T, K extends keyof T>(
     childrenKey: K,
     findFn: (node: T) => boolean
 ): T[] {
-    let _nodes: T[] = [];
+    const _nodes: T[] = [];
     function findNodeByFindFn(node: T, findFn: (node: T) => boolean) {
         if (findFn(node)) {
             _nodes.push(node);
             return true;
         }
         if (Array.isArray(node[childrenKey])) {
-            for (let child of node[childrenKey] as T[]) {
+            for (const child of node[childrenKey] as T[]) {
                 if (findNodeByFindFn(child, findFn)) {
                     _nodes.push(node);
                     return true;
@@ -69,7 +69,7 @@ export function getNodePathsByFindNode<T, K extends keyof T>(
         }
         return false;
     }
-    for (let node of tree) {
+    for (const node of tree) {
         findNodeByFindFn(node, findFn);
     }
     return _nodes.reverse();

@@ -59,6 +59,7 @@
 
                 .atk-list-no-comment {
                     height: unset;
+                    color: deepskyblue;
                 }
             }
         }

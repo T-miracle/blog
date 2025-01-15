@@ -47,11 +47,9 @@
     import { useData } from 'vitepress';
     import { onMounted, onUnmounted, ref } from 'vue';
     import { controllerStore } from '@store/controller';
-
-    const ctl = controllerStore();
-
     import emitter from '../../emitter';
 
+    const ctl = controllerStore();
     const { theme } = useData();
     const navList = theme.value.nav;
 

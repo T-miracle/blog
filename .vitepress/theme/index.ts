@@ -11,10 +11,14 @@ import vModal from '../components/vModal.vue';
 import 'viewerjs/dist/viewer.min.css';
 import 'virtual:uno.css';
 import '../../package/App.scss';
-import { theme, install } from '../../package/App';
+import { App, install } from '../../package/App';
+import { h } from 'vue';
+import artalkComment from '../components/artalkComment/index.vue';
 
 export default {
-    Layout: theme,
+    Layout: () => h(App, {}, {
+        'content-footer': () => h(artalkComment)
+    }),
     // ...DefaultTheme,
     enhanceApp(ctx: EnhanceAppContext) {
         install(ctx);
@@ -30,14 +34,6 @@ export default {
         // 获取前言和路由
         const route = useRoute();
         imageViewer(route, '.vp-doc', { toolbar: true });
-        // giscusTalk({
-        //     repo: 'T-miracle/blog',
-        //     repoId: 'R_kgDOJCf-FQ',
-        //     categoryId: 'DIC_kwDOJCf-Fc4CUohc',
-        //     mapping: 'pathname'
-        // }, {
-        //     frontmatter, route
-        // });
         googleAnalysis();
     }
 };

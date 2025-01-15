@@ -25,15 +25,14 @@
                         <Content/>
                     </article>
                     <div
+                        v-if="showDatetime"
                         class="flex items-center justify-end"
                         style="padding: calc(var(--base-size) * 2.5) calc(var(--base-size) * 1.5) 0"
                     >
                         <span class="text-gray">最后更新于：</span>
                         <time class="text-slate-4" :datetime="isoDatetime">{{ datetime }}</time>
                     </div>
-                    <slot name="contentAfter">
-                        <NanoComment/>
-                    </slot>
+                    <slot name="content-footer"/>
                 </div>
             </OverlayScrollbarsComponent>
         </div>
@@ -41,12 +40,11 @@
 </template>
 
 <script setup lang="ts">
-    import NanoComment from '@NanoUI/NanoComment/index.vue';
     import 'overlayscrollbars/styles/overlayscrollbars.css';
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
     import { computed, nextTick, onMounted, onUnmounted, ref, watch, watchEffect } from 'vue';
-    import { onContentUpdated, useData, useRoute } from 'vitepress';
+    import { Content, onContentUpdated, useData, useRoute } from 'vitepress';
     import emitter from '../../emitter';
     import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
 
@@ -56,6 +54,7 @@
     const article = ref<HTMLElement | null>(null);
 
     const datetime = ref('');
+    const showDatetime = computed(() => frontmatter.value.lastUpdated !== false);
 
     // Listen for routing changes and scroll to the top
     watch(() => route.path, () => {
