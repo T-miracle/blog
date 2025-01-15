@@ -71,9 +71,9 @@
 
     // Listen for hash changes
     const hashChange = () => {
-        // console.log('hashChange', location.hash);
-        if (location.hash) {
-            const _hashText = decodeURIComponent(location.hash.replace('#', ''));
+        // console.log('hashChange', hash.value);
+        if (hash.value) {
+            const _hashText = decodeURIComponent(hash.value.replace('#', ''));
             emitter.emit('scroll-to-hash', _hashText);
         }
     };
