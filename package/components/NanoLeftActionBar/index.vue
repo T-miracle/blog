@@ -34,16 +34,23 @@
     import { ref, shallowRef } from 'vue';
     import emitter from '../../emitter';
     import { type NanoActionBarButtonType } from '@NanoUI/NanoActionBarButton/type';
+    import { useData } from 'vitepress';
+    const { frontmatter } = useData();
 
-    const actionLeftBarTopBtnList = ref<NanoActionBarButtonType[]>([
+    const actionLeftBarTopBtnList = ref<Array<NanoActionBarButtonType>>([
         {
             id: 'project',
             icon: shallowRef(ProjectIcon),
-            clickFn: () => emitter.emit('toggle-dir-open-status')
+            disabled: () => {
+                return [ 'page' ].includes(frontmatter.value?.layout);
+            },
+            clickFn: () => {
+                emitter.emit('toggle-dir-open-status');
+            }
         }
     ]);
 
-    const actionLeftBarBottomBtnList = ref<NanoActionBarButtonType[]>([]);
+    const actionLeftBarBottomBtnList = ref<Array<NanoActionBarButtonType>>([]);
 </script>
 
 <style scoped lang="scss">

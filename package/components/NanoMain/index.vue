@@ -13,7 +13,7 @@
                 class="w-full h-full"
                 :options="scrollbarOptions"
                 defer
-                @os-initialized="scrollbarInitialized"
+                @os-initialized="scrollbarChanged"
             >
                 <div :style="{ padding: articlePadding }">
                     <article
@@ -44,11 +44,11 @@
     import scrollbarOptions from '../../config/scrollbarOptions';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
     import { computed, nextTick, onMounted, onUnmounted, ref, watch, watchEffect } from 'vue';
-    import { Content, onContentUpdated, useData, useRoute } from 'vitepress';
+    import { Content, useData, useRoute } from 'vitepress';
     import emitter from '../../emitter';
     import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
 
-    const { page, theme, frontmatter } = useData();
+    const { page, theme, frontmatter, hash } = useData();
     const route = useRoute();
     const scrollbars = ref<InstanceType<typeof OverlayScrollbarsComponent> | null>(null);
     const article = ref<HTMLElement | null>(null);
@@ -57,35 +57,33 @@
     const showDatetime = computed(() => frontmatter.value.lastUpdated !== false);
 
     // Listen for routing changes and scroll to the top
-    watch(() => route.path, () => {
+    watch(() => [ route.path, hash ], ([ , hashValue ]) => {
         nextTick(() => {
-            scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: 0 });
+            if (hashValue) {
+                setTimeout(() => {
+                    hashChange();
+                });
+            } else {
+                scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: 0 });
+            }
         });
-    }, {
-        immediate: true
-    });
+    }, { immediate: true });
 
     // Listen for hash changes
-    function hashChange() {
+    const hashChange = () => {
+        // console.log('hashChange', location.hash);
         if (location.hash) {
             const _hashText = decodeURIComponent(location.hash.replace('#', ''));
             emitter.emit('scroll-to-hash', _hashText);
         }
-    }
+    };
 
-    function scrollbarInitialized() {
-        // console.log('scrollbarInitialized');
+    function scrollbarChanged() {
+        // console.log('scrollbarChanged');
         setTimeout(() => {
             hashChange();
         }, 0);
     }
-
-    onContentUpdated(() => {
-        // console.log('content updated');
-        setTimeout(() => {
-            hashChange();
-        }, 0);
-    });
 
     const resizeObserver = ref<ResizeObserver | null>(null);
     const articlePadding = ref<string>('calc(var(--base-size))');
@@ -139,8 +137,6 @@
             }
         });
         resizeObserver.value.observe(article.value!);
-
-        scrollbars.value?.osInstance()?.update();
     });
 
     onUnmounted(() => {

@@ -100,10 +100,6 @@ const bugsSidebar: SidebarType[] = [
                 items: androidStudioItems
             }
         ]
-    },
-    {
-        text: '待分类',
-        items: []
     }
 ];
 

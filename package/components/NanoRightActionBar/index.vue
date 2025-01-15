@@ -34,10 +34,21 @@
     import { ref, shallowRef } from 'vue';
     import { NanoActionBarButtonType } from '@NanoUI/NanoActionBarButton/type';
     import emitter from '../../emitter';
+    import { useData } from 'vitepress';
+    const { frontmatter } = useData();
 
-    const actionRightBarTopBtnList = ref<NanoActionBarButtonType[]>([
-        { id: 'structure', icon: shallowRef(StructureIcon), clickFn: () => emitter.emit('toggle-structure-open-status') }
+    const actionRightBarTopBtnList = ref<Array<NanoActionBarButtonType>>([
+        {
+            id: 'structure',
+            icon: shallowRef(StructureIcon),
+            disabled: () => {
+                return [ 'page' ].includes(frontmatter.value?.layout);
+            },
+            clickFn: () => {
+                emitter.emit('toggle-structure-open-status');
+            }
+        }
     ]);
 
-    const actionRightBarBottomBtnList = ref<NanoActionBarButtonType[]>([]);
+    const actionRightBarBottomBtnList = ref<Array<NanoActionBarButtonType>>([]);
 </script>

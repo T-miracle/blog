@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-    import { sidebarStore } from '@store/sidebar';
+    import { no, sidebarStore } from '@store/sidebar';
     import { onMounted, ref, watch } from 'vue';
     import FoldArrow from '@NanoIcon/foldArrow.vue';
     import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
@@ -57,7 +57,7 @@
             if (currentNav) {
                 paths.value = [ {
                     id: v4(),
-                    text: '💠' + currentNav.text
+                    text: no + currentNav.text
                 } ];
             }
         }
@@ -73,7 +73,7 @@
         emitter.on('change-path', (title: string) => {
             paths.value = [ {
                 id: v4(),
-                text: '💠' + title
+                text: no + title
             } ];
         });
         scrollbar.value?.osInstance()?.destroy();

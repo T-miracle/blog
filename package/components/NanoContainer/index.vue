@@ -9,7 +9,7 @@
         :height-range="[ '60vh', '100vh' ]"
         class="nano-theme"
     >
-        <div v-show="!loading" class="relative w-full h-full flex flex-col">
+        <div class="relative w-full h-full flex flex-col">
             <NanoHeader ref="header" @dblclick.self="ctl.fullscreen = !ctl.fullscreen"/>
             <NanoBody>
                 <template #content-footer>

@@ -1,7 +1,7 @@
 import { ThemeConfig } from '../package/type';
 import learnSidebar from './sidebar/learn';
 import bugsSidebar from './sidebar/bugs';
-import testSidebar from './sidebar/test';
+import newToolsSidebar from './sidebar/newTools';
 
 export default {
     name: 'Tmiracle',
@@ -71,6 +71,6 @@ export default {
     sidebar: {
         '/learn/': learnSidebar,
         '/bugs/': bugsSidebar,
-        '/test/': testSidebar
+        '/new-tools/': newToolsSidebar
     }
 } as ThemeConfig;

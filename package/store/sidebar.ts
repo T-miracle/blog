@@ -4,6 +4,8 @@ import { cloneDeep, toArray } from 'lodash-es';
 import { getNodePathsByFindNode, setTreeAllParentNodesByFoundNode } from '../utils/tree';
 import { type SidebarType } from '../type';
 
+export const no = `<svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M497.664 337.92c-112.64 0-204.8 92.16-204.8 204.8s92.16 204.8 204.8 204.8 204.8-92.16 204.8-204.8-92.16-204.8-204.8-204.8z m0 262.144c-30.72 0-55.296-24.576-55.296-55.296 0-30.72 24.576-55.296 55.296-55.296 30.72 0 55.296 24.576 55.296 55.296 0 30.72-24.576 55.296-55.296 55.296z"/></svg>`;
+
 export const sidebarStore = defineStore('sidebar', {
     state: () => {
         return {
@@ -22,10 +24,12 @@ export const sidebarStore = defineStore('sidebar', {
                     const id = v4()?.toString();
                     return {
                         id,
-                        icon: item.icon,
+                        icon: item.icon ?? no,
                         text: item.text,
                         link: item.link,
                         collapsed: item.collapsed ?? true,
+                        disabled: item.disabled ?? false,
+                        readonly: item.readonly ?? false,
                         items: item.items ? addId(item.items) : []
                     };
                 });

@@ -3,8 +3,7 @@
         <div class="relative cursor-pointer select-none rounded-2">
             <div
                 class="py-[calc(var(--base-size)*.15)] w-auto"
-                :class="setClass"
-                :style="{ paddingLeft: `calc(var(--base-size)*${ level })` }"
+                :style="setStyle"
                 un-hover="bg-[var(--sidebar-hover-bg)]"
                 un-flex="~ items-center nowrap gap-[calc(var(--base-size)*.25)]"
                 @click.stop="collapse"
@@ -59,16 +58,25 @@
 
     const collapse = () => {
         item.value.link && router.go(item.value.link);
-        item.value.collapsed = !item.value.collapsed;
+        if (!item.value.disabled && !item.value.readonly) {
+            item.value.collapsed = !item.value.collapsed;
+        }
         store.$patch({
             currentId: item.value.id
         });
     };
 
-    const setClass = computed(() => {
-        return [
-            store.currentId === item.value.id ? 'bg-[var(--sidebar-active-bg)]!' : ''
+    const setStyle = computed(() => {
+        const style: Array<Record<string, string | number>> = [
+            { paddingLeft: `calc(var(--base-size)*${ props.level })` }
         ];
+        if (store.currentId === item.value.id) {
+            style.push({ background: 'var(--sidebar-active-bg)' });
+        }
+        if (item.value.disabled) {
+            style.push({ pointerEvents: 'none', opacity: .65 });
+        }
+        return style;
     });
 </script>
 
@@ -76,9 +84,9 @@
     .menu-icon {
         :deep(svg), :deep(img) {
             display: inline-block;
-            width: calc(var(--base-size)*1.125);
-            height: calc(var(--base-size)*1.125);
-            margin-right: calc(var(--base-size)*.25);
+            width: calc(var(--base-size) * 1.125);
+            height: calc(var(--base-size) * 1.125);
+            margin-right: calc(var(--base-size) * .25);
         }
     }
 </style>

@@ -66,7 +66,7 @@
     import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar';
     import NanoSidebarDirTree from '@NanoUI/NanoSidebarDirTree/index.vue';
     import scrollbarOptions from '../../config/scrollbarOptions';
-    import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
+    import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
     import { sidebarStore } from '@store/sidebar';
     import { useData, useRoute } from 'vitepress';
     import { debounce } from 'lodash-es';
@@ -101,16 +101,13 @@
     }, 80, { leading: true, trailing: true });
 
     const { frontmatter } = useData();
-    const visible = ref(!ctl.hideDir);
-
-    watch(() => frontmatter.value?.layout, (value) => {
-        visible.value = ![ 'page' ].includes(value) && !ctl.hideDir;
-    }, { immediate: true });
+    const visible = computed(() => {
+        return ctl.hideDir ? false : ![ 'page' ].includes(frontmatter.value?.layout);
+    });
 
     onMounted(() => {
         emitter.on('toggle-dir-open-status', () => {
-            visible.value = !visible.value;
-            ctl.hideDir = visible.value;
+            ctl.hideDir = !ctl.hideDir;
         });
     });
 
