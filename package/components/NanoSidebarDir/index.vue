@@ -104,7 +104,7 @@
     const visible = ref(!ctl.hideDir);
 
     watch(() => frontmatter.value?.layout, (value) => {
-        visible.value = value && ctl.hideDir;
+        visible.value = value && !ctl.hideDir;
     }, { immediate: true });
 
     onMounted(() => {
