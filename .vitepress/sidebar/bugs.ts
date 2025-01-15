@@ -3,16 +3,12 @@ import {
     bugIcon,
     editorIcon,
     elementIcon,
-    hBuilderXIcon,
     htmlIcon,
-    ideaIcon,
     tsIcon,
     uniAppIcon,
     webIcon
 } from './icons';
 import { type SidebarType } from '../../package/type';
-import ideaItems from './learn/idea';
-import hBuilderXItems from './learn/hbuilderx';
 import androidStudioItems from './learn/android-studio';
 
 const bugsSidebar: SidebarType[] = [

@@ -1,6 +1,5 @@
 import {
     androidIcon,
-    androidStudioIcon,
     conceptIcon,
     cssIcon, deployIcon, dockerIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
     htmlIcon,
@@ -26,7 +25,6 @@ import springItems from './learn/spring';
 import wxMiniprogramItems from './learn/wx-miniprogram';
 import mysqlItems from './learn/mysql';
 import hBuilderXItems from './learn/hbuilderx';
-import androidStudioItems from './learn/android-studio';
 import webpackItems from './learn/webpack';
 import uniappItems from './learn/uniapp';
 import dockerItem from './learn/docker';
