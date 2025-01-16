@@ -1,10 +1,16 @@
 ---
-lastUpdated: 2023/9/17 02:12
+lastUpdated: 2025/1/16 21:24
 ---
 
-# README 说明文件美化教程
+<style scoped>
+    img {
+        box-shadow: unset !important;
+    }
+</style>
 
-可能你经常看到别人的项目说明文档写的格式整齐又美观，而且还有各种图标展示
+# Github README 说明文件美化教程
+
+可能你经常看到别人的 Github 项目说明文档写的格式整齐又美观，而且还有各种图标展示
 
 而自己的说明文档缺只有干巴巴的文字，显得奇丑无比
 

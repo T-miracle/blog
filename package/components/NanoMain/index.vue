@@ -114,13 +114,7 @@
                 return;
             }
             // Gets the distance of the target element relative to the top of the article viewport
-            const targetTop =
-                target.getBoundingClientRect().top -
-                article.value!.getBoundingClientRect().top -
-                Number.parseInt(
-                    getComputedStyle(document.documentElement)
-                        .fontSize.replace('px', '')
-                );
+            const targetTop = target.getBoundingClientRect().top - article.value!.getBoundingClientRect().top;
             // Scroll to target element
             scrollbars.value?.osInstance()?.elements()?.viewport?.scrollTo({ top: targetTop, behavior: 'smooth' });
         });

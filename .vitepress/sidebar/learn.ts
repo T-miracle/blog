@@ -32,7 +32,7 @@ const learnSidebar: SidebarType[] = [
     {
         icon: webIcon,
         text: '前端',
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 icon: conceptIcon,
@@ -99,7 +99,7 @@ const learnSidebar: SidebarType[] = [
     {
         icon: rearEndIcon,
         text: '后端',
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 icon: javaIcon,
@@ -131,7 +131,7 @@ const learnSidebar: SidebarType[] = [
     {
         icon: sqlIcon,
         text: '数据库',
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 icon: mySQLIcon,
@@ -144,7 +144,7 @@ const learnSidebar: SidebarType[] = [
     {
         icon: deployIcon,
         text: '部署',
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 icon: dockerIcon,
@@ -157,7 +157,7 @@ const learnSidebar: SidebarType[] = [
     {
         icon: versionControlIcon,
         text: '版本控制',
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 icon: gitIcon,
@@ -203,7 +203,7 @@ const learnSidebar: SidebarType[] = [
     {
         icon: editorIcon,
         text: '编辑器',
-        collapsed: false,
+        collapsed: true,
         items: [
             {
                 icon: ideaIcon,

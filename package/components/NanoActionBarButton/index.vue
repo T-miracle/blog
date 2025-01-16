@@ -11,8 +11,8 @@
     >
         <Component
             :is="button.icon"
-            class="w-full h-full fill-[#A0A3AD]"
-            :class="{ 'group-hover:fill-[#FFFFFF]' : !disabled }"
+            class="w-full h-full fill-[#A0A3AD] group-focus:fill-[#FFFFFF]!"
+            :class="{ 'group-hover:fill-[#A0A3AD]' : !disabled }"
         />
     </button>
 </template>
