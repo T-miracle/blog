@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 <script setup>
     import hookFunctionParameters from './components/hookFunctionParameters.vue'
 </script>
@@ -120,7 +124,7 @@ app.directive('focus', (el: HTMLElement) => {
 
 ### 函数钩子参数
 
-<hookFunctionParameters/>
+<hookFunctionParameters></hookFunctionParameters>
 
 ## 有哪些应用场景
 
@@ -137,7 +141,5 @@ app.directive('focus', (el: HTMLElement) => {
     示例：[vue-lazyload](https://github.com/hilongjw/vue-lazyload)
 
 - 权限控制
-
-    
 
 - ...

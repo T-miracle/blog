@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # 什么是Ajax？如何实现一个简单的Ajax？
 
 ## 什么是Ajax
@@ -10,7 +14,7 @@
 
 流程图如下：
 
-![](/images/ajax-flow.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/ajax-flow.png)
 
 下面举个例子：
 

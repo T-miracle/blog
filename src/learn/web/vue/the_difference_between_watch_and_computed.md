@@ -1,3 +1,7 @@
+---
+lastUpdated: 2024/1/17 09:41
+---
+
 # watch 和 computed 的区别
 
 `watch` 和 `computed` 是 Vue.js 中用于监听数据变化的两种不同方式，它们在用途和工作原理上有一些关键的区别。

@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # Vue的生命周期
 
 ## 生命周期是什么
@@ -39,9 +43,17 @@ Vue 生命周期总共可以分为这几个阶段：创建前后, 载入前后,�
 
 ## 生命周期整体流程图
 
-<vImageViewer src='/images/life-cycle.jpg' alt='点我查看vue2生命周期图' inline="true"/>
+<vImageViewer
+src='https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/life-cycle.jpg'
+alt='点我查看vue2生命周期图'
+inline="true"
+/>
 
-<vImageViewer src='/images/lifecycle-vue3.png' alt='点我查看vue3生命周期图' inline="true"/>
+<vImageViewer
+src='https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/lifecycle-vue3.png'
+alt='点我查看vue3生命周期图'
+inline="true"
+/>
 
 ## 各生命周期中组件与数据的加载状态
 

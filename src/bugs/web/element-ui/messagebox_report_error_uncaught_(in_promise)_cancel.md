@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # MessageBox报错Uncaught (in promise) cancel
 
 当使用`MessageBox`或`Message`组件时，如果组件方法后面不加上`catch()`方法会报错

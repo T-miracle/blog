@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # devDependencies 和 dependencies 的区别
 
 ## 区别

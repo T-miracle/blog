@@ -1,3 +1,7 @@
+---
+lastUpdate: 2023/9/17 02:12
+---
+
 # promise.all()
 
 ## 概念

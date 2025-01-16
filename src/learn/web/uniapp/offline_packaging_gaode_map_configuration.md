@@ -1,3 +1,19 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
+<script setup lang="ts">
+    import GaodeMapTree from './components/gaode_map_tree.vue';
+
+    const nodeClickFunc = (val) => {
+        const _hash = val?.replace(/[\p{P}\p{S}]/gu, '-').toLowerCase();
+        console.log(_hash);
+        document.getElementById(_hash)?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+</script>
+
 # uni-app 离线打包配置使用高德地图
 
 ## 配置
@@ -6,7 +22,9 @@
 
 <GaodeMapTree @node-click="nodeClickFunc"/>
 
-<vModal title="build.gradle" v-model="visible['build.gradle']">
+## 配置解析
+
+### build.gradle
 
 ```nim
 dependencies {
@@ -22,9 +40,7 @@ dependencies {
 >
 > 官方文档就是个坑！
 
-</vModal>
-
-<vModal title="dcloud_properties.xml" v-model="visible['dcloud_properties.xml']">
+### dcloud_properties.xml
 
 ```xml
 <properties>
@@ -38,9 +54,7 @@ dependencies {
 </properties>
 ```
 
-</vModal>
-
-<vModal title="AndroidManifest.xml" v-model="visible['AndroidManifest.xml']">
+### AndroidManifest.xml
 
 ```xml {25}
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,18 +86,3 @@ dependencies {
     </application>
 </manifest>
 ```
-
-</vModal>
-
-<script setup lang="ts">
-    import {reactive} from "vue";
-    import GaodeMapTree from './components/gaode_map_tree.vue';
-    const visible = reactive({
-        'build.gradle': false,
-        'dcloud_properties.xml': false,
-        'AndroidManifest.xml': false
-    });
-    const nodeClickFunc = (val) => {
-        visible[val] !== undefined && (visible[val] = true);
-    }
-</script>

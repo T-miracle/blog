@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # 什么是跨域？如何解决跨域问题？
 
 ## 跨域是什么
@@ -12,7 +16,7 @@
 - 主机相同（`host`）
 - 端口相同（`port`）
 
-![](/images/url.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/url.png)
 
 反之非同源请求，也就是协议、端口、主机其中一项不相同的时候，这时候就会产生跨域
 
@@ -43,7 +47,7 @@
 
 只要后端实现了 `CORS`，就实现了跨域
 
-![](/images/CORS.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/CORS.png)
 
 举两个例子：
 
@@ -79,7 +83,7 @@ app.all("*", (req, res, next) => {
 
 这两个都是设置了`Access-Control-Allow-Origin`和`Access-Control-Allow-Methods`，从而实现跨域
 
-> <Badge type="warning" text="PS"/> `Access-Control-Allow-Origin` 设置为`*`其实意义不大，可以说是形同虚设，实际应用中，上线前我们会将`Access-Control-Allow-Origin` 值设为我们目标`host`
+> <Badge type="warning" text="PS"></Badge> `Access-Control-Allow-Origin` 设置为`*`其实意义不大，可以说是形同虚设，实际应用中，上线前我们会将`Access-Control-Allow-Origin` 值设为我们目标`host`
 
 ### 2. Proxy
 

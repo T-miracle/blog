@@ -1,3 +1,7 @@
+---
+lastUpdated: 2025/1//10 00:24
+---
+
 # IDEA 常用快捷键
 
 <IdeaHotkey/>

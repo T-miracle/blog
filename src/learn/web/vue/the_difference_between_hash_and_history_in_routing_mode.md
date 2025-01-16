@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 <script setup>
     import routerMode from './components/routerMode.vue'
 </script>

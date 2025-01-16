@@ -1,3 +1,7 @@
+---
+lastUpdated: 2024/6/17 15:41
+---
+
 # 设置letter-spacing后文本无法居中的问题
 
 ## 问题描述
@@ -28,7 +32,7 @@
 
 可以发现，实际上最后一个字后面也有一段空白间距，这导致文本无法在盒子内无法正常居中：
 
-![](../../../public/images/letter-spacing-demo-1.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/letter-spacing-demo-1.png)
 
 ## 解决方式
 
@@ -46,4 +50,4 @@
 
 眼睛可能看不出区别，但实际上，`text-indent` 给文本前面设置了一段 `4px` 的缩进，这个可以使用浏览器控制台查看。
 
-![](../../../public/images/letter-spacing-demo-2.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/letter-spacing-demo-2.png)

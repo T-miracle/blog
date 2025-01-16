@@ -1,8 +1,12 @@
+---
+lastUpdated: 2025/1/15 23:24
+---
+
 #  别抱着你那陈旧的破技术不放，赶紧学点新玩意吧
 
 现在年轻人的精神状态：
 
-![](../public/images/learn-fuck-hard.png){style="width: 600px"}
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/learn-fuck-hard.png){style="width: 600px"}
 
 额~~~
 

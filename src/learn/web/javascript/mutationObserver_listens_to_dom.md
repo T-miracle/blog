@@ -1,3 +1,7 @@
+---
+lastUpdated: 2024/7/18 09:41
+---
+
 # MutationObserver监听DOM
 
 ## 概念
@@ -56,7 +60,7 @@ observer.observe(myDom, options);
 
 -----------
 
-> <Badge type="warning" text="注意"/> 
+> <Badge type="warning" text="注意"></Badge> 
 > 想要观察哪一种变动类型，就在 `option` 对象中指定它的值为 `true`。
 >
 > 需要注意的是，必须同时指定 `childList`、`attributes` 和 `characterData` 中的一种或多种，若均未指定将报错。
@@ -81,8 +85,8 @@ observer.disconnect();
 
 `new MutationObserver()`中回调函数的第一个参数获取的就是 `MutationRecord` 对象
 
-`DOM` 每次发生变化，就会生成一条变动记录（`MutationRecord` 实例）,该实例包含了与变动相关的所有信息。`Mutation Observer` 处理的就是一个个`MutationRecord`
-实例所组成的数组。
+`DOM` 每次发生变化，就会生成一条变动记录（`MutationRecord` 实例）,该实例包含了与变动相关的所有信息。
+`Mutation Observer` 处理的就是一个个`MutationRecord` 实例所组成的数组。
 
 `MutationRecord`对象包含了`DOM`的相关信息，有如下属性：
 

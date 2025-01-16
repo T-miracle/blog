@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # cookie、localStorage、sessionStorage的区别
 
 `Cookie`、`localStorage`和`sessionStorage`都是用于在浏览器中存储数据的Web存储方案，但它们在实现机制、数据存储范围、数据有效期等方面存在一些不同，下面是它们的具体区别：

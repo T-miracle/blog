@@ -1,3 +1,7 @@
+---
+lastUpdated: 2024/1/15 11:33
+---
+
 # img 标签加载对象存储图片后再使用 canvas 调用当前图片，导致图片跨域的问题
 
 ::: tip 相关问题
@@ -40,7 +44,7 @@ No 'Access-Control-Allow-origin' header is present on the requested resource. //
 2. 如果图片在 `<img>` 或者 `<el-image>` 中正常使用，就可以排除对象存储配置的问题了。
    那么，就可以考虑 `crossOrigin` 相关的问题了，先说说 `crossOrigin` 是什么？MDN 上是如下解释的：
 
-   ![crossOrigin](/images/crossOrigin.png)
+   ![crossOrigin](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/crossOrigin.png)
 
    当你使用了 `<img>` 或者 `<el-image>` 去加载了图片，那么再在同一页面使用 `new image()`
    去加载这张图片，而且设置了 `crossOrigin` 的跨域属性为 `anonymous`。

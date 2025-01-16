@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # uni-app App端与嵌套web-view之间的通讯
 
 当 App 中如果使用 webView 嵌入 H5 页面，

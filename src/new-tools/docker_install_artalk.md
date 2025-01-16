@@ -1,3 +1,7 @@
+---
+lastUpdated: 2025/1/15 23:24
+---
+
 # artalk 评论系统安装与配置教程（docker版）
 
 ::: tip 关联问题
@@ -56,7 +60,7 @@ docker logs artalk
 
 如果看到如下信息，说明启动成功：
 
-![启动成功](../public/images/artalk_start_success.png)
+![启动成功](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/artalk_start_success.png)
 
 ::: warning 注意
 你还需要创建一个管理员账户，方便后续登陆后台管理页面。

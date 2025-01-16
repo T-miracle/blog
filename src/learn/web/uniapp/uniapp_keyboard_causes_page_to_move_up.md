@@ -1,3 +1,7 @@
+---
+lastUpdated: 2024/6/14 18:22
+---
+
 # uni-app App端调用键盘会导致页面上移的问题
 
 对于这个问题可以在 `pages.json` 文件中找到对应页面，加上 `"softinputMode": "adjustResize"` 解决：

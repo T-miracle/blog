@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 <script setup lang="ts">
     import npmProjectTreeStructureDemo from './components/npmProjectTreeStructureDemo.vue';
 </script>
@@ -12,7 +16,7 @@
 
 下面我以一个普通插件为例，插件结构如下：
 
-<npmProjectTreeStructureDemo/>
+<npmProjectTreeStructureDemo></npmProjectTreeStructureDemo>
 
 ## 上传 Github
 

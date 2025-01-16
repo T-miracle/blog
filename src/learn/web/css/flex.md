@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/18 22:12
+---
+
 <script setup>
     import flexProperty from './components/flexProperty.vue'
 </script>

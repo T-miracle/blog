@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 <script setup lang="ts">
     import eventDelegation from './components/eventDelegation.vue';
 </script>

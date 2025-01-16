@@ -9,6 +9,10 @@ const newToolsSidebar: SidebarType[] = [
             {
                 text: 'artalk 评论系统安装与配置教程（docker版）',
                 link: '/new-tools/docker_install_artalk'
+            },
+            {
+                text: 'README 说明文件美化教程',
+                link: '/new-tools/readme_beautify'
             }
         ]
     }

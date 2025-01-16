@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/12/24 21:42
+---
+
 # var、let、const 的区别
 
 `var`、`let`、和 `const` 是 JavaScript 中用于声明变量的关键字，它们之间有一些重要的区别：

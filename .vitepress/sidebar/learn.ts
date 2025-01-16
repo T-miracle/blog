@@ -1,16 +1,7 @@
 import {
-    androidIcon,
-    conceptIcon,
-    cssIcon, deployIcon, dockerIcon, editorIcon, githubIcon, gitIcon, hBuilderXIcon,
-    htmlIcon,
-    httpIcon, ideaIcon,
-    infoIcon,
-    javaBaseIcon,
-    javaIcon,
-    jsIcon, mySQLIcon, npmIcon,
-    rearEndIcon,
-    springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon,
-    vueIcon,
+    androidIcon, conceptIcon, cssIcon, deployIcon, dockerIcon, editorIcon, gitIcon, hBuilderXIcon,
+    htmlIcon, httpIcon, ideaIcon, infoIcon, javaBaseIcon, javaIcon, jsIcon, mySQLIcon, npmIcon,
+    rearEndIcon, springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon, vueIcon,
     webIcon, webpackIcon, wxMiniprogramIcon
 } from './icons';
 import htmlItems from './learn/html';
@@ -182,18 +173,6 @@ const learnSidebar: SidebarType[] = [
                         icon: '🔸',
                         text: 'Git将项目的某个目录分离成新的项目，并保留历史提交信息',
                         link: '/learn/version_control/git/git_detached_directory_and_keep_historical_submission_records'
-                    }
-                ]
-            },
-            {
-                icon: githubIcon,
-                text: 'Github',
-                collapsed: true,
-                items: [
-                    {
-                        icon: '🔹',
-                        text: 'README 说明文件美化教程',
-                        link: '/learn/version_control/github/readme_beautify'
                     }
                 ]
             },

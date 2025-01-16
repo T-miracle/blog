@@ -1,8 +1,12 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # 自用快捷键设置-仿IDEA
 
 首先，要进行以下配置：
 
-![](/images/HbuilderX-hotkeys.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/HbuilderX-hotkeys.png)
 
 然后，在 `工具 - 自定义快捷键` 中，右侧栏填写以下 json 配置：
 

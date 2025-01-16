@@ -1,3 +1,7 @@
+---
+lastUpdate: 2024/1/17 09:41 
+---
+
 # 谈谈 Proxy 和 Reflect
 
 `Proxy` 和 `Reflect` 是 ECMAScript 6（ES6）引入的两个新特性，它们分别提供了一种创建代理对象和进行元编程（meta-programming）的机制。

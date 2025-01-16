@@ -57,9 +57,9 @@
     const showDatetime = computed(() => frontmatter.value.lastUpdated !== false);
 
     // Listen for routing changes and scroll to the top
-    watch(() => [ route.path, hash ], ([ , hashValue ]) => {
+    watch(() => [ route.path, hash ], () => {
         nextTick(() => {
-            if (hashValue) {
+            if (hash.value) {
                 setTimeout(() => {
                     hashChange();
                 });

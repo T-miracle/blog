@@ -1,3 +1,7 @@
+---
+lastUpdated: 2024/12/23 00:50
+---
+
 # 代码警告：TS2307: Cannot find module 'xxx' or its corresponding type declarations.
 
 这个错误通常发生在使用 TypeScript 编写的项目中，意思是 TypeScript 找不到名为 'xxx' 的模块或其对应的类型声明文件。

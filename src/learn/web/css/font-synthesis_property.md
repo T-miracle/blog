@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # font-synthesis属性导致中文斜体不生效的问题
 
 ## `font-synthesis`有什么用？

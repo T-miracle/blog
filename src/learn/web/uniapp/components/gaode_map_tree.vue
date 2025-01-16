@@ -6,7 +6,7 @@
             node-key="label"
             :default-expanded-keys="expandKey"
         >
-            <template #default="{ node, data }">
+            <template #default="{ data }">
                 <div
                     style="width: 100%; display: flex; align-items: center"
                     @click="emits('node-click', data.label)"

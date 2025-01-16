@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # 谈谈事件循环 / 轮询（Event-Loop）
 
 ## 什么是事件循环 / 轮循？
@@ -46,7 +50,7 @@ console.log('结束')
 
 先看下下面这个示例，它大概地抽象描述了`JavaScript`引擎的各个容器：
 
-![](/images/event-loop-demo.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/event-loop-demo.png)
 
 - **Call Stack**：`JavaScript`的调用栈
 - **Web APIs**：`Web`应用接口，像`setTimeout`、`DOM`操作、`Ajax`请求、`Promise`请求之类的相关执行都放在里面
@@ -58,7 +62,7 @@ console.log('结束')
 
 ### 执行步骤
 
-![](/images/event-loop-demo.gif)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/event-loop-demo.gif)
 
 ### 详细解析
 

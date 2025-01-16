@@ -1,3 +1,7 @@
+---
+lastUpdated: 2023/9/17 02:12
+---
+
 # 语义化标签有哪些
 
 ## 什么是语义化标签
@@ -11,7 +15,7 @@
 
 看下图没有用`div`标签来布局
 
-![](/images/html-tags.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/html-tags.png)
 
 如上图那个页面结构没有一个 `div`，都是采用`html 5`语义标签（用哪些标签，关键取决于你的设计目标）。
 
