@@ -25,7 +25,7 @@ export default [
     },
     {
         name: 'VueUse',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/VueUse.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/VueUse.svg',
         description: 'Vue 2 和 3 的基本Vue组合实用程序集合',
         type: [ 'Vue2', 'Vue3' ],
         level: 50,
@@ -98,7 +98,7 @@ export default [
     },
     {
         name: 'Pinia',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/pinia.png',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/pinia.png',
         description: '用于 Vue3 的符合直觉的 Vue.js 状态管理库。',
         type: [ 'Vue3', '框架' ],
         level: 50,

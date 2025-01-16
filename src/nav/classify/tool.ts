@@ -3,7 +3,7 @@ import { Project } from '../type';
 export default [
     {
         name: 'ChatGPT',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/chatgpt.png',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/chatgpt.png',
         description: '随机图片链接生成',
         type: [ '工具', 'AI' ],
         level: 99,

@@ -56,19 +56,19 @@
             title: 'Kotlin 文档',
             status: '翻译中',
             link: 'https://docs.namichong.com/kotlin/',
-            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/Kotlin.svg'
+            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/Kotlin.svg'
         },
         {
             title: 'IntelliJ 平台插件 SDK 文档',
             status: '翻译中',
             link: 'https://docs.namichong.com/intellij-platform-sdk/',
-            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/JetBrains-SDK.svg'
+            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/JetBrains-SDK.svg'
         },
         {
             title: 'OverlayScrollbars',
             status: '已翻译',
             link: 'https://docs.namichong.com/overlayscrollbars/',
-            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/OverlayScrollbars.png'
+            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/OverlayScrollbars.png'
         }
     ]);
 
