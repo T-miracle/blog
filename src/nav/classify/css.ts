@@ -57,7 +57,7 @@ export default [
     },
     {
         name: 'PostCSS',
-        icon: '/images/postcss.png',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/postcss.png',
         description: '一个用 JavaScript 工具和插件转换 CSS 代码的工具。',
         type: [ 'CSS' ],
         link: [

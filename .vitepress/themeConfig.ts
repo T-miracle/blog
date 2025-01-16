@@ -8,7 +8,7 @@ export default {
     motto: '用爱学IT，用心写BUG',
     aboutMePath: '',
     backgrounds: [
-        '/bg/wallhaven-jxl3qp.webp'
+        'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/background/wallhaven-jxl3qp.webp'
     ],
     // 左上角标题图标
     logo: '/logo-op0.png',

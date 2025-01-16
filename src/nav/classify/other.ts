@@ -45,7 +45,7 @@ export default [
     },
     {
         name: 'PlantUML',
-        icon: '/images/plantuml.png',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/plantuml.png',
         description: 'PlantUML是一个通用性很强的工具，可以快速、直接地创建各种图表。',
         type: [ 'UML' ],
         level: 33,
