@@ -2,7 +2,7 @@
 
 ## 公司要求
 
-<vImageViewer alt="查看招聘要求" src="/images/2023-02-02-nanning-vue.jpg"/>
+<vImageViewer alt="查看招聘要求" src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/2023-02-02-nanning-vue.jpg"/>
 
 ## 面试过程
 

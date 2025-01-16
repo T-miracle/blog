@@ -42,9 +42,9 @@ lastUpdated: 2025/1/15 23:24
 
 我就是条咸鱼，只不过有时候闲的蛋疼，想捣鼓一下新技术罢了（当然，只限于自己感兴趣的），至于其他...
 
-![](../public/images/bailan.jpg)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/bailan.jpg)
 
-![](../public/images/ImFW.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/ImFW.png)
 
 
 

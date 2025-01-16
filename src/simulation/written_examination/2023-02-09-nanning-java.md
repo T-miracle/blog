@@ -2,7 +2,7 @@
 
 ## 公司要求
 
-<vImageViewer alt="查看招聘要求" src="/images/2023-02-09-nanning-java.jpg"/>
+<vImageViewer alt="查看招聘要求" src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/2023-02-09-nanning-java.jpg"/>
 
 这家HR说是在某区公安厅驻点开发...
 

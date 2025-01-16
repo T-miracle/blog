@@ -2,7 +2,7 @@
 
 ## 公司要求
 
-<vImageViewer alt="查看招聘要求" src="/images/2023-03-11-nanning-web.jpg"/>
+<vImageViewer alt="查看招聘要求" src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/2023-03-11-nanning-web.jpg"/>
 
 实际看这招聘要求不重要，因为公司驻点外包，面试官是甲方公司的，线上面试，甲方公司的招聘薪资为 8-15k
 

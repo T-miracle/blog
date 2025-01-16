@@ -23,7 +23,6 @@ export default defineConfig({
         resolve: {
             alias: {
                 '@': path.join(__dirname, '../src/'),
-                '@img': path.join(__dirname, '../src/public/images/'),
                 '@NanoUI': path.join(__dirname, '../package/components/'),
                 '@NanoIcon': path.join(__dirname, '../package/icon/'),
                 '@store': path.join(__dirname, '../package/store/'),

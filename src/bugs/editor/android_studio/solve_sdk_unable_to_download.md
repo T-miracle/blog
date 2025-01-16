@@ -6,4 +6,4 @@ lastUpdated: 2025/1/15 13:55
 
 > 下载不了的主要原因还是代理问题，需要配置下代理（前提你得有梯子）
 
-![](/images/android_studio_setting.png)
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/android_studio_setting.png)

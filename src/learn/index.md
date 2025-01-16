@@ -1,6 +1,6 @@
 # 你不会以为这真是学习备忘录吧？这其实是我的外置大脑！
 
-![](../public/images/code_is_copy.png){style="max-width: 400px"}
+![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/code_is_copy.png){style="max-width: 400px"}
 
 ### 为什么要写这个博客？你问我？
 
