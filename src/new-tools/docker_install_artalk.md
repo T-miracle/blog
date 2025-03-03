@@ -14,7 +14,8 @@ lastUpdated: 2025/1/15 23:24
 
 ## 第一步：拉取镜像
 
-docker 安装教程这里不用多说了吧？如果不会，可以参考[这里](../learn/deploy/docker/centos_install_docker){target=_blank}。
+docker 安装教程这里不用多说了吧？如果不会，可以参考
+[这里](../learn/deploy/docker/centos_install_docker){target=_blank}。
 
 ```bash
 docker pull artalk/artalk-go
@@ -22,7 +23,7 @@ docker pull nginx
 ```
 
 如果超时，可以先配置一下国内镜像，这里有教程
-[点击查看](../learn/deploy/docker/docker_configure_domestic_image){target=_blank}
+[点击查看](../learn/deploy/docker/docker_configure_domestic_image)
 
 ## 第二步：docker 创建共同网络
 

@@ -40,7 +40,7 @@ export default defineConfig({
     // 开启黑暗主题按钮
     appearance: true,
     // URL清除.html后缀
-    // cleanUrls: true,
+    cleanUrls: false,
     // markdown 配置
     markdown: {
         // 代码块显示行数
@@ -54,6 +54,15 @@ export default defineConfig({
         config: (md) => {
             md.use(mathjax3);
             md.use(taskLists);
+            const orig = md.renderer.rules.link_open!;
+            md.renderer.rules.link_open = function (tokens, idx, ...args) {
+                const token = tokens[idx];
+                const href = token.attrGet('href')!;
+                if (!/:\/\//.test(href) && !/(?:\.html|\/)$/.test(href)) {
+                    token.attrSet('href', href.replace(/(?:\.md)?$/, '.html'));
+                }
+                return orig(tokens, idx, ...args);
+            };
         }
     },
     vue: {
