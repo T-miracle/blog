@@ -55,7 +55,7 @@ export default defineConfig({
             md.use(mathjax3);
             md.use(taskLists);
             const orig = md.renderer.rules.link_open!;
-            md.renderer.rules.link_open = function (tokens, idx, ...args) {
+            md.renderer.rules.link_open = (tokens, idx, ...args) => {
                 const token = tokens[idx];
                 const href = token.attrGet('href')!;
                 if (!/:\/\//.test(href) && !/(?:\.html|\/)$/.test(href)) {

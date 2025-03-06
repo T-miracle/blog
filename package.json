@@ -16,6 +16,7 @@
     "dayjs": "^1.11.13",
     "element-plus": "^2.9.5",
     "floating-vue": "^5.2.2",
+    "hls.js": "^1.5.20",
     "lodash-es": "^4.17.21",
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-task-lists": "^2.1.1",

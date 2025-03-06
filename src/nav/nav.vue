@@ -53,9 +53,9 @@
                 v-for="project in list"
                 :key="project.name"
                 class="relative rounded-2 p-3 bg-white transform transition-all transition-250"
-                hover="shadow-emerald shadow-md transition-all transition-250"
-                border="~ solid .25 gray-300 dark:gray-700"
-                shadow="sm gray"
+                un-hover="shadow-emerald shadow-md transition-all transition-250"
+                un-border="~ solid .25 gray-300 dark:gray-700"
+                un-shadow="sm gray"
                 dark="bg-#2c2e2f shadow-neutral"
             >
                 <div class="relative">
@@ -76,8 +76,8 @@
                                 {{ project.name }}
                             </strong>
                             <div
-                                class="line-clamp-2 h-8 whitespace-pre-wrap"
-                                un-text="gray-400 .85em!"
+                                class="line-clamp-2 h-8 line-height-4 whitespace-pre-wrap"
+                                un-text="gray-400 .875em!"
                                 line-height-3.75
                                 :title="project.description"
                             >
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="mt-2 flex justify-between">
-                        <div class="flex items-center justify-start gap-2">
+                        <div class="flex flex-wrap items-center justify-start gap-2">
                             <ElTag
                                 v-for="tag in project.type"
                                 :key="tag"

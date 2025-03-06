@@ -23,7 +23,7 @@ docker pull nginx
 ```
 
 如果超时，可以先配置一下国内镜像，这里有教程
-[点击查看](../learn/deploy/docker/docker_configure_domestic_image)
+[点击查看](../learn/deploy/docker/docker_configure_domestic_image){target=_blank}
 
 ## 第二步：docker 创建共同网络
 

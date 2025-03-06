@@ -21,7 +21,7 @@ const bugsSidebar: SidebarType[] = [
     {
         icon: webIcon,
         text: '前端',
-        collapsed: true,
+        collapsed: false,
         items: [
             {
                 icon: htmlIcon,
@@ -91,7 +91,7 @@ const bugsSidebar: SidebarType[] = [
     {
         icon: editorIcon,
         text: '编辑器',
-        collapsed: true,
+        collapsed: false,
         items: [
             {
                 icon: androidStudioIcon,
