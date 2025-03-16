@@ -7,7 +7,7 @@ export default [
         description: 'Deepseek 是国产的 AI 聊天机器人，具有目前国内最强的 AI 模型，它开源并且免费。',
         type: [ '工具', 'AI' ],
         level: 99,
-        link: 'https://chatgpt.com/'
+        link: 'https://chat.deepseek.com/'
     },
     {
         name: 'ChatGPT',
