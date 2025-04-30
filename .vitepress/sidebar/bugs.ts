@@ -54,6 +54,11 @@ const bugsSidebar: SidebarType[] = [
                 items: [
                     {
                         icon: '🔹',
+                        text: 'el-upload 为啥没法拖拽了？',
+                        link: '/bugs/web/element-ui/el-upload-cant-drag'
+                    },
+                    {
+                        icon: '🔹',
                         text: 'MessageBox报错Uncaught (in promise) cancel',
                         link: '/bugs/web/element-ui/messagebox_report_error_uncaught_(in_promise)_cancel'
                     },

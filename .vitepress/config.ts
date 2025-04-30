@@ -38,7 +38,7 @@ export default defineConfig({
         hostname: 'https://blog.namichong.com'
     },
     // 开启黑暗主题按钮
-    appearance: true,
+    appearance: false,
     // URL清除.html后缀
     cleanUrls: false,
     // markdown 配置
