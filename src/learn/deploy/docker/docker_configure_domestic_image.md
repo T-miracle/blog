@@ -20,6 +20,10 @@ sudo nano /etc/docker/daemon.json
 ```json
 {
     "registry-mirrors": [
+        "https://registry.docker-cn.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "http://hub-mirror.c.163.com",
+        "https://docker.xuanyuan.me",
         "https://docker.m.daocloud.io",
         "https://dockerproxy.com",
         "https://docker.nju.edu.cn",
