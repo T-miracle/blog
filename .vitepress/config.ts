@@ -30,7 +30,7 @@ export default defineConfig({
             }
         },
         plugins: [
-            // @ts-expect-error unocss plugin
+            // @ts-expect-error css plugin
             UnoCSS()
         ]
     },

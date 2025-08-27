@@ -1,6 +1,6 @@
 import {
     androidStudioIcon,
-    bugIcon,
+    bugIcon, cssIcon,
     editorIcon,
     elementIcon,
     htmlIcon,
@@ -32,6 +32,18 @@ const bugsSidebar: SidebarType[] = [
                         icon: '🔹',
                         text: 'img 标签加载对象存储图片后再使用 canvas 调用当前图片，导致图片跨域的问题',
                         link: '/bugs/web/html/canvas-use-object-storage-image-cross-domain'
+                    }
+                ]
+            },
+            {
+                icon: cssIcon,
+                text: 'CSS',
+                collapsed: true,
+                items: [
+                    {
+                        icon: '🔹',
+                        text: 'UnoCSS 相关错误记录',
+                        link: '/bugs/web/css/unocss_error_records'
                     }
                 ]
             },

@@ -1,6 +1,6 @@
 import {
     androidIcon, conceptIcon, cssIcon, deployIcon, dockerIcon, editorIcon, gitIcon, hBuilderXIcon,
-    htmlIcon, httpIcon, ideaIcon, infoIcon, javaBaseIcon, javaIcon, jsIcon, mySQLIcon, npmIcon,
+    htmlIcon, httpIcon, ideaIcon, infoIcon, javaBaseIcon, javaIcon, jsIcon, mySQLIcon, nodejsIcon, npmIcon,
     rearEndIcon, springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon, vueIcon,
     webIcon, webpackIcon, wxMiniprogramIcon
 } from './icons';
@@ -20,6 +20,7 @@ import webpackItems from './learn/webpack';
 import uniappItems from './learn/uniapp';
 import dockerItem from './learn/docker';
 import androidItems from './learn/android';
+import nodejsItems from './learn/nodejsItems';
 import { type SidebarType } from '../../package/type';
 
 const learnSidebar: SidebarType[] = [
@@ -57,6 +58,12 @@ const learnSidebar: SidebarType[] = [
                 text: 'JavaScript',
                 collapsed: true,
                 items: jsItems
+            },
+            {
+                icon: nodejsIcon,
+                text: 'NodeJs',
+                collapsed: true,
+                items: nodejsItems
             },
             {
                 icon: vueIcon,
