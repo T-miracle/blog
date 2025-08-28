@@ -3,7 +3,7 @@ import {
     bugIcon, cssIcon,
     editorIcon,
     elementIcon,
-    htmlIcon,
+    htmlIcon, tauriIcon,
     tsIcon,
     uniAppIcon,
     webIcon
@@ -100,6 +100,18 @@ const bugsSidebar: SidebarType[] = [
                         icon: '🔹',
                         text: '新安装包覆盖安装，新增加的页面无法跳转',
                         link: '/bugs/web/uniapp/overwrite_install_newly_added_page_cannot_jump'
+                    }
+                ]
+            },
+            {
+                icon: tauriIcon,
+                text: 'tauri',
+                collapsed: true,
+                items: [
+                    {
+                        icon: '🔹',
+                        text: '解决无法安装 Wix 和 Nsis 的问题',
+                        link: '/bugs/web/tauri/fix_tauri_cant_install_wix_and_nsis'
                     }
                 ]
             }
