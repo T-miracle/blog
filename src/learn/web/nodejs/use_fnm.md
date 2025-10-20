@@ -40,7 +40,7 @@ lastUpdated: 2025/08/28 15:50
 现在，你可以执行以下命令测试下是否成功：
 
 ```shell
-fnm -version
+fnm --version
 ```
 
 ### 写入脚本
