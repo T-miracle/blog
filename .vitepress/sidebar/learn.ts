@@ -1,8 +1,28 @@
 import {
-    androidIcon, conceptIcon, cssIcon, deployIcon, dockerIcon, editorIcon, gitIcon, hBuilderXIcon,
-    htmlIcon, httpIcon, ideaIcon, infoIcon, javaBaseIcon, javaIcon, jsIcon, mySQLIcon, nodejsIcon, npmIcon,
-    rearEndIcon, springBootIcon, springIcon, sqlIcon, uniAppIcon, versionControlIcon, vueIcon,
-    webIcon, webpackIcon, wxMiniprogramIcon
+    androidIcon,
+    conceptIcon,
+    cssIcon,
+    deployIcon,
+    dockerIcon,
+    editorIcon,
+    gitIcon,
+    hBuilderXIcon,
+    htmlIcon,
+    httpIcon,
+    ideaIcon,
+    infoIcon,
+    javaIcon,
+    jsIcon,
+    mySQLIcon,
+    nodejsIcon,
+    npmIcon,
+    rearEndIcon,
+    springIcon,
+    sqlIcon,
+    uniAppIcon,
+    versionControlIcon,
+    vueIcon,
+    webIcon
 } from './icons';
 import htmlItems from './learn/html';
 import cssItems from './learn/css';
@@ -10,13 +30,10 @@ import jsItems from './learn/js';
 import vueItems from './learn/vue';
 import httpItems from './learn/http';
 import webConceptItems from './learn/webConcept';
-import springbootItems from './learn/springboot';
 import ideaItems from './learn/idea';
 import springItems from './learn/spring';
-import wxMiniprogramItems from './learn/wx-miniprogram';
 import mysqlItems from './learn/mysql';
 import hBuilderXItems from './learn/hbuilderx';
-import webpackItems from './learn/webpack';
 import uniappItems from './learn/uniapp';
 import dockerItem from './learn/docker';
 import androidItems from './learn/android';
@@ -77,12 +94,12 @@ const learnSidebar: SidebarType[] = [
                 collapsed: true,
                 items: httpItems
             },
-            {
+            /* {
                 icon: wxMiniprogramIcon,
                 text: '微信小程序',
                 collapsed: true,
                 items: wxMiniprogramItems
-            },
+            }, */
             {
                 icon: uniAppIcon,
                 text: 'uni-app',
@@ -94,13 +111,13 @@ const learnSidebar: SidebarType[] = [
                 text: 'Android',
                 collapsed: true,
                 items: androidItems
-            },
-            {
+            }
+            /* {
                 icon: webpackIcon,
                 text: 'Webpack',
                 collapsed: true,
                 items: webpackItems
-            }
+            } */
         ]
     },
     {
@@ -113,24 +130,24 @@ const learnSidebar: SidebarType[] = [
                 text: 'Java',
                 collapsed: true,
                 items: [
-                    {
+                    /* {
                         icon: javaBaseIcon,
                         text: 'Java基础',
                         collapsed: true,
                         items: []
-                    },
+                    }, */
                     {
                         icon: springIcon,
                         text: 'Spring',
                         collapsed: true,
                         items: springItems
-                    },
-                    {
+                    }
+                    /* {
                         icon: springBootIcon,
                         text: 'SpringBoot',
                         collapsed: true,
                         items: springbootItems
-                    }
+                    } */
                 ]
             }
         ]

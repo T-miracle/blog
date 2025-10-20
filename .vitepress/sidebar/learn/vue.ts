@@ -44,7 +44,7 @@ const vueItems: SidebarType[] = [
             }
         ]
     },
-    { icon: '⭐', text: 'Diff 算法', link: '/learn/web/vue/diff_algorithm' },
+    // { icon: '⭐', text: 'Diff 算法', link: '/learn/web/vue/diff_algorithm' },
     { icon: '🔸', text: 'Vue项目配置路径别名', link: '/learn/web/vue/configure_path_aliases' },
     {
         icon: '🔥',

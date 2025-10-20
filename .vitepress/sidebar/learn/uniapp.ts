@@ -1,11 +1,11 @@
 import { type SidebarType } from '../../../package/type';
 
 const uniappItems: SidebarType[] = [
-    {
+    /* {
         icon: '🔹',
         text: '使用 Android Studio 离线打包',
         link: '/learn/web/uniapp/packaging_offline_with_android_studio'
-    },
+    }, */
     {
         icon: '🔹',
         text: 'uni-app 离线打包配置使用高德地图',

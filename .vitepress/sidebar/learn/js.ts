@@ -22,7 +22,7 @@ const jsItems: SidebarType[] = [
         link: '/learn/web/javascript/the_difference_between_deep_copy_and_shallow_copy'
     },
     { icon: '🔥', text: '什么是闭包？', link: '/learn/web/javascript/what_is_closure' },
-    { icon: '🔥', text: '谈谈原型与原型链', link: '/learn/web/javascript/prototype_and_prototype_chains' },
+    // { icon: '🔥', text: '谈谈原型与原型链', link: '/learn/web/javascript/prototype_and_prototype_chains' },
     { icon: '🔥', text: 'var、let、const 的区别', link: '/learn/web/javascript/the_difference_between_var_let_and_const' },
     {
         icon: '🔥',
@@ -43,9 +43,9 @@ const jsItems: SidebarType[] = [
             { icon: '⭐', text: 'promise.all()', link: '/learn/web/javascript/promise_all' }
         ]
     },
-    { icon: '🔹', text: 'MutationObserver监听DOM', link: '/learn/web/javascript/mutationObserver_listens_to_dom' },
-    { icon: '⭐', text: 'requestAnimationFrame是什么？', link: '/learn/web/javascript/what_is_requestAnimationFrame' },
-    { icon: '⭐', text: 'GC垃圾回收机制', link: '/learn/web/javascript/garbage_collection_mechanism' }
+    { icon: '🔹', text: 'MutationObserver监听DOM', link: '/learn/web/javascript/mutationObserver_listens_to_dom' }
+    // { icon: '⭐', text: 'requestAnimationFrame是什么？', link: '/learn/web/javascript/what_is_requestAnimationFrame' },
+    // { icon: '⭐', text: 'GC垃圾回收机制', link: '/learn/web/javascript/garbage_collection_mechanism' }
 ];
 
 export default jsItems;
