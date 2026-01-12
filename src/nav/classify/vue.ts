@@ -46,8 +46,17 @@ export default [
         icon: 'https://files.codelife.cc/icons/nuxtjs.svg',
         description: 'NuxtJS 让你构建你的下一个 Vue.js 应用程序变得更有信心。这是一个 开源 的框架，让 web 开发变得简单而强大。',
         type: [ '框架', 'Vue2', 'Vue3' ],
-        link: 'https://www.nuxtjs.cn/',
-        github: 'https://github.com/nuxt/nuxt.js'
+        link: [
+            {
+                name: '官网',
+                url: 'https://nuxt.com/',
+                github: 'https://github.com/nuxt/nuxt.js'
+            },
+            {
+                name: '中文文档',
+                url: 'https://nuxt.com.cn/'
+            }
+        ]
     },
     {
         name: 'Vitepress',

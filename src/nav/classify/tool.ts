@@ -2,19 +2,11 @@ import { Project } from '../type';
 
 export default [
     {
-        name: 'Deepseek',
-        icon: 'https://chat.deepseek.com/favicon.svg',
-        description: 'Deepseek 是国产的 AI 聊天机器人，具有目前国内最强的 AI 模型，它开源并且免费。',
-        type: [ '工具', 'AI' ],
-        level: 99,
-        link: 'https://chat.deepseek.com/'
-    },
-    {
         name: 'ChatGPT',
         icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/chatgpt.png',
         description: 'ChatGPT 是一个基于 GPT-3 的聊天机器人。',
         type: [ '工具', 'AI' ],
-        level: 98,
+        level: 999,
         link: 'https://chatgpt.com/'
     },
     {

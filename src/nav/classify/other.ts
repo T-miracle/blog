@@ -6,7 +6,7 @@ export default [
         icon: 'https://files.codelife.cc/website/mdn-web-docs.svg',
         description: '最权威的 Web 技术文档，包括 HTML、CSS、JavaScript、Web API 等...',
         type: [ 'JavaScript', 'HTML', 'CSS' ],
-        level: 80,
+        level: 101,
         link: 'https://developer.mozilla.org/zh-CN/docs/Learn'
     },
     {
@@ -48,7 +48,7 @@ export default [
         icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/plantuml.png',
         description: 'PlantUML是一个通用性很强的工具，可以快速、直接地创建各种图表。',
         type: [ 'UML' ],
-        level: 33,
+        level: 10,
         link: 'https://plantuml.com/zh/',
         github: 'https://github.com/plantuml/plantuml'
     }

@@ -209,8 +209,17 @@ export default [
         icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/OverlayScrollbars.png',
         description: '一个滚动条插件，隐藏本机滚动条，提供自定义样式的覆盖滚动条，并保留本机功能和感觉。',
         type: [ 'JavaScript' ],
-        link: 'https://visactor.io/',
-        github: 'https://github.com/KingSora/OverlayScrollbars'
+        link: [
+            {
+                name: '官方文档',
+                url: 'https://kingsora.github.io/OverlayScrollbars/',
+                github: 'https://github.com/KingSora/OverlayScrollbars'
+            },
+            {
+                name: '中文文档',
+                url: 'https://docs.namichong.com/overlayscrollbars/'
+            }
+        ]
     },
     {
         name: 'ScrollReveal',

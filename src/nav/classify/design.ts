@@ -19,7 +19,7 @@ export default [
     },
     {
         name: 'HTML颜色代码',
-        icon: 'https://htmlcolorcodes.com/assets/images/icons/icon-192x192.png',
+        icon: 'https://htmlcolorcodes.com/favicon.ico',
         description: '使用颜色选择器、颜色表和HTML颜色名称来获取HTML颜色代码、Hex颜色代码、RGB和HSL值。',
         type: [ '设计' ],
         link: 'https://htmlcolorcodes.com/zh/'
