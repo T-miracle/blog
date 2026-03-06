@@ -4,7 +4,7 @@ export default [
     {
         name: 'ChatGPT',
         icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/chatgpt.png',
-        description: 'ChatGPT 是一个基于 GPT-3 的聊天机器人。',
+        description: 'ChatGPT 是 OpenAI 开发的一个基于 GPT 架构的语言模型，能够理解和生成自然语言文本。',
         type: [ '工具', 'AI' ],
         level: 999,
         link: 'https://chatgpt.com/'

@@ -17,7 +17,7 @@
                     <ElInput
                         v-model="filter"
                         class="w-full mb-0! filter"
-                        placeholder="名称筛选"
+                        placeholder="关键字筛选"
                         clearable
                     />
                 </div>
@@ -213,8 +213,13 @@
 
     watch(() => [ filter, typeList ], debounce(() => {
         list.value = projectList?.filter((item) => {
-            return item.name?.toLowerCase().includes(filter.value?.toLowerCase()) &&
-                (typeList.value.length === 0 || every(typeList.value, element => includes(item.type, element)));
+            return (
+                item.name?.toLowerCase().includes(filter.value?.toLowerCase()) ||
+                item.description?.toLowerCase().includes(filter.value?.toLowerCase())
+            ) && (
+                typeList.value.length === 0 ||
+                every(typeList.value, element => includes(item.type, element))
+            );
         }).sort((a, b) => (b.level || 0) - (a.level || 0));
     }, 240), {
         deep: true,
@@ -289,22 +294,24 @@
 
     /* HTML: <div class="loader"></div> */
     .loader {
-        --d:22px;
+        --d: 22px;
         width: 4px;
         height: 4px;
         border-radius: 50%;
         color: #25b09b;
-        box-shadow:
-            calc(1*var(--d))      calc(0*var(--d))     0 0,
-            calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
-            calc(0*var(--d))      calc(1*var(--d))     0 2px,
-            calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
-            calc(-1*var(--d))     calc(0*var(--d))     0 4px,
-            calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
-            calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+        box-shadow: calc(1 * var(--d)) calc(0 * var(--d)) 0 0,
+        calc(0.707 * var(--d)) calc(0.707 * var(--d)) 0 1px,
+        calc(0 * var(--d)) calc(1 * var(--d)) 0 2px,
+        calc(-0.707 * var(--d)) calc(0.707 * var(--d)) 0 3px,
+        calc(-1 * var(--d)) calc(0 * var(--d)) 0 4px,
+        calc(-0.707 * var(--d)) calc(-0.707 * var(--d)) 0 5px,
+        calc(0 * var(--d)) calc(-1 * var(--d)) 0 6px;
         animation: l27 .6s infinite steps(8);
     }
+
     @keyframes l27 {
-        100% {transform: rotate(1turn)}
+        100% {
+            transform: rotate(1turn)
+        }
     }
 </style>
