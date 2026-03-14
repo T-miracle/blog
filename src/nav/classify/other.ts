@@ -3,7 +3,7 @@ import { Project } from '../type';
 export default [
     {
         name: 'MDN Web 文档',
-        icon: 'https://files.codelife.cc/website/mdn-web-docs.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/mdn-web-docs.svg',
         description: '最权威的 Web 技术文档，包括 HTML、CSS、JavaScript、Web API 等...',
         type: [ 'JavaScript', 'HTML', 'CSS' ],
         level: 101,
@@ -19,7 +19,7 @@ export default [
     },
     {
         name: 'Can I Use',
-        icon: 'https://files.codelife.cc/icons/5d35587519c5b849159b9201.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/can_i_use.webp',
         description: '查询浏览器兼容性',
         type: [ 'HTML', 'CSS', 'JavaScript', 'SVG' ],
         level: 50,
@@ -27,7 +27,7 @@ export default [
     },
     {
         name: 'Slidev',
-        icon: 'https://files.codelife.cc/user-website-icon/20231119/tAY9offXv6iWyofSqrnms5765.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/slidev.webp',
         description: '为开发者打造的演示文稿工具，使用 Markdown 和 Vue 编写幻灯片',
         type: [ 'JavaScript', 'Markdown' ],
         level: 10,
@@ -36,7 +36,7 @@ export default [
     },
     {
         name: 'CodePen',
-        icon: 'https://files.codelife.cc/website/codepen.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/codepen.svg',
         description: 'CodePen 是一个面向前端设计师和开发者的社交开发环境。' +
             '你可以构建和部署网站，展示作品，创建测试用例以学习和调试，甚至获得灵感。',
         type: [ 'HTML', 'CSS', 'JavaScript' ],

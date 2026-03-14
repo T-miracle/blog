@@ -39,7 +39,7 @@ export default [
     },
     {
         name: 'Sass',
-        icon: 'https://files.codelife.cc/icons/5a64939010ad6072939fcfb6.png',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/sass.png',
         description: '世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言。',
         type: [ 'CSS' ],
         level: 35,

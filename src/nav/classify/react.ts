@@ -3,7 +3,7 @@ import { Project } from '../type';
 export default [
     {
         name: 'React',
-        icon: 'https://files.codelife.cc/website/react.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/react.svg',
         description: '用于构建用户界面的 JavaScript 库',
         type: [ 'React', 'JavaScript', '框架' ],
         level: 90,

@@ -43,7 +43,7 @@ export default [
     },
     {
         name: 'NuxtJS',
-        icon: 'https://files.codelife.cc/icons/nuxtjs.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/nuxtjs.svg',
         description: 'NuxtJS 让你构建你的下一个 Vue.js 应用程序变得更有信心。这是一个 开源 的框架，让 web 开发变得简单而强大。',
         type: [ '框架', 'Vue2', 'Vue3' ],
         link: [
@@ -124,7 +124,7 @@ export default [
     },
     {
         name: 'Element UI/Plus',
-        icon: 'https://files.codelife.cc/website/elementui.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/elementui.svg',
         description: 'Element，一套为开发者、设计师和产品经理准备的基于 Vue.js 的桌面端组件库',
         type: [ 'UI', 'Vue2', 'Vue3' ],
         level: 60,

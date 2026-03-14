@@ -40,7 +40,7 @@ export default [
     },
     {
         name: 'ECMAScript 6 入门教程',
-        icon: 'https://files.codelife.cc/website/es6ruanyifeng.svg',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/es6ruanyifeng.svg',
         description: '一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。 --- 阮一峰',
         type: [ 'JavaScript' ],
         level: 10,
@@ -146,7 +146,7 @@ export default [
     },
     {
         name: 'Lodash',
-        icon: 'https://files.codelife.cc/website/5ed0b8237e261c1f0b4e6c21.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/lodash.webp',
         description: '一致性、模块化、高性能的 JavaScript 实用工具库',
         level: 45,
         type: [ 'JavaScript' ],
@@ -223,7 +223,7 @@ export default [
     },
     {
         name: 'ScrollReveal',
-        icon: 'https://files.codelife.cc/user-website-icon/20220924/kspmcV8gxtvkVBhboFlSD3488.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/ScrollReveal.webp',
         description: 'ScrollReveal 可在元素进入/离开视口时轻松为其设置动画。',
         type: [ 'JavaScript' ],
         link: 'https://scrollrevealjs.org/',
@@ -264,7 +264,7 @@ export default [
     },
     {
         name: 'RequireJS',
-        icon: 'https://files.codelife.cc/icons/60b9ed5fae5a9ba4024b4194.png?x-oss-process=image/resize,limit_0,m_fill,w_100,h_100/quality,q_92/format,webp',
+        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/RequireJS.webp',
         description: 'RequireJS 是一个 JavaScript 文件和模块加载器。' +
             '它针对浏览器内使用进行了优化，但也可以在其他 JavaScript 环境中使用，例如 Rhino 和 Node.js。' +
             '使用像 RequireJS 这样的模块化脚本加载器将提高代码的速度和质量。',
