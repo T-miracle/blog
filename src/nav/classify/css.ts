@@ -7,17 +7,8 @@ export default [
         description: '即时按需的原子化 CSS 引擎',
         type: [ 'CSS', '框架' ],
         level: 72,
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://unocss.dev/',
-                github: 'https://github.com/unocss/unocss'
-            },
-            {
-                name: '中文文档',
-                url: 'https://unocss.nodejs.cn/'
-            }
-        ]
+        link: 'https://unocss.dev/',
+        github: 'https://github.com/unocss/unocss'
     },
     {
         name: 'Tailwind CSS',
@@ -25,17 +16,8 @@ export default [
         description: '只需 HTML 即可快速构建现代网站。一个工具优先的 CSS 框架，可以直接在你的标记中构建任何设计。',
         type: [ 'CSS', '框架' ],
         level: 72,
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://tailwindcss.com/',
-                github: 'https://github.com/tailwindlabs/tailwindcss'
-            },
-            {
-                name: '中文文档',
-                url: 'https://tailwind.nodejs.cn/'
-            }
-        ]
+        link: 'https://tailwindcss.com/',
+        github: 'https://github.com/tailwindlabs/tailwindcss'
     },
     {
         name: 'Sass',
@@ -43,34 +25,16 @@ export default [
         description: '世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言。',
         type: [ 'CSS' ],
         level: 35,
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://sass-lang.com/',
-                github: 'https://github.com/sass/sass'
-            },
-            {
-                name: '中文文档',
-                url: 'https://sass.nodejs.cn/'
-            }
-        ]
+        link: 'https://sass-lang.com/',
+        github: 'https://github.com/sass/sass'
     },
     {
         name: 'PostCSS',
         icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/postcss.png',
         description: '一个用 JavaScript 工具和插件转换 CSS 代码的工具。',
         type: [ 'CSS' ],
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://postcss.org/',
-                github: 'https://github.com/postcss/postcss'
-            },
-            {
-                name: '中文文档',
-                url: 'https://postcss.nodejs.cn/'
-            }
-        ]
+        link: 'https://postcss.org/',
+        github: 'https://github.com/postcss/postcss'
     },
     {
         name: 'CSS Loaders',

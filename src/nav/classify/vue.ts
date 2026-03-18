@@ -29,17 +29,8 @@ export default [
         description: 'Vue 2 和 3 的基本Vue组合实用程序集合',
         type: [ 'Vue2', 'Vue3' ],
         level: 50,
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://vueuse.org/',
-                github: 'https://github.com/vueuse/vueuse'
-            },
-            {
-                name: '中文文档',
-                url: 'https://vueuse.nodejs.cn/'
-            }
-        ]
+        link: 'https://vueuse.org/',
+        github: 'https://github.com/vueuse/vueuse'
     },
     {
         name: 'NuxtJS',

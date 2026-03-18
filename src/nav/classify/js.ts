@@ -53,17 +53,8 @@ export default [
         description: 'JavaScript 的超集，为大型应用提供了更好的可维护性和可读性',
         type: [ 'TypeScript' ],
         level: 10,
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://www.typescriptlang.org/',
-                github: 'https://github.com/microsoft/TypeScript'
-            },
-            {
-                name: '中文文档',
-                url: 'https://ts.nodejs.cn/'
-            }
-        ]
+        link: 'https://www.typescriptlang.org/',
+        github: 'https://github.com/microsoft/TypeScript'
     },
     {
         name: 'Vite',
@@ -122,19 +113,10 @@ export default [
         name: 'Eslint',
         icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/eslint.svg',
         description: '一个插件化的 JavaScript 代码检测工具，可帮助你查找和修复 JavaScript 代码中的问题。',
-        type: [ 'JavaScript' ],
+        type: [ 'JavaScript' ], 
         level: 10,
-        link: [
-            {
-                name: '官方文档',
-                url: 'https://eslint.org/',
-                github: 'https://github.com/eslint/eslint'
-            },
-            {
-                name: '中文文档',
-                url: 'https://eslint.nodejs.cn/'
-            }
-        ]
+        link: 'https://eslint.org/',
+        github: 'https://github.com/eslint/eslint'
     },
     {
         name: 'Terser',
