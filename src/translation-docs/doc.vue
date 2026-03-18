@@ -50,25 +50,26 @@
 <script setup lang="ts">
     import { ElInput } from 'element-plus';
     import { computed, onMounted, onUnmounted, ref } from 'vue';
+    import { BLOG_ICONS } from '@/__constant__';
 
     const docs = ref([
         {
             title: 'Kotlin 文档',
             status: '翻译中',
             link: 'https://docs.namichong.com/kotlin/',
-            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/Kotlin.svg'
+            logo: BLOG_ICONS + '/Kotlin.svg'
         },
         {
             title: 'IntelliJ 平台插件 SDK 文档',
             status: '翻译中',
             link: 'https://docs.namichong.com/intellij-platform-sdk/',
-            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/JetBrains-SDK.svg'
+            logo: BLOG_ICONS + '/JetBrains-SDK.svg'
         },
         {
             title: 'OverlayScrollbars',
             status: '已翻译',
             link: 'https://docs.namichong.com/overlayscrollbars/',
-            logo: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/OverlayScrollbars.png'
+            logo: BLOG_ICONS + '/OverlayScrollbars.png'
         }
     ]);
 

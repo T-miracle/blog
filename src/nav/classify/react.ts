@@ -1,9 +1,10 @@
 import { Project } from '../type';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
         name: 'React',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/react.svg',
+        icon: BLOG_ICONS + '/react.svg',
         description: '用于构建用户界面的 JavaScript 库',
         type: [ 'React', 'JavaScript', '框架' ],
         level: 90,

@@ -1,4 +1,5 @@
 import { Project } from '@/nav/type';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
@@ -21,7 +22,7 @@ export default [
     },
     {
         name: 'Sass',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/sass.png',
+        icon: BLOG_ICONS + '/sass.png',
         description: '世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言。',
         type: [ 'CSS' ],
         level: 35,
@@ -30,7 +31,7 @@ export default [
     },
     {
         name: 'PostCSS',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/postcss.png',
+        icon: BLOG_ICONS + '/postcss.png',
         description: '一个用 JavaScript 工具和插件转换 CSS 代码的工具。',
         type: [ 'CSS' ],
         link: 'https://postcss.org/',

@@ -1,9 +1,10 @@
 import { Project } from '../type';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
         name: 'MDN Web 文档',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/mdn-web-docs.svg',
+        icon: BLOG_ICONS + '/mdn-web-docs.svg',
         description: '最权威的 Web 技术文档，包括 HTML、CSS、JavaScript、Web API 等...',
         type: [ 'JavaScript', 'HTML', 'CSS' ],
         level: 101,
@@ -19,7 +20,7 @@ export default [
     },
     {
         name: 'Can I Use',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/can_i_use.webp',
+        icon: BLOG_ICONS + '/can_i_use.webp',
         description: '查询浏览器兼容性',
         type: [ 'HTML', 'CSS', 'JavaScript', 'SVG' ],
         level: 50,
@@ -27,7 +28,7 @@ export default [
     },
     {
         name: 'Slidev',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/slidev.webp',
+        icon: BLOG_ICONS + '/slidev.webp',
         description: '为开发者打造的演示文稿工具，使用 Markdown 和 Vue 编写幻灯片',
         type: [ 'JavaScript', 'Markdown' ],
         level: 10,
@@ -36,7 +37,7 @@ export default [
     },
     {
         name: 'CodePen',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/codepen.svg',
+        icon: BLOG_ICONS + '/codepen.svg',
         description: 'CodePen 是一个面向前端设计师和开发者的社交开发环境。' +
             '你可以构建和部署网站，展示作品，创建测试用例以学习和调试，甚至获得灵感。',
         type: [ 'HTML', 'CSS', 'JavaScript' ],
@@ -45,7 +46,7 @@ export default [
     },
     {
         name: 'PlantUML',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/plantuml.png',
+        icon: BLOG_ICONS + '/plantuml.png',
         description: 'PlantUML是一个通用性很强的工具，可以快速、直接地创建各种图表。',
         type: [ 'UML' ],
         level: 10,

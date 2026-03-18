@@ -2,6 +2,7 @@ import { Project } from '../type';
 import VueIcon from '@/icon/vueIcon.vue';
 import splitpanesIcon from '@/icon/splitpanesIcon.vue';
 import { shallowRef } from 'vue';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
@@ -25,7 +26,7 @@ export default [
     },
     {
         name: 'VueUse',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/VueUse.svg',
+        icon: BLOG_ICONS + '/VueUse.svg',
         description: 'Vue 2 和 3 的基本Vue组合实用程序集合',
         type: [ 'Vue2', 'Vue3' ],
         level: 50,
@@ -34,7 +35,7 @@ export default [
     },
     {
         name: 'NuxtJS',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/nuxtjs.svg',
+        icon: BLOG_ICONS + '/nuxtjs.svg',
         description: 'NuxtJS 让你构建你的下一个 Vue.js 应用程序变得更有信心。这是一个 开源 的框架，让 web 开发变得简单而强大。',
         type: [ '框架', 'Vue2', 'Vue3' ],
         link: [
@@ -98,7 +99,7 @@ export default [
     },
     {
         name: 'Pinia',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/pinia.png',
+        icon: BLOG_ICONS + '/pinia.png',
         description: '用于 Vue3 的符合直觉的 Vue.js 状态管理库。',
         type: [ 'Vue3', '框架' ],
         level: 50,
@@ -115,7 +116,7 @@ export default [
     },
     {
         name: 'Element UI/Plus',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/elementui.svg',
+        icon: BLOG_ICONS + '/elementui.svg',
         description: 'Element，一套为开发者、设计师和产品经理准备的基于 Vue.js 的桌面端组件库',
         type: [ 'UI', 'Vue2', 'Vue3' ],
         level: 60,

@@ -4,11 +4,12 @@ import { shallowRef } from 'vue';
 import echartIcon from '@/icon/echartIcon.vue';
 import axiosIcon from '@/icon/axiosIcon.vue';
 import WebpackIcon from '@/icon/webpackIcon.vue';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
         name: 'GSAP',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/GSAP.svg',
+        icon: BLOG_ICONS + '/GSAP.svg',
         description: 'GSAP 是一个高性能、高度可定制的动画库，用于创建流畅的动画效果。',
         type: [ 'JavaScript' ],
         link: 'https://gsap.com/',
@@ -16,7 +17,7 @@ export default [
     },
     {
         name: 'Snabbdom',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/Snabbdom.png',
+        icon: BLOG_ICONS + '/Snabbdom.png',
         description: '一个精简化、模块化、功能强大、性能卓越的虚拟 DOM 库',
         level: -1,
         type: [ 'JavaScript' ],
@@ -24,7 +25,7 @@ export default [
     },
     {
         name: 'Viewer.js',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/github.png',
+        icon: BLOG_ICONS + '/github.png',
         description: '极其强大的图片预览JavaScript库',
         type: [ 'JavaScript' ],
         link: 'https://fengyuanchen.github.io/viewerjs/',
@@ -32,7 +33,7 @@ export default [
     },
     {
         name: 'Floating UI',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/Floating-UI.ico',
+        icon: BLOG_ICONS + '/Floating-UI.ico',
         description: '用于创建浮动元素的底层工具箱，可创建提示气泡、弹出窗口、下拉菜单等',
         type: [ 'JavaScript' ],
         link: 'https://floating-ui.com/',
@@ -40,7 +41,7 @@ export default [
     },
     {
         name: 'ECMAScript 6 入门教程',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/es6ruanyifeng.svg',
+        icon: BLOG_ICONS + '/es6ruanyifeng.svg',
         description: '一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。 --- 阮一峰',
         type: [ 'JavaScript' ],
         level: 10,
@@ -58,7 +59,7 @@ export default [
     },
     {
         name: 'Vite',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/vite.svg',
+        icon: BLOG_ICONS + '/vite.svg',
         description: '一个由原生 ESM 驱动的 Web 开发构建工具',
         type: [ '构建工具' ],
         level: 15,
@@ -94,7 +95,7 @@ export default [
     },
     {
         name: 'Babel',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/babel.png',
+        icon: BLOG_ICONS + '/babel.png',
         description: '一个 JavaScript 编译器，可将 ECMAScript 2015+ 代码转换为向后兼容的 JavaScript 版本',
         type: [ 'JavaScript' ],
         link: [
@@ -111,7 +112,7 @@ export default [
     },
     {
         name: 'Eslint',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/eslint.svg',
+        icon: BLOG_ICONS + '/eslint.svg',
         description: '一个插件化的 JavaScript 代码检测工具，可帮助你查找和修复 JavaScript 代码中的问题。',
         type: [ 'JavaScript' ], 
         level: 10,
@@ -120,7 +121,7 @@ export default [
     },
     {
         name: 'Terser',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/terser-logo.svg',
+        icon: BLOG_ICONS + '/terser-logo.svg',
         description: 'JavaScript 解析器、混淆器和压缩工具包，适用于 ES6+',
         type: [ 'JavaScript' ],
         link: 'https://terser.org/',
@@ -128,7 +129,7 @@ export default [
     },
     {
         name: 'Lodash',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/lodash.webp',
+        icon: BLOG_ICONS + '/lodash.webp',
         description: '一致性、模块化、高性能的 JavaScript 实用工具库',
         level: 45,
         type: [ 'JavaScript' ],
@@ -172,7 +173,7 @@ export default [
     },
     {
         name: 'Swiper',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/swiper-logo.svg',
+        icon: BLOG_ICONS + '/swiper-logo.svg',
         description: '这可能是最全能的移动端轮播图实现，当然 Web 端也可以使用',
         type: [ 'JavaScript' ],
         link: 'https://swiperjs.com/',
@@ -180,7 +181,7 @@ export default [
     },
     {
         name: 'VTable 方格艺术家',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/visactor.png',
+        icon: BLOG_ICONS + '/visactor.png',
         description: 'VTable，不只是一款高性能的多维数据分析表格，更是一个在行列间创作的方格艺术家。',
         type: [ 'JavaScript' ],
         link: 'https://visactor.io/',
@@ -188,7 +189,7 @@ export default [
     },
     {
         name: 'OverlayScrollbars',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/OverlayScrollbars.png',
+        icon: BLOG_ICONS + '/OverlayScrollbars.png',
         description: '一个滚动条插件，隐藏本机滚动条，提供自定义样式的覆盖滚动条，并保留本机功能和感觉。',
         type: [ 'JavaScript' ],
         link: [
@@ -205,7 +206,7 @@ export default [
     },
     {
         name: 'ScrollReveal',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/ScrollReveal.webp',
+        icon: BLOG_ICONS + '/ScrollReveal.webp',
         description: 'ScrollReveal 可在元素进入/离开视口时轻松为其设置动画。',
         type: [ 'JavaScript' ],
         link: 'https://scrollrevealjs.org/',
@@ -213,7 +214,7 @@ export default [
     },
     {
         name: 'Lit',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/lit.png',
+        icon: BLOG_ICONS + '/lit.png',
         description: 'Lit 是一个简单的库，用于构建快速、轻量级的web组件。',
         type: [ 'JavaScript' ],
         link: 'https://lit.dev/',
@@ -221,7 +222,7 @@ export default [
     },
     {
         name: 'NPM',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/NPM.png',
+        icon: BLOG_ICONS + '/NPM.png',
         description: '一个 JavaScript 包管理工具，也是 Node.js 的默认包管理器。 NPM 允许开发者轻松地下载、安装、共享、管理项目的依赖库和工具。',
         type: [ 'JavaScript', 'NodeJs' ],
         level: 40,
@@ -229,7 +230,7 @@ export default [
     },
     {
         name: 'Excalidraw',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/Excalidraw.png',
+        icon: BLOG_ICONS + '/Excalidraw.png',
         description: '一个开源的虚拟手绘风格白板。支持协作并且端到端加密。',
         type: [ '工具', 'JavaScript' ],
         level: 79,
@@ -238,7 +239,7 @@ export default [
     },
     {
         name: 'PromiseMirror',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/ProseMirror.svg',
+        icon: BLOG_ICONS + '/ProseMirror.svg',
         description: '一个基于TypeScript的高度自定义构建富文本编辑器的框架',
         type: [ 'TypeScript', '框架' ],
         link: 'https://prosemirror.net/',
@@ -246,7 +247,7 @@ export default [
     },
     {
         name: 'RequireJS',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/RequireJS.webp',
+        icon: BLOG_ICONS + '/RequireJS.webp',
         description: 'RequireJS 是一个 JavaScript 文件和模块加载器。' +
             '它针对浏览器内使用进行了优化，但也可以在其他 JavaScript 环境中使用，例如 Rhino 和 Node.js。' +
             '使用像 RequireJS 这样的模块化脚本加载器将提高代码的速度和质量。',

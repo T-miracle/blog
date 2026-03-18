@@ -1,9 +1,10 @@
 import { Project } from '../type';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
         name: 'Flutter',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/flutter.svg',
+        icon: BLOG_ICONS + '/flutter.svg',
         description: 'Google 开发的移动应用 UI 框架，可以快速在 iOS 和 Android 上构建高质量的原生用户界面',
         type: [ 'APP', 'Flutter', '框架' ],
         level: 72,

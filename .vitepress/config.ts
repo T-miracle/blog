@@ -25,8 +25,7 @@ export default defineConfig({
                 '@': path.join(__dirname, '../src/'),
                 '@NanoUI': path.join(__dirname, '../package/components/'),
                 '@NanoIcon': path.join(__dirname, '../package/icon/'),
-                '@store': path.join(__dirname, '../package/store/'),
-                '@HWY': 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images'
+                '@store': path.join(__dirname, '../package/store/')
             }
         },
         plugins: [

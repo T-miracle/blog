@@ -1,6 +1,7 @@
 import { Project } from '../type';
 import RustIcon from '@/icon/rustIcon.vue';
 import { shallowRef } from 'vue';
+import { BLOG_ICONS } from '@/__constant__';
 
 export default [
     {
@@ -14,7 +15,7 @@ export default [
     },
     {
         name: 'Rust 圣经',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/rust.jpg',
+        icon: BLOG_ICONS + '/rust.jpg',
         description: '这可能是最好的 Rust 教程',
         type: [ 'Rust' ],
         level: 101,
@@ -22,7 +23,7 @@ export default [
     },
     {
         name: 'Dioxus',
-        icon: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/icons/dioxus.png',
+        icon: BLOG_ICONS + '/dioxus.png',
         description: '使用单个代码库构建 Web、桌面和移动应用，以及更多。零配置启动、集成的热重载和基于信号的状态管理。' +
             '使用服务器功能添加后端功能，并使用我们的 CLI 进行捆绑。',
         type: [ 'Rust', '框架' ],
