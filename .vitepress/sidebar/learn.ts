@@ -39,6 +39,7 @@ import dockerItem from './learn/docker';
 import androidItems from './learn/android';
 import nodejsItems from './learn/nodejsItems';
 import { type SidebarType } from '../../package/type';
+import neovimItems from './learn/neovim';
 
 const learnSidebar: SidebarType[] = [
     {
@@ -240,6 +241,11 @@ const learnSidebar: SidebarType[] = [
                 text: 'HBuilder X',
                 collapsed: true,
                 items: hBuilderXItems
+            },
+            {
+                text: 'Neovim',
+                collapsed: true,
+                items: neovimItems
             }
         ]
     }
