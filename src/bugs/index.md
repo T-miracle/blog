@@ -4,7 +4,7 @@ lastUpdated: 2025/1/15 13:55
 
 # 求求你别再出错了！
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/write-bugs.jpg){width=320}
+![](/images/write-bugs.jpg){width=320}
 
 我发誓，我从未想过要让这些代码出错！
 

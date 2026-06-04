@@ -14,7 +14,7 @@ MVVM 是 Model-View-ViewModel 的缩写，它是一种前端开发模式，旨�
 
 - 模型（Model）是应用程序的核心数据结构，负责存储应用程序的数据。
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/MVVM.png)
+![](/images/MVVM.png)
 
 **MVVM 模式的核心思想是数据绑定**，即将视图与视图模型之间的属性和事件进行双向绑定，当视图的属性发生变化时，视图模型会自动更新相应的数据，反之亦然。
 这种双向绑定的机制可以大大简化代码编写过程，使开发人员更加专注于业务逻辑的实现。

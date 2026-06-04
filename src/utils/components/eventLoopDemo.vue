@@ -49,7 +49,7 @@
                     stack: [ '/what_is_event_loop_asyn_1.png' ]
                 },
                 desc: [
-                    `开始运行，事件循环开始，先执行<img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_asyn_1.png" alt=""/>，这个任务被压入调用栈中`
+                    `开始运行，事件循环开始，先执行<img src="/images/what_is_event_loop_asyn_1.png" alt=""/>，这个任务被压入调用栈中`
                 ]
             }
         },
@@ -70,11 +70,11 @@
             id: 4,
             content: {
                 eventLoopData: {
-                    stack: [ 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png' ],
+                    stack: [ '/images/what_is_event_loop_settimeout_1.png' ],
                     console: [ '开始' ]
                 },
                 desc: [
-                    `下一个 <img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png" alt="" /> 任务被压入调用栈中`
+                    `下一个 <img src="/images/what_is_event_loop_settimeout_1.png" alt="" /> 任务被压入调用栈中`
                 ]
             }
         },
@@ -82,12 +82,12 @@
             id: 5,
             content: {
                 eventLoopData: {
-                    stack: [ 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png' ],
-                    apis: [ { time: '1000ms', info: 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1.png' } ],
+                    stack: [ '/images/what_is_event_loop_settimeout_1.png' ],
+                    apis: [ { time: '1000ms', info: '/images/what_is_event_loop_settimeout_1_func_1.png' } ],
                     console: [ '开始' ]
                 },
                 desc: [
-                    '调用栈发现 <img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png" alt="" /> 这个任务是异步执行的操作（宏任务），' +
+                    '调用栈发现 <img src="/images/what_is_event_loop_settimeout_1.png" alt="" /> 这个任务是异步执行的操作（宏任务），' +
                         '会把该任务的子任务（方法）放到 <code>WebAPIs</code> 中，如果有执行时间会进入计时，计时完毕放到宏任务队列'
                 ]
             }
@@ -96,11 +96,11 @@
             id: 6,
             content: {
                 eventLoopData: {
-                    apis: [ { time: '1000ms', info: `https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png` } ],
+                    apis: [ { time: '1000ms', info: `/images/what_is_event_loop_settimeout_1.png` } ],
                     console: [ '开始' ]
                 },
                 desc: [
-                    `<img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png" alt=""/> 内部子任务被放入后，它本身被调用栈弹出，调用栈空闲，事件循环也没有发现可执行的微任务`
+                    `<img src="/images/what_is_event_loop_settimeout_1.png" alt=""/> 内部子任务被放入后，它本身被调用栈弹出，调用栈空闲，事件循环也没有发现可执行的微任务`
                 ]
             }
         },
@@ -108,12 +108,12 @@
             id: 7,
             content: {
                 eventLoopData: {
-                    stack: [ 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_asyn_2.png' ],
-                    apis: [ { time: '1000ms', info: `https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1.png` } ],
+                    stack: [ '/images/what_is_event_loop_asyn_2.png' ],
+                    apis: [ { time: '1000ms', info: `/images/what_is_event_loop_settimeout_1.png` } ],
                     console: [ '开始' ]
                 },
                 desc: [
-                    `继续执行同步任务 <img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_asyn_2.png" alt="">，压入调用栈中`
+                    `继续执行同步任务 <img src="/images/what_is_event_loop_asyn_2.png" alt="">，压入调用栈中`
                 ]
             }
         },
@@ -121,7 +121,7 @@
             id: 8,
             content: {
                 eventLoopData: {
-                    apis: [ { time: '1000ms', info: `https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_asyn_2.png` } ],
+                    apis: [ { time: '1000ms', info: `/images/what_is_event_loop_asyn_2.png` } ],
                     console: [ '开始', '结束' ],
                     consoleIndex: -1
                 },
@@ -134,7 +134,7 @@
             id: 9,
             content: {
                 eventLoopData: {
-                    queue: [ , [ `https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1.png` ] ],
+                    queue: [ , [ `/images/what_is_event_loop_settimeout_1_func_1.png` ] ],
                     console: [ '开始', '结束' ]
                 },
                 desc: [
@@ -146,7 +146,7 @@
             id: 10,
             content: {
                 eventLoopData: {
-                    stack: [ 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1.png' ],
+                    stack: [ '/images/what_is_event_loop_settimeout_1_func_1.png' ],
                     console: [ '开始', '结束' ]
                 },
                 desc: [
@@ -158,7 +158,7 @@
             id: 11,
             content: {
                 eventLoopData: {
-                    stack: [ 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1.png', 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1_asyn_1.png' ],
+                    stack: [ '/images/what_is_event_loop_settimeout_1_func_1.png', '/images/what_is_event_loop_settimeout_1_func_1_asyn_1.png' ],
                     console: [ '开始', '结束' ]
                 },
                 desc: [
@@ -170,12 +170,12 @@
             id: 12,
             content: {
                 eventLoopData: {
-                    stack: [ 'https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1.png' ],
+                    stack: [ '/images/what_is_event_loop_settimeout_1_func_1.png' ],
                     console: [ '开始', '结束', '定时' ],
                     consoleIndex: -1
                 },
                 desc: [
-                    `<img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1_asyn_1.png" alt=""/>被执行，在浏览器控制台上打印，随后被抛出调用栈`
+                    `<img src="/images/what_is_event_loop_settimeout_1_func_1_asyn_1.png" alt=""/>被执行，在浏览器控制台上打印，随后被抛出调用栈`
                 ]
             }
         },
@@ -186,7 +186,7 @@
                     console: [ '开始', '结束', '定时' ]
                 },
                 desc: [
-                    `因为 <img src="https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/what_is_event_loop_settimeout_1_func_1.png" alt=""/> 里的任务都被执行，所以它被抛出了调用栈`
+                    `因为 <img src="/images/what_is_event_loop_settimeout_1_func_1.png" alt=""/> 里的任务都被执行，所以它被抛出了调用栈`
                 ]
             }
         },

@@ -126,7 +126,7 @@ ComponentB mounted
 
 调用 componentB 页面，浏览器显示：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/vue-extends-image-1.png)
+![](/images/vue-extends-image-1.png)
 
 可以发现，componentA 的 message 被复用了，但是 message2 被重写覆盖了。
 
@@ -178,7 +178,7 @@ ComponentB mounted
 
 浏览器渲染：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/vue-extends-image-2.png)
+![](/images/vue-extends-image-2.png)
 
 顺序点击页面的两个按钮，控制台打印：
 
@@ -256,7 +256,7 @@ export default {
 
 调用 componentB，浏览器渲染：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/vue-extends-image-3.png)
+![](/images/vue-extends-image-3.png)
 
 可以发现，componentB 并没有引入 mixins.js 和 ChildComponent 组件，但还是调用成功了。
 

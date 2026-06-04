@@ -14,7 +14,7 @@ lastUpdated: 2023/9/17 02:12
 
 流程图如下：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/ajax-flow.png)
+![](/images/ajax-flow.png)
 
 下面举个例子：
 

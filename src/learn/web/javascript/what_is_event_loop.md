@@ -50,7 +50,7 @@ console.log('结束')
 
 先看下下面这个示例，它大概地抽象描述了`JavaScript`引擎的各个容器：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/event-loop-demo.png)
+![](/images/event-loop-demo.png)
 
 - **Call Stack**：`JavaScript`的调用栈
 - **Web APIs**：`Web`应用接口，像`setTimeout`、`DOM`操作、`Ajax`请求、`Promise`请求之类的相关执行都放在里面
@@ -62,7 +62,7 @@ console.log('结束')
 
 ### 执行步骤
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/event-loop-demo.gif)
+![](/images/event-loop-demo.gif)
 
 ### 详细解析
 

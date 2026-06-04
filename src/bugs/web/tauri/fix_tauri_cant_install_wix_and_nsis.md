@@ -14,7 +14,7 @@ Wix 和 Nsis 这两个依赖，死活下载不了，不是超时就是其他各�
 
 也有人给出了比较合理的解决方式，例如：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/tauri_install_wix_fix.png)
+![](/images/tauri_install_wix_fix.png)
 
 翻译一下大概意思为：
 

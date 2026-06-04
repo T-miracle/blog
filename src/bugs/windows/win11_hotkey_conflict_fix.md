@@ -20,8 +20,8 @@ IDEA 快捷键 `Ctrl+Shift+X` 被占用
 
 如果你是 AMD 用户，且安装了 AMD Software（以前叫 Adrenalin），那么你可以搜索并打开它。
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/amd_software.png)
+![](/images/amd_software.png)
 
 然后点击右上角的齿轮图标，进入设置，禁用掉热键：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/amd_software_disable_hotkey.png){width="75%"}
+![](/images/amd_software_disable_hotkey.png){width="75%"}

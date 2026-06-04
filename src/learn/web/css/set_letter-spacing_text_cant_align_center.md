@@ -32,7 +32,7 @@ lastUpdated: 2024/6/17 15:41
 
 可以发现，实际上最后一个字后面也有一段空白间距，这导致文本无法在盒子内无法正常居中：
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/letter-spacing-demo-1.png)
+![](/images/letter-spacing-demo-1.png)
 
 ## 解决方式
 
@@ -50,4 +50,4 @@ lastUpdated: 2024/6/17 15:41
 
 眼睛可能看不出区别，但实际上，`text-indent` 给文本前面设置了一段 `4px` 的缩进，这个可以使用浏览器控制台查看。
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/letter-spacing-demo-2.png)
+![](/images/letter-spacing-demo-2.png)

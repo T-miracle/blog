@@ -16,7 +16,7 @@ lastUpdated: 2023/9/17 02:12
 - 主机相同（`host`）
 - 端口相同（`port`）
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/url.png)
+![](/images/url.png)
 
 反之非同源请求，也就是协议、端口、主机其中一项不相同的时候，这时候就会产生跨域
 
@@ -47,7 +47,7 @@ lastUpdated: 2023/9/17 02:12
 
 只要后端实现了 `CORS`，就实现了跨域
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/CORS.png)
+![](/images/CORS.png)
 
 举两个例子：
 

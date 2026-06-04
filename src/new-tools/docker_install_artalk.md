@@ -61,7 +61,7 @@ docker logs artalk
 
 如果看到如下信息，说明启动成功：
 
-![启动成功](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/artalk_start_success.png)
+![启动成功](/images/artalk_start_success.png)
 
 ::: warning 注意
 你还需要创建一个管理员账户，方便后续登陆后台管理页面。

@@ -44,7 +44,7 @@ No 'Access-Control-Allow-origin' header is present on the requested resource. //
 2. 如果图片在 `<img>` 或者 `<el-image>` 中正常使用，就可以排除对象存储配置的问题了。
    那么，就可以考虑 `crossOrigin` 相关的问题了，先说说 `crossOrigin` 是什么？MDN 上是如下解释的：
 
-   ![crossOrigin](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/crossOrigin.png)
+   ![crossOrigin](/images/crossOrigin.png)
 
    当你使用了 `<img>` 或者 `<el-image>` 去加载了图片，那么再在同一页面使用 `new image()`
    去加载这张图片，而且设置了 `crossOrigin` 的跨域属性为 `anonymous`。

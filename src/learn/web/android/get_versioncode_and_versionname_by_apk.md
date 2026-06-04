@@ -10,7 +10,7 @@ lastUpdated: 2023/9/17 02:12
 
 可以通过 Android Studio 自动获取下载 或者 去[官网下载](https://developer.android.com/studio)
 
-![](https://namichong.obs.cn-south-1.myhuaweicloud.com/Blog/images/aapt-path.png)
+![](/images/aapt-path.png)
 
 打开命令行工具，使用以下命令对 APK 文件进行反编译获取（_如果需要经常使用该命令工具，建议添加至系统环境_）
 
