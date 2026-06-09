@@ -233,7 +233,7 @@ export default [
         icon: BLOG_ICONS + '/Excalidraw.png',
         description: '一个开源的虚拟手绘风格白板。支持协作并且端到端加密。',
         type: [ '工具', 'JavaScript' ],
-        level: 79,
+        level: 0,
         link: 'https://excalidraw.com/',
         github: 'https://github.com/excalidraw/excalidraw'
     },
