@@ -8,6 +8,12 @@
             <NanoDefaultHomepage/>
         </slot>
 
+        <footer
+            v-if="onlyShowIndex && footer?.copyright"
+            class="homepage-record fixed bottom-0 left-0 z-10 w-full px-4 py-3 text-center text-sm text-gray-3"
+            v-html="`备案号：${footer.copyright}`"
+        />
+
         <NanoContainer v-if="!onlyShowIndex">
             <template #content-footer>
                 <slot name="content-footer"/>
@@ -24,8 +30,9 @@
     import { controllerStore } from '@store/controller';
 
     const { frontmatter, site } = useData();
-    const { backgrounds: bgList } = site.value.themeConfig;
+    const { backgrounds: bgList, footer } = site.value.themeConfig;
 
+    // Tracks whether the current VitePress route is the standalone homepage.
     const onlyShowIndex = ref<boolean>(false);
 
     watch(() => frontmatter.value.layout, (value) => {
@@ -54,4 +61,8 @@
 
 <style lang="scss">
     @import "./theme/light/var";
+
+    .homepage-record a {
+        color: inherit;
+    }
 </style>

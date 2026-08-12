@@ -5,7 +5,7 @@ import newToolsSidebar from './sidebar/newTools';
 
 export default {
     name: 'Tmiracle',
-    motto: '用爱学IT，用心写BUG',
+    motto: 'AI连接大脑，Token代替思考',
     aboutMePath: '',
     backgrounds: [
         '/background/wallhaven-jxl3qp.webp'
